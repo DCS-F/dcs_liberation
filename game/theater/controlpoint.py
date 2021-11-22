@@ -316,8 +316,8 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
 
 
     # Preferred carrier type and name, if any
-    preferred_type = None
-    preferred_name = None
+    preferred_name: Optional[str] = None
+    preferred_type: Optional[Type[ShipType]] = None
 
     alt = 0
 

@@ -4,11 +4,13 @@ import logging
 import random
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List
+from typing import Any, Dict, Iterable, List, Set, Type
+
 
 import dcs.statics
 
 from game import Game
+from game.db import ship_type_from_name
 from game.factions.faction import Faction
 from game.naming import namegen
 from game.scenery_group import SceneryGroup
@@ -107,7 +109,7 @@ class GameGenerator:
 
     def should_remove_carrier(self, player: bool) -> bool:
         faction = self.player if player else self.enemy
-        return self.generator_settings.no_carrier or not faction.carrier_names
+        return self.generator_settings.no_carrier or not faction.carriers
 
     def should_remove_lha(self, player: bool) -> bool:
         faction = self.player if player else self.enemy
@@ -205,8 +207,8 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         if not super().generate():
             return False
 
-        carrier_names = self.faction.carrier_names
-        if not carrier_names:
+        carriers = self.faction.carriers
+        if not carriers:
             logging.info(
                 f"Skipping generation of {self.control_point.name} because "
                 f"{self.faction_name} has no carriers"
@@ -225,7 +227,22 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
                 self.control_point.heading,
             ),
         )
-        self.update_carrier_name(random.choice(carrier_names))
+
+        # If the campaign designer has specified a preferred name, use that
+        if self.control_point.preferred_name:
+            self.control_point.name = self.control_point.preferred_name
+        else:
+            # Otherwise pick randomly from the names specified for that particular carrier type
+            carrier_type = ship_type_from_name(group.units[0].type)
+            carrier_names = self.faction.carriers[carrier_type]
+            self.control_point.name = random.choice(carrier_names)
+        # Prevents duplicate carrier or LHA names in campaigns with more that one of either.
+        for carrier_type_key in self.faction.carriers:
+            for carrier_name in self.faction.carriers[carrier_type_key]:
+                if carrier_name == self.control_point.name:
+                    self.faction.carriers[carrier_type_key].remove(
+                        self.control_point.name
+                    )
         return True
 
 
@@ -257,6 +274,8 @@ class LhaGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
             ),
         )
         self.update_carrier_name(random.choice(lha_names))
+        # Prevents duplicate carrier or LHA names in campaigns with more that one of either.
+        self.faction.helicopter_carrier_names.remove(self.control_point.name)
         return True
 
 

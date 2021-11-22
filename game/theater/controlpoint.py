@@ -41,6 +41,7 @@ from dcs.ships import (
     LHA_Tarawa,
     Type_071,
 )
+from dcs.unittype import FlyingType, ShipType
 
 from game.ato.closestairfields import ObjectiveDistanceCache
 from game.ground_forces.combat_stance import CombatStance
@@ -312,6 +313,13 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
     # Not sure what distance DCS uses, but assuming it's about 2NM since that's roughly
     # the distance of the circle on the map.
     CAPTURE_DISTANCE = nautical_miles(2)
+
+
+    # Preferred carrier type and name, if any
+    preferred_type = None
+    preferred_name = None
+
+    alt = 0
 
     # TODO: Only airbases have IDs.
     # TODO: cptype is obsolete.

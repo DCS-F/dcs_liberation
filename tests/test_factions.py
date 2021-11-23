@@ -101,7 +101,7 @@ class TestFactionLoader(unittest.TestCase):
             self.assertIn("mod", faction.requirements.keys())
             self.assertIn("Some mod is required", faction.requirements.values())
 
-            self.assertEqual(4, len(faction.carrier_names))
+            self.assertEqual(4, len(faction.carriers.values()))
             self.assertEqual(5, len(faction.helicopter_carrier_names))
 
     @pytest.mark.skip(reason="Faction unit names in the json files are outdated")

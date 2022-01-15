@@ -35,14 +35,17 @@ class CampaignCarrierConfig:
         cls, data: dict[Union[str, int], Any], theater: ConflictTheater
     ) -> CampaignCarrierConfig:
         by_location: dict[ControlPoint, CarrierConfig] = defaultdict()
-        print(data)
         for base_id, carrier_config_data in data.items():
             if isinstance(base_id, int):
                 base = theater.find_control_point_by_id(base_id)
             else:
                 base = theater.control_point_named(base_id)
 
-            carrier_config = CarrierConfig.from_data(carrier_config_data)
+            try:
+                carrier_config = CarrierConfig.from_data(carrier_config_data)
+            except KeyError:
+                # No CarrierConfig, move on
+                continue
             base.preferred_name = carrier_config.preferred_name
             base.preferred_type = carrier_config.preferred_type
             by_location[base] = carrier_config

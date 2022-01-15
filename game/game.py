@@ -1,18 +1,21 @@
 from __future__ import annotations
 
+import copy
 import itertools
 import logging
 import math
+from collections import defaultdict
 from collections.abc import Iterator
 from datetime import date, datetime, timedelta
 from enum import Enum
-from typing import Any, List, TYPE_CHECKING, Type, Union, cast
+from typing import Any, List, TYPE_CHECKING, Type, Union, cast, Dict
 from uuid import UUID
 
 from dcs.countries import Switzerland, USAFAggressors, UnitedNationsPeacekeepers
 from dcs.country import Country
 from dcs.mapping import Point
 from dcs.task import CAP, CAS, PinpointStrike
+from dcs.unittype import ShipType
 from dcs.vehicles import AirDefence
 from faker import Faker
 
@@ -132,6 +135,21 @@ class Game:
 
         self.blue.configure_default_air_wing(air_wing_config)
         self.red.configure_default_air_wing(air_wing_config)
+
+        # Create a local copy of the faction carriers, because
+        # the contents may be modified during campaign generation
+        self.carriers: Dict[str, Dict[Type[ShipType], List[str]]] = defaultdict(
+            Dict[Type[ShipType], List[str]]
+        )
+        self.carriers[player_faction.name] = copy.deepcopy(player_faction.carriers)
+        self.carriers[enemy_faction.name] = copy.deepcopy(enemy_faction.carriers)
+        self.helicopter_carrier_names: Dict[str, List[str]] = defaultdict(List[str])
+        self.helicopter_carrier_names[player_faction.name] = copy.deepcopy(
+            player_faction.helicopter_carrier_names
+        )
+        self.helicopter_carrier_names[enemy_faction.name] = copy.deepcopy(
+            enemy_faction.helicopter_carrier_names
+        )
 
         self.on_load(game_still_initializing=True)
 

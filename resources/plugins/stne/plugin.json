@@ -1,0 +1,12 @@
+{
+    "nameInUI": "Stone",
+    "defaultValue": false,
+    "specificOptions": [],
+    "scriptsWorkOrders": [
+        {
+            "file": "stne.lua",
+            "mnemonic": "Stone"
+        }
+    ],
+    "configurationWorkOrders": []
+}

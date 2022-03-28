@@ -136,6 +136,7 @@ from .flighttype import FlightType
 # factions that also have F-4s should not.
 
 # Used for CAP, Escort, and intercept if there is not a specialised aircraft available
+from pydcs_extensions.uh60l.uh60l import UH_60L, KC130J
 from pydcs_extensions.ah64d.ah64d import AH_64D_BLK_II
 
 CAP_CAPABLE = [

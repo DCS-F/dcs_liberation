@@ -5270,9 +5270,9 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         end
 
 
-        if ctld.jtacUnits[_jtacGroupName] ~= nil then
-            ctld.notifyCoalition("JTAC Group " .. _jtacGroupName .. " KIA!", 10, ctld.jtacUnits[_jtacGroupName].side, _radio)
-        end
+--         if ctld.jtacUnits[_jtacGroupName] ~= nil then
+--             ctld.notifyCoalition("JTAC Group " .. _jtacGroupName .. " KIA!", 10, ctld.jtacUnits[_jtacGroupName].side, _radio)
+--         end
 
         --remove from list
         ctld.jtacUnits[_jtacGroupName] = nil
@@ -5367,7 +5367,7 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         
             local message = _jtacGroupName .. action .. _enemyUnit:getTypeName()
             local fullMessage = message .. '. CODE: ' .. _laserCode .. ". POSITION: " .. ctld.getPositionString(_enemyUnit)
-            ctld.notifyCoalition(fullMessage, 10, _jtacUnit:getCoalition(), _radio, message)
+--             ctld.notifyCoalition(fullMessage, 10, _jtacUnit:getCoalition(), _radio, message)
 
             -- create smoke
             if _smoke == true then
@@ -5406,11 +5406,11 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         timer.scheduleFunction(ctld.timerJTACAutoLase, { _jtacGroupName, _laserCode, _smoke, _lock, _colour, _radio }, timer.getTime() + 5)
     end
 
-    if targetLost then
-        ctld.notifyCoalition(_jtacGroupName .. ", target lost.", 10, _jtacUnit:getCoalition(), _radio)
-    elseif targetDestroyed then
-        ctld.notifyCoalition(_jtacGroupName .. ", target destroyed.", 10, _jtacUnit:getCoalition(), _radio)
-    end
+--     if targetLost then
+--         ctld.notifyCoalition(_jtacGroupName .. ", target lost.", 10, _jtacUnit:getCoalition(), _radio)
+--     elseif targetDestroyed then
+--         ctld.notifyCoalition(_jtacGroupName .. ", target destroyed.", 10, _jtacUnit:getCoalition(), _radio)
+--     end
 end
 
 function ctld.JTACAutoLaseStop(_jtacGroupName)
@@ -5882,7 +5882,7 @@ function ctld.getJTACStatus(_args)
     end
 
 
-    ctld.notifyCoalition(_message, 10, _side)
+--     ctld.notifyCoalition(_message, 10, _side)
 end
 
 

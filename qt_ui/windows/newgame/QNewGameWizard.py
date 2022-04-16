@@ -163,6 +163,7 @@ class NewGameWizard(QtWidgets.QWizard):
             f_16_idf=self.field("f_16_idf"),
             f16a_mlu_f16c_bl52d=self.field("f16a_mlu_f16c_bl52d"),
             f16cm_bl50=self.field("f16cm_bl50"),
+            fa_18efg=self.field("fa_18efg"),
             f22_raptor=self.field("f22_raptor"),
             f84g_thunderjet=self.field("f84g_thunderjet"),
             f100_supersabre=self.field("f100_supersabre"),
@@ -683,6 +684,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("f16a_mlu_f16c_bl52d", f16a_mlu_f16c_bl52d)
         f16cm_bl50 = QtWidgets.QCheckBox()
         self.registerField("f16cm_bl50", f16cm_bl50)
+        fa_18efg = QtWidgets.QCheckBox()
+        self.registerField("fa_18efg", fa_18efg)
         f22_raptor = QtWidgets.QCheckBox()
         self.registerField("f22_raptor", f22_raptor)
         f84g_thunderjet = QtWidgets.QCheckBox()
@@ -734,6 +737,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
                 f16a_mlu_f16c_bl52d,
             ),
             ("F-16CM Block 50 (version 2.5.6.10)", f16cm_bl50),
+            ("F/A-18E/F/G Super Hornet (version 1.6)", fa_18efg),
             ("F-22A Raptor", f22_raptor),
             ("F-84G Thunderjet (v2.5.7.01)", f84g_thunderjet),
             ("F-100 Super Sabre (v2.7.18.30765 patch 20.10.22)", f100_supersabre),

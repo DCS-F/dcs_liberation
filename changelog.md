@@ -88,6 +88,7 @@ Saves from 5.x are not compatible with 6.0.
 * **[Plugins]** Allow full support of the SkynetIADS plugin with all advanced features (connection nodes, power sources, command centers) if campaign supports it.
 * **[Plugins]** Added support for the CTLD script by ciribob with many possible customization options and updated the JTAC Autolase to the CTLD included script.
 * **[Modding]** Add IDF Mod Project F-16I Sufa & F-16D v2.2 mod support
+* **[Modding]** Added F/A-18E/F/G Super Hornet mod support (Chiller Juice Studios SuperBug version 1.7)
 
 ## Fixes
 

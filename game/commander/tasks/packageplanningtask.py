@@ -168,7 +168,10 @@ class PackagePlanningTask(TheaterCommanderTask, Generic[MissionTargetT]):
 
         if not ignore_iads:
             for iads_threat in self.iter_iads_threats(state):
-                threatened = True
+                # Only consider blue faction flights threatened.
+                # Red will still plan missions into hostile territory.
+                if state.context.coalition.player:
+                    threatened = True
                 if iads_threat not in state.threatening_air_defenses:
                     state.threatening_air_defenses.append(iads_threat)
         return not threatened

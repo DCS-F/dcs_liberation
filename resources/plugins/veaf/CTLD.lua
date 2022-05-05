@@ -26,7 +26,7 @@ ctld = {} -- DONT REMOVE!
 ctld.Id = "CTLD - "
 
 --- Version.
-ctld.Version = "20220321.01"
+ctld.Version = "20210617.02"
 
 -- debug level, specific to this module
 ctld.Debug = true
@@ -587,11 +587,11 @@ ctld.spawnableCrates = {
 
         { weight = 595, desc = "Early Warning Radar", unit = "1L13 EWR", side = 1 }, -- cant be used by BLUE coalition
 
-        { weight = 1005, desc = "Strela-1 9P31", unit = "Strela-1 9P31", side = 1 },
-        { weight = 1000, desc = "M1097 Avenger", unit = "M1097 Avenger", side = 2 },
+        { weight = 905, desc = "Strela-1 9P31", unit = "Strela-1 9P31", side = 1 },
+        { weight = 900, desc = "M1097 Avenger", unit = "M1097 Avenger", side = 2 },
 
-        { weight = 252, desc = "Ural-375 Ammo Truck", unit = "Ural-375", side = 1 },
-        { weight = 253, desc = "M-818 Ammo Truck", unit = "M 818", side = 2 },
+        { weight = 652, desc = "Ural-375 Ammo Truck", unit = "Ural-375", side = 1 },
+        { weight = 653, desc = "M-818 Ammo Truck", unit = "M 818", side = 2 },
 
     },
 }
@@ -3969,12 +3969,15 @@ end
 --count the number of captured cities, sets the amount of allowed AA Systems
 function ctld.getAllowedAASystems(_heli)
 
-    if _heli:getCoalition() == 1 then
-        return ctld.AASystemLimitBLUE
-    else
-        return ctld.AASystemLimitRED
+    local redCountries = {country.id.CJTF_RED, country.id.CUBA, country.id.IRAN, country.id.IRAQ, country.id.UKRAINE, country.id.USSR, country.id.RUSSIA}
+    for _, countryId in pairs(redCountries) do
+
+        if _heli:getCountry() == countryId then
+            return ctld.AASystemLimitRED
+        end
     end
 
+    return ctld.AASystemLimitBLUE
 
 end
 
@@ -4160,6 +4163,14 @@ function ctld.spawnCrateGroup(_heli, _positions, _types)
 
         local _unitId = ctld.getNextUnitId()
         local _details = { type = _types[1], unitId = _unitId, name = string.format("Unpacked %s #%i", _types[1], _unitId) }
+
+        if _details.type == "BTR-80" then
+            _details.livery_id = "Green summer"
+        elseif _details.type == "BTR-82A" then
+            _details.livery_id = "Green summer"
+        elseif _details.type == "VAB_Mephisto" then
+            _details.livery_id = "woodland_Summer"
+        end
 
         _group.units[1] = ctld.createUnit(_positions[1].x + 5, _positions[1].z + 5, 120, _details)
 
@@ -4394,16 +4405,31 @@ end
 
 function ctld.createUnit(_x, _y, _angle, _details)
 
-    local _newUnit = {
-        ["y"] = _y,
-        ["type"] = _details.type,
-        ["name"] = _details.name,
-      --  ["unitId"] = _details.unitId,
-        ["heading"] = _angle,
-        ["playerCanDrive"] = true,
-        ["skill"] = "Excellent",
-        ["x"] = _x,
-    }
+    local _newUnit = {}
+    if _details.livery_id ~= nil then
+        _newUnit = {
+            ["y"] = _y,
+            ["type"] = _details.type,
+            ["name"] = _details.name,
+          --  ["unitId"] = _details.unitId,
+            ["heading"] = _angle,
+            ["playerCanDrive"] = true,
+            ["skill"] = "Excellent",
+            ["x"] = _x,
+            ["livery_id"] = _details.livery_id,
+        }
+    else
+        _newUnit = {
+            ["y"] = _y,
+            ["type"] = _details.type,
+            ["name"] = _details.name,
+          --  ["unitId"] = _details.unitId,
+            ["heading"] = _angle,
+            ["playerCanDrive"] = true,
+            ["skill"] = "Excellent",
+            ["x"] = _x,
+        }
+    end
 
     return _newUnit
 end
@@ -4934,6 +4960,20 @@ function ctld.getUnitActions(_unitType)
 
 end
 
+--find out which side to use when spawning crates
+function ctld.getCrateSide(_heli)
+
+    local redCountries = {country.id.CJTF_RED, country.id.CUBA, country.id.IRAN, country.id.IRAQ, country.id.UKRAINE, country.id.USSR, country.id.RUSSIA}
+    for _, countryId in pairs(redCountries) do
+        if _heli:getCountry() == countryId then
+            return 1 --red
+        end
+    end
+
+    return 2 --blue
+
+end
+
 -- Adds menuitem to all heli units that are active
 function ctld.addF10MenuOptions()
     -- Loop through all Heli units
@@ -5012,7 +5052,8 @@ function ctld.addF10MenuOptions()
 
                                         if ctld.isJTACUnitType(_crate.unit) == false
                                                 or (ctld.isJTACUnitType(_crate.unit) == true and ctld.JTAC_dropEnabled) then
-                                            if _crate.side == nil or (_crate.side == _unit:getCoalition()) then
+                                            crate_side = ctld.getCrateSide(_unit)
+                                            if _crate.side == nil or (_crate.side == crate_side) then
 
                                                 local _crateRadioMsg = _crate.desc
 
@@ -5270,9 +5311,9 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         end
 
 
---         if ctld.jtacUnits[_jtacGroupName] ~= nil then
---             ctld.notifyCoalition("JTAC Group " .. _jtacGroupName .. " KIA!", 10, ctld.jtacUnits[_jtacGroupName].side, _radio)
---         end
+        if ctld.jtacUnits[_jtacGroupName] ~= nil then
+            ctld.notifyCoalition("JTAC Group " .. _jtacGroupName .. " KIA!", 10, ctld.jtacUnits[_jtacGroupName].side, _radio)
+        end
 
         --remove from list
         ctld.jtacUnits[_jtacGroupName] = nil
@@ -5367,7 +5408,7 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         
             local message = _jtacGroupName .. action .. _enemyUnit:getTypeName()
             local fullMessage = message .. '. CODE: ' .. _laserCode .. ". POSITION: " .. ctld.getPositionString(_enemyUnit)
---             ctld.notifyCoalition(fullMessage, 10, _jtacUnit:getCoalition(), _radio, message)
+            ctld.notifyCoalition(fullMessage, 10, _jtacUnit:getCoalition(), _radio, message)
 
             -- create smoke
             if _smoke == true then
@@ -5406,11 +5447,11 @@ function ctld.JTACAutoLase(_jtacGroupName, _laserCode, _smoke, _lock, _colour, _
         timer.scheduleFunction(ctld.timerJTACAutoLase, { _jtacGroupName, _laserCode, _smoke, _lock, _colour, _radio }, timer.getTime() + 5)
     end
 
---     if targetLost then
---         ctld.notifyCoalition(_jtacGroupName .. ", target lost.", 10, _jtacUnit:getCoalition(), _radio)
---     elseif targetDestroyed then
---         ctld.notifyCoalition(_jtacGroupName .. ", target destroyed.", 10, _jtacUnit:getCoalition(), _radio)
---     end
+    if targetLost then
+        ctld.notifyCoalition(_jtacGroupName .. ", target lost.", 10, _jtacUnit:getCoalition(), _radio)
+    elseif targetDestroyed then
+        ctld.notifyCoalition(_jtacGroupName .. ", target destroyed.", 10, _jtacUnit:getCoalition(), _radio)
+    end
 end
 
 function ctld.JTACAutoLaseStop(_jtacGroupName)
@@ -5882,7 +5923,7 @@ function ctld.getJTACStatus(_args)
     end
 
 
---     ctld.notifyCoalition(_message, 10, _side)
+    ctld.notifyCoalition(_message, 10, _side)
 end
 
 

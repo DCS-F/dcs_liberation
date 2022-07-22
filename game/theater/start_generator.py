@@ -10,7 +10,7 @@ from typing import Any, Dict, Iterable, List, Set, Type
 import dcs.statics
 
 from game import Game
-from game.db import ship_type_from_name
+from game.dcs.helpers import unit_type_from_name
 from game.factions.faction import Faction
 from game.naming import namegen
 from game.scenery_group import SceneryGroup
@@ -234,7 +234,7 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         # If the campaign designer has specified a preferred name, use that
         # Note that the preferred name needs to exist in the faction, so we
         # don't end up with Kuznetsov carriers called CV-59 Forrestal
-        carrier_type = ship_type_from_name(group.units[0].type)
+        carrier_type = unit_type_from_name(unit_group.units[0].type)
         if (
             self.control_point.preferred_name
             and self.control_point.preferred_name in carriers[carrier_type]

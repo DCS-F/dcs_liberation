@@ -7,7 +7,7 @@ from typing import Any, TYPE_CHECKING, Union, Type
 
 from dcs.unittype import ShipType
 
-from game.db import ship_type_from_name
+from game.dcs.helpers import unit_type_from_name
 from game.theater.controlpoint import ControlPoint
 
 if TYPE_CHECKING:
@@ -22,7 +22,7 @@ class CarrierConfig:
     @classmethod
     def from_data(cls, data: dict[str, Any]) -> CarrierConfig:
         return CarrierConfig(
-            str(data["preferred_name"]), ship_type_from_name(data["preferred_type"])
+            str(data["preferred_name"]), unit_type_from_name(data["preferred_type"])
         )
 
 

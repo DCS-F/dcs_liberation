@@ -7,7 +7,7 @@ from typing import Any, TYPE_CHECKING, Union, Type
 
 from dcs.unittype import ShipType
 
-from game.dcs.helpers import unit_type_from_name
+from game.dcs.helpers import ship_type_from_name
 from game.theater.controlpoint import ControlPoint
 
 if TYPE_CHECKING:
@@ -21,8 +21,12 @@ class CarrierConfig:
 
     @classmethod
     def from_data(cls, data: dict[str, Any]) -> CarrierConfig:
+        preferred_type_name = data["preferred_type"]
+        preferred_type = ship_type_from_name(preferred_type_name)
+        if preferred_type is None:
+            raise RuntimeError(f"Unable to map {preferred_type_name} to a unit type.")
         return CarrierConfig(
-            str(data["preferred_name"]), unit_type_from_name(data["preferred_type"])
+            str(data["preferred_name"]), preferred_type
         )
 
 
@@ -37,7 +41,7 @@ class CampaignCarrierConfig:
         by_location: dict[ControlPoint, CarrierConfig] = defaultdict()
         for base_id, carrier_config_data in data.items():
             if isinstance(base_id, int):
-                base = theater.find_control_point_by_id(base_id)
+                base = theater.find_control_point_by_airport_id(base_id)
             else:
                 base = theater.control_point_named(base_id)
 

@@ -3,7 +3,7 @@ from typing import Optional, Type
 from dcs.helicopters import helicopter_map
 from dcs.planes import plane_map
 from dcs.ships import ship_map
-from dcs.unittype import UnitType
+from dcs.unittype import UnitType, ShipType
 from dcs.vehicles import vehicle_map
 from dcs.statics import fortification_map, groundobject_map, warehouse_map, cargo_map
 
@@ -33,3 +33,6 @@ def static_type_from_name(name: str) -> Optional[Type[UnitType]]:
         return cargo_map[name]
     else:
         return None
+
+def ship_type_from_name(name: str) -> Optional[Type[ShipType]]:
+    return ship_map[name]

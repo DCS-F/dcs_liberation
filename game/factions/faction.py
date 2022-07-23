@@ -240,10 +240,7 @@ class Faction:
             faction.carriers = loaded_carriers
 
         faction.helicopter_carrier_names = json.get("helicopter_carrier_names", [])
-        faction.navy_generators = json.get("navy_generators", [])
-        faction.helicopter_carrier = load_all_ships(json.get("helicopter_carrier", []))
-        faction.destroyers = load_all_ships(json.get("destroyers", []))
-        faction.cruisers = load_all_ships(json.get("cruisers", []))
+
         faction.has_jtac = json.get("has_jtac", False)
         jtac_name = json.get("jtac_unit", None)
         if jtac_name is not None:

@@ -28,7 +28,7 @@ from uuid import UUID
 from dcs.mapping import Point
 from dcs.terrain.terrain import Airport, ParkingSlot
 from dcs.unitgroup import ShipGroup, StaticGroup
-from dcs.unittype import ShipType
+from dcs.unittype import UnitType
 from dcs.ships import (
     CVN_71,
     CVN_72,
@@ -317,7 +317,7 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
 
     # Preferred carrier type and name, if any
     preferred_name: Optional[str] = None
-    preferred_type: Optional[Type[ShipType]] = None
+    preferred_type: Optional[Type[UnitType]] = None
 
     alt = 0
 

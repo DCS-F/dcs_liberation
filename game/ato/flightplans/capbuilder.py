@@ -42,13 +42,8 @@ class CapBuilder(IBuilder, ABC):
 
         if barcap:
             # BARCAPs should remain far enough back from the enemy that their
-            # commit range does not enter the enemy's threat zone. Include a 5nm
-            # buffer.
-            distance_to_no_fly = (
-                meters(position.distance(self.threat_zones.all))
-                - self.doctrine.cap_engagement_range
-                - nautical_miles(5)
-            )
+            # commit range does not enter the enemy's threat zone.
+            distance_to_no_fly = meters(position.distance(self.threat_zones.all))
             max_track_length = self.doctrine.cap_max_track_length
         else:
             # Other race tracks (TARCAPs, currently) just try to keep some

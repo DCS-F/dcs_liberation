@@ -314,7 +314,6 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
     # the distance of the circle on the map.
     CAPTURE_DISTANCE = nautical_miles(2)
 
-
     # Preferred carrier type and name, if any
     preferred_name: Optional[str] = None
     preferred_type: Optional[Type[UnitType]] = None

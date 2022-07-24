@@ -34,5 +34,6 @@ def static_type_from_name(name: str) -> Optional[Type[UnitType]]:
     else:
         return None
 
+
 def ship_type_from_name(name: str) -> Optional[Type[ShipType]]:
     return ship_map[name]

@@ -25,9 +25,7 @@ class CarrierConfig:
         preferred_type = ship_type_from_name(preferred_type_name)
         if preferred_type is None:
             raise RuntimeError(f"Unable to map {preferred_type_name} to a unit type.")
-        return CarrierConfig(
-            str(data["preferred_name"]), preferred_type
-        )
+        return CarrierConfig(str(data["preferred_name"]), preferred_type)
 
 
 @dataclass(frozen=True)

@@ -237,7 +237,9 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         # don't end up with Kuznetsov carriers called CV-59 Forrestal
         carrier_type = ship_type_from_name(unit_group.units[0].name)
         if carrier_type is None:
-            raise RuntimeError(f"Unable to map {unit_group.units[0].name} to a unit type.")
+            raise RuntimeError(
+                f"Unable to map {unit_group.units[0].name} to a unit type."
+            )
 
         if (
             self.control_point.preferred_name

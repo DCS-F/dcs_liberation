@@ -1836,7 +1836,7 @@ class FlightPlanBuilder:
             patrol_start=builder.ingress(
                 FlightWaypointType.INGRESS_CAS, ingress, location
             ),
-            engagement_distance=meters(FRONTLINE_LENGTH) / 2,
+            engagement_distance=meters(FRONTLINE_LENGTH),
             target=builder.cas(center),
             patrol_end=builder.egress(egress, location),
             land=builder.land(flight.arrival),

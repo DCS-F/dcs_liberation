@@ -8,6 +8,7 @@ Saves from 5.x are not compatible with 6.0.
 * **[Mission Generation]** Added an option to fast-forward mission generation until the point of first contact (WIP).
 * **[Mission Generation]** Added performance option to not cull IADS when culling would effect how mission is played at target area.
 * **[Mission Generation]** Reworked the ground object generation which now uses a new layout system
+* **[Mission Generation]** Add option to configure the maximum frontline length in settings
 * **[Mission Generation]** Added information about the modulation (AM/FM) of the assigned frequencies to the kneeboard and assign AM modulation instead of FM for JTAC.
 * **[Mission Generation]** Add option to configure the maximum frontline length in settings
 * **[Factions]** Updated the Faction file structure. Older custom faction files will not work correctly and have to be updated to the new structure.

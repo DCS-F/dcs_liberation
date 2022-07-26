@@ -402,7 +402,7 @@ class Settings:
         min=30,
         max=150,
     )
-    # Mission specific
+
     max_frontline_length: int = bounded_int_option(
         "Maximum frontline length (km)",
         page=MISSION_GENERATOR_PAGE,

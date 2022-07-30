@@ -88,7 +88,6 @@ if TYPE_CHECKING:
     from game.sim import GameUpdateEvents
     from game.squadrons.squadron import Squadron
     from game.transfers import PendingTransfers
-    from .conflicttheater import ConflictTheater
 
 FREE_FRONTLINE_UNIT_SUPPLY: int = 15
 AMMO_DEPOT_FRONTLINE_UNIT_CONTRIBUTION: int = 12
@@ -353,6 +352,8 @@ StartingPosition = ShipGroup | StaticGroup | Airport | Point
 
 
 class ControlPoint(MissionTarget, SidcDescribable, ABC):
+    from .conflicttheater import ConflictTheater
+
     # Not sure what distance DCS uses, but assuming it's about 2NM since that's roughly
     # the distance of the circle on the map.
     CAPTURE_DISTANCE = nautical_miles(2)

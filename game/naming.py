@@ -538,11 +538,6 @@ class NameGenerator:
 
     @classmethod
     def random_objective_name(cls) -> str:
-        if cls.animals:
-            animal = random.choice(cls.animals)
-            cls.animals.remove(animal)
-            return animal
-
         for _ in range(10):
             alpha = random.choice(ALPHA_MILITARY).upper()
             number = random.randint(0, 100)

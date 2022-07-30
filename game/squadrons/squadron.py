@@ -312,9 +312,12 @@ class Squadron:
             self.destination = None
 
     def cancel_overflow_orders(self) -> None:
+        from game.theater import ParkingType
+
         if self.pending_deliveries <= 0:
             return
-        overflow = -self.location.unclaimed_parking()
+        parking_type = ParkingType().from_aircraft(self.aircraft)
+        overflow = -self.location.unclaimed_parking(parking_type)
         if overflow > 0:
             sell_count = min(overflow, self.pending_deliveries)
             logging.debug(
@@ -338,6 +341,8 @@ class Squadron:
     def plan_relocation(
         self, destination: ControlPoint, theater: ConflictTheater
     ) -> None:
+        from game.theater import ParkingType
+
         if destination == self.location:
             logging.warning(
                 f"Attempted to plan relocation of {self} to current location "
@@ -351,7 +356,8 @@ class Squadron:
             )
             return
 
-        if self.expected_size_next_turn > destination.unclaimed_parking():
+        parking_type = ParkingType().from_squadron(self)
+        if self.expected_size_next_turn > destination.unclaimed_parking(parking_type):
             raise RuntimeError(f"Not enough parking for {self} at {destination}.")
         if not destination.can_operate(self.aircraft):
             raise RuntimeError(f"{self} cannot operate at {destination}.")
@@ -359,6 +365,8 @@ class Squadron:
         self.replan_ferry_flights(theater)
 
     def cancel_relocation(self) -> None:
+        from game.theater import ParkingType
+
         if self.destination is None:
             logging.warning(
                 f"Attempted to cancel relocation of squadron with no transfer order. "
@@ -366,7 +374,10 @@ class Squadron:
             )
             return
 
-        if self.expected_size_next_turn >= self.location.unclaimed_parking():
+        parking_type = ParkingType().from_squadron(self)
+        if self.expected_size_next_turn >= self.location.unclaimed_parking(
+            parking_type
+        ):
             raise RuntimeError(f"Not enough parking for {self} at {self.location}.")
         self.destination = None
         self.cancel_ferry_flights()
@@ -381,6 +392,7 @@ class Squadron:
             for flight in list(package.flights):
                 if flight.squadron == self and flight.flight_type is FlightType.FERRY:
                     package.remove_flight(flight)
+                    flight.return_pilots_and_aircraft()
             if not package.flights:
                 self.coalition.ato.remove_package(package)
 

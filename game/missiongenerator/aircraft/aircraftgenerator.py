@@ -3,8 +3,9 @@ from __future__ import annotations
 import logging
 from datetime import datetime
 from functools import cached_property
-from typing import Any, Dict, List, TYPE_CHECKING
+from typing import Any, Dict, List, TYPE_CHECKING, Tuple
 
+from dcs import Point
 from dcs.country import Country
 from dcs.mission import Mission
 from dcs.terrain.terrain import NoParkingSlotError
@@ -50,7 +51,9 @@ class AircraftGenerator:
         laser_code_registry: LaserCodeRegistry,
         unit_map: UnitMap,
         mission_data: MissionData,
-        helipads: dict[ControlPoint, StaticGroup],
+        helipads: dict[ControlPoint, list[StaticGroup]],
+        stol_pads_roadbase: dict[ControlPoint, list[Tuple[StaticGroup, Point]]],
+        stol_pads: dict[ControlPoint, list[Tuple[StaticGroup, Point]]],
     ) -> None:
         self.mission = mission
         self.settings = settings
@@ -63,6 +66,8 @@ class AircraftGenerator:
         self.flights: List[FlightData] = []
         self.mission_data = mission_data
         self.helipads = helipads
+        self.stol_pads_roadbase = stol_pads_roadbase
+        self.stol_pads = stol_pads
 
     @cached_property
     def use_client(self) -> bool:
@@ -152,7 +157,12 @@ class AircraftGenerator:
             flight.state = Completed(flight, self.game.settings)
 
             group = FlightGroupSpawner(
-                flight, country, self.mission, self.helipads
+                flight,
+                country,
+                self.mission,
+                self.helipads,
+                self.stol_pads_roadbase,
+                self.stol_pads,
             ).create_idle_aircraft()
             AircraftPainter(flight, group).apply_livery()
             self.unit_map.add_aircraft(group, flight)
@@ -162,7 +172,12 @@ class AircraftGenerator:
     ) -> FlyingGroup[Any]:
         """Creates and configures the flight group in the mission."""
         group = FlightGroupSpawner(
-            flight, country, self.mission, self.helipads
+            flight,
+            country,
+            self.mission,
+            self.helipads,
+            self.stol_pads_roadbase,
+            self.stol_pads,
         ).create_flight_group()
         self.flights.append(
             FlightGroupConfigurator(

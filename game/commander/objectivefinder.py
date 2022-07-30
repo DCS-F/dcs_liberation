@@ -12,6 +12,7 @@ from game.theater import (
     FrontLine,
     MissionTarget,
     OffMapSpawn,
+    ParkingType,
 )
 from game.theater.theatergroundobject import (
     BuildingGroundObject,
@@ -33,8 +34,8 @@ class ObjectiveFinder:
     """Identifies potential objectives for the mission planner."""
 
     # TODO: Merge into doctrine.
-    AIRFIELD_THREAT_RANGE = nautical_miles(150)
-    SAM_THREAT_RANGE = nautical_miles(100)
+    AIRFIELD_THREAT_RANGE = nautical_miles(10)
+    # SAM_THREAT_RANGE = nautical_miles(100)
 
     def __init__(self, game: Game, is_player: bool) -> None:
         self.game = game
@@ -169,11 +170,21 @@ class ObjectiveFinder:
                     break
 
     def oca_targets(self, min_aircraft: int) -> Iterator[ControlPoint]:
+        # Only include non-STOL and non-VTOL aircraft, because uncontrolled STOL and VTOL aircraft
+        # might block runways and therefore should not be spawned
+        parking_type = ParkingType()
+        parking_type.include_rotary_wing = True
+        parking_type.include_fixed_wing = True
+        parking_type.include_fixed_wing_stol = False
+
         airfields = []
         for control_point in self.enemy_control_points():
             if not isinstance(control_point, Airfield):
                 continue
-            if control_point.allocated_aircraft().total_present >= min_aircraft:
+            if (
+                control_point.allocated_aircraft(parking_type).total_present
+                >= min_aircraft
+            ):
                 airfields.append(control_point)
         return self._targets_by_range(airfields)
 

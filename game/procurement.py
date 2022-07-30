@@ -8,7 +8,7 @@ from typing import Iterator, List, Optional, TYPE_CHECKING, Tuple
 from game.config import RUNWAY_REPAIR_COST
 from game.data.units import UnitClass
 from game.dcs.groundunittype import GroundUnitType
-from game.theater import ControlPoint, MissionTarget
+from game.theater import ControlPoint, MissionTarget, ParkingType
 
 if TYPE_CHECKING:
     from game import Game
@@ -16,7 +16,8 @@ if TYPE_CHECKING:
     from game.factions.faction import Faction
     from game.squadrons import Squadron
 
-FRONTLINE_RESERVES_FACTOR = 1.3
+FRONTLINE_RESERVES_FACTOR = 1.5
+FRONTLINE_RESERVES_FACTOR_OPFOR = 4.0
 
 
 @dataclass(frozen=True)
@@ -66,12 +67,17 @@ class ProcurementAi:
         if len(self.faction.aircrafts) == 0:
             return 1
 
+        parking_type = ParkingType()
+        parking_type.include_rotary_wing = True
+        parking_type.include_fixed_wing = True
+        parking_type.include_fixed_wing_stol = True
+
         for cp in self.owned_points:
             cp_ground_units = cp.allocated_ground_units(
                 self.game.coalition_for(self.is_player).transfers
             )
             armor_investment += cp_ground_units.total_value
-            cp_aircraft = cp.allocated_aircraft()
+            cp_aircraft = cp.allocated_aircraft(parking_type)
             aircraft_investment += cp_aircraft.total_value
 
         total_investment = aircraft_investment + armor_investment
@@ -176,30 +182,54 @@ class ProcurementAi:
                 worst_fulfillment = fulfillment
                 worst_balanced = unit_class
         if worst_balanced is None:
-            return UnitClass.TANK
+            if self.faction.has_access_to_unit_class(UnitClass.TANK):
+                return UnitClass.TANK
+            elif self.faction.has_access_to_unit_class(UnitClass.ATGM):
+                return UnitClass.ATGM
+            elif self.faction.has_access_to_unit_class(UnitClass.APC):
+                return UnitClass.APC
+            elif self.faction.has_access_to_unit_class(UnitClass.IFV):
+                return UnitClass.IFV
+            elif self.faction.has_access_to_unit_class(UnitClass.ARTILLERY):
+                return UnitClass.ARTILLERY
+            elif self.faction.has_access_to_unit_class(UnitClass.SHORAD):
+                return UnitClass.SHORAD
+            else:
+                return UnitClass.RECON
         return worst_balanced
 
     @staticmethod
     def fulfill_aircraft_request(
         squadrons: list[Squadron], quantity: int, budget: float
-    ) -> Tuple[float, bool]:
+    ) -> Tuple[float, bool, bool]:
+        """
+        Purchases aircraft for a requested task. Arguments:
+            List of potential squadrons to consider the task.
+            Requested quantity.
+            Available budget.
+        Returns:
+            A tuple containing, respectively, a float (remaining budget), a bool (true if the request was fulfilled)
+            and a bool (false if the request was not fulfilled because of insufficient pilots, prompting a retry).
+        """
         for squadron in squadrons:
+            insufficient_pilots = False
             price = squadron.aircraft.price * quantity
+
             # Final check to make sure the number of aircraft won't exceed the number of available pilots
             # after fulfilling this aircraft request.
             if (
                 squadron.pilot_limits_enabled
-                and squadron.expected_size_next_turn + quantity
-                > squadron.expected_pilots_next_turn
+                and squadron.expected_size_next_turn + quantity > squadron.max_size
             ):
+                insufficient_pilots = True
                 continue
             if price > budget:
                 continue
 
             squadron.pending_deliveries += quantity
             budget -= price
-            return budget, True
-        return budget, False
+            return budget, True, insufficient_pilots
+        return budget, False, insufficient_pilots
 
     def purchase_aircraft(self, budget: float) -> float:
         for request in self.game.coalition_for(self.is_player).procurement_requests:
@@ -207,9 +237,13 @@ class ProcurementAi:
             if not squadrons:
                 # No airbases in range of this request. Skip it.
                 continue
-            budget, fulfilled = self.fulfill_aircraft_request(
+            budget, fulfilled, insufficient_pilots = self.fulfill_aircraft_request(
                 squadrons, request.number, budget
             )
+            if insufficient_pilots:
+                # The request was not fulfilled because there were not enough pilots in any of the provided squadrons
+                # and not because of insufficient budget. Continue processing the aircraft requests.
+                continue
             if not fulfilled:
                 # The request was not fulfilled because we could not afford any suitable
                 # aircraft. Rather than continuing, which could proceed to buy tons of
@@ -233,9 +267,11 @@ class ProcurementAi:
         for squadron in self.air_wing.best_squadrons_for(
             request.near, request.task_capability, request.number, this_turn=False
         ):
+            parking_type = ParkingType().from_squadron(squadron)
+
             if not squadron.can_provide_pilots(request.number):
                 continue
-            if squadron.location.unclaimed_parking() < request.number:
+            if squadron.location.unclaimed_parking(parking_type) < request.number:
                 continue
             if self.threat_zones.threatened(squadron.location.position):
                 threatened.append(squadron)
@@ -258,11 +294,19 @@ class ProcurementAi:
                 continue
 
             purchase_target = cp.frontline_unit_count_limit * FRONTLINE_RESERVES_FACTOR
+            purchase_target_opfor = (
+                cp.frontline_unit_count_limit * FRONTLINE_RESERVES_FACTOR_OPFOR
+            )
             allocated = cp.allocated_ground_units(
                 self.game.coalition_for(self.is_player).transfers
             )
-            if allocated.total >= purchase_target:
+            if self.is_player and allocated.total >= purchase_target:
                 # Control point is already sufficiently defended.
+                # (Player)
+                continue
+            if self.is_player and allocated.total >= purchase_target_opfor:
+                # Control point is already sufficiently defended.
+                # (OPFOR)
                 continue
             if allocated.total < worst_supply:
                 worst_supply = allocated.total

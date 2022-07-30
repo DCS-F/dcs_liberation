@@ -9,18 +9,19 @@ from uuid import UUID
 from dcs import Mission
 from dcs.countries import CombinedJointTaskForcesBlue, CombinedJointTaskForcesRed
 from dcs.country import Country
-from dcs.planes import F_15C
+from dcs.planes import F_15C, AJS37, A_10A
 from dcs.ships import HandyWind, LHA_Tarawa, Stennis, USS_Arleigh_Burke_IIa
 from dcs.statics import Fortification, Warehouse
 from dcs.terrain import Airport
 from dcs.unitgroup import PlaneGroup, ShipGroup, StaticGroup, VehicleGroup
 from dcs.vehicles import AirDefence, Armor, MissilesSS, Unarmed
 
+from game.point_with_heading import PointWithHeading
 from game.positioned import Positioned
 from game.profiling import logged_duration
 from game.scenery_group import SceneryGroup
 from game.theater.presetlocation import PresetLocation
-from game.utils import Distance, meters
+from game.utils import Distance, meters, Heading
 from game.theater.controlpoint import (
     Airfield,
     Carrier,
@@ -28,8 +29,8 @@ from game.theater.controlpoint import (
     Fob,
     Lha,
     OffMapSpawn,
+    TRIGGER_RADIUS_CAPTURE,
 )
-from game.utils import Distance, Heading, meters
 
 if TYPE_CHECKING:
     from game.theater.conflicttheater import ConflictTheater
@@ -40,6 +41,8 @@ class MizCampaignLoader:
     RED_COUNTRY = CombinedJointTaskForcesRed()
 
     OFF_MAP_UNIT_TYPE = F_15C.id
+    STOL_UNIT_TYPE = A_10A.id
+    STOL_ROADBASE_UNIT_TYPE = AJS37.id
 
     CV_UNIT_TYPE = Stennis.id
     LHA_UNIT_TYPE = LHA_Tarawa.id
@@ -47,9 +50,13 @@ class MizCampaignLoader:
     SHIPPING_LANE_UNIT_TYPE = HandyWind.id
 
     FOB_UNIT_TYPE = Unarmed.SKP_11.id
-    FARP_HELIPADS_TYPE = ["Invisible FARP", "SINGLE_HELIPAD"]
+    FARP_HELIPADS_TYPE = ["Invisible FARP", "SINGLE_HELIPAD", "FARP"]
 
-    OFFSHORE_STRIKE_TARGET_UNIT_TYPE = Fortification.Oil_platform.id
+    OFFSHORE_STRIKE_TARGET_UNIT_TYPES = [
+        Fortification.Oil_platform.id,
+        "Oil rig",
+        "Gas platform",
+    ]
     SHIP_UNIT_TYPE = USS_Arleigh_Burke_IIa.id
     MISSILE_SITE_UNIT_TYPE = MissilesSS.Scud_B.id
     COASTAL_DEFENSE_UNIT_TYPE = MissilesSS.Hy_launcher.id
@@ -94,6 +101,8 @@ class MizCampaignLoader:
     AMMUNITION_DEPOT_UNIT_TYPE = Warehouse._Ammunition_depot.id
 
     STRIKE_TARGET_UNIT_TYPE = Fortification.Tech_combine.id
+
+    STOL_WAYPOINT_DISTANCE = 1000
 
     def __init__(self, miz: Path, theater: ConflictTheater) -> None:
         self.theater = theater
@@ -163,7 +172,7 @@ class MizCampaignLoader:
     @property
     def offshore_strike_targets(self) -> Iterator[StaticGroup]:
         for group in self.red.static_group:
-            if group.units[0].type == self.OFFSHORE_STRIKE_TARGET_UNIT_TYPE:
+            if group.units[0].type in self.OFFSHORE_STRIKE_TARGET_UNIT_TYPES:
                 yield group
 
     @property
@@ -221,6 +230,18 @@ class MizCampaignLoader:
                 yield group
 
     @property
+    def stol_roadside_spawns(self) -> Iterator[PlaneGroup]:
+        for group in itertools.chain(self.blue.plane_group, self.red.plane_group):
+            if group.units[0].type == self.STOL_ROADBASE_UNIT_TYPE:
+                yield group
+
+    @property
+    def stol_spawns(self) -> Iterator[PlaneGroup]:
+        for group in itertools.chain(self.blue.plane_group, self.red.plane_group):
+            if group.units[0].type == self.STOL_UNIT_TYPE:
+                yield group
+
+    @property
     def factories(self) -> Iterator[StaticGroup]:
         for group in self.blue.static_group:
             if group.units[0].type in self.FACTORY_UNIT_TYPE:
@@ -269,6 +290,24 @@ class MizCampaignLoader:
                 control_point = Fob(str(fob.name), fob.position, starts_blue=blue)
                 control_point.captured_invert = fob.late_activation
                 control_points[control_point.id] = control_point
+
+            # Verify that all control points are at least the capture distance away from each other.
+            # If not, raise an exception to prevent the campaign generation.
+            for control_point_a, control_point_b in itertools.product(
+                control_points.values(), control_points.values()
+            ):
+                if control_point_a == control_point_b:
+                    continue
+                else:
+                    distance_between_cps = control_point_a.position.distance_to_point(
+                        control_point_b.position
+                    )
+                    if distance_between_cps < TRIGGER_RADIUS_CAPTURE:
+                        raise RuntimeError(
+                            f"Error in campaign definition: Control point {control_point_a.name} is too close "
+                            + f"to control point {control_point_b.name}. Distance is {distance_between_cps} meters "
+                            + f"while it must be longer than the capture distance of {TRIGGER_RADIUS_CAPTURE} meters."
+                        )
 
         return control_points
 
@@ -410,7 +449,66 @@ class MizCampaignLoader:
 
         for static in self.helipads:
             closest, distance = self.objective_info(static)
-            closest.helipads.append(PresetLocation.from_group(static))
+            if static.units[0].type == "SINGLE_HELIPAD":
+                closest.helipads.append(
+                    PointWithHeading.from_point(
+                        static.position, Heading.from_degrees(static.units[0].heading)
+                    )
+                )
+            elif static.units[0].type == "FARP":
+                closest.helipads_quad.append(
+                    PointWithHeading.from_point(
+                        static.position, Heading.from_degrees(static.units[0].heading)
+                    )
+                )
+            else:
+                closest.helipads_invisible.append(
+                    PointWithHeading.from_point(
+                        static.position, Heading.from_degrees(static.units[0].heading)
+                    )
+                )
+
+        for plane_group in self.stol_roadside_spawns:
+            closest, distance = self.objective_info(plane_group)
+
+            if len(plane_group.points) >= 2:
+                first_waypoint = plane_group.points[1].position
+            else:
+                first_waypoint = plane_group.position.point_from_heading(
+                    plane_group.units[0].heading,
+                    self.STOL_WAYPOINT_DISTANCE,
+                )
+
+            closest.stol_pads_roadbase.append(
+                (
+                    PointWithHeading.from_point(
+                        plane_group.position,
+                        Heading.from_degrees(plane_group.units[0].heading),
+                    ),
+                    first_waypoint,
+                )
+            )
+
+        for plane_group in self.stol_spawns:
+            closest, distance = self.objective_info(plane_group)
+
+            if len(group.points) >= 2:
+                first_waypoint = plane_group.points[1].position
+            else:
+                first_waypoint = plane_group.position.point_from_heading(
+                    plane_group.units[0].heading,
+                    self.STOL_WAYPOINT_DISTANCE,
+                )
+
+            closest.stol_pads.append(
+                (
+                    PointWithHeading.from_point(
+                        plane_group.position,
+                        Heading.from_degrees(plane_group.units[0].heading),
+                    ),
+                    first_waypoint,
+                )
+            )
 
         for static in self.factories:
             closest, distance = self.objective_info(static)
@@ -452,6 +550,7 @@ class MizCampaignLoader:
 
     def populate_theater(self) -> None:
         for control_point in self.control_points.values():
+            control_point.theater = self.theater
             self.theater.add_controlpoint(control_point)
         self.add_preset_locations()
         self.add_supply_routes()

@@ -43,9 +43,6 @@ from game.theater.theatergroundobject import (
     NavalGroundObject,
 )
 from game.utils import Distance, Heading, Speed, feet, knots, meters, nautical_miles
-from .closestairfields import ObjectiveDistanceCache
-from .traveltime import GroundSpeed, TravelTime
-from .waypointbuilder import StrikeTarget, WaypointBuilder
 
 if TYPE_CHECKING:
     from game.ato.flight import Flight

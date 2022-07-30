@@ -2,15 +2,19 @@ from __future__ import annotations
 
 import itertools
 from collections import defaultdict
+import random
 from typing import Sequence, Iterator, TYPE_CHECKING, Optional
+
+from dcs.planes import AV8BNA
 
 from game.dcs.aircrafttype import AircraftType
 from game.ato.ai_flight_planner_db import aircraft_for_task
 from game.ato.closestairfields import ObjectiveDistanceCache
+from .squadrondef import SquadronDef
 from .squadrondefloader import SquadronDefLoader
 from ..campaignloader.squadrondefgenerator import SquadronDefGenerator
 from ..factions.faction import Faction
-from ..theater import ControlPoint, MissionTarget
+from ..theater import ControlPoint, MissionTarget, Fob
 
 if TYPE_CHECKING:
     from game.game import Game
@@ -57,16 +61,12 @@ class AirWing:
             for squadron in control_point.squadrons:
                 if squadron.can_auto_assign_mission(location, task, size, this_turn):
                     capable_at_base.append(squadron)
-                    if squadron.aircraft not in best_aircraft:
-                        # If it is not already in the list it should be the last one
-                        best_aircraft.append(squadron.aircraft)
 
-            ordered.extend(
-                sorted(
-                    capable_at_base,
-                    key=lambda s: best_aircraft.index(s.aircraft),
-                )
-            )
+            # If the Increased airframe variety with automatic aircraft purchases option is enabled,
+            # Shuffle the capable_at_base list so lower priority airframes will also be planned and procured
+            random.shuffle(capable_at_base)
+            ordered.extend(capable_at_base)
+
         return ordered
 
     def best_squadron_for(

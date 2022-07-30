@@ -1,3 +1,6 @@
+import random
+from typing import Optional, List
+
 from game.dcs.groundunittype import GroundUnitType
 
 BASE_MAX_STRENGTH = 1.0
@@ -19,6 +22,17 @@ class Base:
         for unit_type, count in self.armor.items():
             total += unit_type.price * count
         return total
+
+    @property
+    def random_unit(self) -> Optional[GroundUnitType]:
+        units: List[GroundUnitType] = []
+        for unit_type, count in self.armor.items():
+            for i in range(count):
+                units.append(unit_type)
+        if len(units) > 0:
+            return random.choice(units)
+        else:
+            return None
 
     def total_units_of_type(self, unit_type: GroundUnitType) -> int:
         return sum([c for t, c in self.armor.items() if t == unit_type])

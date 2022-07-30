@@ -88,6 +88,7 @@ if TYPE_CHECKING:
     from game.sim import GameUpdateEvents
     from game.squadrons.squadron import Squadron
     from game.transfers import PendingTransfers
+    from .conflicttheater import ConflictTheater
 
 FREE_FRONTLINE_UNIT_SUPPLY: int = 15
 AMMO_DEPOT_FRONTLINE_UNIT_CONTRIBUTION: int = 12

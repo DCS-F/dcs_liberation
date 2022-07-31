@@ -47,9 +47,9 @@ squadrons:
     - primary: BAI
       secondary: air-to-ground
   
-  # Cherbourg-Querqueville airfield
+  # Cherbourg-Querqueville Airfield
   # Cotentin Peninsula, west of Cherbourg
-  # Air spawn
+  # Ground start airbase, ~1500m runway (road)
   Cherbourg-Querqueville:
     - primary: BARCAP
       secondary: air-to-air

@@ -126,6 +126,7 @@ from pydcs_extensions.f22a.f22a import F_22A
 from pydcs_extensions.hercules.hercules import Hercules
 from pydcs_extensions.jas39.jas39 import JAS39Gripen, JAS39Gripen_AG
 from pydcs_extensions.su57.su57 import Su_57
+from pydcs_extensions.superetendard.superetendard import VSN_SEM
 from pydcs_extensions.uh60l.uh60l import KC130J, UH_60L
 from .flighttype import FlightType
 
@@ -255,6 +256,7 @@ CAS_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    VSN_SEM,
     F_5E_3,
     F_86F_Sabre,
     C_101CC,
@@ -316,6 +318,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     Tu_160,
     Tu_95MS,
     H_6J,
+    VSN_SEM,
     A_20G,
     Ju_88A4,
     VSN_F104S_AG,
@@ -381,6 +384,7 @@ STRIKE_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    VSN_SEM,
     MiG_27K,
     MiG_21Bis,
     MiG_15bis,
@@ -482,6 +486,7 @@ RUNWAY_ATTACK_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    VSN_SEM,
     MiG_27K,
     MiG_21Bis,
     MiG_15bis,

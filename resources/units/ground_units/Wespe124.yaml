@@ -1,0 +1,12 @@
+class: Artillery
+description: "The Sd.Kfz. 124 Wespe (German for \u201Cwasp\u201D), also known as Leichte \
+  \ Feldhaubitze 18/2 auf Fahrgestell Panzerkampfwagen II (Sf.) (\u201CLight field howitzer \
+  \ 18 on Panzer II chassis (self-propelled)\u201D), is a German self-propelled gun developed \
+  \ and used during the Second World War. It was based on a modified Panzer II chassis."
+introduced: 1943
+manufacturer: FAMO
+origin: Third Reich
+price: 10
+role: Self-Propelled Gun
+variants:
+  Sd.Kfz.124 Wespe: {}

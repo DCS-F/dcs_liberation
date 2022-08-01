@@ -385,6 +385,14 @@ class Settings:
             "will not be included in automatically planned OCA packages."
         ),
     )
+    default_start_type_client: StartType = choices_option(
+        "Default start type for Player flights",
+        page=MISSION_GENERATOR_PAGE,
+        section=GAMEPLAY_SECTION,
+        choices={v.value: v for v in StartType},
+        default=StartType.COLD,
+        detail=("Default start type for flights containing Player/Client slots."),
+    )
     # Mission specific
     desired_player_mission_duration: timedelta = minutes_option(
         "Desired mission duration",
@@ -407,7 +415,7 @@ class Settings:
         "Maximum frontline length (km)",
         page=MISSION_GENERATOR_PAGE,
         section=GAMEPLAY_SECTION,
-        default=80,
+        default=20,
         min=1,
         max=100,
     )
@@ -445,11 +453,29 @@ class Settings:
         section=PERFORMANCE_SECTION,
         default=True,
     )
+    perf_moving_convoys: bool = boolean_option(
+        "Moving convoys",
+        page=MISSION_GENERATOR_PAGE,
+        section=PERFORMANCE_SECTION,
+        default=True,
+    )
     convoys_travel_full_distance: bool = boolean_option(
         "Convoys drive the full distance between control points",
         page=MISSION_GENERATOR_PAGE,
         section=PERFORMANCE_SECTION,
         default=True,
+    )
+    perf_disable_convoys: bool = boolean_option(
+        "Disable convoys",
+        page=MISSION_GENERATOR_PAGE,
+        section=PERFORMANCE_SECTION,
+        default=False,
+    )
+    perf_frontline_units_prefer_roads: bool = boolean_option(
+        "Front line troops prefer roads",
+        page=MISSION_GENERATOR_PAGE,
+        section=PERFORMANCE_SECTION,
+        default=False,
     )
     perf_infantry: bool = boolean_option(
         "Generate infantry squads alongside vehicles",

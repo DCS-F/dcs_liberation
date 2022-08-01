@@ -239,19 +239,38 @@ class FlotGenerator:
                             heading=forward_heading.degrees,
                             move_formation=PointAction.OffRoad,
                         )
-                        vehicle: Vehicle = vg.units[0]
+                        vehicle = vg.units[0]
                         GroundForcePainter(faction, vehicle).apply_livery()
             return
 
         possible_infantry_units = set(faction.infantry_with_class(UnitClass.INFANTRY))
-        if self.game.settings.manpads:
-            possible_infantry_units |= set(
-                faction.infantry_with_class(UnitClass.MANPAD)
-            )
         if not possible_infantry_units:
             return
 
+        # 30% of infantry squads consists of manpads
+        if self.game.settings.manpads and random.randint(1, 100) <= 30:
+            manpads = list(faction.infantry_with_class(UnitClass.MANPAD))
+            if manpads:
+                u = random.choices(manpads, weights=[m.spawn_weight for m in manpads])[
+                    0
+                ]
+                position = infantry_position.random_point_within(55, 5)
+                vg = self.mission.vehicle_group(
+                    side,
+                    namegen.next_infantry_name(side, u),
+                    u.dcs_unit_type,
+                    position=position,
+                    group_size=1,
+                    heading=forward_heading.degrees,
+                    move_formation=PointAction.OffRoad,
+                )
+                vehicle = vg.units[0]
+                GroundForcePainter(faction, vehicle).apply_livery()
+
+        # manpads handled above, so remove them from the rest of the choices
         infantry_choices = list(possible_infantry_units)
+        possible_infantry_units |= set(faction.infantry_with_class(UnitClass.MANPAD))
+
         units = random.choices(
             infantry_choices,
             weights=[u.spawn_weight for u in infantry_choices],
@@ -324,6 +343,13 @@ class FlotGenerator:
         artillery_trigger.add_action(AITaskPush(dcs_group.id, len(dcs_group.tasks)))
         self.mission.triggerrules.triggers.append(artillery_trigger)
 
+        # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
+        # performance option is enabled
+        if self.game.settings.perf_frontline_units_prefer_roads:
+            waypoint_pointaction = PointAction.OnRoad
+        else:
+            waypoint_pointaction = PointAction.OffRoad
+
         # Artillery will fall back when under attack
         if stance != CombatStance.RETREAT:
 
@@ -334,10 +360,10 @@ class FlotGenerator:
             )
             dcs_group.add_waypoint(
                 dcs_group.position.point_from_heading(forward_heading.degrees, 1),
-                PointAction.OffRoad,
+                waypoint_pointaction,
             )
             dcs_group.points[2].tasks.append(Hold())
-            dcs_group.add_waypoint(retreat, PointAction.OffRoad)
+            dcs_group.add_waypoint(retreat, waypoint_pointaction)
 
             artillery_fallback = TriggerOnce(
                 Event.NoEvent, "ArtilleryRetreat #" + str(dcs_group.id)
@@ -378,6 +404,14 @@ class FlotGenerator:
         Returns True if tasking was added, returns False if the stance was not a combat stance.
         """
         self._set_reform_waypoint(dcs_group, forward_heading)
+
+        # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
+        # performance option is enabled
+        if self.game.settings.perf_frontline_units_prefer_roads:
+            waypoint_pointaction = PointAction.OnRoad
+        else:
+            waypoint_pointaction = PointAction.OffRoad
+
         if stance == CombatStance.AGGRESSIVE:
             # Attack nearest enemy if any
             # Then move forward OR Attack enemy base if it is not too far away
@@ -407,7 +441,7 @@ class FlotGenerator:
                 attack_point = self.find_offensive_point(
                     dcs_group, offset_heading, AGGRESIVE_MOVE_DISTANCE
                 )
-            dcs_group.add_waypoint(attack_point, PointAction.OffRoad)
+            dcs_group.add_waypoint(attack_point, waypoint_pointaction)
         elif stance == CombatStance.BREAKTHROUGH:
             # In breakthrough mode, the units will move forward
             # If the enemy base is close enough, the units will attack the base
@@ -425,7 +459,7 @@ class FlotGenerator:
                 attack_point = self.find_offensive_point(
                     dcs_group, offset_heading, BREAKTHROUGH_OFFENSIVE_DISTANCE
                 )
-            dcs_group.add_waypoint(attack_point, PointAction.OffRoad)
+            dcs_group.add_waypoint(attack_point, waypoint_pointaction)
         elif stance == CombatStance.ELIMINATION:
             # In elimination mode, the units focus on destroying as much enemy groups as possible
             targets = self.find_n_nearest_enemy_groups(dcs_group, enemy_groups, 3)
@@ -437,7 +471,7 @@ class FlotGenerator:
                 target_point = self.conflict.theater.nearest_land_pos(
                     target.points[0].position + rand_offset
                 )
-                dcs_group.add_waypoint(target_point, PointAction.OffRoad)
+                dcs_group.add_waypoint(target_point, waypoint_pointaction)
                 dcs_group.points[i + 1].tasks.append(AttackGroup(target.id))
             if (
                 to_cp.position.distance_to_point(dcs_group.points[0].position)
@@ -471,6 +505,14 @@ class FlotGenerator:
             CombatStance.ELIMINATION,
         ]:
             # APC & ATGM will never move too much forward, but will follow along any offensive
+
+            # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
+            # performance option is enabled
+            if self.game.settings.perf_frontline_units_prefer_roads:
+                waypoint_pointaction = PointAction.OnRoad
+            else:
+                waypoint_pointaction = PointAction.OffRoad
+
             if (
                 to_cp.position.distance_to_point(dcs_group.points[0].position)
                 <= AGGRESIVE_MOVE_DISTANCE
@@ -482,7 +524,7 @@ class FlotGenerator:
                 attack_point = self.find_offensive_point(
                     dcs_group, forward_heading, AGGRESIVE_MOVE_DISTANCE
                 )
-            dcs_group.add_waypoint(attack_point, PointAction.OffRoad)
+            dcs_group.add_waypoint(attack_point, waypoint_pointaction)
 
         if stance != CombatStance.RETREAT:
             self.add_morale_trigger(dcs_group, forward_heading)
@@ -501,6 +543,13 @@ class FlotGenerator:
 
         if not self.game.settings.perf_moving_units:
             return
+
+        # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
+        # performance option is enabled
+        if self.game.settings.perf_frontline_units_prefer_roads:
+            waypoint_pointaction = PointAction.OnRoad
+        else:
+            waypoint_pointaction = PointAction.OffRoad
 
         for dcs_group, group in ally_groups:
             if group.unit_type.eplrs_capable:
@@ -537,8 +586,8 @@ class FlotGenerator:
                 reposition_point = retreat_point.point_from_heading(
                     forward_heading.degrees, 10
                 )  # Another point to make the unit face the enemy
-                dcs_group.add_waypoint(retreat_point, PointAction.OffRoad)
-                dcs_group.add_waypoint(reposition_point, PointAction.OffRoad)
+                dcs_group.add_waypoint(retreat_point, waypoint_pointaction)
+                dcs_group.add_waypoint(reposition_point, waypoint_pointaction)
 
     def add_morale_trigger(
         self, dcs_group: VehicleGroup, forward_heading: Heading
@@ -549,6 +598,13 @@ class FlotGenerator:
 
         if len(dcs_group.units) == 1:
             return
+
+        # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
+        # performance option is enabled
+        if self.game.settings.perf_frontline_units_prefer_roads:
+            waypoint_pointaction = PointAction.OnRoad
+        else:
+            waypoint_pointaction = PointAction.OffRoad
 
         # Units should hold position on last waypoint
         dcs_group.points[len(dcs_group.points) - 1].tasks.append(Hold())
@@ -563,7 +619,7 @@ class FlotGenerator:
             self.find_retreat_point(
                 dcs_group, forward_heading, (int)(RETREAT_DISTANCE / 8)
             ),
-            PointAction.OffRoad,
+            waypoint_pointaction,
         )
 
         # Fallback task
@@ -764,7 +820,16 @@ class FlotGenerator:
                     g.set_skill(Skill(self.game.settings.enemy_vehicle_skill))
                 positioned_groups.append((g, group))
 
-                if group.role in [CombatGroupRole.APC, CombatGroupRole.IFV]:
+                # Generate infantry groups for APCs, IFVs, Logistics vehicles and unarmed Recon vehicles.
+                if group.role in [
+                    CombatGroupRole.APC,
+                    CombatGroupRole.IFV,
+                    CombatGroupRole.LOGI,
+                ] or (
+                    group.role in [CombatGroupRole.RECON]
+                    and group.unit_type.dcs_unit_type.threat_range == 0
+                ):
+
                     self.gen_infantry_group_for_group(
                         g,
                         is_player,

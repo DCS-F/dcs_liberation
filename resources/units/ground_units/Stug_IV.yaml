@@ -1,4 +1,4 @@
-class: ATGM
+class: Artillery
 description: "The Sturmgesch\xFCtz IV (StuG IV) (Sd.Kfz. 167) was a German assault\
   \ gun variant of the Panzer IV used in the latter part of the Second World War.\
   \ It was identical in role and concept to the highly successful StuG III assault\
@@ -9,7 +9,7 @@ description: "The Sturmgesch\xFCtz IV (StuG IV) (Sd.Kfz. 167) was a German assau
 introduced: 1943
 manufacturer: Krupp
 origin: Germany
-price: 14
+price: 12
 role: Assault Gun/Tank Destroyer
 variants:
   "Sturmgesch\xFCtz IV": {}

@@ -1,4 +1,4 @@
-class: ATGM
+class: Artillery
 description: 'The Jagdpanther (German: "hunting Panther"), Sd.Kfz. 173, was a tank
   destroyer (Jagdpanzer, a self-propelled anti-tank gun) built by Germany during World
   War II. The Jagdpanther combined the 8.8 cm Pak 43 anti-tank gun, similar to the
@@ -6,7 +6,7 @@ description: 'The Jagdpanther (German: "hunting Panther"), Sd.Kfz. 173, was a ta
 introduced: 1944
 manufacturer: MIAG/MNH/MBA
 origin: Germany
-price: 18
+price: 14
 role: Tank Destroyer
 variants:
   Jagdpanther G1: {}

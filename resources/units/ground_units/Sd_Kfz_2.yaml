@@ -1,3 +1,5 @@
+class: Recon
+role: Recon Vehicle
 price: 1
 variants:
   LUV Kettenrad: null

@@ -7,7 +7,7 @@ miz: normandy_south.miz
 performance: 3
 version: "10.0"
 squadrons:
-  Blue CV:
+  Blue CV-1:
    # - primary: BARCAP
    #   secondary: air-to-air
    #   aircraft:
@@ -25,7 +25,43 @@ squadrons:
       secondary: any
     - primary: CAS
       secondary: air-to-ground
-  Blue LHA:
+  Blue CV-2:
+   # - primary: BARCAP
+   #   secondary: air-to-air
+   #   aircraft:
+   #     - F-14B Tomcat
+   # - primary: BARCAP
+   #   secondary: any
+   #   aircraft:
+   #     - F-14B Tomcat
+   # - primary: Refueling
+   #   aircraft:
+   #     - S-3B Tanker
+    - primary: Strike
+      secondary: any
+    - primary: BAI
+      secondary: any
+    - primary: CAS
+      secondary: air-to-ground
+  Blue LHA-1:
+    - primary: Strike
+      secondary: any
+    - primary: BAI
+      secondary: any
+    - primary: CAS
+      secondary: air-to-ground
+    - primary: CAS
+      secondary: air-to-ground
+  Blue LHA-2:
+    - primary: Strike
+      secondary: any
+    - primary: BAI
+      secondary: any
+    - primary: CAS
+      secondary: air-to-ground
+    - primary: CAS
+      secondary: air-to-ground
+  Blue LHA-3:
     - primary: Strike
       secondary: any
     - primary: BAI
@@ -50,7 +86,7 @@ squadrons:
   # Cherbourg-Querqueville Airfield
   # Cotentin Peninsula, west of Cherbourg
   # Ground start airbase, ~1500m runway (road)
-  Cherbourg-Querqueville:
+  Cherbourg-Querqueville Airfield:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:

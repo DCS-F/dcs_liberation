@@ -1,4 +1,4 @@
-class: Logistics
+class: Recon
 price: 3
 variants:
-  LUV UAZ-469 Jeep: null
+  LUV UAZ-469 Jeep: {}

@@ -2,16 +2,27 @@ local unitPayloads = {
 	["name"] = "P-47D-30",
 	["payloads"] = {
 		[1] = {
-			["name"] = "Liberation TARCAP",
+			["name"] = "STRIKE",
 			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{AN_M65}",
+					["num"] = 3,
+				},
+				[2] = {
+					["CLSID"] = "{AN_M65}",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "{AN-M64}",
+					["num"] = 1,
+				},
 			},
 			["tasks"] = {
 				[1] = 11,
 			},
 		},
 		[2] = {
-			["displayName"] = "Liberation BARCAP",
-			["name"] = "Liberation BARCAP",
+			["name"] = "ANTISTRIKE",
 			["pylons"] = {
 			},
 			["tasks"] = {
@@ -19,26 +30,7 @@ local unitPayloads = {
 			},
 		},
 		[3] = {
-			["displayName"] = "Liberation Escort",
-			["name"] = "Liberation Escort",
-			["pylons"] = {
-			},
-			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[4] = {
-			["displayName"] = "Liberation Fighter Sweep",
-			["name"] = "Liberation Fighter Sweep",
-			["pylons"] = {
-			},
-			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[5] = {
-			["displayName"] = "Liberation CAS",
-			["name"] = "Liberation CAS",
+			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{AN-M64}",
@@ -50,6 +42,34 @@ local unitPayloads = {
 				},
 				[3] = {
 					["CLSID"] = "{AN-M64}",
+					["num"] = 1,
+				},
+			},
+			["tasks"] = {
+				[1] = 11,
+			},
+		},
+		[4] = {
+			["name"] = "CAP",
+			["pylons"] = {
+			},
+			["tasks"] = {
+				[1] = 11,
+			},
+		},
+		[5] = {
+			["name"] = "SEAD",
+			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{AN_M57}",
+					["num"] = 3,
+				},
+				[2] = {
+					["CLSID"] = "{AN_M57}",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "{AN_M57}",
 					["num"] = 1,
 				},
 			},
@@ -58,8 +78,7 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Liberation Strike",
-			["name"] = "Liberation Strike",
+			["name"] = "ANTISHIP",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{AN-M64}",
@@ -75,87 +94,6 @@ local unitPayloads = {
 				},
 			},
 			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[7] = {
-			["displayName"] = "Liberation DEAD",
-			["name"] = "Liberation DEAD",
-			["pylons"] = {
-				[1] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 2,
-				},
-				[3] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 1,
-				},
-			},
-			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[8] = {
-			["displayName"] = "Liberation BAI",
-			["name"] = "Liberation BAI",
-			["pylons"] = {
-				[1] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 2,
-				},
-				[3] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 1,
-				},
-			},
-			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[9] = {
-			["displayName"] = "Liberation OCA/Runway",
-			["name"] = "Liberation OCA/Runway",
-			["pylons"] = {
-				[1] = {
-					["CLSID"] = "{AN_M65}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{AN_M65}",
-					["num"] = 2,
-				},
-			},
-			["tasks"] = {
-				[1] = 11,
-			},
-		},
-		[10] = {
-			["displayName"] = "Liberation OCA/Aircraft",
-			["name"] = "Liberation OCA/Aircraft",
-			["pylons"] = {
-				[1] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 2,
-				},
-				[3] = {
-					["CLSID"] = "{AN-M64}",
-					["num"] = 1,
-				},
-			},
-			["tasks"] = {
-				[1] = 11,
 			},
 		},
 	},

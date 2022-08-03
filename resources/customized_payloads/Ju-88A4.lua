@@ -2,8 +2,7 @@ local unitPayloads = {
 	["name"] = "Ju-88A4",
 	["payloads"] = {
 		[1] = {
-			["displayName"] = "Liberation OCA/Aircraft",
-			["name"] = "Liberation OCA/Aircraft",
+			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{SC_500_L2}",
@@ -52,7 +51,8 @@ local unitPayloads = {
 			},
 		},
 		[4] = {
-			["name"] = "Liberation Strike",
+			["displayName"] = "Liberation CAS",
+			["name"] = "Liberation CAS",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{SC_500_L2}",
@@ -68,15 +68,15 @@ local unitPayloads = {
 			},
 		},
 		[5] = {
-			["displayName"] = "Liberation CAS",
-			["name"] = "Liberation CAS",
+			["displayName"] = "Liberation DEAD",
+			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{AB_500_1_SD_10A}",
+					["CLSID"] = "{SC_500_L2}",
 					["num"] = 3,
 				},
 				[2] = {
-					["CLSID"] = "{AB_500_1_SD_10A}",
+					["CLSID"] = "{SC_500_L2}",
 					["num"] = 1,
 				},
 			},
@@ -85,8 +85,8 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Liberation DEAD",
-			["name"] = "Liberation DEAD",
+			["displayName"] = "Liberation OCA/Aircraft",
+			["name"] = "Liberation OCA/Aircraft",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{SC_500_L2}",

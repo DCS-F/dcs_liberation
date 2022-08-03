@@ -9,11 +9,11 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+					["CLSID"] = "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+					["CLSID"] = "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -21,11 +21,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+					["CLSID"] = "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+					["CLSID"] = "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
 					["num"] = 6,
 				},
 				[7] = {
@@ -41,32 +41,32 @@ local unitPayloads = {
 			["name"] = "CAP",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-					["num"] = 1,
+					["CLSID"] = "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+					["num"] = 4,
 				},
 				[2] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-					["num"] = 2,
-				},
-				[3] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-					["num"] = 3,
-				},
-				[4] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-					["num"] = 5,
-				},
-				[5] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-					["num"] = 6,
-				},
-				[6] = {
 					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 7,
 				},
+				[3] = {
+					["CLSID"] = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+					["num"] = 5,
+				},
+				[4] = {
+					["CLSID"] = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+					["num"] = 3,
+				},
+				[5] = {
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+					["num"] = 2,
+				},
+				[6] = {
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+					["num"] = 1,
+				},
 				[7] = {
-					["CLSID"] = "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
-					["num"] = 4,
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+					["num"] = 6,
 				},
 			},
 			["tasks"] = {
@@ -77,15 +77,15 @@ local unitPayloads = {
 			["name"] = "STRIKE",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -93,15 +93,15 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 7,
 				},
 			},
@@ -113,7 +113,7 @@ local unitPayloads = {
 			["name"] = "ANTISHIP",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -137,7 +137,7 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 7,
 				},
 			},
@@ -149,7 +149,7 @@ local unitPayloads = {
 			["name"] = "SEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -173,7 +173,7 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+					["CLSID"] = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
 					["num"] = 7,
 				},
 			},

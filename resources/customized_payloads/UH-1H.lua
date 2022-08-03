@@ -20,6 +20,14 @@ local unitPayloads = {
 					["CLSID"] = "M134_R",
 					["num"] = 6,
 				},
+				[5] = {
+					["CLSID"] = "M134_SIDE_R",
+					["num"] = 4,
+				},
+				[6] = {
+					["CLSID"] = "M134_SIDE_L",
+					["num"] = 3,
+				},
 			},
 			["tasks"] = {
 				[1] = 32,
@@ -117,11 +125,11 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "XM158_MK5",
+					["CLSID"] = "M261_MK151",
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "XM158_MK5",
+					["CLSID"] = "M261_MK151",
 					["num"] = 5,
 				},
 				[4] = {
@@ -137,16 +145,31 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Liberation Air Assault",
-			["name"] = "Liberation Air Assault",
+			["name"] = "BAI",
 			["pylons"] = {
 				[1] = {
+					["CLSID"] = "M134_L",
+					["num"] = 1,
+				},
+				[2] = {
+					["CLSID"] = "M261_MK151",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "M60_SIDE_L",
+					["num"] = 3,
+				},
+				[4] = {
 					["CLSID"] = "M60_SIDE_R",
 					["num"] = 4,
 				},
-				[2] = {
-					["CLSID"] = "M60_SIDE_L",
-					["num"] = 3,
+				[5] = {
+					["CLSID"] = "M261_MK151",
+					["num"] = 5,
+				},
+				[6] = {
+					["CLSID"] = "M134_R",
+					["num"] = 6,
 				},
 			},
 			["tasks"] = {

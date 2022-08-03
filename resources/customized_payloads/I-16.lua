@@ -2,32 +2,57 @@ local unitPayloads = {
 	["name"] = "I-16",
 	["payloads"] = {
 		[1] = {
-			["name"] = "Liberation TARCAP",
+			["name"] = "CAP",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "I16_DROP_FUEL_TANK",
-					["num"] = 5,
+					["num"] = 4,
 				},
 				[2] = {
 					["CLSID"] = "I16_DROP_FUEL_TANK",
-					["num"] = 4,
+					["num"] = 5,
 				},
 			},
 			["tasks"] = {
 				[1] = 11,
+				[2] = 17,
+				[3] = 18,
 			},
 		},
 		[2] = {
-			["displayName"] = "Liberation BARCAP",
-			["name"] = "Liberation BARCAP",
+			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
-					["num"] = 5,
+					["CLSID"] = "I16_RS_82",
+					["num"] = 8,
 				},
 				[2] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
+					["CLSID"] = "I16_RS_82",
+					["num"] = 7,
+				},
+				[3] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 6,
+				},
+				[4] = {
+					["CLSID"] = "I16_FAB_100SV",
+					["num"] = 5,
+				},
+				[5] = {
+					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {
@@ -35,16 +60,39 @@ local unitPayloads = {
 			},
 		},
 		[3] = {
-			["displayName"] = "Liberation Escort",
-			["name"] = "Liberation Escort",
+			["name"] = "STRIKE",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
+					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 5,
 				},
 				[2] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
+					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[3] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
+				},
+				[4] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[5] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 6,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 7,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 8,
 				},
 			},
 			["tasks"] = {
@@ -52,16 +100,39 @@ local unitPayloads = {
 			},
 		},
 		[4] = {
-			["displayName"] = "Liberation Fighter Sweep",
-			["name"] = "Liberation Fighter Sweep",
+			["name"] = "ANTISHIP",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
+					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 5,
 				},
 				[2] = {
-					["CLSID"] = "I16_DROP_FUEL_TANK",
+					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[3] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 8,
+				},
+				[4] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 7,
+				},
+				[5] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 6,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {
@@ -69,7 +140,7 @@ local unitPayloads = {
 			},
 		},
 		[5] = {
-			["name"] = "Liberation CAS",
+			["name"] = "SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "I16_RS_82",
@@ -84,24 +155,24 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 3,
-				},
-				[5] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 2,
-				},
-				[6] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 1,
-				},
-				[7] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 5,
 				},
-				[8] = {
+				[5] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {
@@ -109,8 +180,7 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Liberation BAI",
-			["name"] = "Liberation BAI",
+			["name"] = "DEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "I16_RS_82",
@@ -125,24 +195,24 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 3,
-				},
-				[5] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 2,
-				},
-				[6] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 1,
-				},
-				[7] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 5,
 				},
-				[8] = {
+				[5] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {
@@ -150,8 +220,7 @@ local unitPayloads = {
 			},
 		},
 		[7] = {
-			["displayName"] = "Liberation OCA/Aircraft",
-			["name"] = "Liberation OCA/Aircraft",
+			["name"] = "BAI",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "I16_RS_82",
@@ -166,24 +235,24 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 3,
-				},
-				[5] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 2,
-				},
-				[6] = {
-					["CLSID"] = "I16_RS_82",
-					["num"] = 1,
-				},
-				[7] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 5,
 				},
-				[8] = {
+				[5] = {
 					["CLSID"] = "I16_FAB_100SV",
 					["num"] = 4,
+				},
+				[6] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 3,
+				},
+				[7] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 2,
+				},
+				[8] = {
+					["CLSID"] = "I16_RS_82",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {

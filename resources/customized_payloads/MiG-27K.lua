@@ -41,32 +41,32 @@ local unitPayloads = {
 			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{E659C4BE-2CD8-4472-8C08-3F28ACB61A8A}",
+					["CLSID"] = "{601C99F7-9AF3-4ed7-A565-F8B8EC0D7AAC}",
 					["num"] = 2,
 				},
 				[2] = {
-					["CLSID"] = "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
+					["CLSID"] = "{637334E4-AB5A-47C0-83A6-51B7F1DF3CD5}",
 					["num"] = 3,
 				},
 				[3] = {
-					["CLSID"] = "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
-					["num"] = 4,
-				},
-				[4] = {
 					["CLSID"] = "{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}",
 					["num"] = 5,
 				},
-				[5] = {
-					["CLSID"] = "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
-					["num"] = 6,
-				},
-				[6] = {
-					["CLSID"] = "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
+				[4] = {
+					["CLSID"] = "{637334E4-AB5A-47C0-83A6-51B7F1DF3CD5}",
 					["num"] = 7,
 				},
-				[7] = {
-					["CLSID"] = "{E659C4BE-2CD8-4472-8C08-3F28ACB61A8A}",
+				[5] = {
+					["CLSID"] = "{601C99F7-9AF3-4ed7-A565-F8B8EC0D7AAC}",
 					["num"] = 8,
+				},
+				[6] = {
+					["CLSID"] = "{RBK_250_275_AO_1SCH}",
+					["num"] = 6,
+				},
+				[7] = {
+					["CLSID"] = "{RBK_250_275_AO_1SCH}",
+					["num"] = 4,
 				},
 			},
 			["tasks"] = {
@@ -150,6 +150,42 @@ local unitPayloads = {
 				},
 			},
 			["tasks"] = {
+			},
+		},
+		[6] = {
+			["name"] = "Liberation SEAD Escort",
+			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+					["num"] = 2,
+				},
+				[2] = {
+					["CLSID"] = "{637334E4-AB5A-47C0-83A6-51B7F1DF3CD5}",
+					["num"] = 3,
+				},
+				[3] = {
+					["CLSID"] = "{RBK_250_275_AO_1SCH}",
+					["num"] = 4,
+				},
+				[4] = {
+					["CLSID"] = "{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}",
+					["num"] = 5,
+				},
+				[5] = {
+					["CLSID"] = "{RBK_250_275_AO_1SCH}",
+					["num"] = 6,
+				},
+				[6] = {
+					["CLSID"] = "{637334E4-AB5A-47C0-83A6-51B7F1DF3CD5}",
+					["num"] = 7,
+				},
+				[7] = {
+					["CLSID"] = "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+					["num"] = 8,
+				},
+			},
+			["tasks"] = {
+				[1] = 29,
 			},
 		},
 	},

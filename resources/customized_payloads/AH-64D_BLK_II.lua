@@ -5,19 +5,19 @@ local unitPayloads = {
 			["name"] = "Liberation CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{M261_M282}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 4,
 				},
+				[2] = {
+					["CLSID"] = "{M261_M229}",
+					["num"] = 3,
+				},
 				[3] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 2,
 				},
 				[4] = {
-					["CLSID"] = "{M261_M282}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 1,
 				},
 			},
@@ -30,19 +30,19 @@ local unitPayloads = {
 			["name"] = "Liberation BAI",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
-					["num"] = 3,
-				},
-				[2] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 4,
 				},
+				[2] = {
+					["CLSID"] = "{M261_M229}",
+					["num"] = 3,
+				},
 				[3] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 2,
 				},
 				[4] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+					["CLSID"] = "{M261_M229}",
 					["num"] = 1,
 				},
 			},
@@ -59,15 +59,15 @@ local unitPayloads = {
 				},
 				[2] = {
 					["CLSID"] = "{M261_M229}",
-					["num"] = 1,
-				},
-				[3] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
 					["num"] = 3,
 				},
-				[4] = {
-					["CLSID"] = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+				[3] = {
+					["CLSID"] = "{M261_M229}",
 					["num"] = 2,
+				},
+				[4] = {
+					["CLSID"] = "{M261_M229}",
+					["num"] = 1,
 				},
 			},
 			["tasks"] = {

@@ -6,7 +6,7 @@ local unitPayloads = {
 			["name"] = "DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_L_PTB",
 					["num"] = 2,
 				},
 				[2] = {
@@ -38,7 +38,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[9] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_R_PTB",
 					["num"] = 10,
 				},
 			},
@@ -51,7 +51,7 @@ local unitPayloads = {
 			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_L_PTB",
 					["num"] = 2,
 				},
 				[2] = {
@@ -59,7 +59,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[3] = {
-					["CLSID"] = "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+					["CLSID"] = "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
 					["num"] = 4,
 				},
 				[4] = {
@@ -75,7 +75,7 @@ local unitPayloads = {
 					["num"] = 7,
 				},
 				[7] = {
-					["CLSID"] = "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+					["CLSID"] = "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
 					["num"] = 8,
 				},
 				[8] = {
@@ -83,7 +83,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[9] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_R_PTB",
 					["num"] = 10,
 				},
 			},
@@ -96,7 +96,7 @@ local unitPayloads = {
 			["name"] = "STRIKE",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_L_PTB",
 					["num"] = 2,
 				},
 				[2] = {
@@ -128,7 +128,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[9] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_R_PTB",
 					["num"] = 10,
 				},
 			},
@@ -141,7 +141,7 @@ local unitPayloads = {
 			["name"] = "OCA",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_L_PTB",
 					["num"] = 2,
 				},
 				[2] = {
@@ -173,7 +173,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[9] = {
-					["CLSID"] = "{LAU-138 wtip - AIM-9L}",
+					["CLSID"] = "VSN_F104G_R_PTB",
 					["num"] = 10,
 				},
 			},

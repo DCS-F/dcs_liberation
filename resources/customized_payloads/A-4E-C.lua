@@ -5,16 +5,24 @@ local unitPayloads = {
 			["name"] = "CAP",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{GAR-8}",
-					["num"] = 4,
+					["CLSID"] = "{AIM-9P5-ON-ADAPTER}",
+					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "{GAR-8}",
+					["CLSID"] = "{AIM-9P5-ON-ADAPTER}",
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{DFT-150gal}",
+					["CLSID"] = "{DFT-400gal}",
 					["num"] = 3,
+				},
+				[4] = {
+					["CLSID"] = "{AIM-9P5-ON-ADAPTER}",
+					["num"] = 4,
+				},
+				[5] = {
+					["CLSID"] = "{AIM-9P5-ON-ADAPTER}",
+					["num"] = 5,
 				},
 			},
 			["tasks"] = {
@@ -26,23 +34,23 @@ local unitPayloads = {
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
-					["num"] = 5,
-				},
-				[2] = {
-					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 1,
 				},
-				[3] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+				[2] = {
+					["CLSID"] = "{LAU-3 FFAR Mk5 HEAT_TER_2_L}",
 					["num"] = 2,
 				},
+				[3] = {
+					["CLSID"] = "{DFT-300gal}",
+					["num"] = 3,
+				},
 				[4] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{LAU-3 FFAR Mk5 HEAT_TER_2_R}",
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{DFT-150gal}",
-					["num"] = 3,
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
+					["num"] = 5,
 				},
 			},
 			["tasks"] = {
@@ -53,24 +61,24 @@ local unitPayloads = {
 			["name"] = "STRIKE",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
-					["num"] = 5,
-				},
-				[2] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 1,
 				},
-				[3] = {
-					["CLSID"] = "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+				[2] = {
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 2,
 				},
+				[3] = {
+					["CLSID"] = "{DFT-400gal}",
+					["num"] = 3,
+				},
 				[4] = {
-					["CLSID"] = "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
-					["num"] = 3,
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
+					["num"] = 5,
 				},
 			},
 			["tasks"] = {
@@ -97,7 +105,7 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[5] = {
-					["CLSID"] = "{DFT-150gal}",
+					["CLSID"] = "{DFT-300gal}",
 					["num"] = 3,
 				},
 			},
@@ -125,12 +133,41 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[5] = {
-					["CLSID"] = "{DFT-150gal}",
+					["CLSID"] = "{DFT-300gal}",
 					["num"] = 3,
 				},
 			},
 			["tasks"] = {
 				[1] = 31,
+			},
+		},
+		[6] = {
+			["displayName"] = "Liberation SEAD Escort",
+			["name"] = "Liberation SEAD Escort",
+			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{AGM_45A}",
+					["num"] = 1,
+				},
+				[2] = {
+					["CLSID"] = "{LAU-3 FFAR Mk1 HE_TER_2_L}",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "{DFT-300gal}",
+					["num"] = 3,
+				},
+				[4] = {
+					["CLSID"] = "{LAU-3 FFAR Mk1 HE_TER_2_R}",
+					["num"] = 4,
+				},
+				[5] = {
+					["CLSID"] = "{AGM_45A}",
+					["num"] = 5,
+				},
+			},
+			["tasks"] = {
+				[1] = 29,
 			},
 		},
 	},

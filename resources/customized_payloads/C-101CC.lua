@@ -45,11 +45,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[2] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{BLG66_BELOUGA}",
 					["num"] = 5,
 				},
 				[3] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{BLG66_BELOUGA}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -61,11 +61,11 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[6] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 7,
 				},
 				[7] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 1,
 				},
 			},
@@ -89,19 +89,19 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 7,
 				},
 				[5] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 1,
 				},
 				[6] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "BR_500",
 					["num"] = 3,
 				},
 				[7] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "BR_500",
 					["num"] = 5,
 				},
 			},
@@ -117,27 +117,27 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[2] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "{BLG66_BELOUGA}",
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "{BLG66_BELOUGA}",
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 7,
 				},
 				[5] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
 					["num"] = 1,
 				},
 				[6] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "BIN_200",
 					["num"] = 3,
 				},
 				[7] = {
-					["CLSID"] = "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+					["CLSID"] = "BIN_200",
 					["num"] = 5,
 				},
 			},

@@ -79,7 +79,8 @@ class PackageRefuelingFlightPlan(TheaterRefuelingFlightPlan):
             flight_size = self.flight.roster.max_size
             refuel_time_minutes = refuel_time_minutes + 4 * flight_size + 1
             min_patrol_duration = (
-                self.flight.coalition.game.settings.desired_tanker_on_station_time
+                self.flight.coalition.game.settings.desired_tanker_on_station_time.seconds
+                * 60
             )
         if refuel_time_minutes < min_patrol_duration:
             refuel_time_minutes = min_patrol_duration

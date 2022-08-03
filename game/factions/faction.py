@@ -241,6 +241,8 @@ class Faction:
                 faction.carriers[shiptype] = carrier_names
         else:
             faction.carriers = loaded_carriers
+        for carrier_shiptype in faction.carriers.keys():
+            faction.naval_units += ShipUnitType.for_dcs_type(carrier_shiptype)
 
         faction.helicopter_carrier_names = json.get("helicopter_carrier_names", [])
 

@@ -39,6 +39,7 @@ from ..armedforces.armedforces import ArmedForces
 from ..armedforces.forcegroup import ForceGroup
 from ..campaignloader.campaignairwingconfig import CampaignAirWingConfig
 from ..data.groups import GroupTask
+from ..data.units import UnitClass
 from ..profiling import logged_duration
 from ..settings import Settings
 
@@ -236,7 +237,9 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         # If the campaign designer has specified a preferred name, use that
         # Note that the preferred name needs to exist in the faction, so we
         # don't end up with Kuznetsov carriers called CV-59 Forrestal
-        carrier_type = ship_type_from_name(unit_group.units[0].name)
+        for unit in unit_group.units:
+            if unit.unit_class == UnitClass.AIRCRAFT_CARRIER:
+                carrier_type = ship_type_from_name(unit.dcs_unit_type.id)
         if carrier_type is None:
             raise RuntimeError(
                 f"Unable to map {unit_group.units[0].name} to a unit type."

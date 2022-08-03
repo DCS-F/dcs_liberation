@@ -1,0 +1,12 @@
+---
+name: Aéronavale 54.S.16
+nickname: Aéronavale 54.S.16
+female_pilot_percentage: 0
+country: France
+role: Fighter Bomber
+aircraft: Spitfire LF Mk IX
+livery: Seafire CG190
+mission_types:
+  - CAS
+  - BAI
+  - OCA/Aircraft

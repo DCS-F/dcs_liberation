@@ -1,0 +1,12 @@
+---
+name: E.C. 49-3 Calvados
+nickname: E.C. 49-3 Calvados
+female_pilot_percentage: 0
+country: France
+role: Fighter Bomber
+aircraft: Spitfire LF Mk IX
+livery: Escadron de chasse 49.3 Calvados
+mission_types:
+  - CAS
+  - BAI
+  - OCA/Aircraft

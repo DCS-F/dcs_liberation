@@ -1,0 +1,12 @@
+---
+name: G.C. II/5 La Fayette Sioux
+nickname: G.C. II/5 Sioux
+female_pilot_percentage: 0
+country: France
+role: Fighter Bomber
+aircraft: P-47D-40 Thunderbolt
+livery: GC_25_La_Fayette_Sioux
+mission_types:
+  - CAS
+  - BAI
+  - OCA/Aircraft

@@ -1,0 +1,12 @@
+---
+name: E.C. 2-2 Alsace
+nickname: E.C. 2-2
+female_pilot_percentage: 0
+country: France
+role: Fighter Bomber
+aircraft: P-47D-40 Thunderbolt
+livery: E.C. 2-2 Alsace
+mission_types:
+  - CAS
+  - BAI
+  - OCA/Aircraft

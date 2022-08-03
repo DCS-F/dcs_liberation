@@ -1,0 +1,201 @@
+{
+  "country": "France",
+  "name": "France 1980",
+  "authors": "Ghosti",
+  "description": "<p>France 1980 with Mi-8, Mi-24 and Ka-50 standing in for the Super Frelon, Puma, Lynx and others. Frenchpack 4.6+ mod is recommended to enable most of the ground units of this faction available.</p>",
+  "locales": [
+    "fr_FR"
+  ],
+  "doctrine": "coldwar",
+  "aircrafts": [
+    "C-130",
+    "Mirage 2000C",
+    "Mirage-F1B",
+    "Mirage-F1CE",
+    "Mirage-F1C-200",
+	"Super Etendard",
+    "SA 342L Gazelle",
+    "SA 342M Gazelle",
+    "SA 342M Gazelle Mistral",
+	"UH-1H Iroquois",
+    "Ka-50 Hokum",
+    "Mi-24P Hind-F",
+	"Mi-8MTV2 Hip",
+    "A-20G Havoc",
+    "Spitfire LF Mk IX",
+    "P-47D-40 Thunderbolt",
+    "MosquitoFBMkVI"
+  ],
+  "awacs": [
+    "E-2C Hawkeye"
+  ],
+  "tankers": [
+    "KC-130"
+  ],
+  "frontline_units": [
+    "AMX.30B2",
+    "Pamela",
+    "Roland 2 (Marder Chassis)",
+    "VAB .50",
+    "VAB Mephisto",
+    "VAB T20/13",
+    "VBL .50",
+    "VBL AANF1",
+    "AMX-13 75mm",
+    "AMX-13 90mm"
+  ],
+  "artillery_units": [
+    "M109A6 Paladin",
+    "M270 Multiple Launch Rocket System"
+  ],
+  "logistics_units": [
+    "Truck M818 6x6"
+  ],
+  "infantry_units": [
+    "Infantry M249",
+    "Infantry M4",
+    "MANPADS Stinger"
+  ],
+  "air_defense_units": [
+    "53T2"
+  ],
+  "preset_groups": [
+    "Hawk",
+    "Roland",
+	"WW2LST"
+  ],
+  "naval_units": [
+    "FFG Oliver Hazard Perry",
+    "CV-59 Forrestal",
+	"R97 Jeanne dArc"
+  ],
+  "missiles": [],
+  "requirements": {
+    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
+  },
+  "aircraft_carrier": [
+    "Forrestal"
+  ],
+  "carrier_names": [
+    "R98 Clemenceau",
+	"R99 Foch"
+  ],
+  "helicopter_carrier_names": [
+    "R97 Jeanne d'Arc",
+    "L9021 Ouragan",
+    "L9022 Orage",
+    "L9077 Bougainville "
+  ],
+  "liveries_overrides": {
+    "Mirage 2000C": [
+	  "AdA Alsace LF-2",
+	  "AdA Chasse 2-5",
+	  "Cambresis",
+	  "AdA EC 3-2 Forest",
+	  "M2KC_11_EE",
+	  "M2KC_133-XF",
+	  "M2000C-D Navarre SPA 153 Leader",
+	  "M2000C-D Navarre SPA 153 Wingman",
+	  "M2000C-N Lafayette 318",
+	  "M2000C-N Lafayette 321",
+	  "Navarre 133mq",
+	  "SPA48 Bleu",
+	  "VERT ATLAS",
+	  "2000N"
+    ],
+    "Mirage-F1B": [
+	  "BA 118 Mont-de-Marsan",
+	  "EC 1 30 Alsace BA 132 Colmar Meyenheim",
+	  "EC 3 33 Lorraine 60 ans des FAFL",
+	  "EC 3 33 Lorraine 60 ans du D Day",
+	  "EC 3 33 Lorraine BA 112 Reims"
+    ],
+    "Mirage-F1CE": [
+	  "France Air Force (FICTIONAL C VERSION)",
+	  "ER 233 Savoie BA 118 Mont de Marsan (FICTIONAL CR VERSION)",
+	  "RC 130 Normandie Niemen (FICTIONAL CT VERSION)"
+    ],
+    "Mirage-F1C-200": [
+	  "EC 1 5 Vendee BA Orange-Cariat",
+	  "EC 1 12 Cambresis",
+	  "EC 3 33 Lorraine BA 112 Reims - Champagne Ardennes",
+	  "EC 130 Normandie Niemen",
+	  "EC 212 Picardie",
+	  "EC 330 Lorraine"
+    ],
+    "SA 342L Gazelle": [
+	  "Combat",
+	  "Training",
+	  "Training EALAT"
+    ],
+    "SA 342M Gazelle": [
+	  "Combat",
+	  "Training",
+	  "Training EALAT"
+    ],
+    "SA 342M Gazelle Mistral": [
+	  "Combat",
+	  "Training",
+	  "Training EALAT"
+    ],
+    "A-20G Havoc": [
+	  "France"
+    ],
+    "Spitfire LF Mk IX": [
+	  "Escadron de chasse 49.3 Calvados",
+	  "Seafire CG190"
+    ],
+    "P-47D-40 Thunderbolt": [
+	  "E.C. 2-2 Alsace",
+	  "GC_25_La_Fayette_Cigognes",
+	  "GC_25_La_Fayette_Sioux"
+    ],
+    "MosquitoFBMkVI": [
+	  "NS315_GREY_WHITE-FR1"
+    ],
+	"Super Etendard": [
+	  "Aeronavale 1",
+	  "Flotille 11F Camo 1",
+	  "Flotille 11F Camo 2",
+	  "Flotille 11F Grey 1",
+	  "Flotille 11F Grey 2",
+	  "Flotille 17F Camo",
+	  "Flotille 17F Grey",
+	  "Flottille 11F",
+	  "Flottille 14F",
+	  "Flottille 17F"
+    ],
+    "E-2C Hawkeye": [
+	  "Chesapeake2018",
+	  "French Navy"
+    ],
+	"C-130": [
+      "FrenchC130"
+    ],
+    "KC-130": [
+      "FrenchKC130"
+    ],
+    "Ka-50 Hokum": [
+      "France Armee de Terre 1",
+	  "France Armee de Terre 2"
+    ],
+    "Mi-24P Hind-F": [
+      "nni_ALAT_BUN_GREEN"
+    ],
+    "Mi-8MTV2 Hip": [
+      "France ARMY",
+	  "France NAVY"
+    ],
+    "UH-1H Iroquois": [
+      "French Army"
+    ]
+  },
+  "liveries_overrides_ground_forces": {
+	"VAB_Mephisto": [
+      "woodland_Spring",
+      "woodland_Autumn"
+    ]
+  },
+  "has_jtac": true,
+  "jtac_unit": "SA 342M Gazelle"
+}

@@ -107,9 +107,7 @@ class CasFlightPlan(PatrollingFlightPlan[CasLayout]):
 
     @property
     def engagement_distance(self) -> Distance:
-        return (
-            meters(self.flight.coalition.game.settings.max_frontline_length * 1000) / 2
-        )
+        return meters(self.flight.coalition.game.settings.max_frontline_length * 1000)
 
     @property
     def combat_speed_waypoints(self) -> set[FlightWaypoint]:

@@ -76,6 +76,15 @@ local function PrepareGroups()
                         UnitTemplate.y = Coord.z
                         local Heading = UnitObj:GetHeading()
                         UnitTemplate.heading = STNE.Liberation.API.HeadingFix(Heading)
+
+                        if UnitTemplate.type == "BTR-80" then
+                            UnitTemplate.livery_id = "Green summer"
+                        elseif UnitTemplate.type == "BTR-82A" then
+                            UnitTemplate.livery_id = "Green summer"
+                        elseif UnitTemplate.type == "VAB_Mephisto" then
+                            UnitTemplate.livery_id = "woodland_Spring"
+                        end
+
                         table.insert(UnitsNew, UnitTemplate)
                     end
                 end

@@ -287,6 +287,16 @@ class Faction:
             aircraft = AircraftType.named(name)
             faction.liveries_overrides[aircraft] = [s.lower() for s in livery]
 
+        # Load liveries override for ground forces
+        faction.liveries_overrides_ground_forces = {}
+        liveries_overrides_ground_forces = json.get(
+            "liveries_overrides_ground_forces", {}
+        )
+        for vehicle_type, livery in liveries_overrides_ground_forces.items():
+            faction.liveries_overrides_ground_forces[vehicle_type] = [
+                s.lower() for s in livery
+            ]
+
         faction.unrestricted_satnav = json.get("unrestricted_satnav", False)
 
         return faction

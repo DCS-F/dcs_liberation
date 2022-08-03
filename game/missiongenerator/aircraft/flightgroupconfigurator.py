@@ -6,6 +6,7 @@ from typing import Any, Optional, TYPE_CHECKING
 
 from dcs import Mission
 from dcs.flyingunit import FlyingUnit
+from dcs.planes import AV8BNA
 from dcs.unit import Skill
 from dcs.unitgroup import FlyingGroup
 
@@ -25,6 +26,8 @@ from .flightdata import FlightData
 from .waypoints import WaypointGenerator
 from ...ato.flightplans.aewc import AewcFlightPlan
 from ...ato.flightplans.theaterrefueling import TheaterRefuelingFlightPlan
+from ...ato.flightwaypointtype import FlightWaypointType
+from ...theater import Fob
 
 if TYPE_CHECKING:
     from game import Game
@@ -98,6 +101,27 @@ class FlightGroupConfigurator:
             self.game.settings,
             self.mission_data,
         ).create_waypoints()
+
+        if (
+            self.flight.client_count < 1
+            and not self.flight.unit_type.helicopter
+            and self.flight.unit_type.dcs_unit_type not in [AV8BNA]
+        ):
+            for waypoint in waypoints:
+                # Remove landing waypoints which do not point to control points
+                if (
+                    waypoint.waypoint_type is FlightWaypointType.LANDING_POINT
+                    and waypoint.control_point is not None
+                    and isinstance(waypoint.control_point, Fob)
+                ):
+                    waypoint.waypoint_type = FlightWaypointType.NAV
+                    waypoint.alt_type = "RADIO"
+                    waypoint.description = "Exit"
+                    waypoint.pretty_name = "Exit"
+                    waypoint.control_point = None
+                    # Need to set uncontrolled to false, otherwise the AI will skip the mission and just land
+                    self.group.uncontrolled = False
+                    break
 
         return FlightData(
             package=self.flight.package,

@@ -4,6 +4,8 @@ import itertools
 import random
 from typing import Optional, TYPE_CHECKING
 
+from faker import Faker
+
 from game.ato.flighttype import FlightType
 from game.dcs.aircrafttype import AircraftType
 from game.squadrons.operatingbases import OperatingBases
@@ -43,7 +45,7 @@ class SquadronDefGenerator:
     def generate_for_aircraft(self, aircraft: AircraftType) -> SquadronDef:
         return SquadronDef(
             name=f"Squadron {next(self.count):03}",
-            nickname=self.random_nickname(),
+            nickname=self.random_nickname(self.faction.country),
             country=self.faction.country,
             role="Flying Squadron",
             aircraft=aircraft,
@@ -54,10 +56,12 @@ class SquadronDefGenerator:
             pilot_pool=[],
         )
 
-    @staticmethod
-    def _make_random_nickname() -> str:
+    def _make_random_nickname(self, country: str) -> str:
         from game.naming import ANIMALS
 
+        if country == "France":
+            faker = Faker("fr_FR")
+            return f"{faker.city()} {faker.department_name()}"
         animal = random.choice(ANIMALS)
         adjective = random.choice(
             (
@@ -318,9 +322,9 @@ class SquadronDefGenerator:
             return animal.title()
         return f"{adjective} {animal}".title()
 
-    def random_nickname(self) -> str:
+    def random_nickname(self, country: str) -> str:
         while True:
-            nickname = self._make_random_nickname()
+            nickname = self._make_random_nickname(country)
             if nickname not in self.used_nicknames:
                 self.used_nicknames.add(nickname)
                 return nickname

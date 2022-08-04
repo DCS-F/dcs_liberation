@@ -267,5 +267,7 @@ class QGroundObjectMenu(QDialog):
             self.game.initialize_turn(events, for_red=True, for_blue=False)
         EventStream.put_nowait(events)
         GameUpdateSignal.get_instance().updateGame(self.game)
+        # Replan redfor missions
+        self.game.initialize_turn(events, for_red=True, for_blue=False)
         # Refresh the dialog
         self.do_refresh_layout()

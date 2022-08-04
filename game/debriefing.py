@@ -349,9 +349,7 @@ class Debriefing:
             seen.add(cp_id)
 
             try:
-                control_point = self.game.theater.find_control_point_by_airport_id(
-                    int(cp_id)
-                )
+                control_point = self.game.theater.control_point_named(_name)
             except ValueError:
                 # The CP ID could not be converted to an int, so it's a UUID.
                 control_point = self.game.theater.find_control_point_by_id(UUID(cp_id))

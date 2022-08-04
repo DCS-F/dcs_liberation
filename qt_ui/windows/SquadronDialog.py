@@ -20,7 +20,7 @@ from PySide2.QtWidgets import (
 )
 
 from game.squadrons import Pilot, Squadron
-from game.theater import ControlPoint, ConflictTheater
+from game.theater import ControlPoint, ConflictTheater, ParkingType
 from game.ato.flighttype import FlightType
 from qt_ui.delegates import TwoColumnRowDelegate
 from qt_ui.errorreporter import report_errors
@@ -99,7 +99,11 @@ class SquadronDestinationComboBox(QComboBox):
         self.squadron = squadron
         self.theater = theater
 
-        room = squadron.location.unclaimed_parking()
+        parking_type = ParkingType().from_squadron(squadron)
+        # Force ground start slots to also be considered
+        parking_type.include_fixed_wing_stol = True
+
+        room = squadron.location.unclaimed_parking(parking_type)
         self.addItem(
             f"Remain at {squadron.location} (room for {room} more aircraft)", None
         )
@@ -107,7 +111,7 @@ class SquadronDestinationComboBox(QComboBox):
         for idx, destination in enumerate(sorted(self.iter_destinations(), key=str), 1):
             if destination == squadron.destination:
                 selected_index = idx
-            room = destination.unclaimed_parking()
+            room = destination.unclaimed_parking(parking_type)
             self.addItem(
                 f"Transfer to {destination} (room for {room} more aircraft)",
                 destination,
@@ -121,12 +125,15 @@ class SquadronDestinationComboBox(QComboBox):
 
     def iter_destinations(self) -> Iterator[ControlPoint]:
         size = self.squadron.expected_size_next_turn
+        parking_type = ParkingType().from_squadron(self.squadron)
+        # Force ground start slots to also be considered
+        parking_type.include_fixed_wing_stol = True
         for control_point in self.theater.control_points_for(self.squadron.player):
             if control_point == self:
                 continue
             if not control_point.can_operate(self.squadron.aircraft):
                 continue
-            if control_point.unclaimed_parking() < size:
+            if control_point.unclaimed_parking(parking_type) < size:
                 continue
             yield control_point
 

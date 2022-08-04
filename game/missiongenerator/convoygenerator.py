@@ -32,7 +32,7 @@ class ConvoyGenerator:
         for coalition in self.game.coalitions:
             i = 1
             for convoy in coalition.transfers.convoys:
-                convoy.name += convoy.name + str(i)
+                convoy.name += str(i)
                 i += 1
                 self.generate_convoy(convoy)
 

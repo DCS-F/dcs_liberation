@@ -79,6 +79,17 @@ class QFlightWaypointTab(QFrame):
             rlayout.addWidget(button)
             self.recreate_buttons.append(button)
 
+        def make_split_closure(arg):
+            def closure():
+                return self.confirm_split(arg)
+
+            return closure
+
+        split_button = QPushButton(f"Split flight")
+        split_button.clicked.connect(make_split_closure(task))
+        rlayout.addWidget(split_button)
+        self.recreate_buttons.append(split_button)
+
         rlayout.addWidget(QLabel("<strong>Advanced : </strong>"))
         rlayout.addWidget(QLabel("<small>Do not use for AI flights</small>"))
 
@@ -178,6 +189,45 @@ class QFlightWaypointTab(QFrame):
             if not self.flight.loadout.is_custom:
                 self.flight.loadout = Loadout.default_for(self.flight)
                 self.loadout_changed.emit()
+            self.flight_waypoint_list.update_list()
+            self.on_change()
+
+    def confirm_split(self, task: FlightType) -> None:
+        result = QMessageBox.question(
+            self,
+            "Split flight?",
+            (
+                "This will split this flight into one aircraft groups. Do you want "
+                "to continue?"
+            ),
+            QMessageBox.No,
+            QMessageBox.Yes,
+        )
+        original_task = self.flight.flight_type
+        if result == QMessageBox.Yes:
+            new_flight: Flight
+            try:
+                self.flight.return_pilots_and_aircraft()
+                self.flight.roster.resize(1)
+                new_flight = Flight(
+                    self.flight.package,
+                    self.flight.country,
+                    self.flight.squadron,
+                    self.flight.count,
+                    self.flight.flight_type,
+                    self.flight.start_type,
+                    self.flight.divert,
+                )
+                self.flight.package.add_flight(new_flight)
+                self.planner.populate_flight_plan(new_flight)
+            except PlanningError as ex:
+                self.flight.flight_type = original_task
+                logging.exception("Could not split flight")
+                QMessageBox.critical(
+                    self, "Could not split flight", str(ex), QMessageBox.Ok
+                )
+            if not self.flight.loadout.is_custom:
+                new_flight.loadout = self.flight.loadout
             self.flight_waypoint_list.update_list()
             self.on_change()
 

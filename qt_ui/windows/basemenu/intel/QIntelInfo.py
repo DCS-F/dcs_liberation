@@ -44,7 +44,7 @@ class QIntelInfo(QFrame):
         for unit_type, count in self.cp.base.armor.items():
             unit_name = unit_type.name
             if isinstance(unit_type, GroundUnitType):
-                unit_name += " (" + str(unit_type.unit_class)[16:] + ")"
+                unit_name += " (" + str(unit_type.unit_class)[10:] + ")"
             if count:
                 front_line_units[unit_name] += count
 

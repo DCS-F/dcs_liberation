@@ -1570,9 +1570,7 @@ class Fob(ControlPoint):
         parking_type = ParkingType().from_aircraft(aircraft)
         if parking_type.include_rotary_wing and self.has_helipads:
             return True
-        if parking_type.include_fixed_wing_stol and len(self.stol_pads) + len(
-            self.stol_pads_roadbase
-        ):
+        if parking_type.include_fixed_wing_stol and self.has_stol_slots:
             return True
         return False
 

@@ -207,19 +207,21 @@ class QFlightWaypointTab(QFrame):
         if result == QMessageBox.Yes:
             new_flight: Flight
             try:
+                flight_count = self.flight.count - 1
                 self.flight.return_pilots_and_aircraft()
                 self.flight.roster.resize(1)
-                new_flight = Flight(
-                    self.flight.package,
-                    self.flight.country,
-                    self.flight.squadron,
-                    self.flight.count,
-                    self.flight.flight_type,
-                    self.flight.start_type,
-                    self.flight.divert,
-                )
-                self.flight.package.add_flight(new_flight)
-                self.planner.populate_flight_plan(new_flight)
+                for flight_num in range(flight_count):
+                    new_flight = Flight(
+                        self.flight.package,
+                        self.flight.country,
+                        self.flight.squadron,
+                        self.flight.count,
+                        self.flight.flight_type,
+                        self.flight.start_type,
+                        self.flight.divert,
+                    )
+                    self.flight.package.add_flight(new_flight)
+                    self.planner.populate_flight_plan(new_flight)
             except PlanningError as ex:
                 self.flight.flight_type = original_task
                 logging.exception("Could not split flight")

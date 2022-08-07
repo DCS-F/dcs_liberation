@@ -106,22 +106,10 @@ class FlightGroupConfigurator:
             self.flight.client_count < 1
             and not self.flight.unit_type.helicopter
             and self.flight.unit_type.dcs_unit_type not in [AV8BNA]
+            and isinstance(self.flight.squadron.location, Fob)
         ):
-            for waypoint in waypoints:
-                # Remove landing waypoints which do not point to control points
-                if (
-                    waypoint.waypoint_type is FlightWaypointType.LANDING_POINT
-                    and waypoint.control_point is not None
-                    and isinstance(waypoint.control_point, Fob)
-                ):
-                    waypoint.waypoint_type = FlightWaypointType.NAV
-                    waypoint.alt_type = "RADIO"
-                    waypoint.description = "Exit"
-                    waypoint.pretty_name = "Exit"
-                    waypoint.control_point = None
-                    # Need to set uncontrolled to false, otherwise the AI will skip the mission and just land
-                    self.group.uncontrolled = False
-                    break
+            # Need to set uncontrolled to false, otherwise the AI will skip the mission and just land
+            self.group.uncontrolled = False
 
         return FlightData(
             package=self.flight.package,

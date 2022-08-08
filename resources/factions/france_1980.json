@@ -23,6 +23,7 @@
 	"Mi-8MTV2 Hip",
     "A-20G Havoc",
     "Spitfire LF Mk IX",
+    "Spitfire LF Mk IX (Clipped Wings)",
     "P-47D-40 Thunderbolt",
     "MosquitoFBMkVI"
   ],
@@ -36,25 +37,32 @@
     "AMX.30B2",
     "Pamela",
     "Roland 2 (Marder Chassis)",
-    "VAB .50",
+    "VAB",
+	"VAB .50",
     "VAB Mephisto",
+	"VAB MORTIER",
     "VAB T20/13",
     "VBL .50",
     "VBL AANF1",
-    "AMX-13 75mm",
-    "AMX-13 90mm"
+    "AMX-10 RCR",
+	"AMX-10RCR SEPAR",
+	"AMX-13 75mm",
+    "AMX-13 90mm",
+	"TRM-2000 53T2",
+	"TRM-2000"
   ],
   "artillery_units": [
     "M109A6 Paladin",
     "M270 Multiple Launch Rocket System"
   ],
   "logistics_units": [
-    "Truck M818 6x6"
+    "TRM-2000"
   ],
   "infantry_units": [
     "Infantry M249",
     "Infantry M4",
-    "MANPADS Stinger"
+    "MANPADS Stinger",
+	"MO 120 RT"
   ],
   "air_defense_units": [
     "53T2"
@@ -142,7 +150,16 @@
     ],
     "Spitfire LF Mk IX": [
 	  "Escadron de chasse 49.3 Calvados",
-	  "Seafire CG190"
+	  "Seafire CG190",
+	  "Seafire DV996",
+	  "Seafire LL996",
+	  "Seafire MT780",
+	  "Seafire PV962",
+	  "Seafire SR520",
+	  "Seafire SW991"
+    ],
+    "Spitfire LF Mk IX (Clipped Wings)": [
+	  "Escadron de chasse 49.3 Calvados"
     ],
     "P-47D-40 Thunderbolt": [
 	  "E.C. 2-2 Alsace",

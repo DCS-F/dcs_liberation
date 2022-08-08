@@ -1,3 +1,4 @@
-price: 6
+class: Recon
+price: 3
 variants:
   VAB: null

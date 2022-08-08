@@ -38,12 +38,15 @@
     "SA-9 Strela",
     "T-54A",
 	"T-55A",
+	"T-62",
+	"T-72A",
     "T-72B with Kontakt-1 ERA",
     "MT-LB",
     "MT-LBu",
 	"ZSU-23-4 Shilka",
     "ZSU-57-2 'Sparka'",
     "LUV UAZ-469 Jeep",
+	"Truck GAZ-66",
     "Truck Ural-375"
   ],
   "artillery_units": [
@@ -53,7 +56,8 @@
   ],
   "logistics_units": [
     "LUV UAZ-469 Jeep",
-    "Truck Ural-375"
+    "Truck GAZ-66",
+	"Truck Ural-375"
   ],
   "infantry_units": [
     "Infantry AK-74 Rus",

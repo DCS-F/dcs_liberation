@@ -1,3 +1,4 @@
-price: 6
+class: APC
+price: 5
 variants:
   VAB T20/13: null

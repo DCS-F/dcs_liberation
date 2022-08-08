@@ -1,3 +1,5 @@
-price: 10
+class: Infantry
+price: 0
+spawn_weight: 1
 variants:
   MO 120 RT: null

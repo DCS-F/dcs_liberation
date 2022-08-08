@@ -238,7 +238,7 @@ squadrons:
     - primary: BAI
       secondary: air-to-air
       aircraft:
-        - Spitfire LF Mk IX
+        - Spitfire LF Mk IX (Clipped Wings)
     - primary: Strike
       secondary: any
       aircraft:
@@ -258,7 +258,7 @@ squadrons:
     - primary: BAI
       secondary: air-to-air
       aircraft:
-        - Spitfire LF Mk IX
+        - Spitfire LF Mk IX (Clipped Wings)
     - primary: BAI
       secondary: air-to-air
       aircraft:

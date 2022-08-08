@@ -43,7 +43,6 @@ class DefaultSquadronAssigner:
                     )
                     continue
 
-                squadron_def.claimed = True
                 squadron = Squadron.create_from(
                     squadron_def, control_point, self.coalition, self.game
                 )
@@ -61,12 +60,14 @@ class DefaultSquadronAssigner:
                 preferred_aircraft, config.primary, control_point
             )
             if squadron_def is not None:
+                squadron_def.claimed = True
                 return squadron_def
 
         # If we didn't find any of the preferred types we should use any squadron
         # compatible with the primary task.
         squadron_def = self.find_squadron_for_task(config.primary, control_point)
         if squadron_def is not None:
+            squadron_def.claimed = True
             return squadron_def
 
         # If we can't find any squadron matching the requirement, we should

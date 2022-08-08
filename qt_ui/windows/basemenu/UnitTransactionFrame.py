@@ -19,6 +19,7 @@ from PySide2.QtWidgets import (
     QSpacerItem,
 )
 
+from game.dcs.groundunittype import GroundUnitType
 from game.purchaseadapter import PurchaseAdapter, TransactionError
 from qt_ui.models import GameModel
 from qt_ui.windows.GameUpdateSignal import GameUpdateSignal
@@ -129,7 +130,10 @@ class UnitTransactionFrame(QFrame, Generic[TransactionItemType]):
     def display_name_of(
         self, item: TransactionItemType, multiline: bool = False
     ) -> str:
-        return self.purchase_adapter.name_of(item, multiline)
+        item_name = self.purchase_adapter.name_of(item, multiline)
+        if isinstance(item, GroundUnitType):
+            item_name += " (" + str(item.unit_class)[10:] + ")"
+        return item_name
 
     def price_of(self, item: TransactionItemType) -> int:
         return self.purchase_adapter.price_of(item)

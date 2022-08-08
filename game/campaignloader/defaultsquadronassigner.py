@@ -43,6 +43,7 @@ class DefaultSquadronAssigner:
                     )
                     continue
 
+                squadron_def.claimed = True
                 squadron = Squadron.create_from(
                     squadron_def, control_point, self.coalition, self.game
                 )

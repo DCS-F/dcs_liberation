@@ -6,6 +6,7 @@ from typing import Any, Optional, TYPE_CHECKING
 
 from dcs import Mission
 from dcs.flyingunit import FlyingUnit
+from dcs.helicopters import Mi_8MT, Mi_24P, UH_1H
 from dcs.planes import AV8BNA
 from dcs.unit import Skill
 from dcs.unitgroup import FlyingGroup
@@ -139,10 +140,32 @@ class FlightGroupConfigurator:
     ) -> None:
         player = pilot is not None and pilot.player
         self.set_skill(unit, pilot)
+        if player or unit.skill == Skill.Player or unit.skill == Skill.Client:
+            gunner_skill = 100
+        elif unit.skill == Skill.Excellent:
+            gunner_skill = 90
+        elif unit.skill == Skill.High:
+            gunner_skill = 70
+        elif unit.skill == Skill.Good:
+            gunner_skill = 50
+        elif unit.skill == Skill.Average:
+            gunner_skill = 30
+        elif unit.unit_type.property_defaults is not None:
+            gunner_skill = unit.unit_type.property_defaults["GunnersAISkill"]
+        else:
+            gunner_skill = 90
+
         if self.flight.loadout.has_weapon_of_type(WeaponTypeEnum.TGP) and player:
             laser_codes.append(self.laser_code_registry.get_next_laser_code())
         else:
             laser_codes.append(None)
+
+        if unit.unit_type is Mi_8MT:
+            unit.set_property(Mi_8MT.Properties.GunnersAISkill.id, gunner_skill)
+        elif unit.unit_type is Mi_24P:
+            unit.set_property(Mi_24P.Properties.GunnersAISkill.id, gunner_skill)
+        elif unit.unit_type is UH_1H:
+            unit.set_property(UH_1H.Properties.GunnersAISkill.id, gunner_skill)
 
     def setup_radios(self) -> RadioFrequency:
         if self.flight.flight_type in {FlightType.AEWC, FlightType.REFUELING}:

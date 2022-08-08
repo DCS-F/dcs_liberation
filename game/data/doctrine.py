@@ -111,6 +111,7 @@ MODERN_DOCTRINE = Doctrine(
             UnitClass.ARTILLERY: 1,
             UnitClass.SHORAD: 2,
             UnitClass.RECON: 1,
+            UnitClass.LOGISTICS: 1,
         }
     ),
 )
@@ -148,6 +149,7 @@ COLDWAR_DOCTRINE = Doctrine(
             UnitClass.ARTILLERY: 1,
             UnitClass.SHORAD: 2,
             UnitClass.RECON: 1,
+            UnitClass.LOGISTICS: 1,
         }
     ),
 )
@@ -184,6 +186,7 @@ WWII_DOCTRINE = Doctrine(
             UnitClass.ARTILLERY: 1,
             UnitClass.SHORAD: 3,
             UnitClass.RECON: 1,
+            UnitClass.LOGISTICS: 1,
         }
     ),
 )

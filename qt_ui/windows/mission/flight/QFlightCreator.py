@@ -229,7 +229,7 @@ class QFlightCreator(QDialog):
     def on_task_changed(self, index: int) -> None:
         task = self.task_selector.itemData(index)
         self.aircraft_selector.update_items(
-            task, self.game.blue.air_wing.available_aircraft_types
+            self.game.blue.air_wing.best_available_aircrafts_for(task)
         )
         self.squadron_selector.update_items(task, self.aircraft_selector.currentData())
 

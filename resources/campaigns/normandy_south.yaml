@@ -135,10 +135,10 @@ squadrons:
       aircraft:
         - Mi-8MTV2 Hip
   
-  # Cherbourg-Querqueville Airfield
-  # Cotentin Peninsula, west of Cherbourg
+  # Pierreville-Culule Airfield
+  # Cotentin Peninsula, SSW of Cherbourg
   # Ground start airbase, ~1500m runway (road)
-  Cherbourg-Querqueville Airfield:
+  Pierreville-Culule Airfield:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:

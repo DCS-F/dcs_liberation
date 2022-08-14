@@ -132,6 +132,10 @@ from pydcs_extensions.mirage3.mirage3 import (
 )
 from pydcs_extensions.su57.su57 import Su_57
 from pydcs_extensions.superetendard.superetendard import VSN_SEM
+from pydcs_extensions.etendard_iv_superetendard.etendard_iv_superetendard import (
+    SEM,
+    ETENDARD_IV,
+)
 from pydcs_extensions.uh60l.uh60l import KC130J, UH_60L
 from .flighttype import FlightType
 
@@ -142,8 +146,6 @@ from .flighttype import FlightType
 # factions that also have F-4s should not.
 
 # Used for CAP, Escort, and intercept if there is not a specialised aircraft available
-from pydcs_extensions.uh60l.uh60l import UH_60L, KC130J
-
 CAP_CAPABLE = [
     Su_57,
     F_22A,
@@ -265,7 +267,9 @@ CAS_CAPABLE = [
     Mirage_F1CT,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
+    SEM,
     VSN_SEM,
+    ETENDARD_IV,
     F_5E_3,
     F_86F_Sabre,
     C_101CC,
@@ -329,7 +333,9 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     H_6J,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
+    SEM,
     VSN_SEM,
+    ETENDARD_IV,
     A_20G,
     Ju_88A4,
     VSN_F104S_AG,
@@ -395,7 +401,9 @@ STRIKE_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    SEM,
     VSN_SEM,
+    ETENDARD_IV,
     MiG_27K,
     MiG_21Bis,
     MiG_15bis,
@@ -438,6 +446,8 @@ ANTISHIP_CAPABLE = [
     Tornado_GR4,
     AV8BNA,
     S_3B,
+    SEM,
+    ETENDARD_IV,
     A_20G,
     Ju_88A4,
     MosquitoFBMkVI,
@@ -499,7 +509,9 @@ RUNWAY_ATTACK_CAPABLE = [
     Mirage_F1CT,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
+    SEM,
     VSN_SEM,
+    ETENDARD_IV,
     MiG_27K,
     MiG_21Bis,
     MiG_15bis,

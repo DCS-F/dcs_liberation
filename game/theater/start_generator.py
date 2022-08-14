@@ -64,6 +64,7 @@ class ModSettings:
     f104_starfighter: bool = False
     mirage_3: bool = False
     super_etendard: bool = False
+    etendard_iv_superetendard: bool = False
     hercules: bool = False
     uh_60l: bool = False
     jas39_gripen: bool = False

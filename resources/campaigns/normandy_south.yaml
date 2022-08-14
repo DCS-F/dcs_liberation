@@ -29,7 +29,7 @@ squadrons:
     - primary: BAI
       secondary: any
       aircraft:
-        - Super Etendard
+        - Etendard IV
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -56,7 +56,7 @@ squadrons:
     - primary: BAI
       secondary: any
       aircraft:
-        - Super Etendard
+        - Etendard IV
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -135,6 +135,15 @@ squadrons:
       aircraft:
         - Mi-8MTV2 Hip
   
+  # Cherbourg-Querqueville Airfield
+  # Cotentin Peninsula, west of Cherbourg
+  # Ground start airbase, ~1500m runway (road)
+  Cherbourg-Querqueville Airfield:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mirage-F1CE
+
   # Pierreville-Culule Airfield
   # Cotentin Peninsula, SSW of Cherbourg
   # Ground start airbase, ~1500m runway (road)
@@ -142,11 +151,11 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
-        - Mirage 2000C
+        - Mirage IIIB/C
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - Mirage-F1CE
+        - Mirage IIIB/C A/G
 
   # Maupertus
   # Cotentin Peninsula, on the coast
@@ -287,6 +296,10 @@ squadrons:
   # Western France
   # 1800m & 1500m runways
   8:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - Mirage 2000C
     - primary: BARCAP
       secondary: air-to-air
       aircraft:

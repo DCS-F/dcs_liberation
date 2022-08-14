@@ -162,6 +162,7 @@ class NewGameWizard(QtWidgets.QWizard):
             f104_starfighter=self.field("f104_starfighter"),
             mirage_3=self.field("mirage_3"),
             super_etendard=self.field("super_etendard"),
+            etendard_iv_superetendard=self.field("etendard_iv_superetendard"),
             hercules=self.field("hercules"),
             uh_60l=self.field("uh_60l"),
             jas39_gripen=self.field("jas39_gripen"),
@@ -668,6 +669,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("mirage_3", mirage_3)
         super_etendard = QtWidgets.QCheckBox()
         self.registerField("super_etendard", super_etendard)
+        etendard_iv_superetendard = QtWidgets.QCheckBox()
+        self.registerField("etendard_iv_superetendard", etendard_iv_superetendard)
         jas39_gripen = QtWidgets.QCheckBox()
         self.registerField("jas39_gripen", jas39_gripen)
         su57_felon = QtWidgets.QCheckBox()
@@ -705,13 +708,22 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         )
         modLayout.addWidget(super_etendard, modLayout_row, 1)
         modLayout_row += 1
+        # Section break here for readability
+        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
+        modLayout_row += 1
+        modLayout.addWidget(
+            QtWidgets.QLabel(
+                "Etendard IV & Super Etendard (Clemenceau pack version 004 for 2.72)"
+            ),
+            modLayout_row,
+            0,
+        )
+        modLayout.addWidget(etendard_iv_superetendard, modLayout_row, 1)
+        modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel("C-130J-30 Super Hercules"), modLayout_row, 0
         )
         modLayout.addWidget(hercules, modLayout_row, 1)
-        modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
         modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel("UH-60L Black Hawk (version 1.3.1)"), modLayout_row, 0
@@ -725,6 +737,9 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("Su-57 Felon"), modLayout_row, 0)
         modLayout.addWidget(su57_felon, modLayout_row, 1)
+        modLayout_row += 1
+        # Section break here for readability
+        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("Frenchpack"), modLayout_row, 0)
         modLayout.addWidget(frenchpack, modLayout_row, 1)

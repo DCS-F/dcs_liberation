@@ -302,6 +302,7 @@ def create_game(
             f104_starfighter=False,
             mirage_3=False,
             super_etendard=False,
+            etendard_iv_superetendard=False,
             hercules=False,
             jas39_gripen=False,
             su57_felon=False,

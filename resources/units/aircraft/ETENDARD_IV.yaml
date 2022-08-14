@@ -1,0 +1,16 @@
+description:
+  The Dassault-Breguet Étendard IV is a French carrier-borne strike fighter aircraft
+  designed for service with the French Navy aircraft carriers. 
+  
+  It is the first indigenously designed carrier-capable jet aircraft to be produced
+  in France.
+introduced: 1962
+manufacturer: Dassault-Breguet
+origin: France
+price: 9
+role: Carrier-based Strike Fighter
+carrier_capable: true
+gunfighter: true
+max_range: 200
+variants:
+  Etendard IV: {}

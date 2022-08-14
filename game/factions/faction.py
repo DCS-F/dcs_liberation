@@ -335,6 +335,14 @@ class Faction:
             self.remove_aircraft("VSN_MirageIIIS")
         if not mod_settings.super_etendard:
             self.remove_aircraft("VSN_SEM")
+        if not mod_settings.etendard_iv_superetendard:
+            self.remove_aircraft("SEM")
+            self.remove_aircraft("ETENDARD_IV")
+            self.remove_ship("Clemenceau")
+        if not mod_settings.mirage_3:
+            self.remove_aircraft("VSN_MirageIIIC")
+            self.remove_aircraft("VSN_MirageIIIC_AG")
+            self.remove_aircraft("VSN_MirageIIIS")
         if not mod_settings.jas39_gripen:
             self.remove_aircraft("JAS39Gripen")
             self.remove_aircraft("JAS39Gripen_AG")
@@ -408,6 +416,11 @@ class Faction:
         for i in self.frontline_units:
             if i.dcs_unit_type.id == name:
                 self.frontline_units.remove(i)
+
+    def remove_ship(self, name: str) -> None:
+        for i in self.naval_units:
+            if i.dcs_unit_type.id == name:
+                self.naval_units.remove(i)
 
 
 def load_ship(name: str) -> Optional[Type[ShipType]]:

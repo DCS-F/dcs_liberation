@@ -16,6 +16,7 @@
     "Mirage-F1CE",
     "Mirage-F1C-200",
 	"Super Etendard",
+	"Etendard IV",
     "SA 342L Gazelle",
     "SA 342M Gazelle",
     "SA 342M Gazelle Mistral",
@@ -177,17 +178,26 @@
     "MosquitoFBMkVI": [
 	  "NS315_GREY_WHITE-FR1"
     ],
+	"Etendard IV": [
+	  "01 Flotille11-F CAMO 1",
+	  "02 Flotille 11F Camo 2",
+	  "03 FRANCE MARINE",
+	  "04 Marine blue 56",
+	  "05 Marine Grey 30-11F",
+	  "06 Flotille 17F Camo",
+	  "07 Flottille 14F",
+	  "09 Flotille 17f"
+    ],
 	"Super Etendard": [
-	  "Aeronavale 1",
-	  "Flotille 11F Camo 1",
-	  "Flotille 11F Camo 2",
-	  "Flotille 11F Grey 1",
-	  "Flotille 11F Grey 2",
-	  "Flotille 17F Camo",
-	  "Flotille 17F Grey",
-	  "Flottille 11F",
-	  "Flottille 14F",
-	  "Flottille 17F"
+	  "01 SEM 11-F CAMO 1",
+	  "02 Flotille 11F Camo 2",
+	  "03 FRANCE MARINE - Antenne",
+	  "04 Marine blue 56",
+	  "05 Marine Grey 30-11F",
+	  "06 Flotille 17F Camo",
+	  "07 Flottille 14F",
+	  "09 FRANCE MARINE",
+	  "10 Flotille 17f"
     ],
     "E-2C Hawkeye": [
 	  "Chesapeake2018",

@@ -125,6 +125,11 @@ from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG
 from pydcs_extensions.f22a.f22a import F_22A
 from pydcs_extensions.hercules.hercules import Hercules
 from pydcs_extensions.jas39.jas39 import JAS39Gripen, JAS39Gripen_AG
+from pydcs_extensions.mirage3.mirage3 import (
+    VSN_MirageIIIC,
+    VSN_MirageIIIC_AG,
+    VSN_MirageIIIS,
+)
 from pydcs_extensions.su57.su57 import Su_57
 from pydcs_extensions.superetendard.superetendard import VSN_SEM
 from pydcs_extensions.uh60l.uh60l import KC130J, UH_60L
@@ -173,6 +178,8 @@ CAP_CAPABLE = [
     Mirage_F1M_EE,
     Mirage_F1C_200,
     Mirage_F1CT,
+    VSN_MirageIIIS,
+    VSN_MirageIIIC,
     F_15E,
     M_2000C,
     F_5E_3,
@@ -256,6 +263,8 @@ CAS_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    VSN_MirageIIIC_AG,
+    VSN_MirageIIIS,
     VSN_SEM,
     F_5E_3,
     F_86F_Sabre,
@@ -318,6 +327,8 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     Tu_160,
     Tu_95MS,
     H_6J,
+    VSN_MirageIIIC_AG,
+    VSN_MirageIIIS,
     VSN_SEM,
     A_20G,
     Ju_88A4,
@@ -486,6 +497,8 @@ RUNWAY_ATTACK_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    VSN_MirageIIIC_AG,
+    VSN_MirageIIIS,
     VSN_SEM,
     MiG_27K,
     MiG_21Bis,

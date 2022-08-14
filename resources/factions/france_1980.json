@@ -9,7 +9,9 @@
   "doctrine": "coldwar",
   "aircrafts": [
     "C-130",
-    "Mirage 2000C",
+    "Mirage IIIB/C",
+	"Mirage IIIB/C A/G",
+	"Mirage 2000C",
     "Mirage-F1B",
     "Mirage-F1CE",
     "Mirage-F1C-200",
@@ -94,6 +96,12 @@
     "L9077 Bougainville "
   ],
   "liveries_overrides": {
+    "Mirage IIIB/C": [
+	  "SPA 160 Diable Rouge"
+    ],
+	"Mirage IIIB/C A/G": [
+	  "SPA 160 Diable Rouge"
+    ],
     "Mirage 2000C": [
 	  "AdA Alsace LF-2",
 	  "AdA Chasse 2-5",

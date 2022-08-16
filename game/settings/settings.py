@@ -477,6 +477,15 @@ class Settings:
         section=PERFORMANCE_SECTION,
         default=False,
     )
+    perf_frontline_units_max_supply: int = bounded_int_option(
+        "Maximum frontline unit supply per control point",
+        page=MISSION_GENERATOR_PAGE,
+        section=PERFORMANCE_SECTION,
+        default=60,
+        min=10,
+        max=300,
+        causes_expensive_game_update=True,
+    )
     perf_infantry: bool = boolean_option(
         "Generate infantry squads alongside vehicles",
         page=MISSION_GENERATOR_PAGE,

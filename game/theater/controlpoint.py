@@ -90,7 +90,7 @@ if TYPE_CHECKING:
     from game.transfers import PendingTransfers
     from .conflicttheater import ConflictTheater
 
-MAX_FRONTLINE_UNIT_SUPPLY: int = 60
+MAX_FRONTLINE_UNIT_SUPPLY: int = 30
 FREE_FRONTLINE_UNIT_SUPPLY: int = 15
 AMMO_DEPOT_FRONTLINE_UNIT_CONTRIBUTION: int = 12
 TRIGGER_RADIUS_CAPTURE = 3000
@@ -1110,10 +1110,9 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
             self.front_line_capacity_with(ammo_depot_count), self.base.total_armor
         )
 
-    @classmethod
-    def front_line_capacity_with(cls, ammo_depot_count: int) -> int:
+    def front_line_capacity_with(self, ammo_depot_count: int) -> int:
         return min(
-            MAX_FRONTLINE_UNIT_SUPPLY,
+            self.coalition.game.settings.perf_frontline_units_max_supply,
             (
                 FREE_FRONTLINE_UNIT_SUPPLY
                 + ammo_depot_count * AMMO_DEPOT_FRONTLINE_UNIT_CONTRIBUTION

@@ -15,6 +15,7 @@
     "Mirage-F1B",
     "Mirage-F1CE",
     "Mirage-F1C-200",
+	"Super Etendard (SFM)",
 	"Super Etendard",
 	"Etendard IV",
     "SA 342L Gazelle",
@@ -198,6 +199,18 @@
 	  "07 Flottille 14F",
 	  "09 FRANCE MARINE",
 	  "10 Flotille 17f"
+    ],
+	"Super Etendard (SFM)": [
+	  "Aeronavale 1",
+	  "Flotille 11F Camo 1",
+	  "Flotille 11F Camo 2",
+	  "Flotille 11F Grey 1",
+	  "Flotille 11F Grey 2",
+	  "Flotille 17F Camo",
+	  "Flotille 17F Grey",
+	  "Flottille 11F",
+	  "Flottille 14F",
+	  "Flottille 17F"
     ],
     "E-2C Hawkeye": [
 	  "Chesapeake2018",

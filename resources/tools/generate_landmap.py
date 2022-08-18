@@ -43,9 +43,13 @@ for terrain in ["cau", "nev", "syria", "channel", "normandy", "gulf", "marianais
     for plane_group in m.country("USA").plane_group:
         zone = [(x.position.x, x.position.y) for x in plane_group.points]
 
-        if terrain == "cau" and inclusion_zones:
+        if terrain == "cau":
             # legacy
-            exclusion_zones.append(Polygon(zone))
+            poly = Polygon(zone)
+            if plane_group.units[0].type == "F-15C":
+                exclusion_zones.append(poly)
+            else:
+                inclusion_zones.append(poly)
         else:
             poly = Polygon(zone)
             if not poly.is_valid:

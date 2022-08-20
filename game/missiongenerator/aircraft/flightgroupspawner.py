@@ -7,7 +7,7 @@ from dcs import Mission, Point
 from dcs.country import Country
 from dcs.mapping import Vector2
 from dcs.mission import StartType as DcsStartType
-from dcs.planes import F_14A, Su_33, AV8BNA
+from dcs.planes import F_14A, Su_33, AV8BNA, M_2000C
 from dcs.point import PointAction
 from dcs.ships import KUZNECOW
 from dcs.terrain import Airport, NoParkingSlotError
@@ -335,7 +335,13 @@ class FlightGroupSpawner:
         group.points[0].type = "TakeOffGround"
         group.units[0].heading = stol_pad[0].units[0].heading
 
-        if self.start_type is not StartType.COLD:
+        # Evaluate hot starts
+        # The Mirage 2000C currently has a bug (as of DCS World 2.7.16.28157) with hot starts from ground
+        # which makes takeoffs impossible (gear sticking to the ground), so always cold start them
+        if (
+            self.start_type is not StartType.COLD
+            and self.flight.unit_type.dcs_unit_type not in [M_2000C]
+        ):
             group.points[0].action = PointAction.FromGroundAreaHot
             group.points[0].type = "TakeOffGroundHot"
 

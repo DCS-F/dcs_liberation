@@ -167,6 +167,7 @@ class NewGameWizard(QtWidgets.QWizard):
             uh_60l=self.field("uh_60l"),
             jas39_gripen=self.field("jas39_gripen"),
             su57_felon=self.field("su57_felon"),
+            tornado=self.field("tornado"),
             frenchpack=self.field("frenchpack"),
             high_digit_sams=self.field("high_digit_sams"),
         )
@@ -675,6 +676,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("jas39_gripen", jas39_gripen)
         su57_felon = QtWidgets.QCheckBox()
         self.registerField("su57_felon", su57_felon)
+        tornado = QtWidgets.QCheckBox()
+        self.registerField("tornado", tornado)
         frenchpack = QtWidgets.QCheckBox()
         self.registerField("frenchpack", frenchpack)
         high_digit_sams = QtWidgets.QCheckBox()
@@ -740,6 +743,11 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modLayout_row += 1
         # Section break here for readability
         modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
+        modLayout_row += 1
+        modLayout.addWidget(
+            QtWidgets.QLabel("Tornado (v2.5.6.10 FC3 SFM)"), modLayout_row, 0
+        )
+        modLayout.addWidget(tornado, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("Frenchpack"), modLayout_row, 0)
         modLayout.addWidget(frenchpack, modLayout_row, 1)

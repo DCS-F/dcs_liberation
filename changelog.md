@@ -19,6 +19,7 @@ Saves from 5.x are not compatible with 6.0.
 * **[Flight Planning]**  Added a new helo mission type: AirAssault which can be used to load and transport infantry troops from a pickup zone or a carrier to an enemy CP to capture it.
 * **[Flight Planning]**  Improved the Airlift mission type so that it now can be enforced within the unit transfer dialog and implemented CTLD support. This allows user to spawn sling loadable crates at the pickup location and fly transport flights.
 * **[Modding]** Updated UH-60L mod version support to 1.3.1
+* **[Modding]** Add flyable Panavia Tornado mod support
 * **[Modding]** Updated the High Digit SAMs implementation and added the HQ-2 as well as the upgraded SA-2 and SA-3 Launchers from the mod. Threat range circles will now also be displayed correctly.
 * **[Modding]** Add Super Étendard mod support
 * **[UI]** Added options to the loadout editor for setting properties such as HMD choice.

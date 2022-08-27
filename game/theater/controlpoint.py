@@ -130,14 +130,14 @@ class ParkingType:
             self.include_rotary_wing = True
             self.include_fixed_wing = True
             self.include_fixed_wing_stol = True
-        elif aircraft.flyable:
-            self.include_rotary_wing = False
-            self.include_fixed_wing = True
-            self.include_fixed_wing_stol = True
+        # elif aircraft.flyable:
+        #     self.include_rotary_wing = False
+        #     self.include_fixed_wing = True
+        #     self.include_fixed_wing_stol = True
         else:
             self.include_rotary_wing = False
             self.include_fixed_wing = True
-            self.include_fixed_wing_stol = False
+            self.include_fixed_wing_stol = True
         return self
 
     #: Fixed wing aircraft with no STOL or VTOL capability

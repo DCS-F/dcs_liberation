@@ -145,12 +145,14 @@ class Game:
         )
         self.carriers[player_faction.name] = copy.deepcopy(player_faction.carriers)
         self.carriers[enemy_faction.name] = copy.deepcopy(enemy_faction.carriers)
-        self.helicopter_carrier_names: Dict[str, List[str]] = defaultdict(List[str])
-        self.helicopter_carrier_names[player_faction.name] = copy.deepcopy(
-            player_faction.helicopter_carrier_names
+        self.helicopter_carriers: Dict[
+            str, Dict[Type[ShipType], List[str]]
+        ] = defaultdict(Dict[Type[ShipType], List[str]])
+        self.helicopter_carriers[player_faction.name] = copy.deepcopy(
+            player_faction.helicopter_carriers
         )
-        self.helicopter_carrier_names[enemy_faction.name] = copy.deepcopy(
-            enemy_faction.helicopter_carrier_names
+        self.helicopter_carriers[enemy_faction.name] = copy.deepcopy(
+            enemy_faction.helicopter_carriers
         )
 
         self.on_load(game_still_initializing=True)

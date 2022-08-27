@@ -77,8 +77,7 @@
 	"WW2LST"
   ],
   "naval_units": [
-    "FFG Oliver Hazard Perry",
-	"Type 071 Amphibious Transport Dock"
+    "FFG Oliver Hazard Perry"
   ],
   "missiles": [],
   "requirements": {
@@ -90,6 +89,9 @@
   "carrier_names": [
     "R98 Clemenceau",
 	"R99 Foch"
+  ],
+  "helicopter_carrier": [
+    "Type_071"
   ],
   "helicopter_carrier_names": [
     "R97 Jeanne d'Arc",

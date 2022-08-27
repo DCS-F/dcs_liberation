@@ -122,7 +122,7 @@ class GameGenerator:
 
     def should_remove_lha(self, player: bool) -> bool:
         faction = self.player if player else self.enemy
-        return self.generator_settings.no_lha or not faction.helicopter_carrier_names
+        return self.generator_settings.no_lha or not faction.helicopter_carriers
 
     def prepare_theater(self) -> None:
         to_remove: List[ControlPoint] = []
@@ -270,11 +270,11 @@ class LhaGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         if not super().generate():
             return False
 
-        lha_names = self.game.helicopter_carrier_names[self.faction.name]
-        if not lha_names:
+        lhas = self.game.helicopter_carriers[self.faction.name]
+        if not lhas:
             logging.info(
                 f"Skipping generation of {self.control_point.name} because "
-                f"{self.faction_name} has no LHAs"
+                f"{self.faction_name} has no helicopter carriers"
             )
             return False
 
@@ -292,9 +292,33 @@ class LhaGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
                 self.control_point.heading,
             ),
         )
-        self.update_carrier_name(random.choice(lha_names))
+
+        # If the campaign designer has specified a preferred name, use that
+        # Note that the preferred name needs to exist in the faction, so we
+        # don't end up with Type 71 ships called the Tarawa
+        for unit in unit_group.units:
+            if unit.unit_class == UnitClass.HELICOPTER_CARRIER:
+                helicopter_carrier_type = ship_type_from_name(unit.dcs_unit_type.id)
+        if helicopter_carrier_type is None:
+            raise RuntimeError(
+                f"Unable to map {unit_group.units[0].name} to a unit type."
+            )
+
+        if (
+            self.control_point.preferred_name
+            and self.control_point.preferred_name in lhas[helicopter_carrier_type]
+        ):
+            self.control_point.name = self.control_point.preferred_name
+        else:
+            # Otherwise pick randomly from the names specified for that particular carrier type
+            helicopter_carrier_names = lhas[helicopter_carrier_type]
+            self.control_point.name = random.choice(helicopter_carrier_names)
         # Prevents duplicate carrier or LHA names in campaigns with more that one of either.
-        lha_names.remove(self.control_point.name)
+        for helicopter_carrier_type_key in lhas:
+            for carrier_name in lhas[helicopter_carrier_type_key]:
+                if carrier_name == self.control_point.name:
+                    lhas[helicopter_carrier_type_key].remove(self.control_point.name)
+
         return True
 
 

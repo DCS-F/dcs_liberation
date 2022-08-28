@@ -298,6 +298,7 @@ def create_game(
         ),
         ModSettings(
             a4_skyhawk=False,
+            f4b_phantom=False,
             f22_raptor=False,
             f104_starfighter=False,
             mirage_3=False,

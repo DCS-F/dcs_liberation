@@ -22,6 +22,7 @@ Saves from 5.x are not compatible with 6.0.
 * **[Modding]** Add flyable Panavia Tornado mod support
 * **[Modding]** Updated the High Digit SAMs implementation and added the HQ-2 as well as the upgraded SA-2 and SA-3 Launchers from the mod. Threat range circles will now also be displayed correctly.
 * **[Modding]** Add Super Étendard mod support
+* **[Modding]** Add flyable Hawk T1A mod support
 * **[Modding]** Add T-45 Goshawk mod support
 * **[Modding]** Add F-4B Phantom II mod support
 * **[UI]** Added options to the loadout editor for setting properties such as HMD choice.

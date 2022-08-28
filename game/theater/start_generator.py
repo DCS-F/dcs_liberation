@@ -64,6 +64,7 @@ class ModSettings:
     f22_raptor: bool = False
     f104_starfighter: bool = False
     t45_goshawk: bool = False
+    hawk_t1a: bool = False
     mirage_3: bool = False
     super_etendard: bool = False
     etendard_iv_superetendard: bool = False

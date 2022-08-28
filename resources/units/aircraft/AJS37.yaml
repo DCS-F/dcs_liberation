@@ -18,7 +18,14 @@ origin: Sweden
 price: 15
 role: Attack/Reconnaissance
 variants:
+  Mirage 5: {}
+  IAI Nesher: {}
+  IAI Kfir: {}
   AJS-37 Viggen: {}
+  F-4D Phantom II:
+    introduced: 1965
+    manufacturer: McDonnell Douglas
+    origin: USA
 radios:
   # The AJS37 has somewhat unique radio configuration. Two backup radio
   # (FR 24) can only operate simultaneously with the main radio in guard

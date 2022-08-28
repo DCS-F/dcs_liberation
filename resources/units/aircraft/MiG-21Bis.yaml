@@ -18,6 +18,10 @@ variants:
     introduced: 1992
     manufacturer: Chengdu
     origin: China
+  English Electric Lightning:
+    introduced: 1960
+    manufacturer: English Electric
+    origin: UK
   MiG-21bis Fishbed-N: {}
 radios:
   intra_flight: RSIU-5V

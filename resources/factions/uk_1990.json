@@ -167,11 +167,14 @@
     ]
   },
   "liveries_overrides_ground_forces": {
-    "Infantry M249": [
+    "Soldier M249": [
       "DPM"
     ],
-    "Infantry M4": [
+    "Soldier M4": [
       "DPM"
+    ],
+    "Chieftain_mk3": [
+      "Bronze Green Camo"
     ]
   }
 }

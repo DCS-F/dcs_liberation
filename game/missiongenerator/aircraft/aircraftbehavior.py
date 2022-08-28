@@ -1,6 +1,7 @@
 import logging
 from typing import Any, Optional
 
+from dcs.planes import F_117A
 from dcs.task import (
     AWACS,
     AWACSTaskAction,
@@ -25,6 +26,7 @@ from dcs.unitgroup import FlyingGroup
 from game.ato import Flight, FlightType
 from game.ato.flightplans.aewc import AewcFlightPlan
 from game.ato.flightplans.theaterrefueling import TheaterRefuelingFlightPlan
+from pydcs_extensions.t45.t45 import T_45
 
 
 class AircraftBehavior:
@@ -151,16 +153,22 @@ class AircraftBehavior:
         #
         # Note that the only effect that the DCS task type has is in determining which
         # waypoint actions the group may perform.
-        group.task = CAS.name
-        self.configure_behavior(
-            flight,
-            group,
-            react_on_threat=OptReactOnThreat.Values.EvadeFire,
-            roe=OptROE.Values.OpenFire,
-            rtb_winchester=OptRTBOnOutOfAmmo.Values.All,
-            restrict_jettison=True,
-            mission_uses_gun=False,
-        )
+
+        # Convert F-117 and T-45 CAS waypoints into Strike waypoints,
+        # because these aircraft aren't capable of the CAS task in DCS
+        if flight.unit_type.dcs_unit_type in [F_117A, T_45]:
+            self.configure_strike(group, flight)
+        else:
+            group.task = CAS.name
+            self.configure_behavior(
+                flight,
+                group,
+                react_on_threat=OptReactOnThreat.Values.EvadeFire,
+                roe=OptROE.Values.OpenFire,
+                rtb_winchester=OptRTBOnOutOfAmmo.Values.All,
+                restrict_jettison=True,
+                mission_uses_gun=False,
+            )
 
     def configure_sead(self, group: FlyingGroup[Any], flight: Flight) -> None:
         # CAS is able to perform all the same tasks as SEAD using a superset of the

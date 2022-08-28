@@ -161,6 +161,7 @@ class NewGameWizard(QtWidgets.QWizard):
             f4b_phantom=self.field("f4b_phantom"),
             f22_raptor=self.field("f22_raptor"),
             f104_starfighter=self.field("f104_starfighter"),
+            t45_goshawk=self.field("t45_goshawk"),
             mirage_3=self.field("mirage_3"),
             super_etendard=self.field("super_etendard"),
             etendard_iv_superetendard=self.field("etendard_iv_superetendard"),
@@ -669,6 +670,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("f22_raptor", f22_raptor)
         f104_starfighter = QtWidgets.QCheckBox()
         self.registerField("f104_starfighter", f104_starfighter)
+        t45_goshawk = QtWidgets.QCheckBox()
+        self.registerField("t45_goshawk", t45_goshawk)
         mirage_3 = QtWidgets.QCheckBox()
         self.registerField("mirage_3", mirage_3)
         super_etendard = QtWidgets.QCheckBox()
@@ -710,6 +713,11 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("F-104 Starfighter"), modLayout_row, 0)
         modLayout.addWidget(f104_starfighter, modLayout_row, 1)
+        modLayout_row += 1
+        modLayout.addWidget(
+            QtWidgets.QLabel("T-45 Goshawk (version 1.01)"), modLayout_row, 0
+        )
+        modLayout.addWidget(t45_goshawk, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel("Mirage III (v2.5.7.01 FC3 SFM)"), modLayout_row, 0

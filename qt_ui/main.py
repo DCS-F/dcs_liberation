@@ -301,6 +301,7 @@ def create_game(
             f4b_phantom=False,
             f22_raptor=False,
             f104_starfighter=False,
+            t45_goshawk=False,
             mirage_3=False,
             super_etendard=False,
             etendard_iv_superetendard=False,

@@ -132,6 +132,7 @@ from pydcs_extensions.mirage3.mirage3 import (
     VSN_MirageIIIS,
 )
 from pydcs_extensions.su57.su57 import Su_57
+from pydcs_extensions.t45.t45 import T_45
 from pydcs_extensions.tornado.tornado import VSN_TornadoGR4, VSN_TornadoIDS
 from pydcs_extensions.superetendard.superetendard import VSN_SEM
 from pydcs_extensions.etendard_iv_superetendard.etendard_iv_superetendard import (
@@ -348,6 +349,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    T_45,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,
@@ -427,6 +429,7 @@ STRIKE_CAPABLE = [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    T_45,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,

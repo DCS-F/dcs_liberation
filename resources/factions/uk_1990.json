@@ -16,13 +16,16 @@
     "SA 342M Gazelle Mistral",
     "SA 342L Gazelle",
     "SA 342M Gazelle",
+    "F-14A Tomcat (Block 135-GR Late)",
     "F-4E Phantom II",
     "F-4B Phantom II",
     "AJS-37 Viggen",
     "Hawk T1A",
     "Hawk Mk.60",
     "Tornado GR4",
-    "Tornado GR4 (SFM)"
+    "Tornado GR4 (SFM)",
+    "Chinook HC.1",
+    "UH-1H Iroquois"
   ],
   "awacs": [
     "E-3A"
@@ -37,14 +40,18 @@
     "FV510 Warrior",
     "M1043 HMMWV (M2 HMG)",
     "M1045 HMMWV (BGM-71 TOW)",
-    "M1097 Heavy HMMWV Avenger"
+    "M1097 Heavy HMMWV Avenger",
+    "LUV Land Rover 109",
+    "Truck Land Rover 101 FC"
   ],
   "artillery_units": [
     "M109A6 Paladin",
     "M270 Multiple Launch Rocket System"
   ],
   "logistics_units": [
-    "Truck M818 6x6"
+    "Truck M818 6x6",
+    "LUV Land Rover 109",
+    "Truck Land Rover 101 FC"
   ],
   "infantry_units": [
     "Infantry M249",
@@ -121,6 +128,9 @@
     "SA 342M Gazelle": [
       "UK Fictional"
     ],
+    "F-14A Tomcat (Block 135-GR Late)": [
+      "Royal Air Force Tomcat No. 43 Sqn (1970s Late)"
+    ],
     "F-4E Phantom II": [
       "RAF 23 Sqn Camo P",
       "RAF 23 Sqn Camo T"
@@ -164,6 +174,14 @@
       "617 Sqncamo",
       "II Sqn Camo",
       "IX Sqn Camo"
+    ],
+    "Chinook HC.1": [
+      "RAF_18Sqn_100year_ZA712"
+    ],
+    "UH-1H Iroquois": [
+      "British Army Air Corps",
+      "RAF Olive Drab",
+      "Royal Navy"
     ]
   },
   "liveries_overrides_ground_forces": {

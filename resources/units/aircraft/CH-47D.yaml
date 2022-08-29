@@ -5,3 +5,4 @@ description: The CH-47D is a transport helicopter.
 price: 6
 variants:
   CH-47D: null
+  Chinook HC.1: null

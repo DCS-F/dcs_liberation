@@ -43,6 +43,7 @@ from dcs.ships import (
     CVN_75,
     LHA_Tarawa,
     Type_071,
+    Hms_invincible,
 )
 from dcs.terrain.terrain import Airport, ParkingSlot
 from dcs.unittype import FlyingType, ShipType
@@ -1349,6 +1350,7 @@ class NavalControlPoint(ControlPoint, ABC):
                     KUZNECOW,
                     CV_1143_5,
                     Type_071,
+                    Hms_invincible,
                 ]:
                     return True
         return False

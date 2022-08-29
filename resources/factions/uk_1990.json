@@ -65,9 +65,11 @@
     "Rapier"
   ],
   "naval_units": [
-    "FFG Oliver Hazard Perry",
-    "DDG Arleigh Burke IIa",
-    "CG Ticonderoga"
+    "FAC La Combattante IIa",
+	"P265 Dumbarton Castle",
+	"F72 Ariadne",
+	"F57 Andromeda",
+	"F12 Achilles"
   ],
   "missiles": [],
   "air_defense_units": [
@@ -78,11 +80,12 @@
   "carriers": {
     "Forrestal": [
       "HMS Eagle (R05)",
-      "HMS Ark Royal (R09)"
+      "HMS Ark Royal (R09)",
+	  "HMS Audacious (R05)"
     ]
   },
   "helicopter_carriers": {
-    "hms_invincible": [
+    "Hms_invincible": [
       "HMS Invincible (R05)",
       "HMS Illustrious (R06)",
       "HMS Hermes (R12)",
@@ -193,6 +196,14 @@
     ],
     "Chieftain_mk3": [
       "Bronze Green Camo"
+    ],
+	"Forrestal": [
+      "HMS Queen Elizabeth R01",
+	  "HMS Duke of Edinburgh R02",
+	  "HMS Prince of Wales R03"
+    ],
+	"La_Combattante_II": [
+      "Royal Navy"
     ]
   }
 }

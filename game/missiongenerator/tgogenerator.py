@@ -42,7 +42,10 @@ from dcs.unitgroup import MovingGroup, ShipGroup, StaticGroup, VehicleGroup
 from dcs.unittype import ShipType, VehicleType
 from dcs.vehicles import vehicle_map
 
-from game.missiongenerator.groundforcepainter import GroundForcePainter
+from game.missiongenerator.groundforcepainter import (
+    GroundForcePainter,
+    NavalForcePainter,
+)
 from game.missiongenerator.missiondata import CarrierInfo, MissionData
 from game.point_with_heading import PointWithHeading
 
@@ -162,6 +165,7 @@ class GroundObjectGenerator:
         ship_group: Optional[ShipGroup] = None
         for unit in units:
             assert issubclass(unit.type, ShipType)
+            faction = self.game.coalition_for_country(self.country.name).faction
             if ship_group is None:
                 ship_group = self.m.ship_group(
                     self.country,
@@ -174,12 +178,14 @@ class GroundObjectGenerator:
                     ship_group.set_frequency(frequency.hertz)
                 ship_group.units[0].name = unit.unit_name
                 self.set_alarm_state(ship_group)
+                NavalForcePainter(faction, ship_group.units[0]).apply_livery()
             else:
                 ship_unit = self.m.ship(unit.unit_name, unit.type)
                 if frequency:
                     ship_unit.set_frequency(frequency.hertz)
                 ship_unit.position = unit.position
                 ship_unit.heading = unit.position.heading.degrees
+                NavalForcePainter(faction, ship_unit).apply_livery()
                 ship_group.add_unit(ship_unit)
             self._register_theater_unit(unit, ship_group.units[-1])
         if ship_group is None:

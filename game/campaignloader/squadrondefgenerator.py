@@ -62,6 +62,9 @@ class SquadronDefGenerator:
         if country == "France":
             faker = Faker("fr_FR")
             return f"{faker.city()} {faker.department_name()}"
+        elif country == "UK":
+            faker = Faker("en_UK")
+            return f"{faker.administrative_unit()}"
         animal = random.choice(ANIMALS)
         adjective = random.choice(
             (

@@ -1,6 +1,8 @@
 class: Helicopter
 cabin_size: 24 # It should have 33 but we do not want so much for CTLD to be possible
 can_carry_crates: true
+carrier_capable: true
+lha_capable: true
 description: The CH-47D is a transport helicopter.
 price: 6
 variants:

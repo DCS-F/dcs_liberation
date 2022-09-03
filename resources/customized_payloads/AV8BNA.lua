@@ -158,11 +158,11 @@ local unitPayloads = {
 			["name"] = "Liberation Anti-ship",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{AGM_122_SIDEARM}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 8,
 				},
 				[2] = {
-					["CLSID"] = "{AGM_122_SIDEARM}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 1,
 				},
 				[3] = {

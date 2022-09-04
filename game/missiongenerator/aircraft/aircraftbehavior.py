@@ -1,7 +1,7 @@
 import logging
 from typing import Any, Optional
 
-from dcs.planes import F_117A
+from dcs.planes import F_117A, Tornado_GR4, Tornado_IDS
 from dcs.task import (
     AWACS,
     AWACSTaskAction,
@@ -20,6 +20,7 @@ from dcs.task import (
     Refueling,
     RunwayAttack,
     Transport,
+    SEAD,
 )
 from dcs.unitgroup import FlyingGroup
 
@@ -27,6 +28,7 @@ from game.ato import Flight, FlightType
 from game.ato.flightplans.aewc import AewcFlightPlan
 from game.ato.flightplans.theaterrefueling import TheaterRefuelingFlightPlan
 from pydcs_extensions.t45.t45 import T_45
+from pydcs_extensions.tornado.tornado import VSN_TornadoGR4, VSN_TornadoIDS
 
 
 class AircraftBehavior:
@@ -174,7 +176,15 @@ class AircraftBehavior:
         # CAS is able to perform all the same tasks as SEAD using a superset of the
         # available aircraft, and F-14s are not able to be SEAD despite having TALDs.
         # https://forums.eagle.ru/topic/272112-cannot-assign-f-14-to-sead/
-        group.task = CAS.name
+        if flight.unit_type.dcs_unit_type in [
+            Tornado_GR4,
+            Tornado_IDS,
+            VSN_TornadoGR4,
+            VSN_TornadoIDS,
+        ]:
+            group.task = SEAD.name
+        else:
+            group.task = CAS.name
         self.configure_behavior(
             flight,
             group,
@@ -282,7 +292,15 @@ class AircraftBehavior:
         # CAS is able to perform all the same tasks as SEAD using a superset of the
         # available aircraft, and F-14s are not able to be SEAD despite having TALDs.
         # https://forums.eagle.ru/topic/272112-cannot-assign-f-14-to-sead/
-        group.task = CAS.name
+        if flight.unit_type.dcs_unit_type in [
+            Tornado_GR4,
+            Tornado_IDS,
+            VSN_TornadoGR4,
+            VSN_TornadoIDS,
+        ]:
+            group.task = SEAD.name
+        else:
+            group.task = CAS.name
         self.configure_behavior(
             flight,
             group,

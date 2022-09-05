@@ -28,7 +28,7 @@ spencershepard (GRIMM):
 
 splash_damage_options = {
   ["static_damage_boost"] = 20, --apply extra damage to Unit.Category.STRUCTUREs with wave explosions
-  ["oca_aircraft_damage_boost"] = 1000, --apply extra damage to Unit.Category.AIRPLANEs and Unit.Category.HELICOPTERs with wave explosions
+  ["oca_aircraft_damage_boost"] = 3000, --apply extra damage to Unit.Category.AIRPLANEs and Unit.Category.HELICOPTERs with wave explosions
   ["wave_explosions"] = true, --secondary explosions on top of game objects, radiating outward from the impact point and scaled based on size of object and distance from weapon impact point
   ["larger_explosions"] = true, --secondary explosions on top of weapon impact points, dictated by the values in the explTable
   ["damage_model"] = true, --allow blast wave to affect ground unit movement and weapons
@@ -49,6 +49,7 @@ firebomb_splash_factor = 8
 shell_max_flight_time = 20
 cluster_max_flight_time = 20
 cluster_munition_distribution_radius = 75
+bda_message_time = 20
 
 ----[[ ##### End of SCRIPT CONFIGURATION ##### ]]----
 
@@ -373,6 +374,9 @@ end
 WpnHandler = {}
 tracked_weapons = {}
 tracked_shooters = {}
+bda_damage = {}
+bda_wpn_disable = {}
+bda_disable = {}
 
 function track_wpns()
 --  env.info("Weapon Track Start")
@@ -557,6 +561,20 @@ function modelUnitDamage(units)
     --debugMsg("unit table: "..mist.utils.tableShow(unit))
     if unit:isExist() then  --if units are not already dead
       local health = (unit:getLife() / unit:getDesc().life) * 100
+
+      if bda_damage[unit:getName()] ~= nil then
+        local bda_time = bda_damage[unit:getName()].time
+        local delay_time = bda_message_time
+          if timer.getTime() > (bda_time + delay_time) then
+            -- Message delay exceeded, remove from bda array if exists
+            bda_damage[unit:getName()] = nil -- remove from bda array
+        end
+      end
+      if bda_damage[unit:getName()] == nil then
+        bda_damage[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
+        gameMsg(unit:getTypeName().." damaged: "..health.."%")
+      end
+
       --debugMsg(unit:getTypeName().." health %"..health)
       if unit:hasAttribute("Infantry") == true and health > 0 then  --if infantry
         if health <= splash_damage_options.infantry_cant_fire_health then
@@ -568,13 +586,37 @@ function modelUnitDamage(units)
         if health <= splash_damage_options.unit_cant_fire_health then
           ---disable unit's ability to fire---
           unit:getController():setOption(AI.Option.Ground.id.ROE , AI.Option.Ground.val.ROE.WEAPON_HOLD)
-          gameMsg(unit:getTypeName().." weapons disabled")
+          if bda_wpn_disable[unit:getName()] ~= nil then
+            local bda_time = bda_wpn_disable[unit:getName()].time
+            local delay_time = bda_message_time
+            if timer.getTime() > (bda_time + delay_time) then
+              -- Message delay exceeded, remove from bda array if exists
+              bda_wpn_disable[unit:getName()] = nil -- remove from bda array
+            end
+          end
+          if bda_wpn_disable[unit:getName()] == nil then
+            bda_wpn_disable[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
+            gameMsg("Critical hit: "..unit:getTypeName().." weapons disabled")
+          end
         end
         if health <= splash_damage_options.unit_disabled_health and health > 0 then
           ---disable unit's ability to move---
           unit:getController():setTask({id = 'Hold', params = { }} )
           unit:getController():setOnOff(false)
-          gameMsg(unit:getTypeName().." disabled")
+
+          if bda_disable[unit:getName()] ~= nil then
+            local bda_time = bda_disable[unit:getName()].time
+            local delay_time = bda_message_time
+            if timer.getTime() > (bda_time + delay_time) then
+              -- Message delay exceeded, remove from bda array if exists
+              bda_disable[unit:getName()] = nil -- remove from bda array
+            end
+          end
+          if bda_disable[unit:getName()] == nil then
+            bda_disable[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
+            gameMsg("Critical hit: "..unit:getTypeName().." disabled")
+          end
+
         end
       end
 
@@ -641,7 +683,6 @@ function blastWave(_point, _radius, weapon, power)
             if explosion_size > power then explosion_size = power end --secondary explosions should not be larger than the explosion that created it
             local id = timer.scheduleFunction(explodeObject, {obj_location, distance, explosion_size}, timer.getTime() + timing)  --create the explosion on the object location
           end
-
 
         else --debugMsg(obj:getTypeName().." object does not have box property")
       end

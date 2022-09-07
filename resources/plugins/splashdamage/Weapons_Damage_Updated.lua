@@ -375,6 +375,7 @@ WpnHandler = {}
 tracked_weapons = {}
 tracked_shooters = {}
 bda_damage = {}
+bda_destroyed = {}
 bda_wpn_disable = {}
 bda_disable = {}
 
@@ -413,7 +414,7 @@ function track_wpns()
             --trigger.action.smoke(impactPoint, 0)
         end
         --if wpnData.cat == Weapon.Category.ROCKET then
-          blastWave(impactPoint, splash_damage_options.blast_search_radius, wpnData.ordnance, getWeaponExplosive(wpnData.name))
+          blastWave(impactPoint, splash_damage_options.blast_search_radius, wpnData.ordnance, getWeaponExplosive(wpnData.name), wpnData.player)
           if wpnData.name == "MK77mod1-WPN" then
               trigger.action.effectSmokeBig(impactPoint, 2, 0.5, wpnData.name)
           elseif wpnData.name == "MK77mod0-WPN" then
@@ -438,10 +439,10 @@ function onWpnEvent(event)
         if (weapon_desc.category ~= 0) and event.initiator then
           if (weapon_desc.category == 1) then
             if (weapon_desc.MissileCategory ~= 1 and weapon_desc.MissileCategory ~= 2) then
-              tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory() }
+              tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory(), player=event.initiator:getPlayerName() }
             end
           else
-            tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory() }
+            tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory(), player=event.initiator:getPlayerName() }
           end
         end
       else
@@ -459,7 +460,7 @@ function onWpnEvent(event)
       local weapon = event.weapon_name
       if explTable[weapon] then
         env.info(event.initiator:getName().." started shooting with "..weapon)
-        tracked_shooters[event.initiator:getName()] = { wpn = event.weapon_name, init = event.initiator:getName(), time = event.time }
+        tracked_shooters[event.initiator:getName()] = { wpn = event.weapon_name, init = event.initiator:getName(), time = event.time, player=event.initiator:getPlayerName() }
       else
         env.info(weapon.." missing from Splash Damage script")
       end
@@ -472,7 +473,7 @@ function onWpnEvent(event)
       local weapon = event.weapon_name
       if explTable[weapon] then
         env.info(event.initiator:getName().." stopped shooting with "..weapon)
-        tracked_shooters[event.initiator:getName()] = { wpn = event.weapon_name, init = event.initiator:getName(), time = event.time }
+        tracked_shooters[event.initiator:getName()] = { wpn = event.weapon_name, init = event.initiator:getName(), time = event.time, player=event.initiator:getPlayerName() }
       else
         env.info(weapon.." missing from Splash Damage script")
       end
@@ -481,6 +482,7 @@ function onWpnEvent(event)
     if event.weapon and ignoredWeaps[event.weapon] then
       -- Do nothing
     elseif event.target and event.initiator and tracked_shooters[event.initiator:getName()] ~= nil then
+      local player = tracked_shooters[event.initiator:getName()].player
       local weapon = tracked_shooters[event.initiator:getName()].wpn
       local shoot_time = tracked_shooters[event.initiator:getName()].time
       local flight_time = shell_max_flight_time
@@ -510,10 +512,10 @@ function onWpnEvent(event)
                   z = impactPoint.z + cluster_radius * math.sin(cluster_angle)
                 }
                 --env.info('Generating cluster bomb explosion at: X: ' .. blastPoint.x .. ' Y: ' .. blastPoint.y .. ' Z: ' .. blastPoint.z)
-                blastWave(blastPoint, splash_damage_options.blast_search_radius, weapon, getWeaponExplosive(weapon))
+                blastWave(blastPoint, splash_damage_options.blast_search_radius, weapon, getWeaponExplosive(weapon), player)
               end
             else
-              blastWave(impactPoint, splash_damage_options.blast_search_radius, weapon, getWeaponExplosive(weapon))
+              blastWave(impactPoint, splash_damage_options.blast_search_radius, weapon, getWeaponExplosive(weapon), player)
             end
           end
         else
@@ -570,9 +572,9 @@ function modelUnitDamage(units)
             bda_damage[unit:getName()] = nil -- remove from bda array
         end
       end
-      if bda_damage[unit:getName()] == nil then
+      if bda_damage[unit:getName()] == nil and health < 100 then
         bda_damage[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
-        gameMsg(unit:getTypeName().." damaged: "..health.."%")
+        gameMsg("BDA: "..unit:getTypeName().." damaged: "..100-health.."%")
       end
 
       --debugMsg(unit:getTypeName().." health %"..health)
@@ -621,13 +623,29 @@ function modelUnitDamage(units)
       end
 
     else
+      if unit:getName() ~= nil then
+        if bda_destroyed[unit:getName()] ~= nil then
+          local bda_time = bda_destroyed[unit:getName()].time
+          local delay_time = bda_message_time
+          if timer.getTime() > (bda_time + delay_time) then
+            -- Message delay exceeded, remove from bda array if exists
+            bda_destroyed[unit:getName()] = nil -- remove from bda array
+          end
+        end
+        if bda_destroyed[unit:getName()] == nil then
+          bda_destroyed[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
+          gameMsg("BDA: "..unit:getTypeName().." damaged")
+        end
+      else
+        gameMsg("BDA: target destroyed")
+      end
       --debugMsg("unit no longer exists")
     end
   end
 end
 
 
-function blastWave(_point, _radius, weapon, power)
+function blastWave(_point, _radius, weapon, power, player)
   local foundUnits = {}
   local volS = {
    id = world.VolumeType.SPHERE,
@@ -651,6 +669,10 @@ function blastWave(_point, _radius, weapon, power)
       local obj_location = obj:getPoint()
       local distance = getDistance(_point, obj_location)
       local timing = distance/500
+      local scaled_power_factor = 0
+      local intensity = 0
+      local surface_area_default = 20
+      local damage_for_surface = 0
       if obj:isExist() then
 
         if tableHasKey(obj:getDesc(), "box") then
@@ -664,34 +686,48 @@ function blastWave(_point, _radius, weapon, power)
             _depth = length
           end
           local surface_distance = distance - _depth/2
-          local scaled_power_factor = 0.040 * power + 1 --this could be reduced into the calc on the next line
-          local intensity = (power * scaled_power_factor) / (4 * 3.14 * surface_distance * surface_distance )
+          scaled_power_factor = 0.040 * power + 1 --this could be reduced into the calc on the next line
+          intensity = (power * scaled_power_factor) / (4 * 3.14 * surface_distance * surface_distance )
           local surface_area = _length * height --Ideally we should roughly calculate the surface area facing the blast point, but we'll just find the largest side of the object for now
-          local damage_for_surface = intensity * surface_area
+          damage_for_surface = intensity * surface_area
           env.info(weapon.." "..obj:getTypeName().." sa:"..surface_area.." distance:"..surface_distance.." dfs:"..damage_for_surface)
-          --debugMsg(obj:getTypeName().." sa:"..surface_area.." distance:"..surface_distance.." dfs:"..damage_for_surface)
-          if damage_for_surface > splash_damage_options.cascade_damage_threshold then
-            local explosion_size = damage_for_surface
-            if obj:getDesc().category == Unit.Category.STRUCTURE then
-              explosion_size = intensity * splash_damage_options.static_damage_boost --apply an extra damage boost for static objects. should we factor in surface_area?
-              --debugMsg("static obj :"..obj:getTypeName())
-            end
-            if (obj:getDesc().category == Unit.Category.AIRPLANE or obj:getDesc().category == Unit.Category.HELICOPTER) and obj:inAir() == false then
-              explosion_size = intensity * splash_damage_options.oca_aircraft_damage_boost --apply an extra damage boost for aircraft to increase kill probability on OCA/Aircraft missions.
-              --debugMsg("static obj :"..obj:getTypeName())
-            end
-            if explosion_size > power then explosion_size = power end --secondary explosions should not be larger than the explosion that created it
-            local id = timer.scheduleFunction(explodeObject, {obj_location, distance, explosion_size}, timer.getTime() + timing)  --create the explosion on the object location
-          end
-
         else --debugMsg(obj:getTypeName().." object does not have box property")
+          scaled_power_factor = 0.040 * power + 1 --this could be reduced into the calc on the next line
+          intensity = (power * scaled_power_factor) / (4 * 3.14 * distance * distance )
+          damage_for_surface = intensity * surface_area_default
+          env.info(weapon.." "..obj:getTypeName().." distance:"..distance.." dfs:"..damage_for_surface)
+        end
+
+        --debugMsg(obj:getTypeName().." sa:"..surface_area.." distance:"..surface_distance.." dfs:"..damage_for_surface)
+        if damage_for_surface > splash_damage_options.cascade_damage_threshold then
+          local explosion_size = damage_for_surface
+          if obj:getDesc().category == Unit.Category.STRUCTURE then
+            explosion_size = intensity * splash_damage_options.static_damage_boost --apply an extra damage boost for static objects. should we factor in surface_area?
+            --debugMsg("static obj :"..obj:getTypeName())
+          end
+          if (obj:getDesc().category == Unit.Category.AIRPLANE or obj:getDesc().category == Unit.Category.HELICOPTER) and obj:inAir() == false then
+            explosion_size = intensity * splash_damage_options.oca_aircraft_damage_boost --apply an extra damage boost for aircraft to increase kill probability on OCA/Aircraft missions.
+            --debugMsg("static obj :"..obj:getTypeName())
+          end
+          if explosion_size > power then explosion_size = power end --secondary explosions should not be larger than the explosion that created it
+          local id = timer.scheduleFunction(explodeObject, {obj_location, distance, explosion_size}, timer.getTime() + timing)  --create the explosion on the object location
+
+          if bda_damage[obj:getName()] ~= nil then
+            local bda_time = bda_damage[obj:getName()].time
+            local delay_time = bda_message_time
+            if timer.getTime() > (bda_time + delay_time) then
+                -- Message delay exceeded, remove from bda array if exists
+                bda_damage[obj:getName()] = nil -- remove from bda array
+            end
+          end
+          if bda_damage[obj:getName()] == nil then
+            bda_damage[obj:getName()] = { unit = obj:getName(), time = timer.getTime() }
+            gameMsg("BDA: "..obj:getTypeName().." damaged: "..damage_for_surface)
+          end
+        end
       end
-
     end
-
-   end
-
-  return true
+    return true
   end
 
   world.searchObjects(Object.Category.UNIT, volS, ifFound)

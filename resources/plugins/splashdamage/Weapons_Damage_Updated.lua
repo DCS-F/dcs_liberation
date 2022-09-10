@@ -408,13 +408,14 @@ function track_wpns()
         end
         --env.info("Weapon is gone") -- Got to here --
         --trigger.action.outText("Weapon Type was: ".. wpnData.name, 20)
-        if splash_damage_options.larger_explosions == true then
+
+        --if wpnData.cat == Weapon.Category.ROCKET then
+          blastWave(impactPoint, splash_damage_options.blast_search_radius, wpnData.ordnance, getWeaponExplosive(wpnData.name), wpnData.player)
+          if splash_damage_options.larger_explosions == true then
             --env.info("triggered explosion size: "..getWeaponExplosive(wpnData.name))
             trigger.action.explosion(impactPoint, getWeaponExplosive(wpnData.name))
             --trigger.action.smoke(impactPoint, 0)
-        end
-        --if wpnData.cat == Weapon.Category.ROCKET then
-          blastWave(impactPoint, splash_damage_options.blast_search_radius, wpnData.ordnance, getWeaponExplosive(wpnData.name), wpnData.player)
+          end
           if wpnData.name == "MK77mod1-WPN" then
               trigger.action.effectSmokeBig(impactPoint, 2, 0.5, wpnData.name)
           elseif wpnData.name == "MK77mod0-WPN" then
@@ -634,7 +635,7 @@ function modelUnitDamage(units)
         end
         if bda_destroyed[unit:getName()] == nil then
           bda_destroyed[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
-          gameMsg("BDA: "..unit:getTypeName().." damaged")
+          gameMsg("BDA: "..unit:getTypeName().." critically damaged")
         end
       else
         gameMsg("BDA: target destroyed")

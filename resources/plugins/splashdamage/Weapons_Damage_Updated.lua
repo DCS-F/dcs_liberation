@@ -493,8 +493,8 @@ function onWpnEvent(event)
     end
   elseif event.id == world.event.S_EVENT_HIT then
     if event.weapon and event.target then
-          local weapon = event.weapon
-          if event.target:getDesc().category == Unit.Category.SHIP and event.target:hasSensors(Unit.SensorType.RADAR) and antiRadiationMissile[weapon] then
+          local weapon = event.weapon:getTypeName()
+          if event.target:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
             event.target:enableEmission(false)
             env.info("BDA: "..event.target:getTypeName().." radar destroyed")
             gameMsg("BDA: "..event.target:getTypeName().." radar destroyed")
@@ -730,7 +730,9 @@ function blastWave(_point, _radius, weapon, power, player)
             explosion_size = intensity * splash_damage_options.oca_aircraft_damage_boost --apply an extra damage boost for aircraft to increase kill probability on OCA/Aircraft missions.
             --debugMsg("static obj :"..obj:getTypeName())
           end
-          if obj:getDesc().category == Unit.Category.SHIP and obj:hasSensors(Unit.SensorType.RADAR) and antiRadiationMissile[weapon] then
+          -- According to toutenglisse on DCS World forums (2022-06-11), ships do not have sensors attributes and therefore obj:hasSensors(Unit.SensorType.RADAR) cannot be used
+          -- "I don't know why, but no Ship in DCS has ["sensors"] in its attributes (while obviously they have and can use them in game...). No way to use Ship with getDetectedTargets function (except for visual detection)."
+          if obj:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
             obj:enableEmission(false)
             env.info("BDA: "..event.target:getTypeName().." radar destroyed")
             gameMsg("BDA: "..obj:getTypeName().." radar destroyed")

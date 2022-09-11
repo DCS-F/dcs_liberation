@@ -92,16 +92,16 @@ explTable = {
   ["GBU_38"]  = 118,                            --
   ["AGM_62"]  = 400,
   ["GBU_24"]  = 582,                            --
-  ["X_23"]  = 111,
-  ["X_23L"] = 111,                              --
-  ["X_28"]  = 160,
-  ["X_25ML"]  = 89,                             --
-  ["X_25MP"]  = 89,
-  ["X_25MR"]  = 140,                            --
-  ["X_58"]  = 140,
-  ["X_29L"] = 320,                              --
-  ["X_29T"] = 320,
-  ["X_29TE"]  = 320,                            --
+  ["X_23"]  = 111,                              -- Kh-23 Grom anti-radar (AS-7 'Kerry')
+  ["X_23L"] = 111,                              -- Kh-23L Grom laser (AS-7 'Kerry')
+  ["X_28"]  = 160,                              -- Kh-28 anti-radar (AS-9 'Kyle')
+  ["X_25ML"]  = 89,                             -- Kh-25ML laser (AS-10 'Karen')
+  ["X_25MP"]  = 89,                             -- Kh-25MP anti-radar (AS-12 'Kegler')
+  ["X_25MR"]  = 140,                            -- Kh-25MR TV (AS-12 'Kegler')
+  ["X_58"]  = 140,                              -- Kh-58 anti-radar (AS-11 'Kilter')
+  ["X_29L"] = 320,                              -- Kh-29L laser (AS-14 'Kedge')
+  ["X_29T"] = 320,                              -- Kh-29T TV (AS-14 'Kedge')
+  ["X_29TE"]  = 320,                            -- Kh_29TE export (AS-14 'Kedge')
   ["X_31P"]  = 87,                              -- Kh-31P (AS-17 Krypton)
   ["X_65"]  = 410,                              -- Kh-65 (AS-15B Kent)
   ["BK90_MJ1"] = 605,
@@ -178,9 +178,10 @@ explTable = {
   ["TOW"] = 15,
   ["URAGAN_9M27F"] = 100,                        -- BM-27 Uragan / 9M27F (220mm HE)
   ["SMERCH_9M55F"] = 243,                        -- BM-30 Smerch / 9M55F (300mm HE)
-  ["250-3"] = 100,                               --("250 lb GP")
-  ["YJ-83K"] = 165,                              --Air-launched YJ-83 anti-ship missile
+  ["ALARM"] = 66,                                -- ALARM (Air-Launched Anti-Radiation Missile) - 146lbs (66kg) direct fragmentation with proximity/contact fuse
   ["Sea_Eagle"] = 230,
+  ["YJ-83K"] = 165,                              -- Air-launched YJ-83 anti-ship missile
+  ["250-3"] = 100,                               --("250 lb GP")
   ["British_GP_250LB_Bomb_Mk1"] = 100,           --("250 lb GP Mk.I")
   ["British_GP_250LB_Bomb_Mk4"] = 100,           --("250 lb GP Mk.IV")
   ["British_GP_250LB_Bomb_Mk5"] = 100,           --("250 lb GP Mk.V")
@@ -260,6 +261,17 @@ clusterWeaps = {
   ["RBK_500AO"] = 25,
   ["RBK_500U"] = 25,                             -- RBK-500U - 126 x OAB-2.5RT, 500kg CBU HE/Frag
   ["RBK_500U_OAB_2_5RT"] = 25,
+}
+
+antiRadiationMissile = {
+  ["AGM_45A"] = 1,
+  ["AGM_88"] = 1,
+  ["AGM_88C"] = 1,
+  ["AGM_122"] = 1,
+  ["ALARM"] = 1,
+  ["X_25MP"]  = 1,
+  ["X_28"]  = 1,
+  ["X_58"]  = 1,
 }
 
 ignoredWeaps = {
@@ -480,6 +492,14 @@ function onWpnEvent(event)
       end
     end
   elseif event.id == world.event.S_EVENT_HIT then
+    if event.weapon and event.target then
+          local weapon = event.weapon
+          if event.target:getDesc().category == Unit.Category.SHIP and event.target:hasSensors(Unit.SensorType.RADAR) and antiRadiationMissile[weapon] then
+            event.target:enableEmission(false)
+            env.info("BDA: "..event.target:getTypeName().." radar destroyed")
+            gameMsg("BDA: "..event.target:getTypeName().." radar destroyed")
+          end
+    end
     if event.weapon and ignoredWeaps[event.weapon] then
       -- Do nothing
     elseif event.target and event.initiator and tracked_shooters[event.initiator:getName()] ~= nil then
@@ -710,6 +730,12 @@ function blastWave(_point, _radius, weapon, power, player)
             explosion_size = intensity * splash_damage_options.oca_aircraft_damage_boost --apply an extra damage boost for aircraft to increase kill probability on OCA/Aircraft missions.
             --debugMsg("static obj :"..obj:getTypeName())
           end
+          if obj:getDesc().category == Unit.Category.SHIP and obj:hasSensors(Unit.SensorType.RADAR) and antiRadiationMissile[weapon] then
+            obj:enableEmission(false)
+            env.info("BDA: "..event.target:getTypeName().." radar destroyed")
+            gameMsg("BDA: "..obj:getTypeName().." radar destroyed")
+          end
+
           if explosion_size > power then explosion_size = power end --secondary explosions should not be larger than the explosion that created it
           local id = timer.scheduleFunction(explodeObject, {obj_location, distance, explosion_size}, timer.getTime() + timing)  --create the explosion on the object location
 

@@ -28,7 +28,7 @@ spencershepard (GRIMM):
 
 splash_damage_options = {
   ["static_damage_boost"] = 20, --apply extra damage to Unit.Category.STRUCTUREs with wave explosions
-  ["oca_aircraft_damage_boost"] = 3000, --apply extra damage to Unit.Category.AIRPLANEs and Unit.Category.HELICOPTERs with wave explosions
+  ["oca_aircraft_damage_boost"] = 3000, --apply extra damage to parked Unit.Category.AIRPLANEs and Unit.Category.HELICOPTERs with wave explosions
   ["wave_explosions"] = true, --secondary explosions on top of game objects, radiating outward from the impact point and scaled based on size of object and distance from weapon impact point
   ["larger_explosions"] = true, --secondary explosions on top of weapon impact points, dictated by the values in the explTable
   ["damage_model"] = true, --allow blast wave to affect ground unit movement and weapons
@@ -43,7 +43,9 @@ splash_damage_options = {
   ["weapon_missing_message"] = true, --false disables messages alerting you to weapons missing from the explTable
 }
 
-local script_enable = 1
+local bdaMessagesEnable = 1
+local clusterEffectsEnable = 1
+local shipRadarDamageEnable = 1
 refreshRate = 0.1
 firebomb_splash_factor = 8
 shell_max_flight_time = 20
@@ -494,10 +496,14 @@ function onWpnEvent(event)
   elseif event.id == world.event.S_EVENT_HIT then
     if event.weapon and event.target then
           local weapon = event.weapon:getTypeName()
-          if event.target:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
+          if shipRadarDamageEnable and event.target:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
             event.target:enableEmission(false)
             env.info("BDA: "..event.target:getTypeName().." radar destroyed")
-            gameMsg("BDA: "..event.target:getTypeName().." radar destroyed")
+            if event.initiator then
+              if event.initiator:getPlayerName() ~= nil and bdaMessagesEnable then
+                gameMsg("BDA: "..event.target:getTypeName().." radar destroyed")
+              end
+            end
           end
     end
     if event.weapon and ignoredWeaps[event.weapon] then
@@ -522,7 +528,7 @@ function onWpnEvent(event)
           if explTable[weapon] then
             env.info(weapon.." hit "..event.target:getTypeName())
             --env.info('Impact point was at: X: ' .. impactPoint.x .. ' Y: ' .. impactPoint.y .. ' Z: ' .. impactPoint.z)
-            if clusterWeaps[weapon] then
+            if clusterEffectsEnable and clusterWeaps[weapon] then
               for i=1,clusterWeaps[weapon]
               do
                 cluster_radius = math.random(0,cluster_munition_distribution_radius)
@@ -577,7 +583,9 @@ function getWeaponExplosive(name)
 end
 
 
-function modelUnitDamage(units)
+function modelUnitDamage(table)
+  local units = table[1]
+  local player = table[2]
   --debugMsg("units table: "..mist.utils.tableShow(units))
   for i, unit in ipairs(units)
   do
@@ -593,7 +601,7 @@ function modelUnitDamage(units)
             bda_damage[unit:getName()] = nil -- remove from bda array
         end
       end
-      if bda_damage[unit:getName()] == nil and health < 100 then
+      if bdaMessagesEnable and player ~= nil and bda_damage[unit:getName()] == nil and health < 100 then
         bda_damage[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
         gameMsg("BDA: "..unit:getTypeName().." damaged: "..100-health.."%")
       end
@@ -617,7 +625,7 @@ function modelUnitDamage(units)
               bda_wpn_disable[unit:getName()] = nil -- remove from bda array
             end
           end
-          if bda_wpn_disable[unit:getName()] == nil then
+          if bdaMessagesEnable and player ~= nil and bda_wpn_disable[unit:getName()] == nil then
             bda_wpn_disable[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
             gameMsg("Critical hit: "..unit:getTypeName().." weapons disabled")
           end
@@ -635,7 +643,7 @@ function modelUnitDamage(units)
               bda_disable[unit:getName()] = nil -- remove from bda array
             end
           end
-          if bda_disable[unit:getName()] == nil then
+          if bdaMessagesEnable and player ~= nil and bda_disable[unit:getName()] == nil then
             bda_disable[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
             gameMsg("Critical hit: "..unit:getTypeName().." disabled")
           end
@@ -653,12 +661,14 @@ function modelUnitDamage(units)
             bda_destroyed[unit:getName()] = nil -- remove from bda array
           end
         end
-        if bda_destroyed[unit:getName()] == nil then
+        if bdaMessagesEnable and player ~= nil and bda_destroyed[unit:getName()] == nil then
           bda_destroyed[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
           gameMsg("BDA: "..unit:getTypeName().." critically damaged")
         end
       else
-        gameMsg("BDA: target destroyed")
+        if bdaMessagesEnable and player ~= nil then
+          gameMsg("BDA: target destroyed")
+        end
       end
       --debugMsg("unit no longer exists")
     end
@@ -732,10 +742,12 @@ function blastWave(_point, _radius, weapon, power, player)
           end
           -- According to toutenglisse on DCS World forums (2022-06-11), ships do not have sensors attributes and therefore obj:hasSensors(Unit.SensorType.RADAR) cannot be used
           -- "I don't know why, but no Ship in DCS has ["sensors"] in its attributes (while obviously they have and can use them in game...). No way to use Ship with getDetectedTargets function (except for visual detection)."
-          if obj:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
+          if shipRadarDamageEnable and obj:getDesc().category == Unit.Category.SHIP and antiRadiationMissile[weapon] ~= nil then
             obj:enableEmission(false)
             env.info("BDA: "..event.target:getTypeName().." radar destroyed")
-            gameMsg("BDA: "..obj:getTypeName().." radar destroyed")
+            if player ~= nil and bdaMessagesEnable then
+              gameMsg("BDA: "..obj:getTypeName().." radar destroyed")
+            end
           end
 
           if explosion_size > power then explosion_size = power end --secondary explosions should not be larger than the explosion that created it
@@ -751,7 +763,9 @@ function blastWave(_point, _radius, weapon, power, player)
           end
           if bda_damage[obj:getName()] == nil then
             bda_damage[obj:getName()] = { unit = obj:getName(), time = timer.getTime() }
-            gameMsg("BDA: "..obj:getTypeName().." damaged: "..damage_for_surface)
+            if player ~= nil and bdaMessagesEnable then
+              gameMsg("BDA: "..obj:getTypeName().." damaged: "..damage_for_surface)
+            end
           end
         end
       end
@@ -766,14 +780,18 @@ function blastWave(_point, _radius, weapon, power, player)
   --world.searchObjects(Object.Category.BASE, volS, ifFound)
 
   if splash_damage_options.damage_model == true then
-    local id = timer.scheduleFunction(modelUnitDamage, foundUnits, timer.getTime() + 1.5) --allow some time for the game to adjust health levels before running our function
+    local id = timer.scheduleFunction(modelUnitDamage, {foundUnits, player}, timer.getTime() + 1.5) --allow some time for the game to adjust health levels before running our function
   end
 end
 
 
 
-if (script_enable == 1) then
-  gameMsg("SPLASH DAMAGE WITH SECONDARY EXPLOSIONS SCRIPT RUNNING")
+function weaponDamage(bdaMessages, clusterEffects, shipRadarDamage)
+  env.info(string.format("Weapons Damage Mod running. BDA messages enabled: %s, Cluster munition damage updates enabled: %s, Ship radar damage enabled: %s",tostring(bdaMessages),tostring(clusterEffects),tostring(shipRadarDamage)))
+  bdaMessagesEnable = bdaMessages
+  clusterEffectsEnable = clusterEffects
+  shipRadarDamageEnable = shipRadarDamage
+
   timer.scheduleFunction(function()
       protectedCall(track_wpns)
       return timer.getTime() + refreshRate
@@ -783,4 +801,3 @@ if (script_enable == 1) then
   )
   world.addEventHandler(WpnHandler)
 end
-

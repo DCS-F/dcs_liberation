@@ -419,6 +419,14 @@ class Settings:
         min=1,
         max=100,
     )
+    opfor_autoplanner_aggressiveness: int = bounded_int_option(
+        "OPFOR autoplanner aggressiveness (%)",
+        page=MISSION_GENERATOR_PAGE,
+        section=GAMEPLAY_SECTION,
+        default=20,
+        min=0,
+        max=100,
+    )
 
     # Performance
     perf_smoke_gen: bool = boolean_option(

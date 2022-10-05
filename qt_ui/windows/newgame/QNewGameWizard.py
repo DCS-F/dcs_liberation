@@ -716,6 +716,12 @@ class GeneratorOptions(QtWidgets.QWizardPage):
             0,
         )
         modLayout.addWidget(f4b_phantom, modLayout_row, 1)
+        modLayout.addWidget(
+            QtWidgets.QLabel("F-16I Sufa & F-16D (version 2.2 by IDF Mods Project)"),
+            modLayout_row,
+            0,
+        )
+        modLayout.addWidget(f_16_idf, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel(

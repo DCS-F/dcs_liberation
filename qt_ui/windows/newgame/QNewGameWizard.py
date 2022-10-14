@@ -163,6 +163,7 @@ class NewGameWizard(QtWidgets.QWizard):
             f16a_mlu_f16c_bl52d=self.field("f16a_mlu_f16c_bl52d"),
             f16cm_bl50=self.field("f16cm_bl50"),
             f22_raptor=self.field("f22_raptor"),
+            f100_supersabre=self.field("f100_supersabre"),
             f104_starfighter=self.field("f104_starfighter"),
             t45_goshawk=self.field("t45_goshawk"),
             hawk_t1a=self.field("hawk_t1a"),
@@ -678,6 +679,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("f16cm_bl50", f16cm_bl50)
         f22_raptor = QtWidgets.QCheckBox()
         self.registerField("f22_raptor", f22_raptor)
+        f100_supersabre = QtWidgets.QCheckBox()
+        self.registerField("f100_supersabre", f100_supersabre)
         f104_starfighter = QtWidgets.QCheckBox()
         self.registerField("f104_starfighter", f104_starfighter)
         t45_goshawk = QtWidgets.QCheckBox()
@@ -746,11 +749,18 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modLayout.addWidget(QtWidgets.QLabel("F-22A Raptor"), modLayout_row, 0)
         modLayout.addWidget(f22_raptor, modLayout_row, 1)
         modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
+        modLayout.addWidget(
+            QtWidgets.QLabel("F-100 Super Sabre (version 2.7.18.30765 patch 09.10.22)"),
+            modLayout_row,
+            0,
+        )
+        modLayout.addWidget(f100_supersabre, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("F-104 Starfighter"), modLayout_row, 0)
         modLayout.addWidget(f104_starfighter, modLayout_row, 1)
+        modLayout_row += 1
+        # Section break here for readability
+        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
         modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel("T-45 Goshawk (version 1.01)"), modLayout_row, 0

@@ -124,6 +124,7 @@ from dcs.unittype import FlyingType
 
 from game.dcs.aircrafttype import AircraftType
 from pydcs_extensions.a4ec.a4ec import A_4E_C
+from pydcs_extensions.f100.f100 import VSN_F100
 from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG
 from pydcs_extensions.f16i_idf.f16i_idf import (
     F_16D_50,
@@ -223,6 +224,7 @@ CAP_CAPABLE = [
     VSN_F104S,
     VSN_F104G,
     MiG_19P,
+    VSN_F100,
     A_4E_C,
     F_86F_Sabre,
     MiG_15bis,
@@ -329,6 +331,7 @@ CAS_CAPABLE = [
     UH_1H,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F100,
     A_20G,
     Ju_88A4,
     P_47D_40,
@@ -404,6 +407,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F100,
     Hawk_T1A,
     T_45,
     P_47D_40,
@@ -497,6 +501,7 @@ STRIKE_CAPABLE = [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F100,
     Hawk_T1A,
     T_45,
     P_47D_40,
@@ -623,6 +628,7 @@ RUNWAY_ATTACK_CAPABLE = [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F100,
     Hawk_T1A,
     P_47D_40,
     P_47D_30bl1,

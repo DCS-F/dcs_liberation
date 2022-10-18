@@ -302,7 +302,7 @@ class FlightGroupSpawner:
         for i in range(self.flight.count - 1):
             try:
                 helipad = self.helipads[cp].pop()
-                terrain = cp.theater.terrain
+                terrain = cp.coalition.game.theater.terrain
                 group.units[1 + i].position = Point(
                     helipad.x, helipad.y, terrain=terrain
                 )
@@ -353,7 +353,7 @@ class FlightGroupSpawner:
 
         for i in range(self.flight.count - 1):
             try:
-                terrain = cp.theater.terrain
+                terrain = cp.coalition.game.theater.terrain
                 if len(self.stol_pads_roadbase[cp]) > 0:
                     stol_pad = self.stol_pads_roadbase[cp].pop()
                 else:

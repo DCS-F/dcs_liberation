@@ -366,7 +366,7 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
     preferred_type: Optional[Type[ShipType]] = None
 
     alt = 0
-    theater = ConflictTheater()
+    # theater = ConflictTheater()
 
     # TODO: Only airbases have IDs.
     # TODO: has_frontline is only reasonable for airbases.

@@ -698,7 +698,7 @@ class HighwayStripGenerator:
         # capture triggers
         neutral_country = self.m.country(self.game.neutral_country.name)
         country = self.m.country(self.game.coalition_for(self.cp.captured).country_name)
-        terrain = self.cp.theater.terrain
+        terrain = self.cp.coalition.game.theater.terrain
 
         name = f"{self.cp.name} highway {i}"
         logging.info("Generating Highway Strip static : " + name)
@@ -768,7 +768,7 @@ class StolPadGenerator:
         # capture triggers
         neutral_country = self.m.country(self.game.neutral_country.name)
         country = self.m.country(self.game.coalition_for(self.cp.captured).country_name)
-        terrain = self.cp.theater.terrain
+        terrain = self.cp.coalition.game.theater.terrain
 
         name = f"{self.cp.name} ramp {i}"
         logging.info("Generating STOL static : " + name)

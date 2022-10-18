@@ -76,13 +76,13 @@ class MizCampaignLoader:
     MEDIUM_RANGE_SAM_UNIT_TYPES = {
         AirDefence.Hawk_ln.id,
         AirDefence.S_75M_Volhov.id,
-        AirDefence._5p73_s_125_ln.id,
+        AirDefence.X_5p73_s_125_ln.id,
     }
 
     SHORT_RANGE_SAM_UNIT_TYPES = {
         AirDefence.M1097_Avenger.id,
         AirDefence.Rapier_fsa_launcher.id,
-        AirDefence._2S6_Tunguska.id,
+        AirDefence.X_2S6_Tunguska.id,
         AirDefence.Strela_1_9P31.id,
     }
 
@@ -92,7 +92,7 @@ class MizCampaignLoader:
         AirDefence.ZSU_23_4_Shilka.id,
     }
 
-    EWR_UNIT_TYPE = AirDefence._1L13_EWR.id
+    EWR_UNIT_TYPE = AirDefence.X_1L13_EWR.id
 
     ARMOR_GROUP_UNIT_TYPE = Armor.M_1_Abrams.id
 
@@ -550,7 +550,6 @@ class MizCampaignLoader:
 
     def populate_theater(self) -> None:
         for control_point in self.control_points.values():
-            control_point.theater = self.theater
             self.theater.add_controlpoint(control_point)
         self.add_preset_locations()
         self.add_supply_routes()

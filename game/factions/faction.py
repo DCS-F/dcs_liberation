@@ -340,6 +340,14 @@ class Faction:
             self.remove_aircraft("KC130J")
         if not mod_settings.f4b_phantom:
             self.remove_aircraft("VSN_F4B")
+        if not mod_settings.f16a_mlu_f16c_bl52d:
+            self.remove_aircraft("VSN_F16A")
+            self.remove_aircraft("VSN_F16AMLU")
+            self.remove_aircraft("VSN_F16CBL50")
+            self.remove_aircraft("VSN_F16CBL52D")
+        if not mod_settings.f16cm_bl50:
+            self.remove_aircraft("VSN_F16CMBL50")
+            self.remove_aircraft("VSN_F16CMBL50_AG")
         if not mod_settings.f22_raptor:
             self.remove_aircraft("F-22A")
         if not mod_settings.f104_starfighter:

@@ -61,6 +61,8 @@ class GeneratorSettings:
 class ModSettings:
     a4_skyhawk: bool = False
     f4b_phantom: bool = False
+    f16a_mlu_f16c_bl52d: bool = False
+    f16cm_bl50: bool = False
     f22_raptor: bool = False
     f104_starfighter: bool = False
     t45_goshawk: bool = False

@@ -233,6 +233,7 @@ explTable = {
   ["BL_755"] = 132,                              --("BL755 - 147 x parachute-retarded HEAT submunitions, 264kg")
   ["MK77mod0-WPN"] = 110 * firebomb_splash_factor, --("Mk 77 Mod 0 - 750 lb (340 kg) with 110 U.S. gallons (416 L; 92 imp gal) of petroleum oil.")
   ["MK77mod1-WPN"] = 75 * firebomb_splash_factor,  --("Mk 77 Mod 1 - 500 lb (230 kg) with 75 U.S. gallons (284 L; 62 imp gal) of petroleum oil.")
+  ["BIN_200"] = 75 * firebomb_splash_factor,     --("BIN-200 - 200 kg Spanish liquid incendiary Napalm filled bomb.")
   --agm-65??
   ["BELOUGA"] = 10,                              -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
   ["BLG66_BELOUGA"] = 10,                        -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
@@ -430,7 +431,7 @@ function track_wpns()
             trigger.action.explosion(impactPoint, getWeaponExplosive(wpnData.name))
             --trigger.action.smoke(impactPoint, 0)
           end
-          if wpnData.name == "MK77mod1-WPN" then
+          if wpnData.name == "MK77mod1-WPN" or wpnData.name == "BIN_200" then
               trigger.action.effectSmokeBig(impactPoint, 2, 0.5, wpnData.name)
           elseif wpnData.name == "MK77mod0-WPN" then
               trigger.action.effectSmokeBig(impactPoint, 3, 0.5, wpnData.name)

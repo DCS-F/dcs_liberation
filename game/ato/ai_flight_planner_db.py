@@ -142,6 +142,7 @@ from pydcs_extensions.f16a_mlu_f16c_bl52d.f16a_mlu_f16c_bl52d import (
 from pydcs_extensions.f16cm_bl50.f16cm_bl50 import VSN_F16CMBL50_AG, VSN_F16CMBL50
 from pydcs_extensions.f22a.f22a import F_22A
 from pydcs_extensions.f4b.f4b import VSN_F4B
+from pydcs_extensions.f84g.f84g import VSN_F84G
 from pydcs_extensions.hawk_t1a.hawk_t1a import Hawk_T1A
 from pydcs_extensions.hercules.hercules import Hercules
 from pydcs_extensions.jas39.jas39 import JAS39Gripen, JAS39Gripen_AG
@@ -229,6 +230,7 @@ CAP_CAPABLE = [
     C_101CC,
     L_39ZA,
     Hawk_T1A,
+    VSN_F84G,
     P_51D_30_NA,
     P_51D,
     SpitfireLFMkIXCW,
@@ -331,6 +333,7 @@ CAS_CAPABLE = [
     VSN_F104G,
     A_20G,
     Ju_88A4,
+    VSN_F84G,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,
@@ -406,6 +409,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     VSN_F104G,
     Hawk_T1A,
     T_45,
+    VSN_F84G,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,
@@ -499,6 +503,7 @@ STRIKE_CAPABLE = [
     VSN_F104G,
     Hawk_T1A,
     T_45,
+    VSN_F84G,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,

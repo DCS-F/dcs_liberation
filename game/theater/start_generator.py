@@ -65,6 +65,7 @@ class ModSettings:
     f16a_mlu_f16c_bl52d: bool = False
     f16cm_bl50: bool = False
     f22_raptor: bool = False
+    f84g_thunderjet: bool = False
     f104_starfighter: bool = False
     t45_goshawk: bool = False
     hawk_t1a: bool = False

@@ -119,6 +119,7 @@ from dcs.planes import (
     F_16C_bl_50,
     F_A_18C,
     F_16C_bl_52d,
+    Mirage_F1CG,
 )
 from dcs.unittype import FlyingType
 
@@ -217,6 +218,7 @@ CAP_CAPABLE = [
     Mirage_F1M_EE,
     Mirage_F1C_200,
     Mirage_F1CT,
+    Mirage_F1CG,
     VSN_MirageIIIS,
     VSN_MirageIIIC,
     F_15E,
@@ -320,6 +322,7 @@ CAS_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    Mirage_F1CG,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
     SEM,
@@ -490,6 +493,7 @@ STRIKE_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    Mirage_F1CG,
     SEM,
     VSN_SEM,
     ETENDARD_IV,
@@ -616,6 +620,7 @@ RUNWAY_ATTACK_CAPABLE = [
     Mirage_F1M_CE,
     Mirage_F1M_EE,
     Mirage_F1CT,
+    Mirage_F1CG,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
     SEM,

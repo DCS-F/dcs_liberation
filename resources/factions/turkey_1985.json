@@ -16,7 +16,7 @@
     "F-104S Starfighter",
     "F-104S Starfighter A/G",
 	"F-5E Tiger II",
-    "F-16CM Fighting Falcon (Block 50)",
+    "F-16C Fighting Falcon (IDF mod)",
 	"F-16D Fighting Falcon (Block 50)",
 	"F-16D Fighting Falcon (Block 50+)",
     "F-4E Phantom II",
@@ -73,7 +73,8 @@
   "has_jtac": true,
   "jtac_unit": "MQ-9 Reaper",
   "requirements": {
-    "WW2 Asset Pack": "https://www.digitalcombatsimulator.com/en/products/other/wwii_assets_pack/"
+    "WW2 Asset Pack": "https://www.digitalcombatsimulator.com/en/products/other/wwii_assets_pack/",
+	"F-16I & F-16D by IDF Mods Project": "https://discord.com/invite/YDUecPFNAU"
   },
   "liveries_overrides": {
     "AH-1W SuperCobra": [
@@ -83,10 +84,6 @@
     "C-130": [
       "Turkish Air Force"
     ],
-    "CH-47D": [
-      "",
-      ""
-    ],
     "F-84G Thunderjet": [
       "THK"
     ],
@@ -94,28 +91,32 @@
       "Turkey 19392"
     ],
     "F-104S Starfighter": [
-      "",
-      ""
+      "Turkey 12613"
     ],
     "F-104S Starfighter A/G": [
-      "",
-      ""
+      "Turkey 12613"
     ],
 	"F-5E Tiger II": [
       "3rd Main Jet Base Group Command, Turkey",
       "5th fs Merzifon air base, Turkey"
     ],
-    "F-16CM Fighting Falcon (Block 50)": [
+    "F-16C Fighting Falcon (IDF mod)": [
       "THK_191_Filo"
+    ],
+	"F-16D Fighting Falcon (Block 50)": [
+      "TuAF F-16D 2.0",
+      "TUAF F-16D 161 FILO 2.0",
+      "TuAF F-16D 181 FILO 2.0"
+    ],
+	"F-16D Fighting Falcon (Block 50+)": [
+      "TuAF F-16D 2.0",
+      "TUAF F-16D 161 FILO 2.0",
+      "TuAF F-16D 181 FILO 2.0"
     ],
     "F-4E Phantom II": [
       "Turkish Air force 111 Filo",
       "Turkish Air Force 132 Filo",
       "Turkish Air Force 171 Filo"
-    ],
-    "OH-58D Kiowa Warrior": [
-      "",
-      ""
     ],
     "UH-1H Iroquois": [
       "Turkish Air Force"
@@ -125,8 +126,7 @@
       "CLP TUR Turkey Jandarma 1925"
     ],
     "UH-60L": [
-      "",
-      ""
+      "US Army Desert"
     ],
     "E-3A": [
       "TurAF Standard"

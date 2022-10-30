@@ -226,7 +226,6 @@ squadrons:
     - primary: AEW&C
       aircraft:
         - E-3A
-  Karpathos Air Force Detachment:
     - primary: CAS
       secondary: any
       aircraft:
@@ -239,6 +238,11 @@ squadrons:
       secondary: any
       aircraft:
         - F-16C Fighting Falcon (Block 50, AI)
+    - primary: TARCAP
+      secondary: any
+      aircraft:
+        - F-16D Fighting Falcon (Block 52)
+  Karpathos Air Force Detachment:
     - primary: SEAD
       secondary: any
       aircraft:
@@ -255,10 +259,6 @@ squadrons:
       secondary: any
       aircraft:
         - F-16CM Fighting Falcon (Block 50, A/G)
-    - primary: TARCAP
-      secondary: any
-      aircraft:
-        - F-16D Fighting Falcon (Block 52)
     - primary: TARCAP
       secondary: any
       aircraft:

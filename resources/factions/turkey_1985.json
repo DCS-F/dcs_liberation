@@ -10,8 +10,6 @@
     "AH-1W SuperCobra",
     "C-130",
     "CH-47D",
-    "F-84G Thunderjet",
-	"F-86F Sabre",
     "F-100 Super Sabre",
     "F-104S Starfighter",
     "F-104S Starfighter A/G",
@@ -83,12 +81,6 @@
     ],
     "C-130": [
       "Turkish Air Force"
-    ],
-    "F-84G Thunderjet": [
-      "THK"
-    ],
-	"F-86F Sabre": [
-      "Turkey 19392"
     ],
     "F-104S Starfighter": [
       "Turkey 12613"

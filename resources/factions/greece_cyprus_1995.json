@@ -7,8 +7,6 @@
     "el_GR"
   ],
   "aircrafts": [
-    "F-84G Thunderjet",
-	"F-86F Sabre",
 	"F-104G Starfighter",
 	"F-5E Tiger II",
 	"Mirage-F1CG",
@@ -100,13 +98,6 @@
 	"F-16I & F-16D by IDF Mods Project": "https://discord.com/invite/YDUecPFNAU"
   },
   "liveries_overrides": {
-    "F-84G Thunderjet": [
-      "HAF"
-    ],
-	"F-86F Sabre": [
-      "HAF 341sqn",
-      "HAF 342sqn"
-    ],
 	"F-104G Starfighter": [
       "HAF SEA"
     ],

@@ -28,8 +28,7 @@ class VSN_F84G(PlaneType):
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
 
-    livery_name = "VSN_F84G"  # from type
-    Liveries = Liveries()[livery_name]
+    Liveries = Liveries()[id]
 
     class Pylon2:
         Tank = (2, WeaponsF84G.Tank)

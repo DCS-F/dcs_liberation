@@ -1,3 +1,4 @@
+from enum import Enum
 from typing import Set
 
 from dcs import task
@@ -51,8 +52,416 @@ class VSN_F100(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "VSN_F100"  # from type
-    Liveries = Liveries()[livery_name]
+    class Liveries:
+        class USSR(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Georgia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Venezuela(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Australia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Israel(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Combined_Joint_Task_Forces_Blue(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Sudan(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Norway(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Romania(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Iran(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Ukraine(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Libya(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Belgium(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Slovakia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Greece(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class UK(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Third_Reich(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Hungary(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Abkhazia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Morocco(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class United_Nations_Peacekeepers(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Switzerland(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class SouthOssetia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Vietnam(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class China(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Yemen(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Kuwait(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Serbia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Oman(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class India(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Egypt(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class TheNetherlands(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Poland(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Syria(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Finland(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Kazakhstan(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Denmark(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Sweden(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Croatia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class CzechRepublic(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class GDR(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Yugoslavia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Bulgaria(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class SouthKorea(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Tunisia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Combined_Joint_Task_Forces_Red(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Lebanon(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Portugal(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Cuba(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Insurgents(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class SaudiArabia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class France(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class USA(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Honduras(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Qatar(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Russia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class United_Arab_Emirates(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Italian_Social_Republi(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Austria(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Bahrain(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Italy(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Chile(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Turkey(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Philippines(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Algeria(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Pakistan(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Malaysia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Indonesia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Iraq(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Germany(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class South_Africa(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Jordan(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Mexico(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class USAFAggressors(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Brazil(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Spain(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Belarus(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Canada(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class NorthKorea(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Ethiopia(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Japan(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
+
+        class Thailand(Enum):
+            _481_TFS_63054 = "481 TFS 63054"
+            AF_53_CT_318 = "AF 53 CT 318"
+            Thunderbirds_No_1 = "Thunderbirds No 1"
 
     class Pylon2:
         L_081_Fantasmagoria_ELINT_pod = (2, Weapons.L_081_Fantasmagoria_ELINT_pod)

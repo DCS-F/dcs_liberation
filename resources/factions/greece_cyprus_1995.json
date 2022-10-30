@@ -94,9 +94,10 @@
 	"M1097 Heavy HMMWV Avenger"
   ],
   "has_jtac": true,
-  "jtac_unit": "MQ-9 Reaper",
+  "jtac_unit": "SA 342M Gazelle",
   "requirements": {
-    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
+    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974",
+	"F-16I & F-16D by IDF Mods Project": "https://discord.com/invite/YDUecPFNAU"
   },
   "liveries_overrides": {
     "F-84G Thunderjet": [
@@ -121,8 +122,8 @@
     ],
     "AH-64D Apache Longbow": [
       "1st Attack Helicopter Battalion Greece",
-	  "",
-      ""
+	  "Greece - ES1006",
+      "Greece 200 years celebrations"
     ],
     "AH-64D Apache Longbow (AI)": [
       "greek army"
@@ -141,6 +142,12 @@
     "SA 342M Gazelle Mistral": [
       "Greece Cyprus Fictional Desert",
       "Cyprus air force"
+    ],
+    "E-3A": [
+      "HAF Standard"
+    ],
+    "KC-130": [
+      "HAF gray"
     ],
     "C-130": [
       "HAF gray"
@@ -215,14 +222,6 @@
     "Mirage 2000C": [
       "Greek Air Force"
     ],
-    "OH-58D Kiowa Warrior": [
-      "",
-      ""
-    ],
-    "CH-47D": [
-      "",
-      ""
-    ],
     "UH-1H Iroquois": [
       "Greek Army Aviation",
       "Greek Army Aviation Medic",
@@ -275,6 +274,10 @@
       "GRC_spring_MED",
       "GRC_summer",
       "GRC_summer_MED"
+    ],
+	"VAB_Mephisto": [
+      "woodland_Spring",
+      "woodland_Autumn"
     ],
 	"Patriot AMG": [
       "GRC_autumn",

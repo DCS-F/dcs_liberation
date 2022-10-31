@@ -58,13 +58,15 @@ squadrons:
     - primary: TARCAP
       secondary: any
       aircraft:
-        - F-16CM Fighting Falcon (Block 50)
+        - F-16C Fighting Falcon (IDF mod)
+        - F-86F Sabre
   # Gaziantep
   11:
-    - primary: TARCAP
+    - primary: CAS
       secondary: any
       aircraft:
         - F-16D Fighting Falcon (Block 50+)
+        - F-84G Thunderjet
   # Hatay
   15:
     - primary: CAS
@@ -77,6 +79,7 @@ squadrons:
       secondary: any
       aircraft:
         - F-16D Fighting Falcon (Block 50)
+        - F-86F Sabre
     - primary: Transport
       aircraft:
         - C-130
@@ -99,15 +102,7 @@ squadrons:
       aircraft:
         - AH-1W SuperCobra
   # Akrotiri
-  44:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - F-84G Thunderjet
-    - primary: CAS
-      secondary: any
-      aircraft:
-        - F-86F Sabre
+  # 44:
   # Paphos
   46:
     - primary: CAS
@@ -186,15 +181,7 @@ squadrons:
     - primary: Transport
       aircraft:
         - CH-47D
-  Nicosia Airport:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - F-84G Thunderjet
-    - primary: TARCAP
-      secondary: any
-      aircraft:
-        - F-86F Sabre
+  # Nicosia Airport:
   Kalymnos National Airport:
     - primary: TARCAP
       secondary: any
@@ -230,18 +217,22 @@ squadrons:
       secondary: any
       aircraft:
         - F-16A Fighting Falcon (A/G)
+        - F-84G Thunderjet
     - primary: TARCAP
       secondary: any
       aircraft:
         - F-16C Fighting Falcon (Block 50, A/A)
+        - F-86F Sabre
     - primary: TARCAP
       secondary: any
       aircraft:
         - F-16C Fighting Falcon (Block 50, AI)
+        - F-86F Sabre
     - primary: TARCAP
       secondary: any
       aircraft:
         - F-16D Fighting Falcon (Block 52)
+        - F-86F Sabre
   Karpathos Air Force Detachment:
     - primary: SEAD
       secondary: any
@@ -255,14 +246,17 @@ squadrons:
       secondary: any
       aircraft:
         - F-16CM Fighting Falcon (Block 50, A/A)
+        - F-86F Sabre
     - primary: CAS
       secondary: any
       aircraft:
         - F-16CM Fighting Falcon (Block 50, A/G)
+        - F-84G Thunderjet
     - primary: TARCAP
       secondary: any
       aircraft:
         - F-16D Fighting Falcon (Block 52+)
+        - F-86F Sabre
     - primary: CAS
       secondary: air-to-ground
       aircraft:

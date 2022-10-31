@@ -63,8 +63,7 @@
   ],
   "infantry_units": [
     "Infantry M249",
-    "Infantry M4",
-    "MANPADS Stinger"
+    "Infantry M4"
   ],
   "missiles": [],
   "preset_groups": [

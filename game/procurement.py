@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from game.squadrons import Squadron
 
 FRONTLINE_RESERVES_FACTOR = 1.5
-FRONTLINE_RESERVES_FACTOR_OPFOR = 4.0
+FRONTLINE_RESERVES_FACTOR_OPFOR = 1.6
 
 
 @dataclass(frozen=True)

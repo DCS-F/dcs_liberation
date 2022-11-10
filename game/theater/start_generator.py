@@ -85,6 +85,7 @@ class ModSettings:
     tornado: bool = False
     frenchpack: bool = False
     high_digit_sams: bool = False
+    swedishmilitaryassetspack: bool = False
 
 
 class GameGenerator:

@@ -5,6 +5,8 @@
 * **[Mission Generation]** Add option to switch ATFLIR to LITENING automatically for ground based F-18C flights
 * **[Mission Generation]** Add option to switch ATFLIR to LITENING automatically for ground based F-18C flights
 * **[Cheat Menu]** Option to instantly transfer squadrons across bases.
+* **[Modding]** Support for Swedish Military Assets for DCS by Currenthill Version 1.10
+* **[UI]** Add selectable units in faction overview during campaign generation.
 * **[Mission Generation]** Given a CAS flight was planned, delay ground force attack until first CAS flight is on station
 
 ## Fixes

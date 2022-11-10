@@ -5,6 +5,7 @@ from dcs.planes import PlaneType, plane_map
 from dcs.ships import ship_map
 from dcs.unittype import VehicleType, ShipType
 from dcs.vehicles import vehicle_map
+from dcs.ships import ship_map
 
 
 def helicoptermod(helicopter: Type[HelicopterType]) -> Type[HelicopterType]:

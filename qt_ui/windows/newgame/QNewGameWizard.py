@@ -182,6 +182,7 @@ class NewGameWizard(QtWidgets.QWizard):
             tornado=self.field("tornado"),
             frenchpack=self.field("frenchpack"),
             high_digit_sams=self.field("high_digit_sams"),
+            swedishmilitaryassetspack=self.field("swedishmilitaryassetspack"),
         )
 
         blue_faction = self.faction_selection_page.selected_blue_faction
@@ -718,6 +719,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("frenchpack", frenchpack)
         high_digit_sams = QtWidgets.QCheckBox()
         self.registerField("high_digit_sams", high_digit_sams)
+        swedishmilitaryassetspack = QtWidgets.QCheckBox()
+        self.registerField("swedishmilitaryassetspack", swedishmilitaryassetspack)
 
         modHelpText = QtWidgets.QLabel(
             "<p>Select the mods you have installed. If your chosen factions support them, you'll be able to use these mods in your campaign.</p>"
@@ -759,6 +762,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
             ("Su-57 Felon", su57_felon),
             ("Frenchpack", frenchpack),
             ("High Digit SAMs", high_digit_sams),
+            ("Swedish Military Assets pack (1.10)", swedishmilitaryassetspack),
         ]
 
         for i in range(len(mod_pairs)):

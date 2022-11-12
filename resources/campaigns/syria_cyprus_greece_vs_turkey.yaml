@@ -66,7 +66,7 @@ squadrons:
       secondary: any
       aircraft:
         - F-16D Fighting Falcon (Block 50+)
-        - F-84G Thunderjet
+        - F-100 Super Sabre
   # Hatay
   15:
     - primary: CAS
@@ -181,7 +181,12 @@ squadrons:
     - primary: Transport
       aircraft:
         - CH-47D
-  # Nicosia Airport:
+  Nicosia Airport:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - F-84G Thunderjet
+        - F-100 Super Sabre
   Kalymnos National Airport:
     - primary: TARCAP
       secondary: any
@@ -191,6 +196,7 @@ squadrons:
       secondary: any
       aircraft:
         - Mirage 2000-5
+        - F-4E Phantom II
     - primary: TARCAP
       secondary: any
       aircraft:
@@ -238,10 +244,12 @@ squadrons:
       secondary: any
       aircraft:
         - F-16CJ Fighting Falcon (Block 52D, AI)
+        - F-4E Phantom II
     - primary: SEAD
       secondary: any
       aircraft:
         - F-16CJ Fighting Falcon (Block 52D)
+        - F-4E Phantom II
     - primary: TARCAP
       secondary: any
       aircraft:
@@ -261,14 +269,17 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - AH-64A Apache
+        - Ka-50 Hokum
     - primary: CAS
       secondary: air-to-ground
       aircraft:
         - AH-64D Apache Longbow
+        - F-84G Thunderjet
     - primary: CAS
       secondary: air-to-ground
       aircraft:
         - AH-64D Apache Longbow (AI)
+        - Ka-50 Hokum
     - primary: CAS
       secondary: air-to-ground
       aircraft:

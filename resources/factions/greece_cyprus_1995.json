@@ -226,14 +226,14 @@
       "GRC_summer"
     ],
     "BMP-3": [
-      "desert"
+      "summer"
     ],
 	"Leopard1a3": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
     ],
-	"Leopard-2a4": [
+	"leopard-2A4": [
       "HEL_autumn",
       "HEL_spring",
       "HEL_summer"
@@ -243,12 +243,12 @@
       "GRC_spring",
       "GRC_summer"
     ],
-	"M1043 hmmwv armament": [
+	"M1043 HMMWV Armament": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
     ],
-	"M1045 hmmwv tow": [
+	"M1045 HMMWV TOW": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
@@ -326,6 +326,11 @@
       "GRC_summer"
     ],
 	"S-300PS 64H6E sr": [
+      "GRC_autumn",
+      "GRC_spring",
+      "GRC_summer"
+    ],
+	"Tor 9A331": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"

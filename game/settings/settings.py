@@ -361,7 +361,7 @@ class Settings:
         "Player flights ignore TOT and spawn immediately",
         MISSION_GENERATOR_PAGE,
         GAMEPLAY_SECTION,
-        default=False,
+        default=True,
         detail=(
             "Does not adjust package waypoint times. Should not be used if players "
             "have runway or in-air starts."
@@ -504,7 +504,7 @@ class Settings:
         "Generate carcasses for units destroyed in previous turns",
         page=MISSION_GENERATOR_PAGE,
         section=PERFORMANCE_SECTION,
-        default=True,
+        default=False,
     )
     perf_disable_idle_aircraft: bool = boolean_option(
         "Disable idle aircraft at airfields",
@@ -517,13 +517,13 @@ class Settings:
         "Culling of distant units enabled",
         page=MISSION_GENERATOR_PAGE,
         section=PERFORMANCE_SECTION,
-        default=False,
+        default=True,
     )
     perf_culling_distance: int = bounded_int_option(
         "Culling distance (km)",
         page=MISSION_GENERATOR_PAGE,
         section=PERFORMANCE_SECTION,
-        default=100,
+        default=60,
         min=10,
         max=10000,
         causes_expensive_game_update=True,

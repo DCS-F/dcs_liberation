@@ -1530,7 +1530,7 @@ class Fob(ControlPoint):
         return SymbolSet.LAND_INSTALLATIONS, LandInstallationEntity.MILITARY_BASE
 
     def runway_is_operational(self) -> bool:
-        return self.has_helipads
+        return self.has_helipads or self.has_stol_slots
 
     def active_runway(
         self,

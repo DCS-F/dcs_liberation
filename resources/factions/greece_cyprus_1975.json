@@ -12,9 +12,7 @@
 	"F-104G Starfighter",
 	"F-5E Tiger II",
 	"Mirage-F1CG",
-	"AH-64A Apache",
-    "AH-64D Apache Longbow",
-    "AH-64D Apache Longbow (AI)",
+    "Ka-50 Hokum",
     "Mi-24P Hind-F",
     "SA 342L Gazelle",
     "SA 342M Gazelle",
@@ -22,7 +20,6 @@
     "C-130",
     "C-130J-30 Super Hercules",
     "F-4E Phantom II",
-    "Mirage 2000-5",
     "Mirage 2000C",
     "OH-58D Kiowa Warrior",
     "CH-47D",
@@ -105,17 +102,8 @@
 	"Mirage-F1CG": [
       "114th Combat Wing Tanagra AB"
     ],
-	
-	"AH-64A Apache": [
-      "greek army"
-    ],
-    "AH-64D Apache Longbow": [
-      "1st Attack Helicopter Battalion Greece",
-	  "Greece - ES1006",
-      "Greece 200 years celebrations"
-    ],
-    "AH-64D Apache Longbow (AI)": [
-      "greek army"
+	"Ka-50 Hokum": [
+      "Greek Army Aviation"
     ],
     "Mi-24P Hind-F": [
       "Hellenic Army SEA Camo - Fictional"
@@ -144,9 +132,6 @@
     "F-4E Phantom II": [
       "HAF Aegean Ghost"
     ],
-    "Mirage 2000-5": [
-      "Hellenic Airforce"
-    ],
     "Mirage 2000C": [
       "Greek Air Force"
     ],
@@ -163,14 +148,14 @@
       "GRC_summer"
     ],
     "BMP-3": [
-      "desert"
+      "summer"
     ],
 	"Leopard1a3": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
     ],
-	"Leopard-2a4": [
+	"leopard-2A4": [
       "HEL_autumn",
       "HEL_spring",
       "HEL_summer"
@@ -180,12 +165,12 @@
       "GRC_spring",
       "GRC_summer"
     ],
-	"M1043 hmmwv armament": [
+	"M1043 HMMWV Armament": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
     ],
-	"M1045 hmmwv tow": [
+	"M1045 HMMWV TOW": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"
@@ -263,6 +248,11 @@
       "GRC_summer"
     ],
 	"S-300PS 64H6E sr": [
+      "GRC_autumn",
+      "GRC_spring",
+      "GRC_summer"
+    ],
+	"Tor 9A331": [
       "GRC_autumn",
       "GRC_spring",
       "GRC_summer"

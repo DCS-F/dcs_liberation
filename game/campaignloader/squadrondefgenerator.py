@@ -5,6 +5,7 @@ import random
 from typing import Optional, TYPE_CHECKING
 
 from faker import Faker
+from transliterate import translit
 
 from game.ato.flighttype import FlightType
 from game.dcs.aircrafttype import AircraftType
@@ -65,6 +66,9 @@ class SquadronDefGenerator:
         elif country == "UK":
             faker = Faker("en_UK")
             return f"{faker.administrative_unit()}"
+        elif country == "Greece":
+            faker = Faker("el_GR")
+            return f"{translit(faker.administrative_unit(), 'el', reversed=True)}"
         animal = random.choice(ANIMALS)
         adjective = random.choice(
             (

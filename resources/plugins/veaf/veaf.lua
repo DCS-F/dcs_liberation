@@ -3023,7 +3023,7 @@ if ctld then
     ctld.autoInitializeAllLogistic = function()
         veaf.loggers.get(ctld.Id):info("autoInitializeAllLogistic()")
         local CarrierTypeNames = {"Barracks 2", "Warehouse", "Garage small B", ".Command Center", ".Ammunition depot", "Hangar A", "Hangar B", "FARP CP Blindage", "FARP Fuel Depot", "FARP Ammo Dump Coating", "FARP Tent", "Invisible FARP", "SINGLE_HELIPAD", "FARP", "LHA_Tarawa", "Type_071", "Stennis", "VINSON", "Forrestal", "CVN_71", "CVN_72", "CVN_73", "CVN_75", "KUZNECOW", "CV_1143_5"}
-        local ApcTypeNames = {"M 818", "AAV7", "M-113", "LAV-25", "M1126 Stryker ICV", "Sd_Kfz_7", "Blitz_36-6700A", "Land_Rover_101_FC", "Land_Rover_109_S3", "Ural-375", "KAMAZ Truck", "BTR-80", "BTR-82A"}
+        local ApcTypeNames = {"M 818", "AAV7", "M-113", "LAV-25", "M1126 Stryker ICV", "M-2 Bradley", "MCV-80", "M2A1_halftrack", "Marder", "TPZ", "Sd_Kfz_7", "Blitz_36-6700A", "Land_Rover_101_FC", "Land_Rover_109_S3", "Bedford_MWD", "Ural-375", "KrAZ6322", "KAMAZ Truck", "GAZ-66", "BTR-80", "BTR-82A", "BMP-1", "BMP-2", "BMP-3", "BMD-1", "BTR_D", "MTLB", "ZBD04A"}
         local units = mist.DBs.unitsByName -- local copy for faster execution
         for name, unit in pairs(units) do
             veaf.loggers.get(ctld.Id):trace(string.format("name=%s, unit.type=%s", veaf.p(name), veaf.p(unit.type)))

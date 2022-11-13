@@ -5,7 +5,7 @@ import random
 from typing import Optional, TYPE_CHECKING
 
 from faker import Faker
-from transliterate import translit
+from transliterate import translit  # type: ignore
 
 from game.ato.flighttype import FlightType
 from game.dcs.aircrafttype import AircraftType

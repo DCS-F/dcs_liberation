@@ -135,7 +135,7 @@ ctld.JTAC_LIMIT_BLUE = 10 -- max number of JTAC Crates for the BLUE Side
 
 ctld.JTAC_dropEnabled = true -- allow JTAC Crate spawn from F10 menu
 
-ctld.JTAC_maxDistance = 50000 -- How far a JTAC can "see" in meters (with Line of Sight)
+ctld.JTAC_maxDistance = 30000 -- How far a JTAC can "see" in meters (with Line of Sight)
 
 ctld.JTAC_smokeOn_RED = true -- enables marking of target with smoke for RED forces
 ctld.JTAC_smokeOn_BLUE = true -- enables marking of target with smoke for BLUE forces
@@ -5515,8 +5515,8 @@ end
 
 function ctld.createSmokeMarker(_enemyUnit, _colour)
 
-    --recreate in 5 mins
-    ctld.jtacSmokeMarks[_enemyUnit:getName()] = timer.getTime() + 300.0
+    --recreate in 1 min
+    ctld.jtacSmokeMarks[_enemyUnit:getName()] = timer.getTime() + 60.0
 
     -- move smoke 2 meters above target for ease
     local _enemyPoint = _enemyUnit:getPoint()

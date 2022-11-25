@@ -12,6 +12,7 @@ from PySide2.QtWidgets import (
     QCheckBox,
     QVBoxLayout,
 )
+from transliterate import translit
 
 from game import Game
 from game.squadrons.pilot import Pilot
@@ -29,8 +30,14 @@ class PilotSelector(QComboBox):
         self.pilot_index = idx
         self.rebuild()
 
-    @staticmethod
-    def text_for(pilot: Pilot) -> str:
+    def text_for(self, pilot: Pilot) -> str:
+        country = self.roster.squadron.coalition.faction.country
+        if country == "Armenia":
+            return f"{translit(pilot.name, 'hy', reversed=True)}"
+        elif country == "Ukraine":
+            return f"{translit(pilot.name, 'uk', reversed=True)}"
+        elif country == "Greece":
+            return f"{translit(pilot.name, 'el', reversed=True)}"
         return pilot.name
 
     def _do_rebuild(self) -> None:

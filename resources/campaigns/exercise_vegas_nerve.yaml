@@ -58,6 +58,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - AV-8B Harrier II Night Attack
+    - primary: Air Assault
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
 # Groom Lake
   2:
     - primary: BARCAP

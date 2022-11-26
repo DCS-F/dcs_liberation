@@ -175,6 +175,7 @@ class NewGameWizard(QtWidgets.QWizard):
             uh_60l=self.field("uh_60l"),
             jas39_gripen=self.field("jas39_gripen"),
             su57_felon=self.field("su57_felon"),
+            ov10a_bronco=self.field("ov10a_bronco"),
             tornado=self.field("tornado"),
             frenchpack=self.field("frenchpack"),
             high_digit_sams=self.field("high_digit_sams"),
@@ -700,6 +701,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("jas39_gripen", jas39_gripen)
         su57_felon = QtWidgets.QCheckBox()
         self.registerField("su57_felon", su57_felon)
+        ov10a_bronco = QtWidgets.QCheckBox()
+        self.registerField("ov10a_bronco", ov10a_bronco)
         tornado = QtWidgets.QCheckBox()
         self.registerField("tornado", tornado)
         frenchpack = QtWidgets.QCheckBox()
@@ -803,12 +806,17 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modLayout.addWidget(etendard_iv_superetendard, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(
-            QtWidgets.QLabel("C-130J-30 Super Hercules"), modLayout_row, 0
+            QtWidgets.QLabel("OV-10A Bronco (version 1.00)"), modLayout_row, 0
         )
-        modLayout.addWidget(hercules, modLayout_row, 1)
+        modLayout.addWidget(ov10a_bronco, modLayout_row, 1)
         modLayout_row += 1
         # Section break here for readability
         modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
+        modLayout_row += 1
+        modLayout.addWidget(
+            QtWidgets.QLabel("C-130J-30 Super Hercules"), modLayout_row, 0
+        )
+        modLayout.addWidget(hercules, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(
             QtWidgets.QLabel("UH-60L Black Hawk (version 1.3.1)"), modLayout_row, 0
@@ -828,11 +836,11 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         )
         modLayout.addWidget(tornado, modLayout_row, 1)
         modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("Frenchpack"), modLayout_row, 0)
-        modLayout.addWidget(frenchpack, modLayout_row, 1)
-        modLayout_row += 1
         # Section break here for readability
         modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
+        modLayout_row += 1
+        modLayout.addWidget(QtWidgets.QLabel("Frenchpack"), modLayout_row, 0)
+        modLayout.addWidget(frenchpack, modLayout_row, 1)
         modLayout_row += 1
         modLayout.addWidget(QtWidgets.QLabel("High Digit SAMs"), modLayout_row, 0)
         modLayout.addWidget(high_digit_sams, modLayout_row, 1)

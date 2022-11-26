@@ -154,6 +154,7 @@ from pydcs_extensions.mirage3.mirage3 import (
     VSN_MirageIIIS,
 )
 from pydcs_extensions.su57.su57 import Su_57
+from pydcs_extensions.ov10a.ov10a import Bronco_OV_10A
 from pydcs_extensions.t45.t45 import T_45
 from pydcs_extensions.tornado.tornado import VSN_TornadoGR4, VSN_TornadoIDS
 from pydcs_extensions.superetendard.superetendard import VSN_SEM
@@ -283,6 +284,7 @@ CAS_CAPABLE = [
     A_10A,
     B_1B,
     A_4E_C,
+    Bronco_OV_10A,
     F_14B,
     F_14A_135_GR,
     AJS37,
@@ -422,6 +424,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     P_47D_30,
     P_51D_30_NA,
     P_51D,
+    Bronco_OV_10A,
     SpitfireLFMkIXCW,
     SpitfireLFMkIX,
     MosquitoFBMkVI,
@@ -484,6 +487,7 @@ STRIKE_CAPABLE = [
     A_10C,
     S_3B,
     A_4E_C,
+    Bronco_OV_10A,
     M_2000C,
     Mirage_F1B,
     Mirage_F1BE,
@@ -611,6 +615,7 @@ RUNWAY_ATTACK_CAPABLE = [
     A_10C,
     S_3B,
     A_4E_C,
+    Bronco_OV_10A,
     M_2000C,
     Mirage_F1B,
     Mirage_F1BE,

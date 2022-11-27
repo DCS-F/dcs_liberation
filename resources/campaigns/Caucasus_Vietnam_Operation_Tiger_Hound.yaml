@@ -64,8 +64,15 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
   Red LHA-1:
     - primary: CAS
       secondary: air-to-ground
@@ -87,24 +94,9 @@ squadrons:
   # Anapa-Vityazevo
   12:
     - primary: BARCAP
+      secondary: air-to-air
       aircraft:
         - MiG-21bis Fishbed-N
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
     - primary: DEAD
       secondary: air-to-ground
       aircraft:
@@ -114,132 +106,49 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
+        - MiG-21bis Fishbed-N
+    - primary: DEAD
+      secondary: air-to-ground
       aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
+        - MiG-21bis Fishbed-N
   # Novorossiysk
   14:
     - primary: BARCAP
-      secondary: air-to-air
+      secondary: air-to-ground
       aircraft:
         - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
   # Krymsk
   15:
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-  # Maykop-Khanskaya
-  16:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  # Gelendzhik
-  17:
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-  # Krasnodar-Pashkovsky
-  19:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  # Mineralnye Vody
-  26:
-    - primary: BARCAP
-      aircraft:
-        - MiG-21bis Fishbed-N
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
     - primary: SEAD
       secondary: air-to-ground
       aircraft:
-        - MiG-21bis Fishbed-N
+        - Su-22M4 Fitter-K
+  # Maykop-Khanskaya
+  16:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
+  # Gelendzhik
+  17:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
+  # Krasnodar-Pashkovsky
+  19:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
+  # Mineralnye Vody
+  26:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
   # Beslan
   32:
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-15bis Fagot
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - MiG-19P Farmer-B
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
@@ -257,7 +166,7 @@ squadrons:
     - primary: Strike
       secondary: any
       aircraft:
-        - A-26 Invader
+        - A-20G Havoc
     - primary: AEW&C
       aircraft:
         - E-3A
@@ -267,14 +176,21 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - F-105D Thunderchief
+    - primary: SEAD
+      secondary: air-to-ground
+      aircraft:
+        - F-105G Thunderchief
   # Gudauta
   21:
     - primary: BAI
       secondary: air-to-ground
       aircraft:
-        - F-4D Phantom II
+        - F-4B Phantom II
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
@@ -282,8 +198,11 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - A-9A
         - F-4D Phantom II
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - OV-10A Bronco
   # Senaki-Kholki
   23:
     - primary: BARCAP
@@ -305,15 +224,14 @@ squadrons:
     - primary: SEAD
       secondary: air-to-ground
       aircraft:
-        - F-4D Phantom II
+        - F-4B Phantom II
     - primary: Strike
       secondary: any
       aircraft:
-        - A-26 Invader
+        - A-20G Havoc
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
   # Kobuleti
   24:
@@ -328,7 +246,7 @@ squadrons:
     - primary: BAI
       secondary: air-to-ground
       aircraft:
-        - F-4D Phantom II
+        - F-4B Phantom II
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -336,7 +254,6 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
   # Kutaisi
   25:
@@ -355,7 +272,7 @@ squadrons:
     - primary: BAI
       secondary: air-to-ground
       aircraft:
-        - F-4D Phantom II
+        - F-4B Phantom II
     - primary: Transport
       aircraft:
         - C-130
@@ -374,7 +291,6 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
   Kutaisi West Airfield:
     - primary: CAS
@@ -384,7 +300,6 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
   Kutaisi North Airfield:
     - primary: CAS
@@ -394,53 +309,7 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
-  FOB Baranovka:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  FOB Hadzhiko:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  FOB Tuapse:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  FOB Arhipo-Osipovka:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-  FOB Mihaylovskiy Pereval:
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
-    - primary: BAI
-      secondary: air-to-ground
-      aircraft:
-        - Mi-8MTV2 Hip
   FOB Sochi-Adler:
     - primary: CAS
       secondary: air-to-ground
@@ -449,43 +318,174 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1D Iroquois
         - UH-1H Iroquois
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - AH-1Q TOW Cobra
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
   
   FOB Da Nang:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
   Phu Bai FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Dong Ap Bia FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Khe Sanh Combat Base:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Mu Gia Pass FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Quan Lang FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Phuc Yen Helicopter Base:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Thanh Hoa FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Tong FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   FOB Hue:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   FOB Quang Tri:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Mon Cay Airfield:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-15bis Fagot
   Haiphong Cat Bi Airfield:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
   Do Son FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Haiphong Kien An Airfield:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-15bis Fagot
   Kep Airfield:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
   Hanoi Gia Lam Airfield:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-15bis Fagot
   Hanoi Bac Mai Airfield:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-15bis Fagot
   Lang Son Airfield:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-15bis Fagot
   That Khe FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Cao Bang FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Ha Giang FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Bac Kan FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Ban Puoi FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Na San FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Nghia Lo FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Quinh Nai FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Na San Temporary Airstrip:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
   Lai Chau FARP:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Mi-8MTV2 Hip
   Dien Bien Phu Temporary Airstrip:  
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
   
 carriers:
   Blue CV59:

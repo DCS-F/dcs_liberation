@@ -1,0 +1,15 @@
+carrier_capable: true
+description:
+  "The Grumman A-6 Intruder is an American twinjet all-weather attack \
+  \ aircraft operated by the U.S. Navy and U.S. Marine Corps between 1963 and 1997. \
+  \ The all-weather capability was particularly important over Vietnam and Thailand \
+  \ during the Vietnam War. It can carry up to 18 000 pounds of ordnance on five \
+  \ hardpoints."
+introduced: 1963
+manufacturer: Grumman
+origin: USA
+price: 11
+role: Carrier-based Attack Aircraft
+gunfighter: false
+variants:
+  A-6A Intruder: {}

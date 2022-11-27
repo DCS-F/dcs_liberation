@@ -60,6 +60,7 @@ class GeneratorSettings:
 @dataclass
 class ModSettings:
     a4_skyhawk: bool = False
+    a6a_intruder: bool = False
     f4b_phantom: bool = False
     f_16_idf: bool = False
     f16a_mlu_f16c_bl52d: bool = False
@@ -68,11 +69,13 @@ class ModSettings:
     f84g_thunderjet: bool = False
     f100_supersabre: bool = False
     f104_starfighter: bool = False
+    f105_thunderchief: bool = False
     t45_goshawk: bool = False
     hawk_t1a: bool = False
     mirage_3: bool = False
     super_etendard: bool = False
     etendard_iv_superetendard: bool = False
+    ov10a_bronco: bool = False
     hercules: bool = False
     uh_60l: bool = False
     jas39_gripen: bool = False

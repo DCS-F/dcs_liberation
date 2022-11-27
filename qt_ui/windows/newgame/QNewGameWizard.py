@@ -158,6 +158,7 @@ class NewGameWizard(QtWidgets.QWizard):
         )
         mod_settings = ModSettings(
             a4_skyhawk=self.field("a4_skyhawk"),
+            a6a_intruder=self.field("a6a_intruder"),
             f4b_phantom=self.field("f4b_phantom"),
             f_16_idf=self.field("f_16_idf"),
             f16a_mlu_f16c_bl52d=self.field("f16a_mlu_f16c_bl52d"),
@@ -166,6 +167,7 @@ class NewGameWizard(QtWidgets.QWizard):
             f84g_thunderjet=self.field("f84g_thunderjet"),
             f100_supersabre=self.field("f100_supersabre"),
             f104_starfighter=self.field("f104_starfighter"),
+            f105_thunderchief=self.field("f105_thunderchief"),
             t45_goshawk=self.field("t45_goshawk"),
             hawk_t1a=self.field("hawk_t1a"),
             mirage_3=self.field("mirage_3"),
@@ -667,6 +669,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         modSettingsGroup = QtWidgets.QGroupBox("Mod Settings")
         a4_skyhawk = QtWidgets.QCheckBox()
         self.registerField("a4_skyhawk", a4_skyhawk)
+        a6a_intruder = QtWidgets.QCheckBox()
+        self.registerField("a6a_intruder", a6a_intruder)
         hercules = QtWidgets.QCheckBox()
         self.registerField("hercules", hercules)
         uh_60l = QtWidgets.QCheckBox()
@@ -687,6 +691,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("f100_supersabre", f100_supersabre)
         f104_starfighter = QtWidgets.QCheckBox()
         self.registerField("f104_starfighter", f104_starfighter)
+        f105_thunderchief = QtWidgets.QCheckBox()
+        self.registerField("f105_thunderchief", f105_thunderchief)
         t45_goshawk = QtWidgets.QCheckBox()
         self.registerField("t45_goshawk", t45_goshawk)
         hawk_t1a = QtWidgets.QCheckBox()
@@ -717,133 +723,53 @@ class GeneratorOptions(QtWidgets.QWizardPage):
 
         modLayout = QtWidgets.QGridLayout()
         modLayout_row = 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("A-4E Skyhawk (version 2.0.0)"), modLayout_row, 0
-        )
-        modLayout.addWidget(a4_skyhawk, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("F-4B Phantom II (v2.7.9.01 EFM + Patch 2022.01.17)"),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f4b_phantom, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("F-16I Sufa & F-16D (version 2.2 by IDF Mods Project)"),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f_16_idf, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel(
-                "F-16A, F-16A MLU, F-16C Block 50 & F-16C Block 52D (version 2.5.6.10)"
+
+        mod_pairs = [
+            ("A-4E Skyhawk (v2.0.0)", a4_skyhawk),
+            ("A-6A Intruder (v2.7.5.01)", a6a_intruder),
+            ("F-4B Phantom II (v2.7.10.02 EFM + Patch 2022.10.02)", f4b_phantom),
+            ("F-16I Sufa & F-16D (v2.2 by IDF Mods Project)", f_16_idf),
+            (
+                "F-16A, F-16A MLU, F-16C Block 50 & F-16C Block 52D (version 2.5.6.10)",
+                f16a_mlu_f16c_bl52d,
             ),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f16a_mlu_f16c_bl52d, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("F-16CM Block 50 (version 2.5.6.10)"),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f16cm_bl50, modLayout_row, 1)
-        modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("F-22A Raptor"), modLayout_row, 0)
-        modLayout.addWidget(f22_raptor, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("F-84G Thunderjet (version 2.5.7.01)"),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f84g_thunderjet, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("F-100 Super Sabre (version 2.7.18.30765 patch 09.10.22)"),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(f100_supersabre, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("F-104 Starfighter"), modLayout_row, 0)
-        modLayout.addWidget(f104_starfighter, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("T-45 Goshawk (version 1.01)"), modLayout_row, 0
-        )
-        modLayout.addWidget(t45_goshawk, modLayout_row, 1)
-        modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("Hawk T1A"), modLayout_row, 0)
-        modLayout.addWidget(hawk_t1a, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("Mirage III (version 2.5.7.01)"), modLayout_row, 0
-        )
-        modLayout.addWidget(mirage_3, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("Super Etendard (version 2.5.5)"), modLayout_row, 0
-        )
-        modLayout.addWidget(super_etendard, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel(
-                "Etendard IV & Super Etendard (Clemenceau pack version 004 for 2.72)"
+            ("F-16CM Block 50 (version 2.5.6.10)", f16cm_bl50),
+            ("F-22A Raptor", f22_raptor),
+            ("F-84G Thunderjet (v2.5.7.01)", f84g_thunderjet),
+            ("F-100 Super Sabre (v2.7.18.30765 patch 09.10.22)", f100_supersabre),
+            ("F-104 Starfighter (v2.7.11.222.01)", f104_starfighter),
+            ("F-105 Thunderchief (v2.7.12.23x)", f105_thunderchief),
+            ("T-45 Goshawk (version 1.01)", t45_goshawk),
+            ("Hawk T1A", hawk_t1a),
+            ("Mirage III (version 2.5.7.01)", mirage_3),
+            ("Super Etendard (version 2.5.5)", super_etendard),
+            (
+                "Etendard IV & Super Etendard (Clemenceau pack version 004 for 2.72)",
+                etendard_iv_superetendard,
             ),
-            modLayout_row,
-            0,
-        )
-        modLayout.addWidget(etendard_iv_superetendard, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("OV-10A Bronco (version 1.00)"), modLayout_row, 0
-        )
-        modLayout.addWidget(ov10a_bronco, modLayout_row, 1)
-        modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("C-130J-30 Super Hercules"), modLayout_row, 0
-        )
-        modLayout.addWidget(hercules, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("UH-60L Black Hawk (version 1.3.1)"), modLayout_row, 0
-        )
-        modLayout.addWidget(uh_60l, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("JAS 39 Gripen (version v1.8.0-beta)"), modLayout_row, 0
-        )
-        modLayout.addWidget(jas39_gripen, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("Su-57 Felon"), modLayout_row, 0)
-        modLayout.addWidget(su57_felon, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(
-            QtWidgets.QLabel("Tornado (version 2.5.6.10)"), modLayout_row, 0
-        )
-        modLayout.addWidget(tornado, modLayout_row, 1)
-        modLayout_row += 1
-        # Section break here for readability
-        modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, 0)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("Frenchpack"), modLayout_row, 0)
-        modLayout.addWidget(frenchpack, modLayout_row, 1)
-        modLayout_row += 1
-        modLayout.addWidget(QtWidgets.QLabel("High Digit SAMs"), modLayout_row, 0)
-        modLayout.addWidget(high_digit_sams, modLayout_row, 1)
+            ("OV-10A Bronco (version 1.00)", ov10a_bronco),
+            ("C-130J-30 Super Hercules", hercules),
+            ("UH-60L Black Hawk (v1.3.1)", uh_60l),
+            ("JAS 39 Gripen (v1.8.0-beta)", jas39_gripen),
+            ("Tornado (version 2.5.6.10)", tornado),
+            ("Su-57 Felon", su57_felon),
+            ("Frenchpack", frenchpack),
+            ("High Digit SAMs", high_digit_sams),
+        ]
+
+        for i in range(len(mod_pairs)):
+            if i % 15 == 0:
+                modLayout_row = 1
+            col = 2 * (i // 15)
+            if i % 5 == 0:
+                # Section break here for readability
+                modLayout.addWidget(QtWidgets.QWidget(), modLayout_row, col)
+                modLayout_row += 1
+            label, cb = mod_pairs[i]
+            modLayout.addWidget(QLabel(label), modLayout_row, col)
+            modLayout.addWidget(cb, modLayout_row, col + 1)
+            modLayout_row += 1
+
         modSettingsGroup.setLayout(modLayout)
 
         mlayout = QVBoxLayout()

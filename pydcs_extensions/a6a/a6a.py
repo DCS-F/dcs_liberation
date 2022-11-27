@@ -1,10 +1,14 @@
 from enum import Enum
 
 from dcs import task
+from dcs.liveries_scanner import Liveries
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
 
+from game.modsupport import planemod
 
+
+@planemod
 class VSN_A6A(PlaneType):
     id = "VSN_A6A"
     flyable = True
@@ -20,6 +24,9 @@ class VSN_A6A(PlaneType):
     flare_charge_size = 1
     eplrs = True
     radio_frequency = 250.5
+
+    livery_name = "VSN_A6A"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         F_5_275Gal_Fuel_tank = (1, Weapons.F_5_275Gal_Fuel_tank)

@@ -348,6 +348,8 @@ class Faction:
         # aircraft
         if not mod_settings.a4_skyhawk:
             self.remove_aircraft("A-4E-C")
+        if not mod_settings.a6a_intruder:
+            self.remove_aircraft("VSN_A6A")
         if not mod_settings.t45_goshawk:
             self.remove_aircraft("T-45")
         if not mod_settings.hawk_t1a:
@@ -393,6 +395,9 @@ class Faction:
             self.remove_aircraft("VSN_F104G")
             self.remove_aircraft("VSN_F104S")
             self.remove_aircraft("VSN_F104S_AG")
+        if not mod_settings.f105_thunderchief:
+            self.remove_aircraft("VSN_F105D")
+            self.remove_aircraft("VSN_F105G")
         if not mod_settings.mirage_3:
             self.remove_aircraft("VSN_MirageIIIC")
             self.remove_aircraft("VSN_MirageIIIC_AG")

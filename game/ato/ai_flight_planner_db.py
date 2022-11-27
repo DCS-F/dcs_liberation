@@ -125,8 +125,10 @@ from dcs.unittype import FlyingType
 
 from game.dcs.aircrafttype import AircraftType
 from pydcs_extensions.a4ec.a4ec import A_4E_C
+from pydcs_extensions.a6a.a6a import VSN_A6A
 from pydcs_extensions.f100.f100 import VSN_F100
-from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG
+from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG, VSN_F104C
+from pydcs_extensions.f105.f105 import VSN_F105D, VSN_F105G
 from pydcs_extensions.f16i_idf.f16i_idf import (
     F_16D_50,
     F_16D_52,
@@ -227,6 +229,7 @@ CAP_CAPABLE = [
     F_5E_3,
     VSN_F104S,
     VSN_F104G,
+    VSN_F104C,
     MiG_19P,
     VSN_F100,
     A_4E_C,
@@ -283,6 +286,7 @@ CAS_CAPABLE = [
     AV8BNA,
     A_10A,
     B_1B,
+    VSN_A6A,
     A_4E_C,
     Bronco_OV_10A,
     F_14B,
@@ -331,6 +335,11 @@ CAS_CAPABLE = [
     VSN_SEM,
     ETENDARD_IV,
     F_5E_3,
+    VSN_F105D,
+    VSN_F105G,
+    VSN_F104S_AG,
+    VSN_F104G,
+    VSN_F104C,
     F_86F_Sabre,
     C_101CC,
     L_39ZA,
@@ -392,6 +401,7 @@ SEAD_CAPABLE = [
     Su_34,
     Su_30,
     MiG_27K,
+    VSN_F105G,
 ]
 
 
@@ -408,13 +418,16 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     H_6J,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
+    VSN_A6A,
     SEM,
     VSN_SEM,
     ETENDARD_IV,
     A_20G,
     Ju_88A4,
+    VSN_F105D,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F104C,
     VSN_F100,
     Hawk_T1A,
     T_45,
@@ -462,6 +475,7 @@ STRIKE_CAPABLE = [
     VSN_TornadoIDS,
     Tornado_GR4,
     Tornado_IDS,
+    VSN_A6A,
     AV8BNA,
     JF_17,
     F_16A,
@@ -487,7 +501,6 @@ STRIKE_CAPABLE = [
     A_10C,
     S_3B,
     A_4E_C,
-    Bronco_OV_10A,
     M_2000C,
     Mirage_F1B,
     Mirage_F1BE,
@@ -498,6 +511,8 @@ STRIKE_CAPABLE = [
     Mirage_F1M_EE,
     Mirage_F1CT,
     Mirage_F1CG,
+    VSN_F105D,
+    VSN_F105G,
     SEM,
     VSN_SEM,
     ETENDARD_IV,
@@ -513,10 +528,12 @@ STRIKE_CAPABLE = [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F104C,
     VSN_F100,
     Hawk_T1A,
     T_45,
     VSN_F84G,
+    Bronco_OV_10A,
     P_47D_40,
     P_47D_30bl1,
     P_47D_30,
@@ -588,6 +605,7 @@ RUNWAY_ATTACK_CAPABLE = [
     VSN_F16CMBL50_AG,
     FA_18C_hornet,
     F_A_18C,
+    VSN_A6A,
     AV8BNA,
     JF_17,
     F_16A,
@@ -628,6 +646,8 @@ RUNWAY_ATTACK_CAPABLE = [
     Mirage_F1CG,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
+    VSN_F105D,
+    VSN_F105G,
     SEM,
     VSN_SEM,
     ETENDARD_IV,
@@ -643,6 +663,7 @@ RUNWAY_ATTACK_CAPABLE = [
     Ju_88A4,
     VSN_F104S_AG,
     VSN_F104G,
+    VSN_F104C,
     VSN_F100,
     Hawk_T1A,
     P_47D_40,

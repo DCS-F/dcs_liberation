@@ -310,7 +310,7 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - UH-1H Iroquois
-  FOB Sochi-Adler:
+  FOB Da Nang:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -328,7 +328,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
   
-  FOB Da Nang:
+  FOB Sochi-Adler:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -437,11 +437,6 @@ squadrons:
       aircraft:
         - Mi-8MTV2 Hip
   Cao Bang FARP:
-    - primary: CAS
-      secondary: any
-      aircraft:
-        - Mi-8MTV2 Hip
-  Ha Giang FARP:
     - primary: CAS
       secondary: any
       aircraft:

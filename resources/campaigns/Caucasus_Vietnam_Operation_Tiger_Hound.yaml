@@ -8,7 +8,7 @@ recommended_enemy_faction: Vietnam 1970 Limited Armor
 recommended_start_date: 1967-05-03
 miz: Caucasus_Vietnam_Operation_Tiger_Hound.miz
 performance: 3
-version: "9.1"
+version: "10.2"
 squadrons:
   Blue CV59:
     - primary: BARCAP

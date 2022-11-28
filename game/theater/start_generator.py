@@ -40,6 +40,7 @@ from ..armedforces.forcegroup import ForceGroup
 from ..campaignloader.campaignairwingconfig import CampaignAirWingConfig
 from ..data.groups import GroupTask
 from ..data.units import UnitClass
+from ..dcs.shipunittype import ShipUnitType
 from ..profiling import logged_duration
 from ..settings import Settings
 
@@ -253,6 +254,15 @@ class CarrierGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         # don't end up with Kuznetsov carriers called CV-59 Forrestal
         for unit in unit_group.units:
             if unit.unit_class == UnitClass.AIRCRAFT_CARRIER:
+                if (
+                    self.control_point.preferred_type
+                    and self.control_point.preferred_type in carriers
+                ):
+                    carrier_type = ship_type_from_name(
+                        self.control_point.preferred_type.id
+                    )
+                    if carrier_type is not None:
+                        unit = next(ShipUnitType.for_dcs_type(carrier_type))
                 carrier_type = ship_type_from_name(unit.dcs_unit_type.id)
         if carrier_type is None:
             raise RuntimeError(

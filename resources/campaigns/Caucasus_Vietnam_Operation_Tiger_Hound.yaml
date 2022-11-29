@@ -14,7 +14,7 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
-        - A-4E Skyhawk
+        - F-4B Phantom II
     - primary: Refueling
       aircraft:
         - S-3B Tanker
@@ -25,9 +25,9 @@ squadrons:
     - primary: BAI
       secondary: air-to-ground
       aircraft:
-        - A-4E Skyhawk
+        - A-6A Intruder
     - primary: CAS
-      secondary: air-to-ground
+      secondary: air-to-air
       aircraft:
         - A-4E Skyhawk
     - primary: AEW&C
@@ -37,7 +37,7 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-air
       aircraft:
-        - A-4E Skyhawk
+        - F-4B Phantom II
     - primary: Refueling
       aircraft:
         - S-3B Tanker
@@ -48,9 +48,9 @@ squadrons:
     - primary: BAI
       secondary: air-to-ground
       aircraft:
-        - A-4E Skyhawk
+        - A-6A Intruder
     - primary: CAS
-      secondary: air-to-ground
+      secondary: air-to-air
       aircraft:
         - A-4E Skyhawk
     - primary: AEW&C
@@ -129,6 +129,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - MiG-19P Farmer-B
+    - primary: SEAD
+      secondary: air-to-ground
+      aircraft:
+        - Su-22M4 Fitter-K
   # Gelendzhik
   17:
     - primary: CAS
@@ -180,6 +184,10 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
+        - F-100 Super Sabre
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
         - F-105D Thunderchief
     - primary: SEAD
       secondary: air-to-ground
@@ -209,10 +217,6 @@ squadrons:
       secondary: air-to-air
       aircraft:
         - F-4E Phantom II
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - F-86F Sabre
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -261,10 +265,6 @@ squadrons:
       secondary: air-to-air
       aircraft:
         - F-5E Tiger II
-    - primary: BARCAP
-      secondary: air-to-air
-      aircraft:
-        - F-86F Sabre
     - primary: BAI
       secondary: air-to-ground
       aircraft:
@@ -310,7 +310,7 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - UH-1H Iroquois
-  FOB Da Nang:
+  FOB Phu Bai:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -328,7 +328,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
   
-  FOB Sochi-Adler:
+  Da Nang Airbase:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -341,6 +341,18 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - F-100 Super Sabre
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - F-105D Thunderchief
+    - primary: SEAD
+      secondary: air-to-ground
+      aircraft:
+        - F-105G Thunderchief
   Phu Bai FARP:
     - primary: CAS
       secondary: any

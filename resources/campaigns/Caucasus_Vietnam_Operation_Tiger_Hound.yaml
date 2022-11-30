@@ -185,6 +185,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - F-100 Super Sabre
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - F-104C Starfighter
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -345,6 +349,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - F-100 Super Sabre
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - F-104C Starfighter
     - primary: CAS
       secondary: air-to-ground
       aircraft:

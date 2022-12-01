@@ -2007,7 +2007,7 @@ function GMFunc.RouteAI(param1, param2, param3, param4, mcoord)
   then if mcoord:GetSurfaceType() ~= 2 and mcoord:GetSurfaceType() ~= 3
   
         then local UseRoad = false
-             local TrSpeed = 20
+             local TrSpeed = 30
              local Form = nil
              
              if param2 == "road" or param3 == "road" or param4 == "road" 
@@ -3357,7 +3357,7 @@ function GMFunc.MarkHandler:onEvent(event)
     
     if event.id == 25 and GMFunc.DebugMode ~= true
     
-        then trigger.action.outText(" ", 0, true) --Überschreibt "Created New Mark" 
+        then trigger.action.outText(" ", 0, true) --ï¿½berschreibt "Created New Mark" 
     
     elseif event.id == 27 and string.find(event.text, GMFunc.CmdSymbol) and (GMFunc.PW == nil or string.find(event.text, GMFunc.PW) ~= nil)
     

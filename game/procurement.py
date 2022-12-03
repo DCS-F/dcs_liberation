@@ -286,7 +286,21 @@ class ProcurementAi:
         # Prefer to buy front line units at active front lines that are not
         # already overloaded.
         for cp in self.owned_points:
-            if not cp.has_active_frontline:
+            one_step_away_from_frontline = False
+            for cp_possible_frontline in self.owned_points:
+                if (
+                    cp_possible_frontline in cp.connected_points
+                    and cp_possible_frontline.has_active_frontline
+                ):
+                    one_step_away_from_frontline = True
+                    print(f"{cp} is one step away from frontline")
+                    break
+
+            if (self.is_player and not cp.has_active_frontline) or (
+                not self.is_player
+                and not cp.has_active_frontline
+                and not one_step_away_from_frontline
+            ):
                 continue
 
             if not cp.has_ground_unit_source(self.game):
@@ -304,7 +318,7 @@ class ProcurementAi:
                 # Control point is already sufficiently defended.
                 # (Player)
                 continue
-            if self.is_player and allocated.total >= purchase_target_opfor:
+            if not self.is_player and allocated.total >= purchase_target_opfor:
                 # Control point is already sufficiently defended.
                 # (OPFOR)
                 continue

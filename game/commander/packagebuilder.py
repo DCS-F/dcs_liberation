@@ -63,6 +63,14 @@ class PackageBuilder:
             start_type,
             divert=self.find_divert_field(squadron.aircraft, squadron.location),
         )
+
+        # If this is a client flight, set the start_type again to match the configured default
+        # https://github.com/dcs-liberation/dcs_liberation/issues/1567
+        if flight.roster is not None and flight.roster.player_count > 0:
+            flight.start_type = (
+                squadron.coalition.game.settings.default_start_type_client
+            )
+
         self.package.add_flight(flight)
         return True
 

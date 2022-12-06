@@ -2933,8 +2933,8 @@ env.setErrorMessageBoxEnabled(false)
 veaf.loggers.get(veaf.Id):info("Loading version %s", veaf.Version)
 veaf.loggers.get(veaf.Id):info("veaf.Development=%s", veaf.Development)
 veaf.loggers.get(veaf.Id):info("veaf.SecurityDisabled=%s", veaf.SecurityDisabled)
-veaf.loggers.get(veaf.Id):info("veaf.Debug=%s", veaf.Debug)
-veaf.loggers.get(veaf.Id):info("veaf.Trace=%s", veaf.Trace)
+-- veaf.loggers.get(veaf.Id):info("veaf.Debug=%s", veaf.Debug)
+-- veaf.loggers.get(veaf.Id):info("veaf.Trace=%s", veaf.Trace)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- changes to CTLD 

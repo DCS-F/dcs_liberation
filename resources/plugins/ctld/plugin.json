@@ -50,16 +50,8 @@
     ],
     "scriptsWorkOrders": [
         {
-            "file":     "mist.lua",
-            "mnemonic": "mist"
-        },
-        {
             "file": "CTLD.lua",
             "mnemonic": "ctld-script"
-        },
-        {
-            "file": "CTLD-groups.lua",
-            "mnemonic": "ctld-groups"
         }
     ],
     "configurationWorkOrders": [

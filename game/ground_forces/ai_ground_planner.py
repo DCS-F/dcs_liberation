@@ -90,7 +90,10 @@ class GroundPlanner:
 
     def plan_groundwar(self) -> None:
 
-        ground_unit_limit = self.cp.frontline_unit_count_limit
+        ground_unit_limit = min(
+            self.game.settings.perf_frontline_units_max_supply,
+            self.cp.frontline_unit_count_limit,
+        )
 
         remaining_available_frontline_units = ground_unit_limit
 

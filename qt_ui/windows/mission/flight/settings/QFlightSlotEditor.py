@@ -179,6 +179,7 @@ class FlightRosterEditor(QVBoxLayout):
             )
             self.pilot_controls.append(controls)
             self.addLayout(controls)
+            self.pilots_changed = pilots_changed
 
     def update_available_pilots(self, source_idx: int) -> None:
         for idx, controls in enumerate(self.pilot_controls):
@@ -195,6 +196,7 @@ class FlightRosterEditor(QVBoxLayout):
             controls.enable_and_reset()
         for controls in self.pilot_controls[new_size:]:
             controls.disable_and_clear()
+        self.pilots_changed.emit()
 
     def replace(self, new_roster: Optional[FlightRoster]) -> None:
         if self.roster is not None:

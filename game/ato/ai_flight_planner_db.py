@@ -416,6 +416,7 @@ DEAD_CAPABLE = SEAD_CAPABLE + [
     Tu_160,
     Tu_95MS,
     H_6J,
+    F_117A,
     VSN_MirageIIIC_AG,
     VSN_MirageIIIS,
     VSN_A6A,

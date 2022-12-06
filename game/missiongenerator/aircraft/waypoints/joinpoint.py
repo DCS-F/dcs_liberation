@@ -38,12 +38,17 @@ class JoinPointBuilder(PydcsWaypointBuilder):
                     waypoint,
                     [
                         Targets.All.Naval,
+                        Targets.All.GroundUnits.AirDefence.AAA,
                         Targets.All.GroundUnits.AirDefence.AAA.SAMRelated,
                     ],
                 )
             else:
                 self.configure_escort_tasks(
-                    waypoint, [Targets.All.GroundUnits.AirDefence.AAA.SAMRelated]
+                    waypoint,
+                    [
+                        Targets.All.GroundUnits.AirDefence.AAA,
+                        Targets.All.GroundUnits.AirDefence.AAA.SAMRelated,
+                    ],
                 )
 
             # Let the AI use ECM to preemptively defend themselves.

@@ -47,11 +47,11 @@ local unitPayloads = {
 					["num"] = 7,
 				},
 				[4] = {
-					["CLSID"] = "{D5D51E24-348C-4702-96AF-97A714E72697}",
+					["CLSID"] = "{LAU3_FFAR_MK5HEAT}",
 					["num"] = 8,
 				},
 				[5] = {
-					["CLSID"] = "{D5D51E24-348C-4702-96AF-97A714E72697}",
+					["CLSID"] = "{LAU3_FFAR_MK5HEAT}",
 					["num"] = 4,
 				},
 			},

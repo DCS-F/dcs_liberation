@@ -145,6 +145,8 @@ class FlightGroupSpawner:
                     pad_group = self._generate_at_cp_stol(name, cp)
                     if pad_group is not None:
                         return pad_group
+                # FlightGroupSpawner will now always air-start AI A-4E Skyhawks
+                # because the AI is really bad at taking off with heavier loadouts.
                 if (
                     self.flight.client_count < 1
                     and self.flight.unit_type.dcs_unit_type in [A_4E_C]
@@ -336,7 +338,7 @@ class FlightGroupSpawner:
         group.units[0].heading = stol_pad[0].units[0].heading
 
         # Evaluate hot starts
-        # The Mirage 2000C currently has a bug (as of DCS World 2.7.16.28157) with hot starts from ground
+        # The Mirage 2000C currently has a bug (as of DCS World 2.8.0.33006) with hot starts from ground
         # which makes takeoffs impossible (gear sticking to the ground), so always cold start them
         if (
             self.start_type is not StartType.COLD
@@ -367,7 +369,11 @@ class FlightGroupSpawner:
         return group
 
     def dcs_start_type(self) -> DcsStartType:
-        if self.start_type is StartType.RUNWAY:
+        # The Mirage 2000C currently has a bug (as of DCS World 2.8.0.33006) with hot starts
+        # which makes takeoffs impossible (gear sticking to the ground), so always cold start them
+        if self.flight.unit_type.dcs_unit_type in [M_2000C]:
+            return DcsStartType.Cold
+        elif self.start_type is StartType.RUNWAY:
             return DcsStartType.Runway
         elif self.start_type is StartType.COLD:
             return DcsStartType.Cold

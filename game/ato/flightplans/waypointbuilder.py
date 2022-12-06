@@ -57,6 +57,8 @@ class WaypointBuilder:
         return self.flight.is_helo
 
     def takeoff(self, departure: ControlPoint) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         """Create takeoff waypoint for the given arrival airfield or carrier.
 
         Note that the takeoff waypoint will automatically be created by pydcs
@@ -72,7 +74,7 @@ class WaypointBuilder:
                 "NAV",
                 FlightWaypointType.NAV,
                 position,
-                meters(500) if self.is_helo else self.doctrine.rendezvous_altitude,
+                HELI_ALT if self.is_helo else self.doctrine.rendezvous_altitude,
                 description="Enter theater",
                 pretty_name="Enter theater",
             )
@@ -88,6 +90,8 @@ class WaypointBuilder:
         )
 
     def land(self, arrival: ControlPoint) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         """Create descent waypoint for the given arrival airfield or carrier.
 
         Args:
@@ -99,7 +103,7 @@ class WaypointBuilder:
                 "NAV",
                 FlightWaypointType.NAV,
                 position,
-                meters(500) if self.is_helo else self.doctrine.rendezvous_altitude,
+                HELI_ALT if self.is_helo else self.doctrine.rendezvous_altitude,
                 description="Exit theater",
                 pretty_name="Exit theater",
             )
@@ -116,6 +120,8 @@ class WaypointBuilder:
         )
 
     def divert(self, divert: Optional[ControlPoint]) -> Optional[FlightWaypoint]:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         """Create divert waypoint for the given arrival airfield or carrier.
 
         Args:
@@ -128,7 +134,7 @@ class WaypointBuilder:
         altitude_type: AltitudeReference
         if isinstance(divert, OffMapSpawn):
             if self.is_helo:
-                altitude = meters(500)
+                altitude = HELI_ALT
             else:
                 altitude = self.doctrine.rendezvous_altitude
             altitude_type = "BARO"
@@ -160,6 +166,8 @@ class WaypointBuilder:
         )
 
     def hold(self, position: Point) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -168,13 +176,15 @@ class WaypointBuilder:
             "HOLD",
             FlightWaypointType.LOITER,
             position,
-            meters(500) if self.is_helo else self.doctrine.rendezvous_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.rendezvous_altitude,
             alt_type,
             description="Wait until push time",
             pretty_name="Hold",
         )
 
     def join(self, position: Point) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -183,13 +193,15 @@ class WaypointBuilder:
             "JOIN",
             FlightWaypointType.JOIN,
             position,
-            meters(80) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description="Rendezvous with package",
             pretty_name="Join",
         )
 
     def refuel(self, position: Point) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -198,13 +210,15 @@ class WaypointBuilder:
             "REFUEL",
             FlightWaypointType.REFUEL,
             position,
-            meters(80) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description="Refuel from tanker",
             pretty_name="Refuel",
         )
 
     def split(self, position: Point) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -213,7 +227,7 @@ class WaypointBuilder:
             "SPLIT",
             FlightWaypointType.SPLIT,
             position,
-            meters(80) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description="Depart from package",
             pretty_name="Split",
@@ -225,6 +239,8 @@ class WaypointBuilder:
         position: Point,
         objective: MissionTarget,
     ) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -233,7 +249,7 @@ class WaypointBuilder:
             "INGRESS",
             ingress_type,
             position,
-            meters(60) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description=f"INGRESS on {objective.name}",
             pretty_name=f"INGRESS on {objective.name}",
@@ -241,6 +257,8 @@ class WaypointBuilder:
         )
 
     def egress(self, position: Point, target: MissionTarget) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         alt_type: AltitudeReference = "BARO"
         if self.is_helo:
             alt_type = "RADIO"
@@ -249,7 +267,7 @@ class WaypointBuilder:
             "EGRESS",
             FlightWaypointType.EGRESS,
             position,
-            meters(60) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description=f"EGRESS from {target.name}",
             pretty_name=f"EGRESS from {target.name}",
@@ -338,11 +356,13 @@ class WaypointBuilder:
         return waypoint
 
     def cas(self, position: Point) -> FlightWaypoint:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         return FlightWaypoint(
             "CAS",
             FlightWaypointType.CAS,
             position,
-            meters(60) if self.is_helo else meters(1000),
+            HELI_ALT if self.is_helo else meters(1000),
             "RADIO",
             description="Provide CAS",
             pretty_name="CAS",
@@ -466,6 +486,8 @@ class WaypointBuilder:
         ingress: Point,
         target: MissionTarget,
     ) -> Tuple[FlightWaypoint, FlightWaypoint]:
+        from game.missiongenerator.aircraft.flightgroupspawner import HELI_ALT
+
         """Creates the waypoints needed to escort the package.
 
         Args:
@@ -487,7 +509,7 @@ class WaypointBuilder:
             "TARGET",
             FlightWaypointType.TARGET_GROUP_LOC,
             target.position,
-            meters(60) if self.is_helo else self.doctrine.ingress_altitude,
+            HELI_ALT if self.is_helo else self.doctrine.ingress_altitude,
             alt_type,
             description="Escort the package",
             pretty_name="Target area",

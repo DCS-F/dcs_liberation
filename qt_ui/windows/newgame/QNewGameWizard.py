@@ -736,7 +736,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
             ("F-16CM Block 50 (version 2.5.6.10)", f16cm_bl50),
             ("F-22A Raptor", f22_raptor),
             ("F-84G Thunderjet (v2.5.7.01)", f84g_thunderjet),
-            ("F-100 Super Sabre (v2.7.18.30765 patch 09.10.22)", f100_supersabre),
+            ("F-100 Super Sabre (v2.7.18.30765 patch 20.10.22)", f100_supersabre),
             ("F-104 Starfighter (v2.7.11.222.01)", f104_starfighter),
             ("F-105 Thunderchief (v2.7.12.23x)", f105_thunderchief),
             ("T-45 Goshawk (version 1.01)", t45_goshawk),

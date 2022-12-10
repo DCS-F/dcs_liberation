@@ -402,6 +402,7 @@ SEAD_CAPABLE = [
     Su_30,
     MiG_27K,
     VSN_F105G,
+    VSN_F100,
 ]
 
 

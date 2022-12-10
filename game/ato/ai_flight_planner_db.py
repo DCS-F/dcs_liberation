@@ -51,6 +51,7 @@ from dcs.planes import (
     F_15C,
     F_15E,
     F_16A,
+    F_16A_MLU,
     F_16C_50,
     F_4E,
     F_5E_3,
@@ -206,6 +207,7 @@ CAP_CAPABLE = [
     F_A_18C,
     JF_17,
     JAS39Gripen,
+    F_16A_MLU,
     F_16A,
     VSN_F16AMLU,
     F_4E,
@@ -291,6 +293,8 @@ CAS_CAPABLE = [
     JF_17,
     AV8BNA,
     A_10A,
+    F_16A_MLU,
+    F_16A,
     B_1B,
     A_7E,
     VSN_A6A,
@@ -417,6 +421,12 @@ SEAD_CAPABLE = [
 ]
 
 
+SEAD_CAPABLE = SEAD_ESCORT_CAPABLE + [
+    F_16A_MLU,
+    F_14B,
+    F_14A_135_GR,
+]
+
 # Aircraft used for DEAD tasks. Must be capable of the CAS DCS task.
 DEAD_CAPABLE = SEAD_CAPABLE + [
     AJS37,
@@ -492,6 +502,7 @@ STRIKE_CAPABLE = [
     VSN_A6A,
     AV8BNA,
     JF_17,
+    F_16A_MLU,
     F_16A,
     F_14B,
     F_14A_135_GR,
@@ -570,6 +581,8 @@ ANTISHIP_CAPABLE = [
     H_6J,
     FA_18C_hornet,
     JAS39Gripen_AG,
+    F_16A_MLU,
+    F_16A,
     Su_24M,
     Su_17M4,
     JF_17,
@@ -625,6 +638,7 @@ RUNWAY_ATTACK_CAPABLE = [
     VSN_A6A,
     AV8BNA,
     JF_17,
+    F_16A_MLU,
     F_16A,
     F_14B,
     F_14A_135_GR,

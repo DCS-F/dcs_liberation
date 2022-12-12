@@ -427,6 +427,18 @@ class Settings:
         min=0,
         max=100,
     )
+    ground_start_trucks: bool = boolean_option(
+        "Spawn trucks at ground starts in airbases instead of FARP statics",
+        MISSION_GENERATOR_PAGE,
+        GAMEPLAY_SECTION,
+        default=False,
+    )
+    ground_start_trucks_roadbase: bool = boolean_option(
+        "Spawn trucks at ground starts in roadbases instead of FARP statics",
+        MISSION_GENERATOR_PAGE,
+        GAMEPLAY_SECTION,
+        default=False,
+    )
 
     # Performance
     perf_smoke_gen: bool = boolean_option(

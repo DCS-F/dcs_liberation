@@ -17,7 +17,7 @@ from dcs import Mission, Point, unitgroup
 from dcs.action import DoScript, SceneryDestructionZone
 from dcs.condition import MapObjectIsDead
 from dcs.country import Country
-from dcs.point import StaticPoint
+from dcs.point import StaticPoint, PointAction
 from dcs.ships import (
     CVN_71,
     CVN_72,
@@ -40,7 +40,7 @@ from dcs.triggers import Event, TriggerOnce, TriggerStart, TriggerZone
 from dcs.unit import Unit, InvisibleFARP, SingleHeliPad, FARP, BaseFARP
 from dcs.unitgroup import MovingGroup, ShipGroup, StaticGroup, VehicleGroup
 from dcs.unittype import ShipType, VehicleType
-from dcs.vehicles import vehicle_map
+from dcs.vehicles import vehicle_map, Unarmed
 
 from game.missiongenerator.groundforcepainter import (
     GroundForcePainter,
@@ -716,24 +716,48 @@ class HighwayStripGenerator:
         self.stol_pads_roadbase.append((sg, stol_pad[1]))
 
         # Generate a FARP Ammo and Fuel stack for each pad
-        self.m.static_group(
-            country=country,
-            name=(name + "_fuel"),
-            _type=Fortification.FARP_Fuel_Depot,
-            position=pad.position.point_from_heading(
-                stol_pad[0].heading.degrees + 90, 35
-            ),
-            heading=pad.heading + 270,
-        )
-        self.m.static_group(
-            country=country,
-            name=(name + "_ammo"),
-            _type=Fortification.FARP_Ammo_Dump_Coating,
-            position=pad.position.point_from_heading(
-                stol_pad[0].heading.degrees + 90, 35
-            ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
-            heading=pad.heading + 180,
-        )
+        if self.game.settings.ground_start_trucks_roadbase:
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_fuel"),
+                _type=Unarmed.M978_HEMTT_Tanker,
+                position=pad.position.point_from_heading(
+                    stol_pad[0].heading.degrees + 90, 35
+                ),
+                group_size=1,
+                heading=pad.heading + 315,
+                move_formation=PointAction.OffRoad,
+            )
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_ammo"),
+                _type=Unarmed.M_818,
+                position=pad.position.point_from_heading(
+                    stol_pad[0].heading.degrees + 90, 35
+                ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
+                group_size=1,
+                heading=pad.heading + 315,
+                move_formation=PointAction.OffRoad,
+            )
+        else:
+            self.m.static_group(
+                country=country,
+                name=(name + "_fuel"),
+                _type=Fortification.FARP_Fuel_Depot,
+                position=pad.position.point_from_heading(
+                    stol_pad[0].heading.degrees + 90, 35
+                ),
+                heading=pad.heading + 270,
+            )
+            self.m.static_group(
+                country=country,
+                name=(name + "_ammo"),
+                _type=Fortification.FARP_Ammo_Dump_Coating,
+                position=pad.position.point_from_heading(
+                    stol_pad[0].heading.degrees + 90, 35
+                ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
+                heading=pad.heading + 180,
+            )
 
     def generate(self) -> None:
         try:
@@ -786,24 +810,48 @@ class StolPadGenerator:
         self.stol_pads.append((sg, vtol_pad[1]))
 
         # Generate a FARP Ammo and Fuel stack for each pad
-        self.m.static_group(
-            country=country,
-            name=(name + "_fuel"),
-            _type=Fortification.FARP_Fuel_Depot,
-            position=pad.position.point_from_heading(
-                vtol_pad[0].heading.degrees - 180, 45
-            ),
-            heading=pad.heading,
-        )
-        self.m.static_group(
-            country=country,
-            name=(name + "_ammo"),
-            _type=Fortification.FARP_Ammo_Dump_Coating,
-            position=pad.position.point_from_heading(
-                vtol_pad[0].heading.degrees - 180, 35
-            ),
-            heading=pad.heading + 270,
-        )
+        if self.game.settings.ground_start_trucks:
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_fuel"),
+                _type=Unarmed.M978_HEMTT_Tanker,
+                position=pad.position.point_from_heading(
+                    vtol_pad[0].heading.degrees - 175, 35
+                ),
+                group_size=1,
+                heading=pad.heading + 45,
+                move_formation=PointAction.OffRoad,
+            )
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_ammo"),
+                _type=Unarmed.M_818,
+                position=pad.position.point_from_heading(
+                    vtol_pad[0].heading.degrees - 185, 35
+                ),
+                group_size=1,
+                heading=pad.heading + 45,
+                move_formation=PointAction.OffRoad,
+            )
+        else:
+            self.m.static_group(
+                country=country,
+                name=(name + "_fuel"),
+                _type=Fortification.FARP_Fuel_Depot,
+                position=pad.position.point_from_heading(
+                    vtol_pad[0].heading.degrees - 180, 45
+                ),
+                heading=pad.heading,
+            )
+            self.m.static_group(
+                country=country,
+                name=(name + "_ammo"),
+                _type=Fortification.FARP_Ammo_Dump_Coating,
+                position=pad.position.point_from_heading(
+                    vtol_pad[0].heading.degrees - 180, 35
+                ),
+                heading=pad.heading + 270,
+            )
 
     def generate(self) -> None:
         try:

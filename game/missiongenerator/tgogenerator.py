@@ -16,6 +16,7 @@ import dcs.vehicles
 from dcs import Mission, Point, unitgroup
 from dcs.action import DoScript, SceneryDestructionZone
 from dcs.condition import MapObjectIsDead
+from dcs.countries import Vietnam
 from dcs.country import Country
 from dcs.point import StaticPoint, PointAction
 from dcs.ships import (
@@ -715,12 +716,19 @@ class HighwayStripGenerator:
 
         self.stol_pads_roadbase.append((sg, stol_pad[1]))
 
+        if country.id == Vietnam.id:
+            tanker_type = Unarmed.ATZ_60_Maz
+            ammo_truck_type = Unarmed.KAMAZ_Truck
+        else:
+            tanker_type = Unarmed.M978_HEMTT_Tanker
+            ammo_truck_type = Unarmed.M_818
+
         # Generate a FARP Ammo and Fuel stack for each pad
         if self.game.settings.ground_start_trucks_roadbase:
             self.m.vehicle_group(
                 country=country,
                 name=(name + "_fuel"),
-                _type=Unarmed.M978_HEMTT_Tanker,
+                _type=tanker_type,
                 position=pad.position.point_from_heading(
                     stol_pad[0].heading.degrees + 90, 35
                 ),
@@ -731,7 +739,7 @@ class HighwayStripGenerator:
             self.m.vehicle_group(
                 country=country,
                 name=(name + "_ammo"),
-                _type=Unarmed.M_818,
+                _type=ammo_truck_type,
                 position=pad.position.point_from_heading(
                     stol_pad[0].heading.degrees + 90, 35
                 ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
@@ -809,12 +817,19 @@ class StolPadGenerator:
 
         self.stol_pads.append((sg, vtol_pad[1]))
 
+        if country.id == Vietnam.id:
+            tanker_type = Unarmed.ATZ_60_Maz
+            ammo_truck_type = Unarmed.KAMAZ_Truck
+        else:
+            tanker_type = Unarmed.M978_HEMTT_Tanker
+            ammo_truck_type = Unarmed.M_818
+
         # Generate a FARP Ammo and Fuel stack for each pad
         if self.game.settings.ground_start_trucks:
             self.m.vehicle_group(
                 country=country,
                 name=(name + "_fuel"),
-                _type=Unarmed.M978_HEMTT_Tanker,
+                _type=tanker_type,
                 position=pad.position.point_from_heading(
                     vtol_pad[0].heading.degrees - 175, 35
                 ),
@@ -825,7 +840,7 @@ class StolPadGenerator:
             self.m.vehicle_group(
                 country=country,
                 name=(name + "_ammo"),
-                _type=Unarmed.M_818,
+                _type=ammo_truck_type,
                 position=pad.position.point_from_heading(
                     vtol_pad[0].heading.degrees - 185, 35
                 ),

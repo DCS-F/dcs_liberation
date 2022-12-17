@@ -1,3 +1,59 @@
+# Retribution 1.0.0
+
+## Features/Improvements
+* **[Engine]** Support for DCS v2.8.1.34437.
+* **[Briefing]** Add tanker info to mission briefing
+* **[Campaign]** Add 5 new campaigns by Oscar Juliet from WRL
+* **[Campaign]** Add ability to define livery overrides also for ground/naval units
+* **[Data]** Added data to support C-47 Skytrain.
+* **[Data]** Added data to support F-16A MLU.
+* **[Data]** Added data to support KS-19 & SON-9, including support for "AAA Site" layout.
+* **[Mission Generation]** Add option to configure the maximum front-line length in settings
+* **[Mission Generation]** Use Escort & SEAD tasks for Escort & SEAD Escort flights
+* **[Mission Generation]** Variable flight-size (2/3/4-ship) for 
+BAI/ANTISHIP/DEAD/STRIKE/BARCAP/CAS/OCA/AIR-ASSAULT (main) missions
+* **[Mission Generation]** Add option to only generate night missions
+* **[Modding]** Support for F-15D 'Baz' mod version 1.0
+* **[Modding]** Support for Su-30 mod version 2.01B
+* **[Modding]** Support for A-6A Intruder version 2.7.5.01
+* **[Modding]** Support for F-4B Phantom II mod version v2.7.10.02, patch 2022.10.02
+* **[Modding]** Support for F-100 Super Sabre mod versions v2.7.18.01 & 2.7.18.30765 and patch 20.10.22
+* **[Modding]** Support for F-105 mod version 2.7.12.23x
+* **[Modding]** Support IDF Mod Project F-16I Sufa & F-16D v2.2 mod
+* **[Modding]** Support for F-84G mod version 2.5.7.01
+* **[Modding]** Updated F-104 mod version support to 2.7.11.222.01
+* **[Performance]** Added performance option: Maximum front-line unit supply per control point.
+* **[Performance]** Added performance option: Disable convoys.
+* **[Performance]** Added performance option: Front-line troops prefer roads.
+* **[Performance]** Added performance option: Disable idle aircraft at airfields.
+* **[Squadrons]** Squadron pilot limits enabled by default.
+* **[UI]** Add livery selector to Air Wing Configurator's squadrons.
+
+## Fixes
+
+* **[Mission Generation]** Fixed issue where aircraft carriers would return after being killed.
+* **[Mission Generation]** Kneeboard STRIKE coordinates would sometimes get clipped when not fitting.
+* **[UI]** Fix exception when trying to add a waypoints to a flightplan.
+
+# Liberation:
+# 7.0.0
+
+Saves from 6.x are not compatible with 7.0.
+
+## Features/Improvements
+
+## Fixes
+
+# 6.1.0
+
+Saves from 6.0.0 are compatible with 6.1.0
+
+## Features/Improvements
+
+## Fixes
+
+* **[UI]** Fixed an issue where manual submit of mission results did not end the mission correctly.
+
 # 6.0.0
 
 Saves from 5.x are not compatible with 6.0.

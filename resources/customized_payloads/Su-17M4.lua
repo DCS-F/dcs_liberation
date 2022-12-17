@@ -46,7 +46,7 @@ local unitPayloads = {
 			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 8,
 				},
 				[2] = {
@@ -54,7 +54,7 @@ local unitPayloads = {
 					["num"] = 7,
 				},
 				[3] = {
-					["CLSID"] = "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 6,
 				},
 				[4] = {
@@ -66,7 +66,7 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[6] = {
-					["CLSID"] = "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 3,
 				},
 				[7] = {
@@ -74,7 +74,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[8] = {
-					["CLSID"] = "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+					["CLSID"] = "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
 					["num"] = 1,
 				},
 			},
@@ -333,36 +333,36 @@ local unitPayloads = {
 			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{E86C5AA5-6D49-4F00-AD2E-79A62D6DDE26}",
-					["num"] = 8,
+					["CLSID"] = "{6A367BB4-327F-4A04-8D9E-6D86BDC98E7E}",
+					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
-					["num"] = 7,
+					["CLSID"] = "{APU-60-1_R_60M}",
+					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{E86C5AA5-6D49-4F00-AD2E-79A62D6DDE26}",
-					["num"] = 6,
+					["CLSID"] = "{FE382A68-8620-4AC0-BDF5-709BFE3977D7}",
+					["num"] = 3,
 				},
 				[4] = {
 					["CLSID"] = "{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}",
-					["num"] = 5,
+					["num"] = 4,
 				},
 				[5] = {
 					["CLSID"] = "{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}",
-					["num"] = 4,
+					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{E86C5AA5-6D49-4F00-AD2E-79A62D6DDE26}",
-					["num"] = 3,
+					["CLSID"] = "{FE382A68-8620-4AC0-BDF5-709BFE3977D7}",
+					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
-					["num"] = 2,
+					["CLSID"] = "{APU-60-1_R_60M}",
+					["num"] = 7,
 				},
 				[8] = {
-					["CLSID"] = "{E86C5AA5-6D49-4F00-AD2E-79A62D6DDE26}",
-					["num"] = 1,
+					["CLSID"] = "{6A367BB4-327F-4A04-8D9E-6D86BDC98E7E}",
+					["num"] = 8,
 				},
 			},
 			["tasks"] = {

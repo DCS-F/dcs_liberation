@@ -314,7 +314,7 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - UH-1H Iroquois
-  FOB Phu Bai:
+  Phu Bai Combat Base:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -348,6 +348,10 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
+        - F-86F Sabre
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
         - F-100 Super Sabre
     - primary: BARCAP
       secondary: air-to-ground
@@ -361,7 +365,7 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - F-105G Thunderchief
-  Phu Bai FARP:
+  Dong Ha Camp Spillman:
     - primary: CAS
       secondary: any
       aircraft:
@@ -406,7 +410,7 @@ squadrons:
       secondary: any
       aircraft:
         - Mi-8MTV2 Hip
-  FOB Quang Tri:
+  Quang Tri Combat Base:
     - primary: CAS
       secondary: any
       aircraft:
@@ -442,6 +446,10 @@ squadrons:
       aircraft:
         - MiG-15bis Fagot
   Hanoi Bac Mai Airfield:
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-19P Farmer-B
     - primary: BARCAP
       secondary: air-to-air
       aircraft:

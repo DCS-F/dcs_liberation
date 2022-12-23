@@ -716,6 +716,9 @@ class HighwayStripGenerator:
 
         self.stol_pads_roadbase.append((sg, stol_pad[1]))
 
+        tanker_type: Type[VehicleType]
+        ammo_truck_type: Type[VehicleType]
+
         if country.id == Vietnam.id:
             tanker_type = Unarmed.ATZ_60_Maz
             ammo_truck_type = Unarmed.KAMAZ_Truck
@@ -816,6 +819,9 @@ class StolPadGenerator:
         neutral_country.add_static_group(sg)
 
         self.stol_pads.append((sg, vtol_pad[1]))
+
+        tanker_type: Type[VehicleType]
+        ammo_truck_type: Type[VehicleType]
 
         if country.id == Vietnam.id:
             tanker_type = Unarmed.ATZ_60_Maz

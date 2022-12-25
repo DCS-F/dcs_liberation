@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import math
 import random
+from datetime import timedelta
 from typing import List, Optional, TYPE_CHECKING, Tuple
 
 from dcs import Mission
@@ -15,7 +16,6 @@ from dcs.task import (
     AFAC,
     AttackGroup,
     ControlledTask,
-    EPLRS,
     FAC,
     FireAtPoint,
     GoToWaypoint,
@@ -48,6 +48,7 @@ from .missiondata import MissionData, JtacInfo
 from .frontlineconflictdescription import FrontLineConflictDescription
 from .groundforcepainter import GroundForcePainter
 from .lasercoderegistry import LaserCodeRegistry
+from ..ato import FlightType
 
 if TYPE_CHECKING:
     from game import Game
@@ -298,8 +299,29 @@ class FlotGenerator:
             vehicle = vg.units[0]
             GroundForcePainter(faction, vehicle).apply_livery()
 
+    def _earliest_tot_on_flot(self, player: bool) -> timedelta:
+        tots = [
+            x.time_over_target
+            for x in self.game.ato_for(player).packages
+            if x.primary_task == FlightType.CAS
+        ]
+        return (
+            timedelta()
+            if len(tots) == 0
+            else min(
+                [
+                    x.time_over_target
+                    for x in self.game.ato_for(player).packages
+                    if x.primary_task == FlightType.CAS
+                ]
+            )
+        )
+
     def _set_reform_waypoint(
-        self, dcs_group: VehicleGroup, forward_heading: Heading
+        self,
+        dcs_group: VehicleGroup,
+        forward_heading: Heading,
+        hold_duration: timedelta = timedelta(),
     ) -> None:
         """Setting a waypoint close to the spawn position allows the group to reform gracefully
         rather than spin
@@ -307,7 +329,10 @@ class FlotGenerator:
         reform_point = dcs_group.position.point_from_heading(
             forward_heading.degrees, 50
         )
-        dcs_group.add_waypoint(reform_point)
+        rp = dcs_group.add_waypoint(reform_point)
+        hold = ControlledTask(Hold())
+        hold.stop_after_duration(hold_duration.seconds)
+        rp.add_task(hold)
 
     def _plan_artillery_action(
         self,
@@ -352,7 +377,7 @@ class FlotGenerator:
             # Hold position
             dcs_group.points[1].tasks.append(Hold())
             retreat = self.find_retreat_point(
-                dcs_group, forward_heading, (int)(RETREAT_DISTANCE / 3)
+                dcs_group, forward_heading, int(RETREAT_DISTANCE / 3)
             )
             dcs_group.add_waypoint(
                 dcs_group.position.point_from_heading(forward_heading.degrees, 1),
@@ -399,7 +424,10 @@ class FlotGenerator:
         Handles adding the DCS tasks for tank and IFV groups for all combat stances.
         Returns True if tasking was added, returns False if the stance was not a combat stance.
         """
-        self._set_reform_waypoint(dcs_group, forward_heading)
+        duration = timedelta()
+        if stance != CombatStance.RETREAT:
+            duration = self._earliest_tot_on_flot(not to_cp.coalition.player)
+        self._set_reform_waypoint(dcs_group, forward_heading, duration)
 
         # Set the waypoint PointActions to on-road if the "Front line troops prefer roads"
         # performance option is enabled
@@ -494,7 +522,10 @@ class FlotGenerator:
         Handles adding the DCS tasks for APC and ATGM groups for all combat stances.
         Returns True if tasking was added, returns False if the stance was not a combat stance.
         """
-        self._set_reform_waypoint(dcs_group, forward_heading)
+        duration = timedelta()
+        if stance != CombatStance.RETREAT:
+            duration = self._earliest_tot_on_flot(not to_cp.coalition.player)
+        self._set_reform_waypoint(dcs_group, forward_heading, duration)
         if stance in [
             CombatStance.AGGRESSIVE,
             CombatStance.BREAKTHROUGH,
@@ -548,8 +579,6 @@ class FlotGenerator:
             waypoint_pointaction = PointAction.OffRoad
 
         for dcs_group, group in ally_groups:
-            if group.unit_type.eplrs_capable:
-                dcs_group.points[0].tasks.append(EPLRS(dcs_group.id))
 
             if group.role == CombatGroupRole.ARTILLERY:
                 if self.game.settings.perf_artillery:
@@ -571,7 +600,7 @@ class FlotGenerator:
 
             if stance == CombatStance.RETREAT:
                 # In retreat mode, the units will fall back
-                # If the ally base is close enough, the units will even regroup there
+                # If the allied base is close enough, the units will even regroup there
                 if (
                     from_cp.position.distance_to_point(dcs_group.points[0].position)
                     <= RETREAT_DISTANCE
@@ -589,7 +618,7 @@ class FlotGenerator:
         self, dcs_group: VehicleGroup, forward_heading: Heading
     ) -> None:
         """
-        This add a trigger to manage units fleeing whenever their group is hit hard, or being engaged by CAS
+        This adds a trigger to manage units fleeing whenever their group is hit hard, or being engaged by CAS
         """
 
         if len(dcs_group.units) == 1:
@@ -613,7 +642,7 @@ class FlotGenerator:
         # We add a new retreat waypoint
         dcs_group.add_waypoint(
             self.find_retreat_point(
-                dcs_group, forward_heading, (int)(RETREAT_DISTANCE / 8)
+                dcs_group, forward_heading, int(RETREAT_DISTANCE / 8)
             ),
             waypoint_pointaction,
         )
@@ -743,7 +772,7 @@ class FlotGenerator:
     @staticmethod
     def get_artilery_group_distance_from_frontline(group: CombatGroup) -> int:
         """
-        For artilery group, decide the distance from frontline with the range of the unit
+        For artillery group, decide the distance from frontline with the range of the unit
         """
         rg = group.unit_type.dcs_unit_type.threat_range - 7500
         if rg > DISTANCE_FROM_FRONTLINE[CombatGroupRole.ARTILLERY][1]:

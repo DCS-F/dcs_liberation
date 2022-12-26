@@ -61,17 +61,18 @@ explTable = {
   ["FAB_250M54TU"]= 100,
   ["FAB_500"] = 213,
   ["FAB_1500"]  = 675,
+  ["BAP_100"] = 100,
   ["BetAB_500"] = 98,
   ["BetAB_500ShP"]= 107,
   ["BKF_PTAB2_5KO"]= 10,
   ["BKF_AO2_5RT"]= 10,
-  ["RBK_250_275_AO_1SCH"] = 100,
-  ["RBK_250"] = 100,
-  ["RBK_500AO"] = 200,
-  ["RBK_500U"] = 200,
-  ["RBK_500U_OAB_2_5RT"] = 200,
+  ["RBK_250_275_AO_1SCH"] = 10,                 -- RBK-250-275 - 150 x AO-1SCh, 250kg CBU HE/Frag
+  ["RBK_250"] = 40,                             -- RBK-250 - 42 x PTAB-2.5M, 250kg CBU Medium HEAT/AP
+  ["RBK_500AO"] = 50,                           -- RBK-500-255 - 30 x PTAB-10-5 CBU Heavy HEAT/AP
+  ["RBK_500U"] = 5,                             -- RBK-500U - 268 x PTAB-1M CBU Light HEAT/AP
+  ["RBK_500U_OAB_2_5RT"] = 10,                  -- RBK-500U - 126 x OAB-2.5RT, 500kg CBU HE/Frag
   ["KH-66_Grom"]  = 108,
-  ["BDU_33"] = 201,                             -- BDU-33, smoke warhead (T-45, increased power for balance reasons)
+  ["BDU_33"] = 201,                             -- BDU-33, smoke warhead (added to allow the T-45 to fly combat missions)
   ["M_117"] = 201,
   ["Mk_81"] = 60,                               --
   ["Mk_82"] = 118,
@@ -130,7 +131,7 @@ explTable = {
   ["AGM_123"] = 274,
   ["AGM_130"] = 582,
   ["AGM_119"] = 176,
-  ["AGM_154A"]  = 10,                           -- AGM-154A - JSOW CEB (CBU-type) - 145 BLU-97/B Combined Effects Bomb (CEB) submunitions
+  ["AGM_154A"]  = 10,                            -- AGM-154A - JSOW CEB (CBU-type) - 145 BLU-97/B Combined Effects Bomb (CEB) submunitions
   ["AGM_154C"]  = 305,                           -- AGM-154C - JSOW Unitary BROACH
   ["S-24A"] = 24,                                --
   ["S-24B"] = 123,                               --
@@ -158,7 +159,7 @@ explTable = {
   ["HYDRA_70"] = 7,                              -- Hydra 70 2.75-inch/70mm rocket
   ["HYDRA_70_M151"] = 7,                         -- Hydra 70 2.75-inch/70mm rocket, M151 HEDP warhead
   ["HYDRA_70_M229"] = 7,                         -- Hydra 70 2.75-inch/70mm rocket, M229 HEDP warhead
-  ["HYDRA_70_M274"] = 20,                        -- Hydra 70 2.75-inch/70mm rocket, M274 smoke warhead (T-45, increased power for balance reasons)
+  ["HYDRA_70_M274"] = 20,                        -- Hydra 70 2.75-inch/70mm rocket, M274 smoke warhead (added to allow the T-45 to fly combat missions)
   ["HYDRA_70_M282"] = 7,                         -- Hydra 70 2.75-inch/70mm rocket, M282 MPP (penetrator) warhead
   ["HYDRA_70_MK5"] = 7,                          -- Hydra 70 2.75-inch/70mm rocket, Mk5 HEAT warhead
   ["FFAR Mk1 HE"] = 8,
@@ -201,8 +202,8 @@ explTable = {
   ["British_AP_25LBNo1_3INCHNo1"] = 4,           --("RP-3 25lb AP Mk.I")
   ["British_HE_60LBSAPNo2_3INCHNo1"] = 4,        --("RP-3 60lb SAP No2 Mk.I")
   ["British_HE_60LBFNo1_3INCHNo1"] = 4,          --("RP-3 60lb F No1 Mk.I")
-  ["WGr21"] = 4,                                 --("Werfer-Granate 21 - 21 cm UnGd air-to-air rocket")
-  ["3xM8_ROCKETS_IN_TUBES"] = 4,                 --("4.5 inch M8 UnGd Rocket")
+  ["WGr21"] = 21,                                --("Werfer-Granate 21 - 21 cm UnGd air-to-air rocket")
+  ["3xM8_ROCKETS_IN_TUBES"] = 12,                --("4.5 inch M8 UnGd Rocket")
   ["AN_M30A1"] = 45,                             --("AN-M30A1 - 100lb GP Bomb LD")
   ["AN-M57"] = 100,                              --("AN-M57 - 250lb GP Bomb LD")
   ["AN-M64"] = 213,                              --("AN-M64 - 500lb GP Bomb LD")
@@ -224,9 +225,9 @@ explTable = {
   ["SC_500_L2"] = 213,                           --("SC 500 L2 - 500kg GP Bomb LD")
   ["SD_250_Stg"] = 100,                          --("SD 250 Stg - 250kg GP Bomb LD")
   ["SD_500_A"] = 213,                            --("SD 500 A - 500kg GP Bomb LD")
---   ["AB_250_2_SD_2"] = 100,                       --("AB 250-2 - 144 x SD-2, 250kg CBU with HE submunitions")
---   ["AB_250_2_SD_10A"] = 100,                     --("AB 250-2 - 17 x SD-10A, 250kg CBU with 10kg Frag/HE submunitions")
---   ["AB_500_1_SD_10A"] = 213,                     --("AB 500-1 - 34 x SD-10A, 500kg CBU with 10kg Frag/HE submunitions")
+  ["AB_250_2_SD_2"] = 10,                        --("AB 250-2 - 144 x SD-2, 250kg CBU with HE submunitions")
+  ["AB_250_2_SD_10A"] = 80,                      --("AB 250-2 - 17 x SD-10A, 250kg CBU with 10kg Frag/HE submunitions")
+  ["AB_500_1_SD_10A"] = 40,                      --("AB 500-1 - 34 x SD-10A, 500kg CBU with 10kg Frag/HE submunitions")
 --   ["CLUSTER_AB_250_2_SD_2"] = 100,               --("AB 250-2 - 144 x SD-2, 250kg CBU with HE submunitions")
 --   ["CLUSTER_AB_250_2_SD_10A"] = 100,             --("AB 250-2 - 17 x SD-10A, 250kg CBU with 10kg Frag/HE submunitions")
 --   ["CLUSTER_AB_500_1_SD_10A"] = 213,             --("AB 500-1 - 34 x SD-10A, 500kg CBU with 10kg Frag/HE submunitions")
@@ -235,11 +236,9 @@ explTable = {
   ["MK77mod0-WPN"] = 110 * splash_damage_options.firebomb_splash_factor, --("Mk 77 Mod 0 - 750 lb (340 kg) with 110 U.S. gallons (416 L; 92 imp gal) of petroleum oil.")
   ["MK77mod1-WPN"] = 75 * splash_damage_options.firebomb_splash_factor,  --("Mk 77 Mod 1 - 500 lb (230 kg) with 75 U.S. gallons (284 L; 62 imp gal) of petroleum oil.")
   ["BIN_200"] = 75 * splash_damage_options.firebomb_splash_factor,     --("BIN-200 - 200 kg Spanish liquid incendiary Napalm filled bomb.")
-  --agm-65??
   ["BELOUGA"] = 10,                              -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
   ["BLG66_BELOUGA"] = 10,                        -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
-  ["BAP_100"] = 100,
-  ["ROCKEYE"] = 10,                             --("Mk-20 - 247 x Mk 118 Mod 1 bomblets, 222kg")
+  ["ROCKEYE"] = 10,                              --("Mk-20 - 247 x Mk 118 Mod 1 bomblets, 222kg")
   ["CBU_87"] = 10,                               --CBU-87 - 202 x CEM Cluster Bomb
   ["CBU_103"] = 10,                              --CBU-103 - 202 x CEM, CBU with WCMD
   ["M_230_new"] = 30,                            --30mm M230 autocannon (AH-64)
@@ -260,11 +259,14 @@ clusterWeaps = {
   ["AGM_154A"]  = 145,                           -- AGM-154A - JSOW CEB (CBU-type) - 145 BLU-97/B Combined Effects Bomb (CEB) submunitions
   ["BKF_PTAB2_5KO"]= 12,                         -- BKF - 12 x PTAB-2.5KO
   ["BKF_AO2_5RT"]= 12,                           -- BKF - 12 x AO-2.5RT
-  ["RBK_250_275_AO_1SCH"] = 25,                  -- RBK-250-275 - 150 x AO-1SCh, 250kg CBU HE/Frag
-  ["RBK_250"] = 25,                              -- RBK-250 - 42 x PTAB-2.5M, 250kg CBU Medium HEAT/AP
-  ["RBK_500AO"] = 25,
-  ["RBK_500U"] = 25,                             -- RBK-500U - 126 x OAB-2.5RT, 500kg CBU HE/Frag
-  ["RBK_500U_OAB_2_5RT"] = 25,
+  ["RBK_250_275_AO_1SCH"] = 150,                 -- RBK-250-275 - 150 x AO-1SCh, 250kg CBU HE/Frag
+  ["RBK_250"] = 42,                              -- RBK-250 - 42 x PTAB-2.5M, 250kg CBU Medium HEAT/AP
+  ["RBK_500AO"] = 30,                            -- RBK-500-255 - 30 x PTAB-10-5 CBU Heavy HEAT/AP
+  ["RBK_500U"] = 268,                            -- RBK-500U - 268 x PTAB-1M CBU Light HEAT/AP
+  ["RBK_500U_OAB_2_5RT"] = 126,                  -- RBK-500U - 126 x OAB-2.5RT, 500kg CBU HE/Frag
+  ["AB_250_2_SD_2"] = 144,                       --("AB 250-2 - 144 x SD-2, 250kg CBU with HE submunitions")
+  ["AB_250_2_SD_10A"] = 17,                      --("AB 250-2 - 17 x SD-10A, 250kg CBU with 10kg Frag/HE submunitions")
+  ["AB_500_1_SD_10A"] = 34,                      --("AB 500-1 - 34 x SD-10A, 500kg CBU with 10kg Frag/HE submunitions")
 }
 
 antiRadiationMissile = {
@@ -295,7 +297,7 @@ ignoredWeaps = {
   ["12_7_MG"] = 1,                                --12.7mm
   ["M2_Browning"] = 1,                            --12.7mm
   ["BrowningM2"] = 1,                             --12.7mm
-  ["KORD_12_7"] = 1,                             --12.7mm
+  ["KORD_12_7"] = 1,                              --12.7mm
   ["KPVT"] = 1,                                   --14.5mm
   ["coltMK12"] = 1,                               --20mm
   ["2A14_2"] = 1,                                 --23mm, ZU-23
@@ -316,13 +318,6 @@ ignoredWeaps = {
   ["Bofors 40mm gun"] = 1,                        --40mm
   ["S_68"] = 1,                                   --57mm
   ["AAA 01"] = 1,
---   weapons.shells.M1_37mm_HE-T
---   weapons.shells.M1_37mm_37AP-T
---   weapons.shells.M2_12_7_T
---   weapons.shells.KPVT_14_5_T
---   weapons.shells.OF_350
---   weapons.shells.Bofors_40mm_HE
---   weapons.shells.QF94_AA_HE
 }
 
 ----[[ ##### HELPER/UTILITY FUNCTIONS ##### ]]----
@@ -654,7 +649,7 @@ function modelUnitDamage(table)
       end
 
     else
-      if unit:getName() ~= nil then
+      if unit ~= nil and unit:getName() ~= nil then
         if bda_destroyed[unit:getName()] ~= nil then
           local bda_time = bda_destroyed[unit:getName()].time
           local delay_time = splash_damage_options.bda_message_time

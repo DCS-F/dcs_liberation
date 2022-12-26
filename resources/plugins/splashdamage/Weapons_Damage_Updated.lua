@@ -34,6 +34,11 @@ splash_damage_options = {
   ["damage_model"] = true, --allow blast wave to affect ground unit movement and weapons
   ["blast_search_radius"] = 200, --this is the max size of any blast wave radius, since we will only find objects within this zone
   ["cascade_damage_threshold"] = 0.1, --if the calculated blast damage doesn't exeed this value, there will be no secondary explosion damage on the unit.  If this value is too small, the appearance of explosions far outside of an expected radius looks incorrect.
+  ["firebomb_splash_factor"] = 8
+  ["shell_max_flight_time"] = 20
+  ["cluster_max_flight_time"] = 20
+  ["cluster_munition_distribution_radius"] = 75
+  ["bda_message_time"] = 20
   ["game_messages"] = true, --enable some messages on screen
   ["blast_stun"] = false, --not implemented
   ["unit_disabled_health"] = 30, --if health is below this value after our explosions, disable its movement
@@ -47,11 +52,6 @@ local bdaMessagesEnable = 1
 local clusterEffectsEnable = 1
 local shipRadarDamageEnable = 1
 refreshRate = 0.1
-firebomb_splash_factor = 8
-shell_max_flight_time = 20
-cluster_max_flight_time = 20
-cluster_munition_distribution_radius = 75
-bda_message_time = 20
 
 ----[[ ##### End of SCRIPT CONFIGURATION ##### ]]----
 
@@ -170,7 +170,7 @@ explTable = {
   ["KONKURS"] = 3,                               -- AT-5 Spandrel / 9M113 Konkurs
   ["AT_6"] = 6,                                  -- AT-6 Spiral / 9K114 Shturm
   ["Ataka_9M120"] = 8,                           -- AT-9 Spiral-2 / 9M120 Ataka
-  ["Ataka_9M120F"] = 8 * firebomb_splash_factor, -- AT-9 Spiral-2 / 9M120F Ataka (thermobaric)
+  ["Ataka_9M120F"] = 8 * splash_damage_options.firebomb_splash_factor, -- AT-9 Spiral-2 / 9M120F Ataka (thermobaric)
   ["P_9M117"] = 3,                               -- AT-10 Stabber / 9M117 Bastion
   ["SVIR"] = 5,                                  -- AT-11 Sniper / 9M119 Svir
   ["REFLEX"] = 5,                                -- AT-11 Sniper / 9M119M Refleks
@@ -232,9 +232,9 @@ explTable = {
 --   ["CLUSTER_AB_500_1_SD_10A"] = 213,             --("AB 500-1 - 34 x SD-10A, 500kg CBU with 10kg Frag/HE submunitions")
   ["LTF_5B"] = 100,                              --("LTF 5b Aerial Torpedo")
   ["BL_755"] = 132,                              --("BL755 - 147 x parachute-retarded HEAT submunitions, 264kg")
-  ["MK77mod0-WPN"] = 110 * firebomb_splash_factor, --("Mk 77 Mod 0 - 750 lb (340 kg) with 110 U.S. gallons (416 L; 92 imp gal) of petroleum oil.")
-  ["MK77mod1-WPN"] = 75 * firebomb_splash_factor,  --("Mk 77 Mod 1 - 500 lb (230 kg) with 75 U.S. gallons (284 L; 62 imp gal) of petroleum oil.")
-  ["BIN_200"] = 75 * firebomb_splash_factor,     --("BIN-200 - 200 kg Spanish liquid incendiary Napalm filled bomb.")
+  ["MK77mod0-WPN"] = 110 * splash_damage_options.firebomb_splash_factor, --("Mk 77 Mod 0 - 750 lb (340 kg) with 110 U.S. gallons (416 L; 92 imp gal) of petroleum oil.")
+  ["MK77mod1-WPN"] = 75 * splash_damage_options.firebomb_splash_factor,  --("Mk 77 Mod 1 - 500 lb (230 kg) with 75 U.S. gallons (284 L; 62 imp gal) of petroleum oil.")
+  ["BIN_200"] = 75 * splash_damage_options.firebomb_splash_factor,     --("BIN-200 - 200 kg Spanish liquid incendiary Napalm filled bomb.")
   --agm-65??
   ["BELOUGA"] = 10,                              -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
   ["BLG66_BELOUGA"] = 10,                        -- BLG-66 Belouga AC - 305kg CBU, 151 x HEAT Bomblets
@@ -514,9 +514,9 @@ function onWpnEvent(event)
       local player = tracked_shooters[event.initiator:getName()].player
       local weapon = tracked_shooters[event.initiator:getName()].wpn
       local shoot_time = tracked_shooters[event.initiator:getName()].time
-      local flight_time = shell_max_flight_time
+      local flight_time = splash_damage_options.shell_max_flight_time
       if clusterWeaps[weapon] then
-        flight_time = cluster_max_flight_time
+        flight_time = splash_damage_options.cluster_max_flight_time
       end
       env.info("Hit with weapon "..weapon.." by "..event.initiator:getName().." at "..event.time.." shoot_time: "..shoot_time.." flight_time: "..flight_time)
       if event.time > (shoot_time + flight_time) then
@@ -533,7 +533,7 @@ function onWpnEvent(event)
             if clusterEffectsEnable and clusterWeaps[weapon] then
               for i=1,clusterWeaps[weapon]
               do
-                cluster_radius = math.random(0,cluster_munition_distribution_radius)
+                cluster_radius = math.random(0,splash_damage_options.cluster_munition_distribution_radius)
                 cluster_angle = 2 * math.pi * (math.random())
                 blastPoint = {
                   x = impactPoint.x + cluster_radius * math.cos(cluster_angle),
@@ -597,7 +597,7 @@ function modelUnitDamage(table)
 
       if bda_damage[unit:getName()] ~= nil then
         local bda_time = bda_damage[unit:getName()].time
-        local delay_time = bda_message_time
+        local delay_time = splash_damage_options.bda_message_time
           if timer.getTime() > (bda_time + delay_time) then
             -- Message delay exceeded, remove from bda array if exists
             bda_damage[unit:getName()] = nil -- remove from bda array
@@ -621,7 +621,7 @@ function modelUnitDamage(table)
           unit:getController():setOption(AI.Option.Ground.id.ROE , AI.Option.Ground.val.ROE.WEAPON_HOLD)
           if bda_wpn_disable[unit:getName()] ~= nil then
             local bda_time = bda_wpn_disable[unit:getName()].time
-            local delay_time = bda_message_time
+            local delay_time = splash_damage_options.bda_message_time
             if timer.getTime() > (bda_time + delay_time) then
               -- Message delay exceeded, remove from bda array if exists
               bda_wpn_disable[unit:getName()] = nil -- remove from bda array
@@ -639,7 +639,7 @@ function modelUnitDamage(table)
 
           if bda_disable[unit:getName()] ~= nil then
             local bda_time = bda_disable[unit:getName()].time
-            local delay_time = bda_message_time
+            local delay_time = splash_damage_options.bda_message_time
             if timer.getTime() > (bda_time + delay_time) then
               -- Message delay exceeded, remove from bda array if exists
               bda_disable[unit:getName()] = nil -- remove from bda array
@@ -657,7 +657,7 @@ function modelUnitDamage(table)
       if unit:getName() ~= nil then
         if bda_destroyed[unit:getName()] ~= nil then
           local bda_time = bda_destroyed[unit:getName()].time
-          local delay_time = bda_message_time
+          local delay_time = splash_damage_options.bda_message_time
           if timer.getTime() > (bda_time + delay_time) then
             -- Message delay exceeded, remove from bda array if exists
             bda_destroyed[unit:getName()] = nil -- remove from bda array
@@ -757,7 +757,7 @@ function blastWave(_point, _radius, weapon, power, player)
 
           if bda_damage[obj:getName()] ~= nil then
             local bda_time = bda_damage[obj:getName()].time
-            local delay_time = bda_message_time
+            local delay_time = splash_damage_options.bda_message_time
             if timer.getTime() > (bda_time + delay_time) then
                 -- Message delay exceeded, remove from bda array if exists
                 bda_damage[obj:getName()] = nil -- remove from bda array

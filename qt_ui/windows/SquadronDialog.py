@@ -1,30 +1,27 @@
 import logging
 from typing import Callable, Iterator, Optional
 
-from PySide2.QtCore import (
-    QItemSelectionModel,
-    QModelIndex,
-    Qt,
-    QItemSelection,
-)
+from PySide2.QtCore import QItemSelection, QItemSelectionModel, QModelIndex, Qt
 from PySide2.QtWidgets import (
     QAbstractItemView,
-    QDialog,
-    QListView,
-    QVBoxLayout,
-    QPushButton,
-    QHBoxLayout,
-    QLabel,
     QCheckBox,
     QComboBox,
+    QDialog,
+    QHBoxLayout,
+    QLabel,
+    QListView,
+    QPushButton,
+    QVBoxLayout,
 )
 
-from game.squadrons import Pilot, Squadron
-from game.theater import ControlPoint, ConflictTheater, ParkingType
+from game.ato.flightplans.custom import CustomFlightPlan
 from game.ato.flighttype import FlightType
+from game.ato.flightwaypointtype import FlightWaypointType
+from game.squadrons import Pilot, Squadron
+from game.theater import ConflictTheater, ControlPoint
 from qt_ui.delegates import TwoColumnRowDelegate
 from qt_ui.errorreporter import report_errors
-from qt_ui.models import SquadronModel, AtoModel
+from qt_ui.models import AtoModel, SquadronModel
 
 
 class PilotDelegate(TwoColumnRowDelegate):
@@ -99,19 +96,16 @@ class SquadronDestinationComboBox(QComboBox):
         self.squadron = squadron
         self.theater = theater
 
-        parking_type = ParkingType().from_squadron(squadron)
-        # Force ground start slots to also be considered
-        parking_type.include_fixed_wing_stol = True
-
-        room = squadron.location.unclaimed_parking(parking_type)
+        room = squadron.location.unclaimed_parking()
         self.addItem(
-            f"Remain at {squadron.location} (room for {room} more aircraft)", None
+            f"Remain at {squadron.location} (room for {room} more aircraft)",
+            squadron.location,
         )
         selected_index: Optional[int] = None
         for idx, destination in enumerate(sorted(self.iter_destinations(), key=str), 1):
             if destination == squadron.destination:
                 selected_index = idx
-            room = destination.unclaimed_parking(parking_type)
+            room = destination.unclaimed_parking()
             self.addItem(
                 f"Transfer to {destination} (room for {room} more aircraft)",
                 destination,
@@ -125,15 +119,12 @@ class SquadronDestinationComboBox(QComboBox):
 
     def iter_destinations(self) -> Iterator[ControlPoint]:
         size = self.squadron.expected_size_next_turn
-        parking_type = ParkingType().from_squadron(self.squadron)
-        # Force ground start slots to also be considered
-        parking_type.include_fixed_wing_stol = True
         for control_point in self.theater.control_points_for(self.squadron.player):
-            if control_point == self:
+            if control_point == self.squadron.location:
                 continue
             if not control_point.can_operate(self.squadron.aircraft):
                 continue
-            if control_point.unclaimed_parking(parking_type) < size:
+            if control_point.unclaimed_parking() < size:
                 continue
             yield control_point
 
@@ -151,7 +142,6 @@ class SquadronDialog(QDialog):
         super().__init__(parent)
         self.ato_model = ato_model
         self.squadron_model = squadron_model
-        self.theater = theater
 
         self.setMinimumSize(1000, 440)
         self.setWindowTitle(str(squadron_model.squadron))
@@ -201,13 +191,27 @@ class SquadronDialog(QDialog):
     def squadron(self) -> Squadron:
         return self.squadron_model.squadron
 
+    def _instant_relocate(self, destination: ControlPoint) -> None:
+        self.squadron.relocate_to(destination)
+        for _, f in self.squadron.flight_db.objects.items():
+            if f.squadron == self.squadron:
+                if isinstance(f.flight_plan, CustomFlightPlan):
+                    for wpt in f.flight_plan.waypoints:
+                        if wpt.waypoint_type == FlightWaypointType.LANDING_POINT:
+                            wpt.control_point = destination
+                            wpt.position = wpt.control_point.position
+                            break
+                f.recreate_flight_plan()
+
     def on_destination_changed(self, index: int) -> None:
         with report_errors("Could not change squadron destination", self):
             destination = self.transfer_destination.itemData(index)
-            if destination is None:
+            if destination is self.squadron.location:
                 self.squadron.cancel_relocation()
+            elif self.ato_model.game.settings.enable_transfer_cheat:
+                self._instant_relocate(destination)
             else:
-                self.squadron.plan_relocation(destination, self.theater)
+                self.squadron.plan_relocation(destination)
             self.ato_model.replace_from_game(player=True)
 
     def check_disabled_button_states(

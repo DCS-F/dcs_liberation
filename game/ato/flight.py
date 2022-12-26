@@ -244,3 +244,10 @@ class Flight(SidcDescribable):
         for pilot in self.roster.pilots:
             if pilot is not None:
                 results.kill_pilot(self, pilot)
+
+    def recreate_flight_plan(self) -> None:
+        from game.sim.gameupdateevents import GameUpdateEvents
+        from game.server import EventStream
+
+        self._flight_plan_builder.regenerate()
+        EventStream.put_nowait(GameUpdateEvents().update_flight(self))

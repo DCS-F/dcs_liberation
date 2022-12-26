@@ -34,11 +34,11 @@ splash_damage_options = {
   ["damage_model"] = true, --allow blast wave to affect ground unit movement and weapons
   ["blast_search_radius"] = 200, --this is the max size of any blast wave radius, since we will only find objects within this zone
   ["cascade_damage_threshold"] = 0.1, --if the calculated blast damage doesn't exeed this value, there will be no secondary explosion damage on the unit.  If this value is too small, the appearance of explosions far outside of an expected radius looks incorrect.
-  ["firebomb_splash_factor"] = 8
-  ["shell_max_flight_time"] = 20
-  ["cluster_max_flight_time"] = 20
-  ["cluster_munition_distribution_radius"] = 75
-  ["bda_message_time"] = 20
+  ["firebomb_splash_factor"] = 8 --apply a multiplier to thermobaric and napalm bombs so it matches the visual effect
+  ["shell_max_flight_time"] = 20 --maximum flight time of cannon shells, used with gun fragmentation effects
+  ["cluster_max_flight_time"] = 20 --maximum flight time of cluster munitions, used with submunitions effects
+  ["cluster_munition_distribution_radius"] = 75 --distribution radius of submunition explosions, in meters, TODO: make this depend on the weapon type
+  ["bda_message_time"] = 20 --BDA messages remain this time on the screen, in seconds, if the option is enabled
   ["game_messages"] = true, --enable some messages on screen
   ["blast_stun"] = false, --not implemented
   ["unit_disabled_health"] = 30, --if health is below this value after our explosions, disable its movement
@@ -649,27 +649,36 @@ function modelUnitDamage(table)
       end
 
     else
-      if unit ~= nil and unit:getName() ~= nil then
+      pcall(destroyedBda, unit)
+    end
+  end
+end
+
+
+-- This is run inside a function with a protected call (pcall),
+-- so we allow the unit to have been destroyed and cleaned up
+-- between the start and finish of the function when calling unit:getName()
+-- This allows us to avoid "Unit does not exist" errors in the log.
+function destroyedBda(unit)
+      if unit == nil then
+        gameMsg("BDA: target destroyed")
+      elseif unit:getName() == nil then
+        gameMsg("BDA: target destroyed")
+      else
         if bda_destroyed[unit:getName()] ~= nil then
           local bda_time = bda_destroyed[unit:getName()].time
-          local delay_time = splash_damage_options.bda_message_time
+          local delay_time = bda_message_time
           if timer.getTime() > (bda_time + delay_time) then
             -- Message delay exceeded, remove from bda array if exists
             bda_destroyed[unit:getName()] = nil -- remove from bda array
           end
         end
-        if bdaMessagesEnable and player ~= nil and bda_destroyed[unit:getName()] == nil then
+        if bda_destroyed[unit:getName()] == nil then
           bda_destroyed[unit:getName()] = { unit = unit:getName(), time = timer.getTime() }
           gameMsg("BDA: "..unit:getTypeName().." critically damaged")
         end
-      else
-        if bdaMessagesEnable and player ~= nil then
-          gameMsg("BDA: target destroyed")
-        end
       end
       --debugMsg("unit no longer exists")
-    end
-  end
 end
 
 

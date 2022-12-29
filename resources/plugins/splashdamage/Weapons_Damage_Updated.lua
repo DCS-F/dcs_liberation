@@ -521,9 +521,10 @@ function onWpnEvent(event)
       else
         env.info(weapon.." hit a target")
         if event.target then
+          targetName = event.target:getTypeName()
           local impactPoint = event.target:getPosition().p
           if explTable[weapon] then
-            env.info(weapon.." hit "..event.target:getTypeName())
+            env.info(weapon.." hit "..targetName)
             --env.info('Impact point was at: X: ' .. impactPoint.x .. ' Y: ' .. impactPoint.y .. ' Z: ' .. impactPoint.z)
             if clusterEffectsEnable and clusterWeaps[weapon] then
               for i=1,clusterWeaps[weapon]

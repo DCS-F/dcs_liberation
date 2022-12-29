@@ -411,8 +411,8 @@ class Settings:
         max=150,
     )
 
-    max_frontline_length: int = bounded_int_option(
-        "Maximum frontline length (km)",
+    max_frontline_width: int = bounded_int_option(
+        "Maximum frontline width (km)",
         page=MISSION_GENERATOR_PAGE,
         section=GAMEPLAY_SECTION,
         default=20,

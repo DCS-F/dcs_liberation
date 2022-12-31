@@ -293,7 +293,6 @@ class ProcurementAi:
                     and cp_possible_frontline.has_active_frontline
                 ):
                     one_step_away_from_frontline = True
-                    print(f"{cp} is one step away from frontline")
                     break
 
             if (self.is_player and not cp.has_active_frontline) or (

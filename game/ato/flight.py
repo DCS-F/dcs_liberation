@@ -247,3 +247,15 @@ class Flight(SidcDescribable):
 
     def recreate_flight_plan(self) -> None:
         self._flight_plan_builder.regenerate()
+
+    @staticmethod
+    def clone_flight(flight: Flight) -> Flight:
+        return Flight(
+            flight.package,
+            flight.country,
+            flight.squadron,
+            flight.count,
+            flight.flight_type,
+            flight.start_type,
+            flight.divert,
+        )

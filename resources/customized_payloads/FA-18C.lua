@@ -18,7 +18,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{6C0D552F-570B-42ff-9F6D-F10D9C1D4E1C}",
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -110,7 +110,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{6C0D552F-570B-42ff-9F6D-F10D9C1D4E1C}",
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -155,7 +155,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{6C0D552F-570B-42ff-9F6D-F10D9C1D4E1C}",
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -200,7 +200,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{6C0D552F-570B-42ff-9F6D-F10D9C1D4E1C}",
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -245,7 +245,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{6C0D552F-570B-42ff-9F6D-F10D9C1D4E1C}",
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -271,6 +271,94 @@ local unitPayloads = {
 			},
 			["tasks"] = {
 				[1] = 31,
+			},
+		},
+		[7] = {
+			["displayName"] = "Liberation CAS",
+			["name"] = "Liberation CAS",
+			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["num"] = 1,
+				},
+				[2] = {
+					["CLSID"] = "{F16A4DE0-116C-4A71-97F0-2CF85B0313EC}",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "{AF42E6DF-9A60-46D8-A9A0-1708B241AADB}",
+					["num"] = 3,
+				},
+				[4] = {
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["num"] = 4,
+				},
+				[5] = {
+					["CLSID"] = "{EFEC8201-B922-11d7-9897-000476191836}",
+					["num"] = 5,
+				},
+				[6] = {
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["num"] = 6,
+				},
+				[7] = {
+					["CLSID"] = "{AF42E6DF-9A60-46D8-A9A0-1708B241AADB}",
+					["num"] = 7,
+				},
+				[8] = {
+					["CLSID"] = "{F16A4DE0-116C-4A71-97F0-2CF85B0313EC}",
+					["num"] = 8,
+				},
+				[9] = {
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["num"] = 9,
+				},
+			},
+			["tasks"] = {
+			},
+		},
+		[8] = {
+			["displayName"] = "Liberation DEAD",
+			["name"] = "Liberation DEAD",
+			["pylons"] = {
+				[1] = {
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["num"] = 1,
+				},
+				[2] = {
+					["CLSID"] = "{9BCC2A2B-5708-4860-B1F1-053A18442067}",
+					["num"] = 2,
+				},
+				[3] = {
+					["CLSID"] = "{AF42E6DF-9A60-46D8-A9A0-1708B241AADB}",
+					["num"] = 3,
+				},
+				[4] = {
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["num"] = 4,
+				},
+				[5] = {
+					["CLSID"] = "{EFEC8201-B922-11d7-9897-000476191836}",
+					["num"] = 5,
+				},
+				[6] = {
+					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["num"] = 6,
+				},
+				[7] = {
+					["CLSID"] = "{AF42E6DF-9A60-46D8-A9A0-1708B241AADB}",
+					["num"] = 7,
+				},
+				[8] = {
+					["CLSID"] = "{9BCC2A2B-5708-4860-B1F1-053A18442067}",
+					["num"] = 8,
+				},
+				[9] = {
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["num"] = 9,
+				},
+			},
+			["tasks"] = {
 			},
 		},
 	},

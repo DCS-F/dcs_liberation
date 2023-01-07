@@ -76,7 +76,7 @@ class TheaterRefuelingFlightPlan(PatrollingFlightPlan[PatrollingLayout]):
 
     @property
     def patrol_duration(self) -> timedelta:
-        return timedelta(hours=1)
+        return self.flight.coalition.game.settings.desired_tanker_on_station_time
 
     @property
     def patrol_speed(self) -> Speed:

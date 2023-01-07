@@ -72,20 +72,19 @@ class PackageRefuelingFlightPlan(TheaterRefuelingFlightPlan):
     @property
     def patrol_duration(self) -> timedelta:
         # TODO: Only consider aircraft that can refuel with this tanker type.
-        refuel_time_minutes = 5
+        refuel_time_minutes = timedelta(minutes=5)
         min_patrol_duration = refuel_time_minutes
 
         for self.flight in self.package.flights:
             flight_size = self.flight.roster.max_size
             refuel_time_minutes = refuel_time_minutes + 4 * flight_size + 1
             min_patrol_duration = (
-                self.flight.coalition.game.settings.desired_tanker_on_station_time.seconds
-                * 60
+                self.flight.coalition.game.settings.desired_tanker_on_station_time
             )
         if refuel_time_minutes < min_patrol_duration:
             refuel_time_minutes = min_patrol_duration
 
-        return timedelta(minutes=refuel_time_minutes)
+        return refuel_time_minutes
 
     def target_area_waypoint(self) -> FlightWaypoint:
         return FlightWaypoint(

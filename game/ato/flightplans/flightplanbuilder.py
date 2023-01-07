@@ -32,7 +32,7 @@ from .waypointbuilder import WaypointBuilder
 if TYPE_CHECKING:
     from game.ato import Flight, FlightWaypoint, Package
     from game.coalition import Coalition
-    from game.theater import ConflictTheater, ControlPoint, FrontLine
+    from game.theater import ConflictTheater, ControlPoint
     from game.threatzones import ThreatZones
 
 
@@ -84,6 +84,8 @@ class FlightPlanBuilder:
             ) from ex
 
     def plan_type(self, task: FlightType) -> Type[FlightPlan[Any]] | None:
+        from game.theater import FrontLine
+
         plan_type: Type[FlightPlan[Any]]
         if task == FlightType.REFUELING:
             if self.package.target.is_friendly(self.is_player) or isinstance(

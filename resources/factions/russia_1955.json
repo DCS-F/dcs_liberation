@@ -17,7 +17,7 @@
     "IL-78M"
   ],
   "frontline_units": [
-    "8.8 cm Flak 18",
+    "AAA KS-19 100mm",
     "BRDM-2",
     "Grad MRL FDDM (FC)",
     "MT-LB",
@@ -39,10 +39,7 @@
   ],
   "missiles": [],
   "air_defense_units": [],
-  "preset_groups": [
-    "KS-19",
-    "Cold-War-Flak"
-  ],
+  "preset_groups": [],
   "naval_units": [],
   "helicopter_carrier_names": [],
   "requirements": {},

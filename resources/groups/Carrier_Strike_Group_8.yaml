@@ -2,6 +2,7 @@ name: Carrier Strike Group 8
 tasks:
   - Navy
 units:
+  - CV-59 Forrestal
   - CVN-74 John C. Stennis
   - DDG Arleigh Burke IIa
   - CG Ticonderoga

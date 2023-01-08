@@ -214,7 +214,9 @@ class SquadronConfigurationBox(QGroupBox):
 
     def reroll_nickname(self) -> None:
         self.nickname_edit.setText(
-            self.squadron.coalition.air_wing.squadron_def_generator.random_nickname()
+            self.squadron.coalition.air_wing.squadron_def_generator.random_nickname(
+                self.squadron.coalition.country_name
+            )
         )
 
     def apply(self) -> Squadron:

@@ -45,6 +45,10 @@ squadrons:
       secondary: any
       aircraft:
         - Super Etendard (SFM)
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - French Army
   # LPH-12 Inchon
   Blue LPH-12:
     - primary: CAS

@@ -119,11 +119,15 @@ class DefaultSquadronAssigner:
     def find_squadron_for_airframe(
         self, aircraft: AircraftType, task: FlightType, control_point: ControlPoint
     ) -> Optional[SquadronDef]:
-        for squadron in self.air_wing.squadron_defs[aircraft]:
-            if not squadron.claimed and self.squadron_compatible_with(
-                squadron, task, control_point
-            ):
-                return squadron
+        # This has been intentionally disabled by MetalStormGhost.
+        # Only use named squadrons if they have been explicitly named.
+        # Otherwise generate new ones.
+
+        # for squadron in self.air_wing.squadron_defs[aircraft]:
+        #     if not squadron.claimed and self.squadron_compatible_with(
+        #         squadron, task, control_point
+        #     ):
+        #         return squadron
         return None
 
     def find_squadron_by_name(
@@ -144,12 +148,16 @@ class DefaultSquadronAssigner:
     def find_squadron_for_task(
         self, task: FlightType, control_point: ControlPoint
     ) -> Optional[SquadronDef]:
-        for squadrons in self.air_wing.squadron_defs.values():
-            for squadron in squadrons:
-                if not squadron.claimed and self.squadron_compatible_with(
-                    squadron, task, control_point
-                ):
-                    return squadron
+        # This has been intentionally disabled by MetalStormGhost.
+        # Only use named squadrons if they have been explicitly named.
+        # Otherwise generate new ones.
+
+        # for squadrons in self.air_wing.squadron_defs.values():
+        #     for squadron in squadrons:
+        #         if not squadron.claimed and self.squadron_compatible_with(
+        #             squadron, task, control_point
+        #         ):
+        #             return squadron
         return None
 
     @staticmethod

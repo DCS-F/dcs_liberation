@@ -2,7 +2,7 @@
   "country": "Serbia",
   "name": "Serbia 1999",
   "authors": "Ghosti",
-  "description": "<p>Serbia army in the late 90s.</p>",
+  "description": "<p>Serbian armed forces in the late 90s.</p>",
   "locales": [
     "ru_RU"
   ],
@@ -54,18 +54,19 @@
     "Paratrooper AKS",
     "Paratrooper RPG-16"
   ],
-  "air_defenses": [
-    "BoforsGenerator",
-	"SA3Generator",
-    "SA6Generator",
-    "SA9Generator",
-    "SA13Generator",
-    "ZU23Generator",
-    "ZU23UralGenerator"
+  "preset_groups": [
+    "SA-3/S-125",
+    "SA-3/S-125 V-601P/5V27",
+    "SA-6"
   ],
-  "ewrs": [
-    "FlatFaceGenerator",
-    "StraightFlushGenerator"
+  "air_defense_units": [
+    "EWR 1L13",
+    "SAM SA-6 Kub \"Straight Flush\" STR",
+    "SA-9 Strela",
+    "SA-13 Gopher (9K35 Strela-10M3)",
+	"Bofors 40 mm Gun",
+    "AAA ZU-23 Closed Emplacement",
+    "ZU-23 on Ural-375"
   ],
   "aircraft_carrier": [],
   "helicopter_carrier": [],

@@ -21,10 +21,15 @@
     "F-15C Eagle",
     "F-15E Strike Eagle",
     "F-16CM Fighting Falcon (Block 50)",
+    "F/A-18C Hornet (AI)",
     "F/A-18C Hornet (Lot 20)",
     "S-3B Viking",
     "Tornado GR4",
-	"Tornado IDS",
+    "Tornado GR4 (SFM)",
+    "Tornado IDS",
+    "Tornado IDS (SFM)",
+    "Mirage 2000C",
+    "Super Etendard (SFM)",
     "SH-60B Seahawk",
     "UH-1H Iroquois",
     "UH-60A",
@@ -77,43 +82,50 @@
     "MANPADS Stinger",
     "Mortar 2B11 120mm"
   ],
-  "air_defenses": [
-    "RolandGenerator",
-    "AvengerGenerator",
-    "ChaparralGenerator",
-    "VulcanGenerator",
-    "HawkGenerator",
-    "PatriotGenerator"
+  "preset_groups": [
+    "Hawk",
+    "Roland",
+    "Patriot"
   ],
-  "ewrs": [
-    "RolandEwrGenerator",
-	"HawkEwrGenerator",
-    "PatriotEwrGenerator"
+  "air_defense_units": [
+    "SAM Patriot STR",
+	"SAM Hawk SR (AN/MPQ-50)",
+	"SAM Roland EWR",
+    "M163 Vulcan Air Defense System",
+	"M48 Chaparral",
+    "Roland 2 (Marder Chassis)",
+    "M1097 Heavy HMMWV Avenger"
   ],
-  "aircraft_carrier": [
-    "Stennis"
-  ],
-  "helicopter_carrier": [
-    "LHA_Tarawa"
-  ],
-  "destroyers": [
-    "PERRY",
-    "USS_Arleigh_Burke_IIa"
-  ],
-  "cruisers": [
-    "TICONDEROG"
-  ],
+  "carriers": {
+    "Stennis": [
+      "CVN-71 Theodore Roosevelt"
+    ],
+    "Forrestal": [
+      "Foch (R99)"
+    ]
+  },
+  "helicopter_carriers": {
+    "Hms_invincible": [
+      "HMS Invincible (R05)"
+    ],
+    "LHA_Tarawa": [
+      "LPH-12 Inchon",
+      "LHD-3 Kearsarge",
+      "Giuseppe Garibaldi (C551)"
+    ],
+    "Type_071": [
+      "RFA Argus (A135)"
+    ]
+  },
   "requirements": {},
-  "carrier_names": [
-    "CVN-71 Theodore Roosevelt"
-  ],
-  "helicopter_carrier_names": [
-    "LPH-12 Inchon",
-    "LHD-3 Kearsarge"
-  ],
-  "navy_generators": [
-    "OliverHazardPerryGroupGenerator",
-    "ArleighBurkeGroupGenerator"
+  "naval_units": [
+    "DDG Arleigh Burke IIa",
+    "CG Ticonderoga",
+    "FAC La Combattante IIa",
+	"P265 Dumbarton Castle",
+	"F72 Ariadne",
+	"F57 Andromeda",
+	"F12 Achilles"
   ],
   "has_jtac": true,
   "jtac_unit": "RQ-1A Predator",
@@ -227,6 +239,14 @@
 	  "no. 617 squadron raf lossiemouth ab (morayshire)",
 	  "o of ii (ac) squadron raf marham"
     ],
+    "Tornado GR4 (SFM)": [
+      "27 Sqn Camo",
+      "31 Sqn Camo",
+      "41 Sqn Camo",
+      "617 Sqncamo",
+      "II Sqn Camo",
+      "IX Sqn Camo"
+    ],
 	"Tornado IDS": [
       "aufklarungsgeschwader 51 `immelmann` jagel ab luftwaffe",
       "jagdbombergeschwader 31 `boelcke` norvenich ab luftwaffe",
@@ -238,7 +258,47 @@
       "ITA Tornado MM7042",
       "ITA Tornado MM55004"
     ],
+	"Tornado IDS (SFM)": [
+      "aufklarungsgeschwader 51 `immelmann` jagel ab luftwaffe",
+      "jagdbombergeschwader 31 `boelcke` norvenich ab luftwaffe",
+      "jagdbombergeschwader 32 lechfeld ab luftwaffe",
+      "jagdbombergeschwader 33 buchel ab no. 43+19 experimental scheme",
+      "marinefliegergeschwader 2 eggebek ab marineflieger"
+    ],
+    "Mirage 2000C": [
+	  "AdA Alsace LF-2",
+	  "AdA Chasse 2-5",
+	  "Cambresis",
+	  "AdA EC 3-2 Forest",
+	  "M2KC_11_EE",
+	  "M2KC_133-XF",
+	  "M2000C-D Navarre SPA 153 Leader",
+	  "M2000C-D Navarre SPA 153 Wingman",
+	  "M2000C-N Lafayette 318",
+	  "M2000C-N Lafayette 321",
+	  "Navarre 133mq",
+	  "SPA48 Bleu",
+	  "VERT ATLAS",
+	  "2000N"
+    ],
+	"Super Etendard (SFM)": [
+	  "Aeronavale 1",
+	  "Flotille 11F Camo 1",
+	  "Flotille 11F Camo 2",
+	  "Flotille 11F Grey 1",
+	  "Flotille 11F Grey 2",
+	  "Flotille 17F Camo",
+	  "Flotille 17F Grey",
+	  "Flottille 11F",
+	  "Flottille 14F",
+	  "Flottille 17F"
+    ],
+    "F/A-18C Hornet (AI)": [
+      "VFA-94"
+    ],
     "F/A-18C Hornet (Lot 20)": [
+      "Canada 409th Squadron",
+      "Canada 425th Squadron",
       "VFA-106",
       "VFA-113",
       "VFA-122",
@@ -304,6 +364,24 @@
 	"VAB_Mephisto": [
       "woodland_Spring",
       "woodland_Autumn"
+    ],
+	"La_Combattante_II": [
+      "Royal Navy",
+	  "Union Jack",
+	  "Germany",
+	  "GER_S50_Panther",
+	  "GER_S51_Haher",
+	  "GER_S52_Storch",
+	  "GER_S53_Pelikan",
+	  "GER_S54_Elster",
+	  "GER_S55_Alk",
+	  "GER_S56_Dommel",
+	  "GER_S57_Weihe",
+	  "GER_S58_Pinguin",
+	  "GER_S59_Reiher",
+	  "Italian Navy",
+	  "Italy",
+	  "France"
     ]
   }
 }

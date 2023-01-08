@@ -8,9 +8,10 @@ recommended_enemy_faction: Serbia 1999
 recommended_start_date: 1999-03-24
 miz: Caucasus_Allied_Force.miz
 performance: 2
-version: "9.1"
+version: "10.0"
 squadrons:
-  Blue CV:
+  # CVN-71 Theodore Roosevelt
+  Blue CVN-71:
     - primary: BARCAP
       secondary: air-to-ground
       aircraft:
@@ -18,7 +19,11 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-ground
       aircraft:
-        - F/A-18C Hornet (Lot 20)
+        - VFA-87 (NATO)
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - F/A-18C Hornet (AI)
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -30,24 +35,62 @@ squadrons:
     - primary: AEW&C
       aircraft:
         - E-2C Hawkeye
-  Blue LHA 1:
+  # Foch (R99)
+  Blue R99:
+    - primary: Strike
+      secondary: any
+      aircraft:
+        - Super Etendard (SFM)
+    - primary: BAI
+      secondary: any
+      aircraft:
+        - Super Etendard (SFM)
+  # LPH-12 Inchon
+  Blue LPH-12:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - AV-8B Harrier II Night Attack
+        - VMA-332
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1H Iroquois
-  Blue LHA 2:
+        - HMLA-169 (UH-1H)
+  # LHD-3 Kearsarge
+  Blue LHD-3:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - AV-8B Harrier II Night Attack
+        - VMA-513
     - primary: CAS
       secondary: air-to-ground
       aircraft:
-        - UH-1H Iroquois
+        - HMLA-269 (UH-1H)
+  # HMS Invincible (R05)
+  Blue R05:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - 800 Naval Air Squadron
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - 801 Naval Air Squadron
+  # Giuseppe Garibaldi (551)
+  Blue C551:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - GAI Wolves
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - E.I. 4B Regg.
+  # RFA Argus (A135)
+  Blue A135:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Royal Navy
   # Anapa-Vityazevo
   12:
     - primary: Strike
@@ -84,6 +127,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - F-16CM Fighting Falcon (Block 50)
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - Mirage 2000C
   # Maykop-Khanskaya
   16:
     - primary: BARCAP
@@ -100,12 +147,20 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - Tornado GR4
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Tornado GR4 (SFM)
   # Krasnodar-Pashkovsky
   19:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
         - Tornado IDS
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Tornado IDS (SFM)
   # Mineralnye Vody
   26:
     - primary: BARCAP
@@ -365,3 +420,31 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - SA 342M Gazelle
+carriers:
+  Blue CVN-71:
+    preferred_name: CVN-74 John C. Stennis
+    preferred_type: Stennis
+  # Foch (R99)
+  Blue R99:
+    preferred_name: Foch (R99)
+    preferred_type: Forrestal
+  # LPH-12 Inchon
+  Blue LPH-12:
+    preferred_name: Blue LPH-12
+    preferred_type: LHA_Tarawa
+  # LHD-3 Kearsarge
+  Blue LHD-3:
+    preferred_name: LHD-3 Kearsarge
+    preferred_type: LHA_Tarawa
+  # HMS Invincible (R05)
+  Blue R05:
+    preferred_name: HMS Invincible (R05)
+    preferred_type: hms_invincible
+  # Giuseppe Garibaldi (551)
+  Blue C551:
+    preferred_name: Giuseppe Garibaldi (551)
+    preferred_type: LHA_Tarawa
+  # RFA Argus (A135)
+  Blue A135:
+    preferred_name: RFA Argus (A135)
+    preferred_type: Type_071

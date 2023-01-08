@@ -214,15 +214,15 @@ class ForceGroup:
             for unit_group in tgo_group.unit_groups:
                 # Choose a random unit_type for the group
                 try:
+                    unit_type = self.random_dcs_unit_type_for_group(unit_group)
                     # If the campaign designer has specified a preferred type, use that
                     if (
-                        control_point.preferred_type
+                        control_point.preferred_type is not None
                         and control_point.preferred_type
                         in self.dcs_unit_types_for_group(unit_group)
                     ):
+                        # Ignore Mypy type error (Type[ShipType] -> Type[UnitType], ShipType is a subtype of UnitType)
                         unit_type = control_point.preferred_type
-                    else:
-                        unit_type = self.random_dcs_unit_type_for_group(unit_group)
                 except IndexError:
                     if unit_group.optional:
                         # If group is optional it is ok when no unit_type is available

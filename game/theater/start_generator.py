@@ -320,6 +320,15 @@ class LhaGroundObjectGenerator(GenericCarrierGroundObjectGenerator):
         # don't end up with Type 71 ships called the Tarawa
         for unit in unit_group.units:
             if unit.unit_class == UnitClass.HELICOPTER_CARRIER:
+                if (
+                    self.control_point.preferred_type
+                    and self.control_point.preferred_type in lhas
+                ):
+                    helicopter_carrier_type = ship_type_from_name(
+                        self.control_point.preferred_type.id
+                    )
+                    if helicopter_carrier_type is not None:
+                        unit = next(ShipUnitType.for_dcs_type(helicopter_carrier_type))
                 helicopter_carrier_type = ship_type_from_name(unit.dcs_unit_type.id)
         if helicopter_carrier_type is None:
             raise RuntimeError(

@@ -2,46 +2,48 @@ from __future__ import annotations
 
 import logging
 from collections import defaultdict
-from dataclasses import dataclass, field
 from datetime import timedelta
-from typing import Dict, List, Optional, TYPE_CHECKING
+from typing import Dict, Optional, TYPE_CHECKING
 
-from .flightplans.formation import FormationFlightPlan
 from game.db import Database
 from game.utils import Speed
+from .closestairfields import ObjectiveDistanceCache
 from .flight import Flight
+from .flightplans.formation import FormationFlightPlan
 from .flighttype import FlightType
 from .packagewaypoints import PackageWaypoints
 from .traveltime import TotEstimator
+from ..radio.radios import RadioFrequency
 
 if TYPE_CHECKING:
-    from game.theater import MissionTarget
+    from game.theater import ControlPoint, MissionTarget
 
 
-@dataclass
 class Package:
     """A mission package."""
 
-    #: The mission target. Currently can be either a ControlPoint or a
-    #: TheaterGroundObject (non-ControlPoint map objectives).
-    target: MissionTarget
+    def __init__(
+        self,
+        target: MissionTarget,
+        db: Database[Flight],
+        auto_asap: bool = False,
+        custom_name: str | None = None,
+        frequency: RadioFrequency | None = None,
+    ) -> None:
+        self.target = target
+        self._db = db
+        self.frequency = frequency
+        self.custom_name = custom_name
 
-    _db: Database[Flight]
+        # True if the package ToT should be reset to ASAP whenever the player makes a
+        # change. This is really a UI property rather than a game property, but we want
+        # it to persist in the save.
+        self.auto_asap = auto_asap
+        self.flights: list[Flight] = []
 
-    #: The set of flights in the package.
-    flights: List[Flight] = field(default_factory=list)
-
-    delay: int = field(default=0)
-
-    #: True if the package ToT should be reset to ASAP whenever the player makes
-    #: a change. This is really a UI property rather than a game property, but
-    #: we want it to persist in the save.
-    auto_asap: bool = field(default=False)
-
-    #: Desired TOT as an offset from mission start.
-    time_over_target: timedelta = field(default=timedelta())
-
-    waypoints: Optional[PackageWaypoints] = field(default=None)
+        # Desired TOT as an offset from mission start.
+        self.time_over_target: timedelta = timedelta()
+        self.waypoints: PackageWaypoints | None = None
 
     @property
     def has_players(self) -> bool:
@@ -136,6 +138,16 @@ class Package:
             self.waypoints = None
 
     @property
+    def primary_flight(self) -> Optional[Flight]:
+        task = self.primary_task
+        if not task:
+            return None
+        primaries = [x for x in self.flights if x.flight_type == task]
+        if len(primaries) > 0:
+            return primaries[0]
+        return None
+
+    @property
     def primary_task(self) -> Optional[FlightType]:
         if not self.flights:
             return None
@@ -193,6 +205,29 @@ class Package:
             return "OCA Strike"
         return str(task)
 
-    def __hash__(self) -> int:
-        # TODO: Far from perfect. Number packages?
-        return hash(self.target.name)
+    def departure_closest_to_target(self) -> ControlPoint:
+        # We'll always have a package, but if this is being planned via the UI
+        # it could be the first flight in the package.
+        if not self.flights:
+            raise RuntimeError(
+                "Cannot determine source airfield for package with no flights"
+            )
+
+        # The package airfield is either the flight's airfield (when there is no
+        # package) or the closest airfield to the objective that is the
+        # departure airfield for some flight in the package.
+        cache = ObjectiveDistanceCache.get_closest_airfields(self.target)
+        for airfield in cache.operational_airfields:
+            for flight in self.flights:
+                if flight.departure == airfield:
+                    return airfield
+        raise RuntimeError("Could not find any airfield assigned to this package")
+
+    @staticmethod
+    def clone_package(package: Package) -> Package:
+        clone = Package(package.target, package._db, package.auto_asap)
+        clone.time_over_target = package.time_over_target
+        for f in package.flights:
+            cf = Flight.clone_flight(f)
+            clone.add_flight(cf)
+        return clone

@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 from typing import Any, List, Optional, TYPE_CHECKING
 
 from dcs import Point
-from dcs.planes import C_101CC, C_101EB, Su_33
 
 from .flightroster import FlightRoster
 from .flightstate import FlightState, Navigating, Uninitialized
@@ -246,8 +245,4 @@ class Flight(SidcDescribable):
                 results.kill_pilot(self, pilot)
 
     def recreate_flight_plan(self) -> None:
-        from game.sim.gameupdateevents import GameUpdateEvents
-        from game.server import EventStream
-
         self._flight_plan_builder.regenerate()
-        EventStream.put_nowait(GameUpdateEvents().update_flight(self))

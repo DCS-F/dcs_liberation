@@ -6,7 +6,7 @@ local unitPayloads = {
 			["name"] = "Liberation Anti-ship",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -14,7 +14,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -34,7 +34,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -42,7 +42,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -55,7 +55,7 @@ local unitPayloads = {
 			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -63,7 +63,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -83,7 +83,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -91,7 +91,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -104,7 +104,7 @@ local unitPayloads = {
 			["name"] = "Liberation OCA/Aircraft",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -112,7 +112,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -128,7 +128,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[7] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[8] = {
@@ -136,7 +136,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[9] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -149,7 +149,7 @@ local unitPayloads = {
 			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -157,7 +157,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -177,7 +177,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -185,7 +185,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -198,7 +198,7 @@ local unitPayloads = {
 			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -206,7 +206,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -226,7 +226,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -234,7 +234,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -247,7 +247,7 @@ local unitPayloads = {
 			["name"] = "Liberation CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -255,7 +255,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -275,7 +275,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -283,7 +283,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -296,7 +296,7 @@ local unitPayloads = {
 			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -304,7 +304,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -328,7 +328,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[9] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[10] = {
@@ -336,7 +336,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[11] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -349,7 +349,7 @@ local unitPayloads = {
 			["name"] = "Liberation BAI",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -357,7 +357,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -377,7 +377,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[8] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[9] = {
@@ -385,7 +385,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[10] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},
@@ -398,7 +398,7 @@ local unitPayloads = {
 			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -406,7 +406,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 3,
 				},
 				[4] = {
@@ -430,7 +430,7 @@ local unitPayloads = {
 					["num"] = 8,
 				},
 				[9] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 9,
 				},
 				[10] = {
@@ -438,7 +438,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[11] = {
-					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
 					["num"] = 11,
 				},
 			},

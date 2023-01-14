@@ -275,7 +275,7 @@ local unitPayloads = {
 			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+					["CLSID"] = "{BRU55_2*AGM-154A}",
 					["num"] = 7,
 				},
 				[2] = {
@@ -295,7 +295,7 @@ local unitPayloads = {
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+					["CLSID"] = "{BRU55_2*AGM-154A}",
 					["num"] = 3,
 				},
 				[7] = {
@@ -570,11 +570,11 @@ local unitPayloads = {
 			["name"] = "Liberation CAS",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 7,
 				},
 				[2] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 8,
 				},
 				[3] = {
@@ -586,11 +586,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 3,
 				},
 				[6] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 2,
 				},
 				[7] = {
@@ -660,11 +660,11 @@ local unitPayloads = {
 			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 7,
 				},
 				[2] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 8,
 				},
 				[3] = {
@@ -680,11 +680,11 @@ local unitPayloads = {
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 3,
 				},
 				[7] = {
-					["CLSID"] = "{BRU33_2X_GBU-12}",
+					["CLSID"] = "{BRU55_2*AGM-154C}",
 					["num"] = 2,
 				},
 				[8] = {

@@ -24,3 +24,4 @@ class PlanStrike(PackagePlanningTask[TheaterGroundObject]):
     def propose_flights(self) -> None:
         self.propose_flight(FlightType.STRIKE, 2)
         self.propose_common_escorts()
+        self.propose_flight(FlightType.REFUELING, 1)

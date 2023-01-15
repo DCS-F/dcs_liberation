@@ -16,7 +16,6 @@ class Migrator:
 
     def _migrate_game(self) -> None:
         self._update_doctrine()
-        self._update_packagewaypoints()
         self._update_package_attributes()
 
     def _update_doctrine(self) -> None:
@@ -36,12 +35,6 @@ class Migrator:
                     break
             if not found:
                 c.faction.doctrine = MODERN_DOCTRINE
-
-    def _update_packagewaypoints(self) -> None:
-        for c in self.game.coalitions:
-            for p in c.ato.packages:
-                if p.flights and not hasattr(p.waypoints, "initial"):
-                    p.waypoints = PackageWaypoints.create(p, c)
 
     def _update_package_attributes(self) -> None:
         for c in self.game.coalitions:

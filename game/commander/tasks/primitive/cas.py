@@ -5,12 +5,15 @@ import random
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
+from game.settings import Settings
 from game.theater import FrontLine
 from game.ato.flighttype import FlightType
 
 
 @dataclass
 class PlanCas(PackagePlanningTask[FrontLine]):
+    settings: Settings
+
     def preconditions_met(self, state: TheaterState) -> bool:
         # Do not bother planning CAS when there are no enemy ground units at the front.
         # An exception is made for turn zero since that's not being truly planned, but
@@ -42,5 +45,5 @@ class PlanCas(PackagePlanningTask[FrontLine]):
         self.propose_flight(FlightType.CAS, 2)
         self.propose_flight(FlightType.TARCAP, 2)
         self.propose_flight(FlightType.SEAD_ESCORT, 2)
-        if random.randint(1, 100) > 60:
+        if random.randint(1, 100) <= self.settings.autoplan_tankers_for_cas:
             self.propose_flight(FlightType.REFUELING, 1)

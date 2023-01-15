@@ -5,12 +5,15 @@ from dataclasses import dataclass
 from game.commander.missionproposals import EscortType
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
+from game.settings import Settings
 from game.theater.theatergroundobject import IadsGroundObject
 from game.ato.flighttype import FlightType
 
 
 @dataclass
 class PlanDead(PackagePlanningTask[IadsGroundObject]):
+    settings: Settings
+
     def preconditions_met(self, state: TheaterState) -> bool:
         if (
             self.target not in state.threatening_air_defenses
@@ -44,4 +47,5 @@ class PlanDead(PackagePlanningTask[IadsGroundObject]):
         else:
             self.propose_flight(FlightType.SEAD_ESCORT, 2, EscortType.Sead)
         self.propose_flight(FlightType.ESCORT, 2, EscortType.AirToAir)
-        self.propose_flight(FlightType.REFUELING, 1)
+        if self.settings.autoplan_tankers_for_dead:
+            self.propose_flight(FlightType.REFUELING, 1)

@@ -4,13 +4,14 @@ from dataclasses import dataclass
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
+from game.settings import Settings
 from game.theater import ControlPoint
 from game.ato.flighttype import FlightType
 
 
 @dataclass
 class PlanOcaStrike(PackagePlanningTask[ControlPoint]):
-    aircraft_cold_start: bool
+    settings: Settings
 
     def preconditions_met(self, state: TheaterState) -> bool:
         if self.target not in state.oca_targets:
@@ -23,8 +24,11 @@ class PlanOcaStrike(PackagePlanningTask[ControlPoint]):
         state.oca_targets.remove(self.target)
 
     def propose_flights(self) -> None:
+        from game.ato.starttype import StartType
+
         self.propose_flight(FlightType.OCA_RUNWAY, 2)
-        if self.aircraft_cold_start:
+        if self.settings.default_start_type is StartType.COLD:
             self.propose_flight(FlightType.OCA_AIRCRAFT, 2)
         self.propose_common_escorts()
-        self.propose_flight(FlightType.REFUELING, 1)
+        if self.settings.autoplan_tankers_for_oca:
+            self.propose_flight(FlightType.REFUELING, 1)

@@ -5,12 +5,15 @@ from typing import Any
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
+from game.settings import Settings
 from game.theater.theatergroundobject import TheaterGroundObject
 from game.ato.flighttype import FlightType
 
 
 @dataclass
 class PlanStrike(PackagePlanningTask[TheaterGroundObject]):
+    settings: Settings
+
     def preconditions_met(self, state: TheaterState) -> bool:
         if self.target not in state.strike_targets:
             return False
@@ -24,4 +27,5 @@ class PlanStrike(PackagePlanningTask[TheaterGroundObject]):
     def propose_flights(self) -> None:
         self.propose_flight(FlightType.STRIKE, 2)
         self.propose_common_escorts()
-        self.propose_flight(FlightType.REFUELING, 1)
+        if self.settings.autoplan_tankers_for_strike:
+            self.propose_flight(FlightType.REFUELING, 1)

@@ -245,9 +245,6 @@ class Flight(SidcDescribable):
             if pilot is not None:
                 results.kill_pilot(self, pilot)
 
-    def recreate_flight_plan(self) -> None:
-        self._flight_plan_builder.regenerate()
-
     @staticmethod
     def clone_flight(flight: Flight) -> Flight:
         return Flight(

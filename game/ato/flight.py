@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import Any, List, Optional, TYPE_CHECKING
 
 from dcs import Point
+from dcs.planes import C_101CC, C_101EB, Su_33
 
 from .flightroster import FlightRoster
 from .flightstate import FlightState, Navigating, Uninitialized
@@ -171,7 +172,7 @@ class Flight(SidcDescribable):
     def max_takeoff_fuel(self) -> Optional[float]:
         # Special case so Su 33 and C101 can take off
         unit_type = self.unit_type.dcs_unit_type
-        if unit_type == Su_33:
+        if unit_type == Su_33 and self.squadron.location.is_fleet:
             if self.flight_type.is_air_to_air:
                 return Su_33.fuel_max / 2.2
             else:

@@ -422,6 +422,17 @@ class Settings:
             "option only allows the player to wait on the ground.</strong>"
         ),
     )
+    atflir_autoswap: bool = boolean_option(
+        "Auto-swap F/A-18C ATFLIR and LITENING",
+        MISSION_GENERATOR_PAGE,
+        GAMEPLAY_SECTION,
+        default=True,
+        detail=(
+            "Automatically swaps between ATFLIR and LITENING targeting pods for newly generated F/A-18 flights "
+            "without having to change the payload. ATFLIR will be used for naval F/A-18s and LITENING for land "
+            "based ones. <u>Takes effect after current turn!</u>"
+        ),
+    )
     default_start_type: StartType = choices_option(
         "Default start type for AI aircraft",
         page=MISSION_GENERATOR_PAGE,

@@ -7,16 +7,19 @@ from dcs import Mission, Point
 from dcs.country import Country
 from dcs.mapping import Vector2
 from dcs.mission import StartType as DcsStartType
-from dcs.planes import F_14A, Su_33, AV8BNA, M_2000C
+from dcs.planes import F_14A, Su_33, AV8BNA, M_2000C, FA_18C_hornet
 from dcs.point import PointAction
 from dcs.ships import KUZNECOW
 from dcs.terrain import Airport, NoParkingSlotError
 from dcs.unitgroup import FlyingGroup, ShipGroup, StaticGroup
+from dcs.weapons_data import Weapons
 
 from game.ato import Flight
 from game.ato.flightstate import InFlight
+from game.ato.loadouts import Loadout
 from game.ato.starttype import StartType
 from game.ato.traveltime import GroundSpeed
+from game.data.weapons import Weapon
 from game.naming import namegen
 from game.theater import Airfield, ControlPoint, Fob, NavalControlPoint, OffMapSpawn
 from game.utils import feet, meters
@@ -38,6 +41,7 @@ MINIMUM_MID_MISSION_SPAWN_ALTITUDE_AGL = feet(500)
 RTB_ALTITUDE = meters(800)
 RTB_DISTANCE = 5000
 HELI_ALT = meters(500)
+F18_TGP_PYLON: int = 4
 
 
 class FlightGroupSpawner:
@@ -101,6 +105,42 @@ class FlightGroupSpawner:
     def generate_flight_at_departure(self) -> FlyingGroup[Any]:
         name = namegen.next_aircraft_name(self.country, self.flight)
         cp = self.flight.departure
+
+        is_f18 = self.flight.squadron.aircraft.dcs_unit_type.id == FA_18C_hornet.id
+        on_land = not self.flight.squadron.location.is_fleet
+        if is_f18:
+            try:
+                print(f"Before: {self.flight.loadout.pylons[F18_TGP_PYLON]}")
+
+                if (
+                    on_land
+                    and self.flight.squadron.coalition.game.settings.atflir_autoswap
+                ):
+                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(
+                        str(
+                            FA_18C_hornet.Pylon4.AN_AAQ_28_LITENING___Targeting_Pod_[1][
+                                "clsid"
+                            ]
+                        )
+                    )
+                elif (
+                    not on_land
+                    and self.flight.squadron.coalition.game.settings.atflir_autoswap
+                ):
+                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(
+                        str(
+                            FA_18C_hornet.Pylon4.AN_ASQ_228_ATFLIR___Targeting_Pod[1][
+                                "clsid"
+                            ]
+                        )
+                    )
+                print(f"After: {self.flight.loadout.pylons[F18_TGP_PYLON]}")
+
+            except KeyError:
+                logging.warning(
+                    f"Could not swap ATFLIR/LITENING for {self.flight.squadron.aircraft} {self.flight.flight_type} {self.flight.targets}"
+                )
+
         try:
             if self.start_type is StartType.IN_FLIGHT:
                 group = self._generate_over_departure(name, cp)

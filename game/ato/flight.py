@@ -5,12 +5,12 @@ from datetime import datetime, timedelta
 from typing import Any, List, Optional, TYPE_CHECKING
 
 from dcs import Point
-from dcs.planes import C_101CC, C_101EB, Su_33, FA_18C_hornet
+from dcs.planes import C_101CC, C_101EB, Su_33
 
 from .flightroster import FlightRoster
 from .flightstate import FlightState, Navigating, Uninitialized
 from .flightstate.killed import Killed
-from .loadouts import Loadout, Weapon
+from .loadouts import Loadout
 from ..sidc import (
     Entity,
     SidcDescribable,
@@ -31,8 +31,6 @@ if TYPE_CHECKING:
     from .flightwaypoint import FlightWaypoint
     from .package import Package
     from .starttype import StartType
-
-F18_TGP_PYLON: int = 4
 
 
 class Flight(SidcDescribable):
@@ -91,15 +89,6 @@ class Flight(SidcDescribable):
         self.flight_plan: FlightPlan[Any] = CustomFlightPlan(
             self, CustomLayout(custom_waypoints=[])
         )
-
-        is_f18 = self.squadron.aircraft.dcs_unit_type.id == FA_18C_hornet.id
-        on_land = not self.squadron.location.is_fleet
-        if on_land and is_f18 and self.coalition.game.settings.atflir_autoswap:
-            self.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(
-                str(
-                    FA_18C_hornet.Pylon4.AN_AAQ_28_LITENING___Targeting_Pod_[1]["clsid"]
-                )
-            )
 
     def __getstate__(self) -> dict[str, Any]:
         state = self.__dict__.copy()
@@ -205,7 +194,8 @@ class Flight(SidcDescribable):
     def abort(self) -> None:
         from .flightplans.rtb import RtbFlightPlan
 
-        plan = self._flight_plan_builder.get_or_build()
+        layout = RtbFlightPlan.builder_type()(self, self.coalition.game.theater).build()
+        self.flight_plan = RtbFlightPlan(self, layout)
 
         self.set_state(
             Navigating(
@@ -254,3 +244,15 @@ class Flight(SidcDescribable):
         for pilot in self.roster.pilots:
             if pilot is not None:
                 results.kill_pilot(self, pilot)
+
+    @staticmethod
+    def clone_flight(flight: Flight) -> Flight:
+        return Flight(
+            flight.package,
+            flight.country,
+            flight.squadron,
+            flight.count,
+            flight.flight_type,
+            flight.start_type,
+            flight.divert,
+        )

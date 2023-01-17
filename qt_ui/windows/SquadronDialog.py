@@ -223,7 +223,9 @@ class SquadronDialog(QDialog):
             elif self.ato_model.game.settings.enable_transfer_cheat:
                 self._instant_relocate(destination)
             else:
-                self.squadron.plan_relocation(destination)
+                self.squadron.plan_relocation(
+                    destination, destination.coalition.game.theater
+                )
             self.ato_model.replace_from_game(player=True)
 
     def check_disabled_button_states(

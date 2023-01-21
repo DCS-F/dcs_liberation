@@ -116,7 +116,7 @@ class FlightGroupSpawner:
                     on_land
                     and self.flight.squadron.coalition.game.settings.atflir_autoswap
                 ):
-                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(
+                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(  # type: ignore
                         str(
                             FA_18C_hornet.Pylon4.AN_AAQ_28_LITENING___Targeting_Pod_[1][
                                 "clsid"
@@ -127,7 +127,7 @@ class FlightGroupSpawner:
                     not on_land
                     and self.flight.squadron.coalition.game.settings.atflir_autoswap
                 ):
-                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(
+                    self.flight.loadout.pylons[F18_TGP_PYLON] = Weapon.with_clsid(  # type: ignore
                         str(
                             FA_18C_hornet.Pylon4.AN_ASQ_228_ATFLIR___Targeting_Pod[1][
                                 "clsid"

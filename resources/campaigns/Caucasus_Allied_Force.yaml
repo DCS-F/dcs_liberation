@@ -19,7 +19,7 @@ squadrons:
     - primary: BARCAP
       secondary: air-to-ground
       aircraft:
-        - VFA-87 (NATO)
+        - VFA-87
     - primary: BARCAP
       secondary: air-to-ground
       aircraft:

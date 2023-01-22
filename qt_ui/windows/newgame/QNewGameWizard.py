@@ -731,7 +731,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
             ("A-4E Skyhawk (v2.0.0)", a4_skyhawk),
             ("A-6A Intruder (v2.7.5.01)", a6a_intruder),
             ("F-4B Phantom II (v2.7.10.02 EFM + Patch 2022.10.02)", f4b_phantom),
-            ("F-16I Sufa & F-16D (v2.2 by IDF Mods Project)", f_16_idf),
+            ("F-16I Sufa & F-16D (v3.2 by IDF Mods Project)", f_16_idf),
             (
                 "F-16A, F-16A MLU, F-16C Block 50 & F-16C Block 52D (version 2.5.6.10)",
                 f16a_mlu_f16c_bl52d,

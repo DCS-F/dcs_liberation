@@ -408,7 +408,7 @@ local unitPayloads = {
 			},
 		},
 		[9] = {
-			["name"] = "Retribution SEAD Escort",
+			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",

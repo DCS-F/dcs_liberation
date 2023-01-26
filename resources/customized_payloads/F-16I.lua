@@ -2,7 +2,7 @@ local unitPayloads = {
 	["name"] = "F-16I",
 	["payloads"] = {
 		[1] = {
-			["name"] = "Retribution SEAD",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -54,7 +54,7 @@ local unitPayloads = {
 			},
 		},
 		[2] = {
-			["name"] = "Retribution Ferry",
+			["name"] = "Liberation Ferry",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",

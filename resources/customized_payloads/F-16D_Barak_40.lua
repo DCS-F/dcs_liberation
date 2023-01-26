@@ -2,7 +2,7 @@ local unitPayloads = {
 	["name"] = "F-16D_Barak_40",
 	["payloads"] = {
 		[1] = {
-			["name"] = "Retribution SEAD",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -54,7 +54,7 @@ local unitPayloads = {
 			},
 		},
 		[2] = {
-			["name"] = "Retribution Ferry",
+			["name"] = "Liberation Ferry",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -144,7 +144,7 @@ local unitPayloads = {
 			},
 		},
 		[4] = {
-			["name"] = "Retribution Strike",
+			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -243,8 +243,8 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Retribution DEAD",
-			["name"] = "Retribution DEAD",
+			["displayName"] = "Liberation DEAD",
+			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -300,7 +300,7 @@ local unitPayloads = {
 			},
 		},
 		[7] = {
-			["name"] = "Retribution OCA/Runway",
+			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -403,7 +403,7 @@ local unitPayloads = {
 			},
 		},
 		[9] = {
-			["name"] = "Retribution SEAD Escort",
+			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",

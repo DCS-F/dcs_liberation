@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from random import randint
 from typing import Any
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
@@ -25,7 +26,10 @@ class PlanStrike(PackagePlanningTask[TheaterGroundObject]):
         state.strike_targets.remove(self.target)
 
     def propose_flights(self) -> None:
-        self.propose_flight(FlightType.STRIKE, 2)
+        if not self.target.control_point.coalition.player:
+            self.propose_flight(FlightType.STRIKE, 2)
+        else:
+            self.propose_flight(FlightType.STRIKE, randint(2, 4))
         self.propose_common_escorts()
         if self.settings.autoplan_tankers_for_strike:
             self.propose_flight(FlightType.REFUELING, 1)

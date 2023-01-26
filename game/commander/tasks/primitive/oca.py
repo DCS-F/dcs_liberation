@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from random import randint
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
@@ -26,9 +27,14 @@ class PlanOcaStrike(PackagePlanningTask[ControlPoint]):
     def propose_flights(self) -> None:
         from game.ato.starttype import StartType
 
-        self.propose_flight(FlightType.OCA_RUNWAY, 2)
-        if self.settings.default_start_type is StartType.COLD:
-            self.propose_flight(FlightType.OCA_AIRCRAFT, 2)
+        if not self.target.coalition.player:
+            self.propose_flight(FlightType.OCA_RUNWAY, 2)
+            if self.settings.default_start_type is StartType.COLD:
+                self.propose_flight(FlightType.OCA_AIRCRAFT, 2)
+        else:
+            self.propose_flight(FlightType.OCA_RUNWAY, randint(2, 4))
+            if self.settings.default_start_type is StartType.COLD:
+                self.propose_flight(FlightType.OCA_AIRCRAFT, randint(2, 4))
         self.propose_common_escorts()
         if self.settings.autoplan_tankers_for_oca:
             self.propose_flight(FlightType.REFUELING, 1)

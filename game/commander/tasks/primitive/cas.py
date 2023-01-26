@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-import random
+from random import randint
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
@@ -27,7 +27,7 @@ class PlanCas(PackagePlanningTask[FrontLine]):
             # May still plan a CAS mission despite the front line
             # not being considered vulnerable,
             # more enemy ground units means higher chance to do so
-            if enemy_cp.deployable_front_line_units > random.randint(
+            if enemy_cp.deployable_front_line_units > randint(
                 0, enemy_cp.frontline_unit_count_limit
             ):
                 state.vulnerable_front_lines.append(self.target)
@@ -42,8 +42,13 @@ class PlanCas(PackagePlanningTask[FrontLine]):
         state.vulnerable_front_lines.remove(self.target)
 
     def propose_flights(self) -> None:
-        self.propose_flight(FlightType.CAS, 2)
-        self.propose_flight(FlightType.TARCAP, 2)
-        self.propose_flight(FlightType.SEAD_ESCORT, 2)
-        if random.randint(1, 100) <= self.settings.autoplan_tankers_for_cas:
+        if self.target.is_friendly(False):
+            self.propose_flight(FlightType.CAS, 2)
+            self.propose_flight(FlightType.TARCAP, 2)
+            self.propose_flight(FlightType.SEAD_ESCORT, 2)
+        else:
+            self.propose_flight(FlightType.CAS, randint(2, 4))
+            self.propose_flight(FlightType.TARCAP, randint(2, 4))
+            self.propose_flight(FlightType.SEAD_ESCORT, randint(2, 4))
+        if randint(1, 100) <= self.settings.autoplan_tankers_for_cas:
             self.propose_flight(FlightType.REFUELING, 1)

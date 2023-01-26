@@ -366,6 +366,8 @@ class Faction:
             self.remove_aircraft("F_16D_50")
             self.remove_aircraft("F_16D_50_NS")
             self.remove_aircraft("F_16D_52_NS")
+            self.remove_aircraft("F-16D_Barak_30")
+            self.remove_aircraft("F-16D_Barak_40")
         else:
             inject_F16I()
         if not mod_settings.f4b_phantom:

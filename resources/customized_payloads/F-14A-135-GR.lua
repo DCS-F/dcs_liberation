@@ -10,19 +10,19 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[2] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 7,
 				},
 				[3] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 5,
 				},
 				[5] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 4,
 				},
 				[6] = {
@@ -402,19 +402,19 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[2] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 7,
 				},
 				[3] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 5,
 				},
 				[5] = {
-					["CLSID"] = "{BRU-32 GBU-12}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 4,
 				},
 				[6] = {
@@ -500,19 +500,19 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[2] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 7,
 				},
 				[3] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 5,
 				},
 				[5] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 4,
 				},
 				[6] = {
@@ -528,7 +528,7 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[9] = {
-					["CLSID"] = "{SHOULDER AIM-7M}",
+					["CLSID"] = "{F14-LANTIRN-TP}",
 					["num"] = 9,
 				},
 				[10] = {
@@ -549,19 +549,19 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[2] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 7,
 				},
 				[3] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-24}",
 					["num"] = 6,
 				},
 				[4] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-16}",
 					["num"] = 5,
 				},
 				[5] = {
-					["CLSID"] = "{BRU-32 MK-84}",
+					["CLSID"] = "{BRU-32 GBU-10}",
 					["num"] = 4,
 				},
 				[6] = {
@@ -577,7 +577,7 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[9] = {
-					["CLSID"] = "{SHOULDER AIM-7M}",
+					["CLSID"] = "{F14-LANTIRN-TP}",
 					["num"] = 9,
 				},
 				[10] = {

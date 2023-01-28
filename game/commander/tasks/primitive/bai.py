@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from random import randint
 
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
@@ -21,5 +22,8 @@ class PlanBai(PackagePlanningTask[VehicleGroupGroundObject]):
         state.eliminate_battle_position(self.target)
 
     def propose_flights(self) -> None:
-        self.propose_flight(FlightType.BAI, 2)
+        if not self.target.control_point.coalition.player:
+            self.propose_flight(FlightType.BAI, 2)
+        else:
+            self.propose_flight(FlightType.BAI, randint(2, 4))
         self.propose_common_escorts()

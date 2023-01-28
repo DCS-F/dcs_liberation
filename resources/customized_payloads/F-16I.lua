@@ -1,9 +1,8 @@
 local unitPayloads = {
-	["name"] = "F-16D_52",
+	["name"] = "F-16I",
 	["payloads"] = {
 		[1] = {
-			["displayName"] = "Liberation DEAD",
-			["name"] = "Liberation DEAD",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -94,7 +93,7 @@ local unitPayloads = {
 			},
 		},
 		[3] = {
-			["name"] = "Liberation OCA/Runway",
+			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -137,7 +136,7 @@ local unitPayloads = {
 					["num"] = 11,
 				},
 				[11] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
+					["CLSID"] = "{IDF Mods Project F-16I CFT}",
 					["num"] = 16,
 				},
 				[12] = {
@@ -201,7 +200,7 @@ local unitPayloads = {
 			},
 		},
 		[5] = {
-			["name"] = "CAP",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -240,7 +239,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[10] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
+					["CLSID"] = "{IDF Mods Project F-16I CFT}",
 					["num"] = 16,
 				},
 				[11] = {
@@ -300,7 +299,7 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[12] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
+					["CLSID"] = "{IDF Mods Project F-16I CFT}",
 					["num"] = 16,
 				},
 				[13] = {
@@ -312,8 +311,8 @@ local unitPayloads = {
 				[1] = 31,
 			},
 		},
-		[6] = {
-			["name"] = "Liberation Strike",
+		[7] = {
+			["name"] = "Liberation Ferry",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -364,8 +363,8 @@ local unitPayloads = {
 				[1] = 11,
 			},
 		},
-		[7] = {
-			["name"] = "Liberation SEAD",
+		[8] = {
+			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -408,7 +407,7 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[11] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
+					["CLSID"] = "{IDF Mods Project F-16I CFT}",
 					["num"] = 16,
 				},
 				[12] = {
@@ -419,8 +418,8 @@ local unitPayloads = {
 			["tasks"] = {
 			},
 		},
-		[8] = {
-			["name"] = "Liberation Ferry",
+		[9] = {
+			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -471,10 +470,9 @@ local unitPayloads = {
 				[1] = 29,
 			},
 		},
-
 	},
 	["tasks"] = {
 	},
-	["unitType"] = "F-16D_52",
+	["unitType"] = "F-16I",
 }
 return unitPayloads

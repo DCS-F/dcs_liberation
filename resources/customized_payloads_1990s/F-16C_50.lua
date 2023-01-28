@@ -373,7 +373,7 @@ local unitPayloads = {
 			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{BRU57_2*CBU-105}",
+					["CLSID"] = "{BRU57_2*AGM-154A}",
 					["num"] = 7,
 				},
 				[2] = {
@@ -397,7 +397,7 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[7] = {
-					["CLSID"] = "{BRU57_2*CBU-105}",
+					["CLSID"] = "{BRU57_2*AGM-154A}",
 					["num"] = 3,
 				},
 				[8] = {
@@ -610,7 +610,7 @@ local unitPayloads = {
 			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+					["CLSID"] = "LAU_88_AGM_65H_2_R",
 					["num"] = 7,
 				},
 				[2] = {
@@ -634,7 +634,7 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[7] = {
-					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+					["CLSID"] = "LAU_88_AGM_65H_2_L",
 					["num"] = 3,
 				},
 				[8] = {

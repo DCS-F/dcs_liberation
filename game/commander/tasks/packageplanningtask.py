@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import itertools
 import operator
-import random
+from random import randint
 from abc import abstractmethod
 from dataclasses import dataclass, field
 from enum import IntEnum, auto, unique
@@ -108,8 +108,12 @@ class PackagePlanningTask(TheaterCommanderTask, Generic[MissionTargetT]):
         return self.package is not None
 
     def propose_common_escorts(self) -> None:
-        self.propose_flight(FlightType.SEAD_ESCORT, 2, EscortType.Sead)
-        self.propose_flight(FlightType.ESCORT, 2, EscortType.AirToAir)
+        if self.target.is_friendly(False):
+            self.propose_flight(FlightType.SEAD_ESCORT, 2, EscortType.Sead)
+            self.propose_flight(FlightType.ESCORT, 2, EscortType.AirToAir)
+        else:
+            self.propose_flight(FlightType.SEAD_ESCORT, randint(2, 4), EscortType.Sead)
+            self.propose_flight(FlightType.ESCORT, randint(2, 4), EscortType.AirToAir)
 
     def iter_iads_ranges(
         self, state: TheaterState, range_type: RangeType
@@ -174,7 +178,7 @@ class PackagePlanningTask(TheaterCommanderTask, Generic[MissionTargetT]):
                 # depending on the aggressiveness setting.
                 if (
                     state.context.coalition.player
-                    or random.randint(1, 100)
+                    or randint(1, 100)
                     > state.context.coalition.game.settings.opfor_autoplanner_aggressiveness
                 ):
                     threatened = True

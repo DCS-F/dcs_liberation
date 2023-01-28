@@ -1,9 +1,8 @@
 local unitPayloads = {
-	["name"] = "F-16D_52",
+	["name"] = "F-16D_Barak_30",
 	["payloads"] = {
 		[1] = {
-			["displayName"] = "Liberation DEAD",
-			["name"] = "Liberation DEAD",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -94,7 +93,7 @@ local unitPayloads = {
 			},
 		},
 		[3] = {
-			["name"] = "Liberation OCA/Runway",
+			["name"] = "CAS",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -109,7 +108,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{600gal+CFT Fuel Left 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -117,7 +116,7 @@ local unitPayloads = {
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{600gal+CFT Fuel Right 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 6,
 				},
 				[7] = {
@@ -137,10 +136,6 @@ local unitPayloads = {
 					["num"] = 11,
 				},
 				[11] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
-					["num"] = 16,
-				},
-				[12] = {
 					["CLSID"] = "ALQ_184_Long",
 					["num"] = 13,
 				},
@@ -216,7 +211,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{600gal+CFT Fuel Left 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 4,
 				},
 				[5] = {
@@ -224,7 +219,7 @@ local unitPayloads = {
 					["num"] = 5,
 				},
 				[6] = {
-					["CLSID"] = "{600gal+CFT Fuel Right 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 6,
 				},
 				[7] = {
@@ -240,10 +235,6 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[10] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
-					["num"] = 16,
-				},
-				[11] = {
 					["CLSID"] = "ALQ_184_Long",
 					["num"] = 13,
 				},
@@ -276,7 +267,7 @@ local unitPayloads = {
 					["num"] = 7,
 				},
 				[6] = {
-					["CLSID"] = "{600gal+CFT Fuel Right 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 6,
 				},
 				[7] = {
@@ -284,7 +275,7 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[8] = {
-					["CLSID"] = "{600gal+CFT Fuel Left 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 4,
 				},
 				[9] = {
@@ -300,10 +291,6 @@ local unitPayloads = {
 					["num"] = 10,
 				},
 				[12] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
-					["num"] = 16,
-				},
-				[13] = {
 					["CLSID"] = "ALQ_184_Long",
 					["num"] = 13,
 				},
@@ -312,8 +299,8 @@ local unitPayloads = {
 				[1] = 31,
 			},
 		},
-		[6] = {
-			["name"] = "Liberation Strike",
+		[7] = {
+			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -364,8 +351,8 @@ local unitPayloads = {
 				[1] = 11,
 			},
 		},
-		[7] = {
-			["name"] = "Liberation SEAD",
+		[8] = {
+			["name"] = "ANTISHIP",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -380,7 +367,7 @@ local unitPayloads = {
 					["num"] = 7,
 				},
 				[4] = {
-					["CLSID"] = "{600gal+CFT Fuel Right 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 6,
 				},
 				[5] = {
@@ -392,7 +379,7 @@ local unitPayloads = {
 					["num"] = 5,
 				},
 				[7] = {
-					["CLSID"] = "{600gal+CFT Fuel Left 1500lb}",
+					["CLSID"] = "{600gal}",
 					["num"] = 4,
 				},
 				[8] = {
@@ -408,10 +395,6 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[11] = {
-					["CLSID"] = "{IDF Mods Project F-16C CFT}",
-					["num"] = 16,
-				},
-				[12] = {
 					["CLSID"] = "ALQ_184_Long",
 					["num"] = 13,
 				},
@@ -419,8 +402,8 @@ local unitPayloads = {
 			["tasks"] = {
 			},
 		},
-		[8] = {
-			["name"] = "Liberation Ferry",
+		[9] = {
+			["name"] = "Liberation SEAD Escort",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
@@ -471,10 +454,9 @@ local unitPayloads = {
 				[1] = 29,
 			},
 		},
-
 	},
 	["tasks"] = {
 	},
-	["unitType"] = "F-16D_52",
+	["unitType"] = "F-16D_Barak_30",
 }
 return unitPayloads

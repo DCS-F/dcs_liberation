@@ -2,8 +2,8 @@ local unitPayloads = {
 	["name"] = "FA-18C_hornet",
 	["payloads"] = {
 		[1] = {
-			["displayName"] = "Retribution SEAD",
-			["name"] = "Retribution SEAD",
+			["displayName"] = "Liberation SEAD",
+			["name"] = "Liberation SEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -47,8 +47,8 @@ local unitPayloads = {
 			},
 		},
 		[2] = {
-			["displayName"] = "Retribution OCA/Runway",
-			["name"] = "Retribution OCA/Runway",
+			["displayName"] = "Liberation OCA/Runway",
+			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -92,8 +92,8 @@ local unitPayloads = {
 			},
 		},
 		[3] = {
-			["displayName"] = "Retribution Strike",
-			["name"] = "Retribution Strike",
+			["displayName"] = "Liberation Strike",
+			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -139,7 +139,7 @@ local unitPayloads = {
 			},
 		},
 		[4] = {
-			["name"] = "Retribution CAS",
+			["name"] = "Liberation CAS",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -183,7 +183,7 @@ local unitPayloads = {
 			},
 		},
 		[5] = {
-			["name"] = "Retribution DEAD",
+			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -228,8 +228,8 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Retribution Anti-ship",
-			["name"] = "Retribution Anti-ship",
+			["displayName"] = "Liberation Anti-ship",
+			["name"] = "Liberation Anti-ship",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{AGM_84D}",
@@ -274,8 +274,8 @@ local unitPayloads = {
 			},
 		},
 		[7] = {
-			["displayName"] = "Retribution BARCAP",
-			["name"] = "Retribution BARCAP",
+			["displayName"] = "Liberation BARCAP",
+			["name"] = "Liberation BARCAP",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -322,8 +322,8 @@ local unitPayloads = {
 			},
 		},
 		[8] = {
-			["displayName"] = "Retribution BAI",
-			["name"] = "Retribution BAI",
+			["displayName"] = "Liberation BAI",
+			["name"] = "Liberation BAI",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
@@ -367,8 +367,8 @@ local unitPayloads = {
 			},
 		},
 		[9] = {
-			["displayName"] = "Retribution Ferry",
-			["name"] = "Retribution Ferry",
+			["displayName"] = "Liberation Ferry",
+			["name"] = "Liberation Ferry",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",

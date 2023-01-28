@@ -35,6 +35,7 @@ import logging
 import math
 from collections import defaultdict
 from dataclasses import dataclass, field
+from datetime import timedelta
 from functools import singledispatchmethod
 from typing import Generic, Iterator, List, Optional, Sequence, TYPE_CHECKING, TypeVar
 
@@ -321,7 +322,9 @@ class AirliftPlanner:
                     ):
                         self.create_airlift_flight(squadron)
         if self.package.flights:
-            self.package.set_tot_asap()
+            self.package.time_over_target = (
+                self.game.settings.desired_player_mission_duration / 2
+            )
             self.game.ato_for(self.for_player).add_package(self.package)
 
     def create_airlift_flight(self, squadron: Squadron) -> int:

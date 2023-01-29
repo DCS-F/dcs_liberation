@@ -59,7 +59,7 @@ class VSN_MirageIIIC(PlaneType):
         Smokewinder___yellow = (1, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (1, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (1, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (1, Weapons.Super_530D)
+        Matra_Super_530D = (1, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 
@@ -97,7 +97,7 @@ class VSN_MirageIIIC(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (2, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (2, Weapons.Super_530D)
+        Matra_Super_530D = (2, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (2, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
         M3_Fuel_Tank_1300_Liter = (2, WeaponsMirage3.M3_Fuel_Tank_1300_Liter)
 
@@ -118,7 +118,7 @@ class VSN_MirageIIIC(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (3, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (3, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (3, Weapons.Super_530D)
+        Matra_Super_530D = (3, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -163,7 +163,7 @@ class VSN_MirageIIIC(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (9, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (9, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (9, Weapons.Super_530D)
+        Matra_Super_530D = (9, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -204,7 +204,7 @@ class VSN_MirageIIIC(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (10, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (10, Weapons.Super_530D)
+        Matra_Super_530D = (10, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (10, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
         M3_Fuel_Tank_1300_Liter = (10, WeaponsMirage3.M3_Fuel_Tank_1300_Liter)
 
@@ -217,7 +217,7 @@ class VSN_MirageIIIC(PlaneType):
         Smokewinder___yellow = (11, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (11, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (11, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (11, Weapons.Super_530D)
+        Matra_Super_530D = (11, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 
@@ -266,7 +266,7 @@ class VSN_MirageIIIC_AG(PlaneType):
         Smokewinder___yellow = (1, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (1, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (1, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (1, Weapons.Super_530D)
+        Matra_Super_530D = (1, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 
@@ -304,7 +304,7 @@ class VSN_MirageIIIC_AG(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (2, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (2, Weapons.Super_530D)
+        Matra_Super_530D = (2, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (2, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
         M3_Fuel_Tank_1300_Liter = (2, WeaponsMirage3.M3_Fuel_Tank_1300_Liter)
 
@@ -325,7 +325,7 @@ class VSN_MirageIIIC_AG(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (3, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (3, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (3, Weapons.Super_530D)
+        Matra_Super_530D = (3, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -370,7 +370,7 @@ class VSN_MirageIIIC_AG(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (9, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (9, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (9, Weapons.Super_530D)
+        Matra_Super_530D = (9, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -411,7 +411,7 @@ class VSN_MirageIIIC_AG(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (10, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (10, Weapons.Super_530D)
+        Matra_Super_530D = (10, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (10, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
         M3_Fuel_Tank_1300_Liter = (10, WeaponsMirage3.M3_Fuel_Tank_1300_Liter)
 
@@ -424,7 +424,7 @@ class VSN_MirageIIIC_AG(PlaneType):
         Smokewinder___yellow = (11, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (11, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (11, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (11, Weapons.Super_530D)
+        Matra_Super_530D = (11, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 
@@ -476,7 +476,7 @@ class VSN_MirageIIIS(PlaneType):
         Smokewinder___yellow = (1, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (1, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (1, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (1, Weapons.Super_530D)
+        Matra_Super_530D = (1, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 
@@ -509,7 +509,7 @@ class VSN_MirageIIIS(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (2, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (2, Weapons.Super_530D)
+        Matra_Super_530D = (2, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (2, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
 
     class Pylon3:
@@ -524,7 +524,7 @@ class VSN_MirageIIIS(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (3, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (3, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (3, Weapons.Super_530D)
+        Matra_Super_530D = (3, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -563,7 +563,7 @@ class VSN_MirageIIIS(PlaneType):
         )
         Mk_83___1000lb_GP_Bomb_LD = (9, Weapons.Mk_83___1000lb_GP_Bomb_LD)
         R550_Magic_2_IR_AAM = (9, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (9, Weapons.Super_530D)
+        Matra_Super_530D = (9, Weapons.Matra_Super_530D)
 
     # ERRR {Kh-58U}
 
@@ -599,7 +599,7 @@ class VSN_MirageIIIS(PlaneType):
             Weapons.Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_,
         )
         R550_Magic_2_IR_AAM = (10, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (10, Weapons.Super_530D)
+        Matra_Super_530D = (10, Weapons.Matra_Super_530D)
         M3_Fuel_Tank_625_Liter = (10, WeaponsMirage3.M3_Fuel_Tank_625_Liter)
 
     class Pylon11:
@@ -617,7 +617,7 @@ class VSN_MirageIIIS(PlaneType):
         Smokewinder___yellow = (11, Weapons.Smokewinder___yellow)
         Smokewinder___orange = (11, Weapons.Smokewinder___orange)
         R550_Magic_2_IR_AAM = (11, Weapons.R550_Magic_2_IR_AAM)
-        Super_530D = (11, Weapons.Super_530D)
+        Matra_Super_530D = (11, Weapons.Matra_Super_530D)
 
     # ERRR <CLEAN>
 

@@ -5,15 +5,21 @@
   "description": "<p>Ukrainian army in the 2010s.</p>",
   "aircrafts": [
     "IL-76MD",
+	"An-26B",
+	"An-30M",
     "L-39ZA Albatros",
     "Mi-24V Hind-E",
     "Mi-24P Hind-F",
     "Mi-8MTV2 Hip",
+    "Ka-50 Hokum",
+	"MiG-21bis Fishbed-N",
+	"MiG-27K Flogger-J2",
     "MiG-29S Fulcrum-C",
     "Su-24M Fencer-D",
     "Su-25 Frogfoot",
     "Su-25T Frogfoot",
-    "Su-27 Flanker-B"
+    "Su-27 Flanker-B",
+	"UH-1H Iroquois"
   ],
   "awacs": [
     "A-50"
@@ -22,16 +28,40 @@
     "IL-78M"
   ],
   "frontline_units": [
+    "BRDM-2",
+    "BMP-1",
     "BMP-2",
     "BMP-3",
+	"BMD-1",
+    "BTR-D",
     "BTR-80",
+	"BTR-82A",
     "M1043 HMMWV (M2 HMG)",
-    "SA-13 Gopher (9K35 Strela-10M3)",
+    "M1045 HMMWV (BGM-71 TOW)",
+    "SA-19 Grison (2K22 Tunguska)",
+    "SA-15 Tor",
+	"SA-13 Gopher (9K35 Strela-10M3)",
+    "SAM SA-8 Osa \"Gecko\" TEL",
+	"ZSU-23-4 Shilka",
     "T-72B with Kontakt-1 ERA",
-    "T-80UD"
+    "T-80UD",
+    "MT-LB",
+    "MT-LBu",
+	"LUV Tigr"
   ],
-  "artillery_units": [],
+  "artillery_units": [
+    "2S19 Msta-S",
+    "2S3 Akatsiya",
+	"2S1 Gvozdika",
+    "2S9 Nona-S",
+    "BM-30 Smerch (9M55K5 HE Rockets)",
+	"BM-30 Smerch (9M55K Cluster Rockets)",
+	"BM-27 Uragan",
+    "BM-21 Grad",
+    "SpGH DANA"
+  ],
   "logistics_units": [
+	"LUV Tigr",
     "LUV UAZ-469 Jeep",
     "Truck Ural-375"
   ],
@@ -67,7 +97,107 @@
   ],
   "requirements": {},
   "carrier_names": [
-    "Admiral Kuznetsov",
-    "Admiral Gorshkov"
-  ]
+  ],
+  "aircraft_carrier": [
+  ],
+  "helicopter_carrier": [
+    "Type_071"
+  ],
+  "helicopter_carrier_names": [
+    "A500 Donbas",
+    "A512 Pereyaslav",
+    "F130 Hetman Sahaydachniy"
+  ],
+  "destroyers": [
+    "REZKY"
+  ],
+  "cruisers": [
+    "MOLNIYA"
+  ],
+  "navy_generators": [
+    "GrishaGroupGenerator",
+	"MolniyaGroupGenerator"
+  ],
+  "has_jtac": true,
+  "jtac_unit": "MQ-9 Reaper",
+  "liveries_overrides": {
+    "A-50": [
+      "Ukrainian AF"
+    ],
+    "IL-76MD": [
+      "Ukrainian AF"
+    ],
+    "IL-78M": [
+      "Ukrainian AF"
+    ],
+	"An-26B": [
+      "Ukraine AF",
+      "Ukraine AF #05 Digital Camo"
+    ],
+	"An-30M": [
+      "15th Transport AB"
+    ],
+    "L-39ZA Albatros": [
+      "Ukraine Air Force digital"
+    ],
+    "Mi-24V Hind-E": [
+      "Ukraine"
+    ],
+    "Mi-24P Hind-F": [
+      "Ukrainian Army Aviation"
+    ],
+    "Mi-8MTV2 Hip": [
+      "Ukraine"
+    ],
+    "Ka-50 Hokum": [
+      "ukraine camo 1",
+	  "ukraine camo 1 dirt"
+    ],
+	"MiG-21bis Fishbed-N": [
+      "Ukraine (1)",
+	  "Ukraine (2)"
+    ],
+	"MiG-27K Flogger-J2": [
+      "Ukraine 1",
+	  "Ukraine 2"
+    ],
+    "MiG-29S Fulcrum-C": [
+      "Air Force Ukraine Standard"
+    ],
+    "Su-24M Fencer-D": [
+      "Ukrainian Air Force Standard",
+	  "Ukrainian Air Force Digital"
+    ],
+    "Su-25 Frogfoot": [
+      "broken camo scheme #1 (native). 299th oshap",
+	  "broken camo scheme #2 (native). 452th shap",
+	  "petal camo scheme #1 (native). 299th brigade",
+	  "petal camo scheme #2 (native). 299th brigade"
+    ],
+    "Su-25T Frogfoot": [
+      "Su-25T_Ukraine_Forest"
+    ],
+    "Su-27 Flanker-B": [
+      "Air Force Ukraine Standard",
+	  "Air Force Ukraine Standard Early",
+	  "Mirgorod AFB (831th brigade)",
+	  "Mirgorod AFB (Digital camo)",
+	  "Ozerne AFB (9th brigade)"
+    ],
+	"UH-1H Iroquois": [
+      "Ukrainian Army",
+	  "UKR Air Force Broken"
+    ]
+  },
+  "liveries_overrides_ground_forces": {
+    "BTR-80": [
+      "Green summer"
+    ],
+	"BTR-82A": [
+      "Green summer"
+    ],
+    "BMP-2": [
+      "UKR_New"
+    ]
+  }  
 }

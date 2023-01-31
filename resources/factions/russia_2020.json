@@ -9,7 +9,6 @@
   "aircrafts": [
     "IL-76MD",
     "Ka-50 Hokum",
-    "Ka-50 Hokum III",
     "L-39ZA Albatros",
     "Mi-24V Hind-E",
     "Mi-24P Hind-F",
@@ -25,7 +24,8 @@
     "Su-33 Flanker-D",
     "Su-34 Fullback",
     "Su-57 Felon",
-    "Tu-142 Bear-F",
+    "Tu-16 Badger",
+	"Tu-142 Bear-F",
     "Tu-160 Blackjack",
     "Tu-22M3 Backfire-C",
     "Tu-95MS Bear-H"
@@ -37,19 +37,41 @@
     "IL-78M"
   ],
   "frontline_units": [
+    "BRDM-2",
+    "BMP-1",
     "BMP-2",
     "BMP-3",
+	"BMD-1",
+    "BTR-D",
+    "BTR-80",
+	"BTR-82A",
     "SA-19 Grison (2K22 Tunguska)",
+    "SA-15 Tor",
+	"SA-13 Gopher (9K35 Strela-10M3)",
+    "SAM SA-8 Osa \"Gecko\" TEL",
+	"ZSU-23-4 Shilka",
     "T-72B with Kontakt-1 ERA",
+    "T-72B3 model 2011",
     "T-80UD",
-    "T-90A"
+    "T-90A",
+    "MT-LB",
+    "MT-LBu",
+    "LUV UAZ-469 Jeep",
+	"LUV Tigr"
   ],
   "artillery_units": [
     "2S19 Msta-S",
-    "BM-27 Uragan"
+    "2S3 Akatsiya",
+	"2S1 Gvozdika",
+    "2S9 Nona-S",
+    "BM-30 Smerch (9M55K5 HE Rockets)",
+	"BM-30 Smerch (9M55K Cluster Rockets)",
+	"BM-27 Uragan",
+    "BM-21 Grad"
   ],
   "logistics_units": [
     "LUV UAZ-469 Jeep",
+	"LUV Tigr",
     "Truck Ural-375"
   ],
   "infantry_units": [
@@ -95,5 +117,19 @@
     "Admiral Kuznetsov"
   ],
   "has_jtac": true,
-  "jtac_unit": "MQ-9 Reaper"
+  "jtac_unit": "MQ-9 Reaper",
+  "liveries_overrides_ground_forces": {
+    "BMP-1": [
+      "UKR_summer"
+    ],
+    "BMP-2": [
+      "RUS_winter"
+    ],
+    "BTR-80": [
+      "default"
+    ],
+	"BTR-82A": [
+      "default"
+    ]
+  }
 }

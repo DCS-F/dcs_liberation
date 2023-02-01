@@ -242,6 +242,10 @@ class Faction:
             for carrier_shiptype in aircraft_carrier:
                 shiptype = carrier_shiptype
                 faction.carriers[shiptype] = carrier_names
+            for carrier_classname in faction.naval_units:
+                if carrier_classname.unit_class in [UnitClass.AIRCRAFT_CARRIER]:
+                    shiptype = carrier_classname.dcs_unit_type
+                    faction.carriers[shiptype] = carrier_names
         else:
             faction.carriers = loaded_carriers
         for carrier_shiptype in faction.carriers.keys():
@@ -258,6 +262,10 @@ class Faction:
             for carrier_shiptype in helicopter_carrier:
                 shiptype = carrier_shiptype
                 faction.helicopter_carriers[shiptype] = carrier_names
+            for carrier_classname in faction.naval_units:
+                if carrier_classname.unit_class in [UnitClass.HELICOPTER_CARRIER]:
+                    shiptype = carrier_classname.dcs_unit_type
+                    faction.helicopter_carriers[shiptype] = carrier_names
         else:
             faction.helicopter_carriers = loaded_carriers
         for carrier_shiptype in faction.helicopter_carriers.keys():

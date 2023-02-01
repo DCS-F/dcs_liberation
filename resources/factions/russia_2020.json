@@ -50,6 +50,7 @@
 	"SA-13 Gopher (9K35 Strela-10M3)",
     "SAM SA-8 Osa \"Gecko\" TEL",
 	"ZSU-23-4 Shilka",
+	"T-62",
     "T-72B with Kontakt-1 ERA",
     "T-72B3 model 2011",
     "T-80UD",
@@ -72,6 +73,7 @@
   "logistics_units": [
     "LUV UAZ-469 Jeep",
 	"LUV Tigr",
+	"Truck GAZ-66",
     "Truck Ural-375"
   ],
   "infantry_units": [
@@ -111,7 +113,8 @@
   ],
   "helicopter_carrier_names": [],
   "requirements": {
-    "SU-57 Felon By CubanAce Simulations": "https://www.digitalcombatsimulator.com/fr/files/2539621/"
+    "SU-57 Felon By CubanAce Simulations": "https://www.digitalcombatsimulator.com/fr/files/2539621/",
+	"frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
   },
   "carrier_names": [
     "Admiral Kuznetsov"
@@ -120,16 +123,60 @@
   "jtac_unit": "MQ-9 Reaper",
   "liveries_overrides_ground_forces": {
     "BMP-1": [
-      "UKR_summer"
+      "IZI",
+      "O",
+      "V",
+      "Z"
     ],
     "BMP-2": [
-      "RUS_winter"
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+    "BMP-3": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"BMD-1": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
     ],
     "BTR-80": [
-      "default"
+      "IZI",
+      "O",
+      "V",
+      "X",
+      "Z"
     ],
 	"BTR-82A": [
-      "default"
+      "IZI",
+      "O",
+      "V",
+      "X",
+      "Z"
+    ],
+	"T-90": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"2S6 Tunguska": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"Tor 9A331": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
     ]
   }
 }

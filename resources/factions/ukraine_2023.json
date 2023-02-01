@@ -48,6 +48,13 @@
 	"T-64BV",
     "T-72B with Kontakt-1 ERA",
     "T-80UD",
+    "M1A2 Abrams",
+    "M2A2 Bradley",
+    "FV4034 Challenger 2",
+    "Leopard 2A4",
+	"Leopard 2A5",
+    "Marder 1A3",
+    "Flakpanzer Gepard",
     "MT-LB",
     "MT-LBu",
 	"LUV Tigr"
@@ -61,6 +68,8 @@
 	"BM-30 Smerch (9M55K Cluster Rockets)",
 	"BM-27 Uragan",
     "BM-21 Grad",
+    "M109A6 Paladin",
+    "M270 Multiple Launch Rocket System",
     "SpGH DANA"
   ],
   "logistics_units": [

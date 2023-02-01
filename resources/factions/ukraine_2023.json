@@ -1,8 +1,8 @@
 {
   "country": "Ukraine",
-  "name": "Ukraine 2010",
+  "name": "Ukraine 2023",
   "authors": "Khopa",
-  "description": "<p>Ukrainian army in the 2010s.</p>",
+  "description": "<p>Ukrainian army in 2023, during the war and after receiving some Western weapons aid.</p>",
   "aircrafts": [
     "IL-76MD",
 	"An-26B",
@@ -19,6 +19,8 @@
     "Su-25 Frogfoot",
     "Su-25T Frogfoot",
     "Su-27 Flanker-B",
+    "F-16CM Fighting Falcon (Block 50)",
+    "F/A-18C Hornet (Lot 20)",
 	"UH-1H Iroquois"
   ],
   "awacs": [
@@ -195,6 +197,12 @@
 	  "Mirgorod AFB (831th brigade)",
 	  "Mirgorod AFB (Digital camo)",
 	  "Ozerne AFB (9th brigade)"
+    ],
+    "F-16CM Fighting Falcon (Block 50)": [
+      "Fictional Ukraine Air Force"
+    ],
+    "F/A-18C Hornet (Lot 20)": [
+      "Fictional Ukraine Air Force"
     ],
 	"UH-1H Iroquois": [
       "Ukrainian Army",

@@ -1,0 +1,458 @@
+name: Caucasus - Blyatskrieg
+theater: Caucasus
+authors: Ghosti
+recommended_player_faction: Ukraine 2010
+recommended_enemy_faction: Russia 2020
+recommended_start_date: 2022-02-24
+description: <p>Russian forces have launched a sneak attack on Ukraine. Mount an offensive, land your troops east of the Kerch Strait and push them back.</p>
+miz: Ukraine_to_Russia.miz
+performance: 2
+version: 10.0
+squadrons:
+  # Anapa-Vityazevo
+  12:
+    - primary: BARCAP
+      aircraft:
+        - MiG-29S Fulcrum-C
+    - primary: Anti-ship
+      secondary: any
+      aircraft:
+        - Tu-142 Bear-F
+    - primary: Refueling
+      aircraft:
+        - IL-78M
+    - primary: Transport
+      aircraft:
+        - IL-76MD
+  # Krasnodar-Center
+  13:
+    - primary: BARCAP
+      aircraft:
+        - Su-30 Flanker-C
+        - Su-27 Flanker-B
+    - primary: SEAD
+      secondary: any
+      aircraft:
+        - Su-25T Frogfoot
+  # Novorossiysk
+  14:
+    - primary: BARCAP
+      aircraft:
+        - Su-30 Flanker-C
+        - Su-27 Flanker-B
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Su-25 Frogfoot
+  # Krymsk
+  15:
+    - primary: BARCAP
+      aircraft:
+        - Su-27 Flanker-B
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - Tu-16 Badger
+  # Maykop-Khanskaya
+  16:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Su-25 Frogfoot
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Su-24M Fencer-D
+    - primary: DEAD
+      secondary: air-to-ground
+      aircraft:
+        - Su-34 Fullback
+  # Gelendzhik
+  17:
+    - primary: BARCAP
+      aircraft:
+        - MiG-29S Fulcrum-C
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Su-25 Frogfoot
+    - primary: Transport
+  # Krasnodar-Pashkovsky
+  19:
+    - primary: BARCAP
+      aircraft:
+        - Su-27 Flanker-B
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
+  # Mineralnye Vody
+  26:
+    - primary: BARCAP
+      aircraft:
+        - Su-30 Flanker-C
+        - Su-27 Flanker-B
+    - primary: AEW&C
+      aircraft:
+        - A-50
+  # Nalchik
+  27:
+    - primary: DEAD
+      secondary: air-to-ground
+      aircraft:
+        - Tu-22M3 Backfire-C
+  # Mozdok
+  28:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-31 Foxhound
+        - MiG-25PD Foxbat-E
+    - primary: AEW&C
+      aircraft:
+        - A-50
+    - primary: Refueling
+      aircraft:
+        - IL-78M
+    - primary: Transport
+      aircraft:
+        - IL-76MD
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - Tu-160 Blackjack
+    - primary: Strike
+      aircraft:
+        - Tu-95MS Bear-H
+  # Beslan
+  32: 
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+  Kerch Voykovo Heliport:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: Transport
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Kerch Bagerovo Heliport:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: Transport
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Belyy Heliport:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+  Starotitarovskaya Roadbase:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+  Sennoy Roadbase:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+  Adagum Roadbase:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-28N Havoc
+  Mingrelskaya Roadbase:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+  Yablonovskiy Roadbase:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+  Kazazov Roadbase:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+  Saratovskaya Roadbase:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-28N Havoc
+  Guriyskaya FARP:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Kurinskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+  Apsheronsk FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+  Kubanskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+  Pshehskaya FARP:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-28N Havoc
+  Kurdzhipskaya FARP:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Dagestanskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+  Abadzehskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+  Dahovskaya FARP:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-28N Havoc
+  Gubskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Besstrashnaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Udobnaya Roadbase:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Cherkessk FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Prigorodnoe Roadbase:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+  Vorovskolesskaya FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  # Zarechnoe FARP
+  Zarechnoe FARP:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Melitopol Airbase:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - Su-27 Flanker-B
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-29S Fulcrum-C
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Su-25 Frogfoot
+    - primary: SEAD
+      secondary: any
+      aircraft:
+        - Su-25T Frogfoot
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - Su-24M Fencer-D
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-21bis Fishbed-N
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - MiG-27K Flogger-J2
+  Kulbakino Airbase:
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - Su-27 Flanker-B
+    - primary: BARCAP
+      secondary: air-to-air
+      aircraft:
+        - MiG-29S Fulcrum-C
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Su-25 Frogfoot
+    - primary: SEAD
+      secondary: any
+      aircraft:
+        - Su-25T Frogfoot
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - Su-24M Fencer-D
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - L-39ZA Albatros
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+    - primary: Refueling
+      aircraft:
+        - IL-78M
+    - primary: Transport
+      aircraft:
+        - IL-76MD
+    - primary: Transport
+      aircraft:
+        - An-26B
+    - primary: AEW&C
+      aircraft:
+        - A-50
+    - primary: BARCAP
+      secondary: air-to-ground
+      aircraft:
+        - MiG-21bis Fishbed-N
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - MiG-27K Flogger-J2
+  Blue LHA:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Blue LHA 2:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Blue LHA 3:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24V Hind-E
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois

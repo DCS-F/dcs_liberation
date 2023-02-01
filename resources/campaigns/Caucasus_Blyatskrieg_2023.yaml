@@ -1,14 +1,18 @@
-name: Caucasus - Blyatskrieg
+name: Caucasus - Blyatskrieg 2023
 theater: Caucasus
 authors: Ghosti
-recommended_player_faction: Ukraine 2010
+recommended_player_faction: Ukraine 2023
 recommended_enemy_faction: Russia 2020
-recommended_start_date: 2022-02-24
-description: <p>Russian forces have launched a sneak attack on Ukraine. Mount an offensive, land your troops east of the Kerch Strait and push them back.</p>
-miz: Caucasus_Blyatskrieg.miz
+recommended_start_date: 2023-02-24
+description: <p>It is one year into a three day special military operation. Launch the fourth major counteroffensive, after Kiev, Kharkiv and Kherson.</p>
+miz: Caucasus_Blyatskrieg_2023.miz
 performance: 2
 version: 10.0
 squadrons:
+  Red CV:
+    - primary: BARCAP
+      aircraft:
+        - Su-33 Flanker-D
   # Anapa-Vityazevo
   12:
     - primary: BARCAP

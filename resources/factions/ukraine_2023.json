@@ -12,6 +12,7 @@
     "Mi-24P Hind-F",
     "Mi-8MTV2 Hip",
     "Ka-50 Hokum",
+	"Ka-50 Hokum III",
 	"MiG-21bis Fishbed-N",
 	"MiG-27K Flogger-J2",
     "MiG-29S Fulcrum-C",
@@ -55,6 +56,7 @@
 	"Leopard 2A5",
     "Marder 1A3",
     "Flakpanzer Gepard",
+    "M113",
     "MT-LB",
     "MT-LBu",
 	"LUV Tigr"
@@ -167,7 +169,8 @@
       "Ukrainian Army Aviation",
 	  "Fictional Mi-24 Caucasus Ukrania",
 	  "Fictional Mi-35 Caucasus Ukraine",
-	  "Ukrainian Army Aviation (Pixel (Files))"
+	  "Ukrainian Army Aviation (Pixel, clean, striped blades)",
+	  "Ukrainian Army Aviation (Pixel, clean, default blades)"
     ],
     "Mi-8MTV2 Hip": [
       "Ukraine"
@@ -175,6 +178,9 @@
     "Ka-50 Hokum": [
       "ukraine camo 1",
 	  "ukraine camo 1 dirt"
+    ],
+    "Ka-50 Hokum III": [
+      "Ka-50_3 Ukraine Fictional"
     ],
 	"MiG-21bis Fishbed-N": [
       "Ukraine (1)",
@@ -208,7 +214,8 @@
 	  "Ozerne AFB (9th brigade)"
     ],
     "F-16CM Fighting Falcon (Block 50)": [
-      "Fictional Ukraine Air Force"
+      "UAF 831th Tactical Aviation Brigade - Splinter - High-Viz",
+	  "Mirgorod_AFB_Fictional"
     ],
     "F/A-18C Hornet (Lot 20)": [
       "Fictional Ukraine Air Force"
@@ -256,6 +263,9 @@
 	"Osa 9A33 ln": [
       "UA_historical(otaman)",
       "UA_pixel"
+    ],
+	"2S6 Tunguska": [
+      "Tunguska Ukraine"
     ],
 	"KrAZ6322": [
       "UA-historical",

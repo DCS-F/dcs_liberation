@@ -9,6 +9,7 @@
   "aircrafts": [
     "IL-76MD",
     "Ka-50 Hokum",
+	"Ka-50 Hokum III",
     "L-39ZA Albatros",
     "Mi-24V Hind-E",
     "Mi-24P Hind-F",
@@ -122,6 +123,131 @@
   ],
   "has_jtac": true,
   "jtac_unit": "MQ-9 Reaper",
+  "liveries_overrides": {
+    "A-50": [
+      "RF Air Force new"
+    ],
+    "IL-78M": [
+      "RF Air Force new"
+    ],
+    "IL-76MD": [
+      "MVD aeroflot"
+    ],
+    "Ka-50 Hokum": [
+      "Russia Standard Army",
+	  "Russia Standard Army (Worn)",
+	  "Russia Worn Black",
+	  "Russia Demo #22 `Black Shark`",
+	  "Russia Demo #024",
+	  "Russia Demo `Werewolf`"
+    ],
+	"Ka-50 Hokum III": [
+      "default",
+	  "Ka-50_black_h347_blackshark",
+	  "Ka-50_black_werewolf",
+	  "Ka-50_blackshark_Torzhok",
+	  "Ka-50_standart_black_RussianAirForce",
+	  "Ka-50_desert_blackshark",
+	  "Ka-50_desert_werewolf"
+    ],
+    "L-39ZA Albatros": [
+      "Russian Air Force"
+    ],
+    "Mi-24V Hind-E": [
+      "standard 1",
+	  "standard 2 (faded and sun-bleached)",
+	  "Russia_FSB",
+	  "Russia_MVD"
+    ],
+    "Mi-24P Hind-F": [
+      "AF 440 OVP",
+	  "AF Standard3 Old",
+	  "AF Syzran AFB",
+	  "Russian Air Force"
+    ],
+    "Mi-28N Havoc": [
+      "standard",
+	  "night"
+    ],
+    "Mi-8MTV2 Hip": [
+      "Russia_Army_Weather",
+	  "Russia_FSB",
+	  "Russia_MVD_Mozdok",
+	  "Russia_MVD_Standard",
+	  "Russia_VVS_Grey",
+	  "Russia_VVS_Grey_2",
+	  "Russia_VVS_MA",
+	  "Russia_VVS_Standard",
+	  "Russia_VVS_Standard_2"
+    ],
+    "MiG-29S Fulcrum-C": [
+      "Air Force Standard",
+	  "28 GvIAP_Andreapol",
+	  "31 GvIAP_Zernograd",
+	  "426th Air Group_Erebuni",
+	  "1521th Air base_Mary-1"
+    ],
+    "MiG-31 Foxhound": [
+      "af standard",
+	  "174 GvIAP_Boris Safonov",
+	  "903_White"
+    ],
+    "Su-24M Fencer-D": [
+      "af standard"
+    ],
+    "Su-25 Frogfoot": [
+      "field camo scheme #2 (native). 960th shap"
+    ],
+    "Su-25T Frogfoot": [
+      "af standard 2",
+	  "su-25t test scheme"
+    ],
+    "Su-27 Flanker-B": [
+      "Air Force Standard",
+	  "Air Force Standard Early",
+	  "Besovets AFB",
+	  "Besovets AFB 2 squadron",
+	  "Chkalovsk AFB (689 GvIAP)",
+	  "Hotilovo AFB",
+	  "Lodeynoye pole AFB (177 IAP)",
+	  "Lypetsk AFB (Shark)"
+    ],
+    "Su-30 Flanker-C": [
+      "adf 148th ctc savasleyka ab",
+	  "af standard",
+	  "af standard last",
+	  "af standard last (worn-out)",
+	  "`snow` test paint scheme"
+    ],
+    "Su-33 Flanker-D": [
+      "279th kiap 1st squad navy",
+	  "279th kiap 1st squad Syria 2017",
+	  "279th kiap 2nd squad navy",
+	  "279th kiap 2nd squad Syria 2017",
+	  "t-10k-1 test paint scheme",
+	  "t-10k-5 test paint scheme",
+	  "t-10k-9 test paint scheme"
+    ],
+    "Su-34 Fullback": [
+      "Russian Air Force",
+	  "Russian Air Force Old"
+    ],
+    "Tu-16 Badger": [
+      "Badger-C"
+    ],
+	"Tu-142 Bear-F": [
+      "af standard"
+    ],
+    "Tu-160 Blackjack": [
+      "af standard"
+    ],
+    "Tu-22M3 Backfire-C": [
+      "af standard"
+    ],
+    "Tu-95MS Bear-H": [
+      "af standard"
+    ]
+  },
   "liveries_overrides_ground_forces": {
     "BMP-1": [
       "IZI",

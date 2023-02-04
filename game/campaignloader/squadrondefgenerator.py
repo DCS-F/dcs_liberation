@@ -69,6 +69,10 @@ class SquadronDefGenerator:
         elif country == "Greece":
             faker = Faker("el_GR")
             return f"{translit(faker.administrative_unit(), 'el', reversed=True)}"
+        elif country == "Ukraine":
+            faker = Faker("uk_UA")
+            return f"{translit(faker.city_name(), 'ru', reversed=True)}"
+
         animal = random.choice(ANIMALS)
         adjective = random.choice(
             (

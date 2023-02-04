@@ -24,3 +24,6 @@ radios:
   # communications with FAC and ground units, which don't currently have
   # radios assigned, so no channels to configure.
 kneeboard_units: "metric"
+default_overrides:
+  Realistic_INS: 0
+  IMU_alignment_type: 1

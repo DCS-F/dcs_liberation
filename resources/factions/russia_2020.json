@@ -73,6 +73,7 @@
   "logistics_units": [
     "LUV UAZ-469 Jeep",
 	"LUV Tigr",
+	"Truck KAMAZ 43101",
 	"Truck GAZ-66",
     "Truck Ural-375"
   ],
@@ -166,6 +167,36 @@
       "V",
       "Z"
     ],
+	"Smerch": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"Smerch_HE": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"Grad-URAL": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"GAZ-66": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"KAMAZ Truck": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
 	"2S6 Tunguska": [
       "IZI",
       "O",
@@ -173,6 +204,18 @@
       "Z"
     ],
 	"Tor 9A331": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"Tigr_233036": [
+      "IZI",
+      "O",
+      "V",
+      "Z"
+    ],
+	"UAZ-469": [
       "IZI",
       "O",
       "V",

@@ -157,6 +157,10 @@ squadrons:
     - primary: CAS
       secondary: air-to-ground
       aircraft:
+        - Ka-50 Hokum III
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
         - UH-1H Iroquois
   Kerch Bagerovo Heliport:
     - primary: CAS
@@ -174,6 +178,10 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum III
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -332,6 +340,14 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - MiG-27K Flogger-J2
+    - primary: CAS
+      secondary: air-to-air
+      aircraft:
+        - F-16CM Fighting Falcon (Block 50)
+    - primary: CAS
+      secondary: air-to-air
+      aircraft:
+        - F/A-18C Hornet (Lot 20)
   Kulbakino Airbase:
     - primary: BARCAP
       secondary: air-to-air

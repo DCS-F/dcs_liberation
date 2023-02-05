@@ -33,11 +33,11 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[8] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[9] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[10] = {
@@ -54,7 +54,7 @@ local unitPayloads = {
 			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -62,7 +62,7 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[3] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[4] = {
@@ -110,19 +110,19 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[3] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 2,
 				},
 				[4] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[5] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[7] = {
@@ -161,19 +161,19 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[6] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 9,
 				},
 				[7] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[8] = {
@@ -196,7 +196,7 @@ local unitPayloads = {
 			["name"] = "Liberation Ferry",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[2] = {
@@ -204,7 +204,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[3] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[4] = {
@@ -243,19 +243,19 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[6] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 9,
 				},
 				[7] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[8] = {
@@ -278,11 +278,11 @@ local unitPayloads = {
 			["name"] = "Liberation Strike",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[2] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[3] = {
@@ -326,7 +326,7 @@ local unitPayloads = {
 			["name"] = "Liberation OCA/Runway",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -358,7 +358,7 @@ local unitPayloads = {
 					["num"] = 9,
 				},
 				[9] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[10] = {
@@ -403,11 +403,11 @@ local unitPayloads = {
 					["num"] = 2,
 				},
 				[8] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 1,
 				},
 				[9] = {
-					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
+					["CLSID"] = "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
 					["num"] = 10,
 				},
 				[10] = {

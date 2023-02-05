@@ -29,7 +29,7 @@ class DefendingSam(FrozenCombat):
 
     def because(self) -> str:
         sams = ", ".join(str(d) for d in self.air_defenses)
-        return f"{self.flight} is engaged by enemy air defenses: {sams}"
+        return f"{self.flight} of {self.flight.coalition.faction.name} is engaged by enemy air defenses: {sams}"
 
     def describe(self) -> str:
         return f"engaged by enemy air defenses"

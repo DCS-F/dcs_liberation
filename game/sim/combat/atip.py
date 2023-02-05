@@ -20,7 +20,7 @@ class AtIp(FrozenCombat):
         self.flight = flight
 
     def because(self) -> str:
-        return f"{self.flight} is at its IP"
+        return f"{self.flight} of {self.flight.coalition.faction.name} is at its IP"
 
     def describe(self) -> str:
         return f"at IP"

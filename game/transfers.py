@@ -322,8 +322,9 @@ class AirliftPlanner:
                     ):
                         self.create_airlift_flight(squadron)
         if self.package.flights:
+            self.package.auto_asap = False
             self.package.time_over_target = (
-                self.game.settings.desired_player_mission_duration / 2
+                self.game.settings.desired_player_mission_duration
             )
             self.game.ato_for(self.for_player).add_package(self.package)
 

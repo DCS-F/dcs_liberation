@@ -8,6 +8,7 @@ from .jas39 import *
 from .su57 import *
 from .uh60l import *
 from .ov10a import *
+from .swedishmilitaryassetspack import *
 
 
 def load_mods() -> None:

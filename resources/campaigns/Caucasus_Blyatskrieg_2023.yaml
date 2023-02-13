@@ -11,11 +11,13 @@ version: 10.0
 squadrons:
   Red CV:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-33 Flanker-D
   # Anapa-Vityazevo
   12:
     - primary: BARCAP
+      secondary: air-to-air
       aircraft:
         - MiG-29S Fulcrum-C
     - primary: Anti-ship
@@ -31,6 +33,7 @@ squadrons:
   # Krasnodar-Center
   13:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-30 Flanker-C
         - Su-27 Flanker-B
@@ -41,6 +44,7 @@ squadrons:
   # Novorossiysk
   14:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-30 Flanker-C
         - Su-27 Flanker-B
@@ -51,6 +55,7 @@ squadrons:
   # Krymsk
   15:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-27 Flanker-B
     - primary: Strike
@@ -74,6 +79,7 @@ squadrons:
   # Gelendzhik
   17:
     - primary: BARCAP
+      secondary: air-to-air
       aircraft:
         - MiG-29S Fulcrum-C
     - primary: CAS
@@ -84,6 +90,7 @@ squadrons:
   # Krasnodar-Pashkovsky
   19:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-27 Flanker-B
     - primary: CAS
@@ -93,6 +100,7 @@ squadrons:
   # Mineralnye Vody
   26:
     - primary: BARCAP
+      secondary: any
       aircraft:
         - Su-30 Flanker-C
         - Su-27 Flanker-B
@@ -148,6 +156,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
     - primary: Transport
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
     - primary: CAS
@@ -172,6 +181,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
     - primary: Transport
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
     - primary: CAS
@@ -228,7 +238,7 @@ squadrons:
         - Mi-28N Havoc
   Guriyskaya FARP:
     - primary: BAI
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Kurinskaya FARP:
@@ -253,7 +263,7 @@ squadrons:
         - Mi-28N Havoc
   Kurdzhipskaya FARP:
     - primary: BAI
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Dagestanskaya FARP:
@@ -273,22 +283,22 @@ squadrons:
         - Mi-28N Havoc
   Gubskaya FARP:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Besstrashnaya FARP:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Udobnaya Roadbase:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Cherkessk FARP:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Prigorodnoe Roadbase:
@@ -298,13 +308,13 @@ squadrons:
         - Ka-50 Hokum
   Vorovskolesskaya FARP:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   # Zarechnoe FARP
   Zarechnoe FARP:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   Melitopol Airbase:
@@ -332,7 +342,7 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - L-39ZA Albatros
-    - primary: BARCAP
+    - primary: CAS
       secondary: air-to-ground
       aircraft:
         - MiG-21bis Fishbed-N
@@ -341,11 +351,11 @@ squadrons:
       aircraft:
         - MiG-27K Flogger-J2
     - primary: CAS
-      secondary: air-to-air
+      secondary: any
       aircraft:
         - F-16CM Fighting Falcon (Block 50)
     - primary: CAS
-      secondary: air-to-air
+      secondary: any
       aircraft:
         - F/A-18C Hornet (Lot 20)
   Kulbakino Airbase:
@@ -405,7 +415,7 @@ squadrons:
     - primary: AEW&C
       aircraft:
         - A-50
-    - primary: BARCAP
+    - primary: CAS
       secondary: air-to-ground
       aircraft:
         - MiG-21bis Fishbed-N
@@ -423,13 +433,17 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
     - primary: CAS
       secondary: air-to-ground
       aircraft:
         - Ka-50 Hokum
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum III
     - primary: CAS
       secondary: air-to-ground
       aircraft:
@@ -444,7 +458,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
     - primary: CAS
@@ -465,7 +479,7 @@ squadrons:
       aircraft:
         - Mi-24P Hind-F
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
     - primary: CAS

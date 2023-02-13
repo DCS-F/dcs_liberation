@@ -57,6 +57,7 @@
 	"Leopard 2A5",
     "Marder 1A3",
     "Flakpanzer Gepard",
+    "CV9040 IFV",
     "M113",
     "MT-LB",
     "MT-LBu",
@@ -73,6 +74,7 @@
     "BM-21 Grad",
     "M109A6 Paladin",
     "M270 Multiple Launch Rocket System",
+    "Artillerisystem 08 SPG",
     "SpGH DANA"
   ],
   "logistics_units": [
@@ -86,7 +88,11 @@
     "Infantry M4 Georgia",
     "MANPADS SA-18 Igla-S \"Grouse\"",
     "Paratrooper AKS",
-    "Paratrooper RPG-16"
+    "Paratrooper RPG-16",
+    "M82A1 Barrett Light 50 Sniper team",
+    "Soldier AT-4",
+    "Soldier NLAW ATGM",
+    "Soldier RBS 58 ATGM"
   ],
   "missiles": [],
   "preset_groups": [
@@ -113,7 +119,8 @@
     "ZSU-23-4 Shilka"
   ],
   "requirements": {
-    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
+    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974",
+    "Swedish Military Assets for DCS by Currenthill": "https://forum.dcs.world/topic/295202-swedish-military-assets-for-dcs-by-currenthill/"
   },
   "carrier_names": [
   ],

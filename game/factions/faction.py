@@ -424,6 +424,8 @@ class Faction:
         if not mod_settings.tornado:
             self.remove_aircraft("VSN_TornadoIDS")
             self.remove_aircraft("VSN_TornadoGR4")
+        if not mod_settings.a7e_corsair2:
+            self.remove_aircraft("A-7E")
         # frenchpack
         if not mod_settings.frenchpack:
             self.remove_vehicle("AMX10RCR")

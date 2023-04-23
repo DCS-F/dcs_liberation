@@ -127,6 +127,7 @@ from dcs.unittype import FlyingType
 from game.dcs.aircrafttype import AircraftType
 from pydcs_extensions.a4ec.a4ec import A_4E_C
 from pydcs_extensions.a6a.a6a import VSN_A6A
+from pydcs_extensions.a7e.a7e import A_7E
 from pydcs_extensions.f100.f100 import VSN_F100
 from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG, VSN_F104C
 from pydcs_extensions.f105.f105 import VSN_F105D, VSN_F105G
@@ -290,6 +291,7 @@ CAS_CAPABLE = [
     AV8BNA,
     A_10A,
     B_1B,
+    A_7E,
     VSN_A6A,
     A_4E_C,
     Bronco_OV_10A,
@@ -397,6 +399,7 @@ SEAD_CAPABLE = [
     Su_25T,
     Su_25TM,
     F_4E,
+    A_7E,
     A_4E_C,
     F_14B,
     F_14A_135_GR,
@@ -505,6 +508,7 @@ STRIKE_CAPABLE = [
     MiG_29A,
     VSN_F16A,
     F_4E,
+    A_7E,
     VSN_F4B,
     A_10C_2,
     A_10C,
@@ -575,6 +579,7 @@ ANTISHIP_CAPABLE = [
     Tornado_GR4,
     AV8BNA,
     S_3B,
+    A_7E,
     SEM,
     ETENDARD_IV,
     A_20G,
@@ -642,6 +647,7 @@ RUNWAY_ATTACK_CAPABLE = [
     A_10C_2,
     A_10C,
     S_3B,
+    A_7E,
     A_4E_C,
     Bronco_OV_10A,
     M_2000C,

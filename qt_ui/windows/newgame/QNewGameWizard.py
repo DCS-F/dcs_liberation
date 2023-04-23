@@ -159,6 +159,9 @@ class NewGameWizard(QtWidgets.QWizard):
         mod_settings = ModSettings(
             a4_skyhawk=self.field("a4_skyhawk"),
             a6a_intruder=self.field("a6a_intruder"),
+            f4bc_phantom=self.field("f4bc_phantom"),
+            f15d_baz=self.field("f15d_baz"),
+            a7e_corsair2=self.field("a7e_corsair2"),
             f4b_phantom=self.field("f4b_phantom"),
             f_16_idf=self.field("f_16_idf"),
             f16a_mlu_f16c_bl52d=self.field("f16a_mlu_f16c_bl52d"),

@@ -302,7 +302,10 @@ class MizCampaignLoader:
                     distance_between_cps = control_point_a.position.distance_to_point(
                         control_point_b.position
                     )
-                    if distance_between_cps < TRIGGER_RADIUS_CAPTURE:
+                    if distance_between_cps < TRIGGER_RADIUS_CAPTURE and (
+                        "Marj as Sultan" not in control_point_a.name
+                        and "Marj as Sultan" not in control_point_b.name
+                    ):
                         raise RuntimeError(
                             f"Error in campaign definition: Control point {control_point_a.name} is too close "
                             + f"to control point {control_point_b.name}. Distance is {distance_between_cps} meters "

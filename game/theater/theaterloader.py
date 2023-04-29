@@ -57,6 +57,23 @@ class SeasonData:
         )
 
 
+@dataclass(frozen=True)
+class TurbulenceData:
+    high_avg_yearly_turbulence_per_10cm: float | None
+    low_avg_yearly_turbulence_per_10cm: float | None
+    solar_noon_turbulence_per_10cm: float | None
+    midnight_turbulence_per_10cm: float | None
+
+    @staticmethod
+    def from_yaml(data: dict[str, Any]) -> TurbulenceData:
+        return TurbulenceData(
+            data.get("high_avg_yearly_turbulence_per_10cm"),
+            data.get("low_avg_yearly_turbulence_per_10cm"),
+            data.get("solar_noon_turbulence_per_10cm"),
+            data.get("midnight_turbulence_per_10cm"),
+        )
+
+
 class TheaterLoader:
     THEATER_RESOURCE_DIR = Path("resources/theaters")
 
@@ -74,11 +91,8 @@ class TheaterLoader:
         return self.descriptor_path.with_name("landmap.p")
 
     @property
-    def icon_name(self) -> str:
-        with self.descriptor_path.open() as descriptor_file:
-            data = yaml.safe_load(descriptor_file)
-        name = data.get("pydcs_name", data["name"])
-        return f"Terrain_{name}"
+    def icon_path(self) -> Path:
+        return self.descriptor_path.with_name("icon.gif")
 
     @property
     def menu_thumbnail_dcs_relative_path(self) -> Path:
@@ -120,6 +134,7 @@ class TheaterLoader:
         spring = SeasonData.from_yaml(climate_data["seasons"]["spring"])
         summer = SeasonData.from_yaml(climate_data["seasons"]["summer"])
         fall = SeasonData.from_yaml(climate_data["seasons"]["fall"])
+        turbulence = TurbulenceData.from_yaml(climate_data["turbulence"])
         if summer.average_pressure is None:
             raise RuntimeError(
                 f"{self.descriptor_path} does not define a summer average pressure"
@@ -136,12 +151,32 @@ class TheaterLoader:
             raise RuntimeError(
                 f"{self.descriptor_path} does not define a winter average temperature"
             )
+        if turbulence.high_avg_yearly_turbulence_per_10cm is None:
+            raise RuntimeError(
+                f"{self.descriptor_path} does not define a yearly average high turbulence"
+            )
+        if turbulence.low_avg_yearly_turbulence_per_10cm is None:
+            raise RuntimeError(
+                f"{self.descriptor_path} does not define a yearly average low turbulence"
+            )
+        if turbulence.solar_noon_turbulence_per_10cm is None:
+            raise RuntimeError(
+                f"{self.descriptor_path} does not define a solar noon turbulence"
+            )
+        if turbulence.midnight_turbulence_per_10cm is None:
+            raise RuntimeError(
+                f"{self.descriptor_path} does not define a midnight turbulence"
+            )
         return SeasonalConditions(
             summer.average_pressure,
             winter.average_pressure,
             summer.average_temperature,
             winter.average_temperature,
             climate_data["day_night_temperature_difference"],
+            turbulence.high_avg_yearly_turbulence_per_10cm,
+            turbulence.low_avg_yearly_turbulence_per_10cm,
+            turbulence.solar_noon_turbulence_per_10cm,
+            turbulence.midnight_turbulence_per_10cm,
             {
                 Season.Winter: winter.weather,
                 Season.Spring: spring.weather,

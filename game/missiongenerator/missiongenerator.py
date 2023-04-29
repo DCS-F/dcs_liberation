@@ -84,6 +84,12 @@ class MissionGenerator:
         self.add_airfields_to_unit_map()
         self.initialize_registries()
 
+        self.game.conditions = self.game.conditions.generate(
+            self.game.theater,
+            self.game.conditions.start_time.date(),
+            self.game.conditions.time_of_day,
+            self.game.settings,
+        )
         EnvironmentGenerator(self.mission, self.game.conditions, self.time).generate()
 
         tgo_generator = TgoGenerator(

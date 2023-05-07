@@ -25,7 +25,7 @@ squadrons:
   # Ramat David
   30:
     - primary: SEAD
-      secondary: any
+      secondary: air-to-ground
       aircraft:
         - F-16CM Fighting Falcon (Block 50)
     - primary: TARCAP
@@ -55,10 +55,16 @@ squadrons:
     - primary: AEW&C
       aircraft:
         - E-3A
+    - primary: Refueling
+      aircraft:
+        - KC-135 Stratotanker
+    - primary: Refueling
+      aircraft:
+        - KC-135 Stratotanker MPRS
   # Megiddo
   24:
     - primary: SEAD
-      secondary: any
+      secondary: air-to-ground
       aircraft:
         - F-16CM Fighting Falcon (Block 50)
   # Rosh Pina
@@ -83,6 +89,7 @@ squadrons:
       aircraft:
         - UH-1H Iroquois
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   Golan South:
@@ -95,6 +102,7 @@ squadrons:
       aircraft:
         - UH-1H Iroquois
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   # Tha'lah
@@ -141,7 +149,7 @@ squadrons:
   # Marj as Sultan South
   8:
     - primary: CAS
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - Mi-8MTV2 Hip
   # Damascus
@@ -151,15 +159,15 @@ squadrons:
       aircraft:
         - L-39ZA Albatros
     - primary: BARCAP
-      secondary: air-to-air
+      secondary: any
       aircraft:
         - MiG-19P Farmer-B
     - primary: BARCAP
-      secondary: air-to-air
+      secondary: any
       aircraft:
         - MiG-21bis Fishbed-N
     - primary: BARCAP
-      secondary: air-to-ground
+      secondary: any
       aircraft:
         - MiG-23ML Flogger-G
     - primary: Transport
@@ -248,7 +256,7 @@ squadrons:
         - IL-78M
   BLUFOR CVN:
     - primary: TARCAP
-      secondary: any
+      secondary: air-to-air
       aircraft:
         - F-14A Tomcat (Block 135-GR Late)
     - primary: SEAD
@@ -267,6 +275,7 @@ squadrons:
       aircraft:
         - SH-60B Seahawk
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   BLUFOR CVN 2:
@@ -290,11 +299,12 @@ squadrons:
       aircraft:
         - SH-60B Seahawk
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   BLUFOR CVN 3:
     - primary: TARCAP
-      secondary: any
+      secondary: air-to-air
       aircraft:
         - F-14B Tomcat
     - primary: SEAD
@@ -313,6 +323,7 @@ squadrons:
       aircraft:
         - SH-60B Seahawk
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   BLUFOR CVN 4:
@@ -336,6 +347,7 @@ squadrons:
       aircraft:
         - SH-60B Seahawk
     - primary: Transport
+      secondary: any
       aircraft:
         - UH-60L
   # BLUFOR LHA

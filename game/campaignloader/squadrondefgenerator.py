@@ -72,6 +72,75 @@ class SquadronDefGenerator:
         elif country == "Ukraine":
             faker = Faker("uk_UA")
             return f"{translit(faker.city_name(), 'ru', reversed=True)}"
+        elif country == "USA":
+            faker = Faker("en_US")
+            callsign = random.choice(
+                (
+                    "Cowboy",
+                    "Gunslinger",
+                    "Rambler",
+                    "Showtime",
+                    "Wolfpack",
+                    "Asp",
+                    "Cobra",
+                    "Mamba",
+                    "Python",
+                    "Viper",
+                    "Crab",
+                    "Kingfish",
+                    "Oyster",
+                    "Tuna",
+                    "Trout",
+                    "Austin",
+                    "Dallas",
+                    "Denver",
+                    "Memphis",
+                    "Tampa",
+                    "Buick",
+                    "Chevy",
+                    "Dodge",
+                    "Ford",
+                    "Olds",
+                    "Anvil",
+                    "Dagger",
+                    "Hammer",
+                    "Ramrod",
+                    "Tomahawk",
+                    "Bison",
+                    "Gopher",
+                    "Lion",
+                    "Tiger",
+                    "Zebra",
+                    "Super 6",
+                    "Razor",
+                    "Topgun",
+                )
+            )
+            force = random.choice(
+                (
+                    "Guard",
+                    "Reserve",
+                    "National",
+                    "Expeditionary",
+                    "Defense",
+                    "Force Recon",
+                    "Special Operations",
+                    "Special Forces",
+                    "Northern Command",
+                    "Eastern Command",
+                    "Western Command",
+                    "Southern Command",
+                    "Atlantic Command",
+                    "Pacific Command",
+                    "Central Command",
+                    "Rapid Reaction Force",
+                    "Assault",
+                    "Global Strike",
+                    "Tactical Command",
+                    "Joint Force",
+                )
+            )
+            return f"{faker.state()} {force} squadron {callsign}"
 
         animal = random.choice(ANIMALS)
         adjective = random.choice(

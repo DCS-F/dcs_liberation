@@ -303,10 +303,10 @@ class Game:
                 cp.base.affect_strength(+PLAYER_BASE_STRENGTH_RECOVERY)
 
         self.conditions = self.generate_conditions()
-        self.game.conditions.weather = self.game.conditions.generate_weather(
-            self.game.theater.seasonal_conditions,
-            self.game.date,
-            self.game.current_turn_time_of_day,
+        self.conditions.weather = self.conditions.generate_weather(
+            self.theater.seasonal_conditions,
+            self.date,
+            self.current_turn_time_of_day,
         )
 
     def begin_turn_0(self) -> None:

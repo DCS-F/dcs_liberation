@@ -164,8 +164,12 @@ class FrontLine(MissionTarget):
                 )
             else:
                 remaining_dist -= segment.attack_distance
-        raise RuntimeError(
-            f"Could not find front line point {distance} from {self.blue_cp}"
+        # Could not find front line point {distance} from {self.blue_cp},
+        # So return the halfway point between the cps
+        return Point(
+            (self.blue_cp.position.x + self.red_cp.position.x) / 2,
+            (self.blue_cp.position.y + self.red_cp.position.y) / 2,
+            self.blue_cp.coalition.game.theater.terrain,
         )
 
     @property

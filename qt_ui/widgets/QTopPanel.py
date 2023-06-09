@@ -300,6 +300,7 @@ class QTopPanel(QFrame):
         if self.game is None:
             return
 
+        self.game.generate_conditions()
         self.game.conditions.weather = self.game.conditions.generate_weather(
             self.game.theater.seasonal_conditions,
             self.game.date,

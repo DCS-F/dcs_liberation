@@ -263,6 +263,13 @@ squadrons:
       secondary: any
       aircraft:
         - F/A-18C Hornet (Lot 20)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-7E Corsair II
+    - primary: SEAD
+      aircraft:
+        - EA-6B Prowler
     - primary: AEW&C
       aircraft:
         - E-2C Hawkeye
@@ -287,6 +294,13 @@ squadrons:
       secondary: any
       aircraft:
         - F/A-18C Hornet (Lot 20)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-7E Corsair II
+    - primary: SEAD
+      aircraft:
+        - EA-6B Prowler
     - primary: AEW&C
       aircraft:
         - E-2C Hawkeye
@@ -311,6 +325,13 @@ squadrons:
       secondary: any
       aircraft:
         - F/A-18C Hornet (Lot 20)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-7E Corsair II
+    - primary: SEAD
+      aircraft:
+        - EA-6B Prowler
     - primary: AEW&C
       aircraft:
         - E-2C Hawkeye
@@ -335,6 +356,13 @@ squadrons:
       secondary: any
       aircraft:
         - F/A-18C Hornet (Lot 20)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-7E Corsair II
+    - primary: SEAD
+      aircraft:
+        - EA-6B Prowler
     - primary: AEW&C
       aircraft:
         - E-2C Hawkeye

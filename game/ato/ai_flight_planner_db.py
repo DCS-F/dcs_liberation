@@ -128,6 +128,7 @@ from game.dcs.aircrafttype import AircraftType
 from pydcs_extensions.a4ec.a4ec import A_4E_C
 from pydcs_extensions.a6a.a6a import VSN_A6A
 from pydcs_extensions.a7e.a7e import A_7E
+from pydcs_extensions.ea6b.ea6b import EA_6B
 from pydcs_extensions.f100.f100 import VSN_F100
 from pydcs_extensions.f104.f104 import VSN_F104G, VSN_F104S, VSN_F104S_AG, VSN_F104C
 from pydcs_extensions.f105.f105 import VSN_F105D, VSN_F105G
@@ -396,6 +397,7 @@ SEAD_CAPABLE = [
     VSN_TornadoGR4,
     Tornado_IDS,
     Tornado_GR4,
+    EA_6B,
     Su_25T,
     Su_25TM,
     F_4E,
@@ -508,8 +510,8 @@ STRIKE_CAPABLE = [
     MiG_29A,
     VSN_F16A,
     F_4E,
-    A_7E,
     VSN_F4B,
+    A_7E,
     A_10C_2,
     A_10C,
     S_3B,

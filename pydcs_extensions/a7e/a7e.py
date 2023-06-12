@@ -6,7 +6,7 @@ from dcs.liveries_scanner import Liveries
 from dcs.weapons_data import Weapons
 
 from game.modsupport import planemod
-from pydcs_extensions import inject_weapons
+from pydcs_extensions.weapon_injector import inject_weapons
 
 
 class WeaponsA7E:

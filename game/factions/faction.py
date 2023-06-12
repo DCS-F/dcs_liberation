@@ -359,6 +359,8 @@ class Faction:
             self.remove_aircraft("A-4E-C")
         if not mod_settings.a6a_intruder:
             self.remove_aircraft("VSN_A6A")
+        if not mod_settings.ea6b_prowler:
+            self.remove_aircraft("EA_6B")
         if not mod_settings.t45_goshawk:
             self.remove_aircraft("T-45")
         if not mod_settings.hawk_t1a:

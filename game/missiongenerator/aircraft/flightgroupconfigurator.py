@@ -74,10 +74,20 @@ class FlightGroupConfigurator:
             self.configure_flight_member(unit, pilot, laser_codes)
 
         divert = None
-        if self.flight.divert is not None:
-            divert = self.flight.divert.active_runway(
-                self.game.theater, self.game.conditions, self.dynamic_runways
+        if (
+            self.flight.divert is not None
+            and self.flight.divert.dcs_airport is not None
+        ):
+            runways = list(
+                RunwayData.for_pydcs_airport(
+                    self.game.theater, self.flight.divert.dcs_airport
+                )
             )
+
+            if len(runways) > 0:
+                divert = self.flight.divert.active_runway(
+                    self.game.theater, self.game.conditions, self.dynamic_runways
+                )
 
         if self.flight.flight_type in [
             FlightType.TRANSPORT,

@@ -37,6 +37,9 @@ GENERAL_SECTION = "General"
 PILOTS_AND_SQUADRONS_SECTION = "Pilots and Squadrons"
 HQ_AUTOMATION_SECTION = "HQ Automation"
 
+CAMPAIGN_DOCTRINE_PAGE = "Campaign Doctrine"
+DOCTRINE_DISTANCES_SECTION = "Doctrine distances"
+
 MISSION_GENERATOR_PAGE = "Mission Generator"
 
 GAMEPLAY_SECTION = "Gameplay"
@@ -199,7 +202,7 @@ class Settings:
     )
     autoplan_tankers_for_strike: bool = boolean_option(
         "Autoplanner plans refueling flights for Strike packages",
-        page=CAMPAIGN_MANAGEMENT_PAGE,
+        page=CAMPAIGN_DOCTRINE_PAGE,
         section=GENERAL_SECTION,
         default=True,
         invert=False,
@@ -210,41 +213,94 @@ class Settings:
     )
     autoplan_tankers_for_oca: bool = boolean_option(
         "Autoplanner plans refueling flights for OCA packages",
-        page=CAMPAIGN_MANAGEMENT_PAGE,
+        page=CAMPAIGN_DOCTRINE_PAGE,
         section=GENERAL_SECTION,
         default=True,
         invert=False,
         detail=(
-            "If checked, the autoplanner will include tankers in Offensive Counter Air packages, "
+            "If checked, the autoplanner will include tankers in OCA packages, "
             "provided the faction has access to them."
         ),
     )
     autoplan_tankers_for_dead: bool = boolean_option(
         "Autoplanner plans refueling flights for DEAD packages",
-        page=CAMPAIGN_MANAGEMENT_PAGE,
+        page=CAMPAIGN_DOCTRINE_PAGE,
         section=GENERAL_SECTION,
         default=True,
         invert=False,
         detail=(
-            "If checked, the autoplanner will include tankers in Destruction of Air Defences packages, "
+            "If checked, the autoplanner will include tankers in DEAD packages, "
             "provided the faction has access to them."
         ),
     )
     autoplan_tankers_for_cas: int = bounded_int_option(
         "Chance for autoplanner planning tankers for CAS packages (%)",
-        page=CAMPAIGN_MANAGEMENT_PAGE,
+        page=CAMPAIGN_DOCTRINE_PAGE,
         section=GENERAL_SECTION,
         default=50,
         min=0,
         max=100,
     )
-    opfor_autoplanner_aggressiveness: int = bounded_int_option(
-        "OPFOR autoplanner aggressiveness (%)",
-        page=CAMPAIGN_MANAGEMENT_PAGE,
+    oca_target_autoplanner_min_aircraft_count: int = bounded_int_option(
+        "Minimum number of aircraft for autoplanner to plan OCA packages against",
+        page=CAMPAIGN_DOCTRINE_PAGE,
         section=GENERAL_SECTION,
         default=20,
         min=0,
         max=100,
+        detail=(
+            "How many aircraft there has to be at an airfield for "
+            "the autoplanner to plan an OCA strike against it."
+        ),
+    )
+    opfor_autoplanner_aggressiveness: int = bounded_int_option(
+        "OPFOR autoplanner aggressiveness (%)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=GENERAL_SECTION,
+        default=20,
+        min=0,
+        max=100,
+    )
+    airbase_threat_range: int = bounded_int_option(
+        "Airbase threat range (nmi)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=10,
+        min=0,
+        max=300,
+    )
+    tarcap_threat_buffer_min_distance: int = bounded_int_option(
+        "TARCAP threat buffer distance (nmi)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=20,
+        min=0,
+        max=100,
+        detail=("How close to known threats will the TARCAP racetrack " "extend."),
+    )
+    aewc_threat_buffer_min_distance: int = bounded_int_option(
+        "AEW&C threat buffer distance (nmi)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=80,
+        min=0,
+        max=300,
+        detail=(
+            "How far, at minimum, will AEW&C racetracks be planned"
+            "to known threat zones."
+        ),
+    )
+    tanker_threat_buffer_min_distance: int = bounded_int_option(
+        "Theater tanker threat buffer distance (nmi)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=70,
+        min=0,
+        max=300,
+        detail=(
+            "How far, at minimum, will theater tanker racetracks be "
+            "planned to known threat zones."
+        ),
     )
     # Pilots and Squadrons
     ai_pilot_levelling: bool = boolean_option(

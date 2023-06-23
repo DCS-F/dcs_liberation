@@ -50,7 +50,9 @@ class CapBuilder(IBuilder, ABC):
             # distance from the nearest enemy airbase, but since they are by
             # definition in enemy territory they can't avoid the threat zone
             # without being useless.
-            min_distance_from_enemy = nautical_miles(20)
+            min_distance_from_enemy = nautical_miles(
+                self.coalition.game.settings.tarcap_threat_buffer_min_distance
+            )
             distance_to_airfield = meters(
                 closest_airfield.position.distance_to_point(
                     self.package.target.position

@@ -210,8 +210,8 @@ local unitPayloads = {
 			},
 		},
 		[5] = {
-			["displayName"] = "Retribution DEAD",
-			["name"] = "Retribution DEAD",
+			["displayName"] = "Liberation DEAD",
+			["name"] = "Liberation DEAD",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
@@ -259,8 +259,8 @@ local unitPayloads = {
 			},
 		},
 		[6] = {
-			["displayName"] = "Retribution ANTISHIP",
-			["name"] = "Retribution ANTISHIP",
+			["displayName"] = "Liberation ANTISHIP",
+			["name"] = "Liberation ANTISHIP",
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",

@@ -9,28 +9,36 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[2] = {
-					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 8,
 				},
 				[3] = {
-					["CLSID"] = "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 1,
 				},
 				[7] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 10,
+				},
+				[8] = {
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+					["num"] = 7,
+				},
+				[9] = {
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+					["num"] = 4,
 				},
 			},
 			["tasks"] = {
@@ -53,27 +61,27 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 1,
 				},
 				[7] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 10,
 				},
 				[8] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 7,
 				},
 				[9] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 4,
 				},
 			},
@@ -89,35 +97,35 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[2] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 8,
 				},
 				[3] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 1,
 				},
 				[7] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 10,
 				},
 				[8] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 7,
 				},
 				[9] = {
-					["CLSID"] = "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 4,
 				},
 			},
@@ -141,27 +149,27 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 1,
 				},
 				[7] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 10,
 				},
 				[8] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 7,
 				},
 				[9] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 4,
 				},
 			},
@@ -177,35 +185,35 @@ local unitPayloads = {
 					["num"] = 6,
 				},
 				[2] = {
-					["CLSID"] = "{E6A6262A-CA08-4B3D-B030-E1A993B98453}",
+					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
 					["num"] = 8,
 				},
 				[3] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 2,
 				},
 				[5] = {
-					["CLSID"] = "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+					["CLSID"] = "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
 					["num"] = 9,
 				},
 				[6] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 1,
 				},
 				[7] = {
-					["CLSID"] = "{AIS_ASQ_T50}",
+					["CLSID"] = "{C8E06185-7CD6-4C90-959F-044679E90751}",
 					["num"] = 10,
 				},
 				[8] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 7,
 				},
 				[9] = {
-					["CLSID"] = "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+					["CLSID"] = "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
 					["num"] = 4,
 				},
 			},

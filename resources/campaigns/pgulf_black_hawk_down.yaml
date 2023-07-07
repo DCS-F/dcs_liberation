@@ -5,13 +5,15 @@ authors: Ghosti
 recommended_player_faction: USA 1993 Task Force Ranger
 recommended_enemy_faction: Somali National Army 1993
 description:
-  <p>You have managed to establish a foothold near Ras Al Khaima. Continue
-  pushing south.</p>
+  <p>US Task Force Ranger, operating with helicopters from Al Ain Intl
+  is to engage the Somali National Army and neutralize their leader,
+  Mohamed Farah Aidid.</p>
 miz: pgulf_black_hawk_down.miz
 recommended_start_date: 1993-08-22
 performance: 2
 version: "10.2"
 squadrons:
+  # Al Ain Intl
   25:
     - primary: CAS
       secondary: air-to-ground
@@ -27,6 +29,9 @@ squadrons:
         - UH-1H Iroquois
     - primary: CAS
       secondary: air-to-ground
+      aircraft:
+        - OH-58D Kiowa Warrior
+    - primary: Transport
       aircraft:
         - UH-60L
     - primary: AEW&C

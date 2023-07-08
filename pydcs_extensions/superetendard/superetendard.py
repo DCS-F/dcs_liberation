@@ -3,7 +3,7 @@ from enum import Enum
 from dcs import task
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
-from dcs.liveries_scanner import Liveries
+
 
 from game.modsupport import planemod
 from pydcs_extensions.weapon_injector import inject_weapons
@@ -43,7 +43,6 @@ class VSN_SEM(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_SEM"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         Smokewinder___red = (1, Weapons.Smokewinder___red)

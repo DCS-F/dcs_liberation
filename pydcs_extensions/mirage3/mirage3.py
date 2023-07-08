@@ -1,7 +1,7 @@
 from enum import Enum
 
 from dcs import task
-from dcs.liveries_scanner import Liveries
+
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
 
@@ -48,7 +48,6 @@ class VSN_MirageIIIC(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_MirageIIIC"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         AN_ASQ_T50_TCTS_Pod___ACMI_Pod = (1, Weapons.AN_ASQ_T50_TCTS_Pod___ACMI_Pod)
@@ -255,7 +254,6 @@ class VSN_MirageIIIC_AG(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_MirageIIIC_AG"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         AN_ASQ_T50_TCTS_Pod___ACMI_Pod = (1, Weapons.AN_ASQ_T50_TCTS_Pod___ACMI_Pod)
@@ -462,7 +460,6 @@ class VSN_MirageIIIS(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_MirageIIIS"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)

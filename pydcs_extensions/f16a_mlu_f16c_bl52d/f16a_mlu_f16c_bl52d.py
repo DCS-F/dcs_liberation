@@ -1,7 +1,7 @@
 from dcs import task
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
-from dcs.liveries_scanner import Liveries
+
 
 from game.modsupport import planemod
 from pydcs_extensions.weapon_injector import inject_weapons
@@ -97,9 +97,9 @@ class VSN_F16A(PlaneType):
             2,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             2,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             2,
@@ -162,9 +162,9 @@ class VSN_F16A(PlaneType):
             4,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             4,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             4,
@@ -243,9 +243,9 @@ class VSN_F16A(PlaneType):
             8,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             8,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             8,
@@ -303,9 +303,9 @@ class VSN_F16A(PlaneType):
             10,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             10,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             10,
@@ -500,9 +500,9 @@ class VSN_F16CBL50(PlaneType):
             2,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             2,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             2,
@@ -596,9 +596,9 @@ class VSN_F16CBL50(PlaneType):
             4,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             4,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             4,
@@ -708,9 +708,9 @@ class VSN_F16CBL50(PlaneType):
             8,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             8,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             8,
@@ -782,9 +782,9 @@ class VSN_F16CBL50(PlaneType):
             10,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             10,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             10,
@@ -899,9 +899,9 @@ class VSN_F16CBL52D(PlaneType):
             2,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             2,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             2,
@@ -973,9 +973,9 @@ class VSN_F16CBL52D(PlaneType):
             4,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             4,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             4,
@@ -1075,9 +1075,9 @@ class VSN_F16CBL52D(PlaneType):
             8,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             8,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             8,
@@ -1149,9 +1149,9 @@ class VSN_F16CBL52D(PlaneType):
             10,
             Weapons.BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD,
         )
-        GBU_38___JDAM__500lb_GPS_Guided_Bomb = (
+        GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb = (
             10,
-            Weapons.GBU_38___JDAM__500lb_GPS_Guided_Bomb,
+            Weapons.GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb,
         )
         GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb = (
             10,

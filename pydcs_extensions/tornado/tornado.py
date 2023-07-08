@@ -3,7 +3,7 @@ from enum import Enum
 from dcs import task
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
-from dcs.liveries_scanner import Liveries
+
 
 from game.modsupport import planemod
 
@@ -26,7 +26,6 @@ class VSN_TornadoIDS(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_TornadoIDS"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         BOZ_107___Countermeasure_Dispenser = (
@@ -139,7 +138,6 @@ class VSN_TornadoGR4(PlaneType):
     radio_frequency = 127.5
 
     livery_name = "VSN_TornadoGR4"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         BOZ_107___Countermeasure_Dispenser = (

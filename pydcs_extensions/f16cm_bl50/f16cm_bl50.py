@@ -1,7 +1,7 @@
 from dcs import task
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
-from dcs.liveries_scanner import Liveries
+
 
 from game.modsupport import planemod
 
@@ -22,8 +22,6 @@ class VSN_F16CMBL50(PlaneType):
     flare_charge_size = 1
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
-
-    Liveries = Liveries()[id]
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -398,8 +396,6 @@ class VSN_F16CMBL50_AG(PlaneType):
     flare_charge_size = 1
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
-
-    Liveries = Liveries()[id]
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)

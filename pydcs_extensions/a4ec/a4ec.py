@@ -1,7 +1,6 @@
 from typing import Any, Dict, Set
 
 from dcs import task
-from dcs.liveries_scanner import Liveries
 from dcs.planes import PlaneType
 from dcs.weapons_data import Weapons
 
@@ -88,39 +87,49 @@ class WeaponsA4EC:
         "name": "BDU-33 *6 (MER)",
         "weight": 167.6,
     }
-    CBU_1_A = {"clsid": "{CBU-1/A}", "name": "CBU-1/A", "weight": 458.921706}
+    BLU_3B_x_19 = {"clsid": "{BLU_3B_GROUP}", "name": "BLU-3B x 19", "weight": 0.793786}
+    BLU_4B_x_27 = {
+        "clsid": "{BLU_4B_GROUP}",
+        "name": "BLU-4B x 27",
+        "weight": 0.5443104,
+    }
+    CBU_1_A = {"clsid": "{CBU-1/A}", "name": "CBU-1/A", "weight": 337.2910112}
+    CBU_1_A_2 = {"clsid": "{CBU-1/A*2}", "name": "CBU-1/A*2", "weight": 616.5222464}
     CBU_1_A__2 = {
         "clsid": "{CBU-1/A_TER_2_L}",
         "name": "CBU-1/A *2",
-        "weight": 713.473056,
+        "weight": 722.1820224,
     }
     CBU_1_A__2_ = {
         "clsid": "{CBU-1/A_TER_2_R}",
         "name": "CBU-1/A *2",
-        "weight": 713.473056,
+        "weight": 722.1820224,
     }
-    CBU_2B_A = {"clsid": "{CBU-2B/A}", "name": "CBU-2B/A", "weight": 379.543106}
+    CBU_2B_A = {"clsid": "{CBU-2B/A}", "name": "CBU-2B/A", "weight": 344.616522}
+    CBU_2B_A_2 = {"clsid": "{CBU-2B/A*2}", "name": "CBU-2B/A*2", "weight": 631.173268}
     CBU_2B_A__2 = {
         "clsid": "{CBU-2B/A_TER_2_L}",
         "name": "CBU-2B/A *2",
-        "weight": 806.686212,
+        "weight": 827.324648,
     }
     CBU_2B_A__2_ = {
         "clsid": "{CBU-2B/A_TER_2_R}",
         "name": "CBU-2B/A *2",
-        "weight": 806.686212,
+        "weight": 827.324648,
     }
-    CBU_2_A = {"clsid": "{CBU-2/A}", "name": "CBU-2/A", "weight": 343.822736}
+    CBU_2_A = {"clsid": "{CBU-2/A}", "name": "CBU-2/A", "weight": 344.616522}
+    CBU_2_A_2 = {"clsid": "{CBU-2/A*2}", "name": "CBU-2/A*2", "weight": 631.173268}
     CBU_2_A__2 = {
         "clsid": "{CBU-2/A_TER_2_L}",
         "name": "CBU-2/A *2",
-        "weight": 735.245472,
+        "weight": 736.833044,
     }
     CBU_2_A__2_ = {
         "clsid": "{CBU-2/A_TER_2_R}",
         "name": "CBU-2/A *2",
-        "weight": 735.245472,
+        "weight": 736.833044,
     }
+    CBU_DUMMY = {"clsid": "{CBU_DUMMY}", "name": "CBU_DUMMY", "weight": 58.059776}
     Fuel_Tank_150_gallons = {
         "clsid": "{DFT-150gal}",
         "name": "Fuel Tank 150 gallons",
@@ -569,7 +578,6 @@ class A_4E_C(PlaneType):
                 x_14_seconds = 7
 
     livery_name = "A-4E-C"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         LAU_7_with_AIM_9B_Sidewinder_IR_AAM = (

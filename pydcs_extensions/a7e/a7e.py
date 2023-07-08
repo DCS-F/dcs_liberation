@@ -2,11 +2,10 @@ from typing import Set
 
 from dcs import task
 from dcs.planes import PlaneType
-from dcs.liveries_scanner import Liveries
 from dcs.weapons_data import Weapons
 
 from game.modsupport import planemod
-from pydcs_extensions.weapon_injector import inject_weapons
+from pydcs_extensions import inject_weapons
 
 
 class WeaponsA7E:
@@ -498,7 +497,6 @@ class A_7E(PlaneType):
     radio_frequency = 124
 
     livery_name = "A-7E"  # from type
-    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         AGM_62_Walleye_II___Guided_Weapon_Mk_5__TV_Guided_ = (

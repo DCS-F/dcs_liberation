@@ -50,8 +50,6 @@ class VSN_F16A(PlaneType):
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
 
-    Liveries = Liveries()[id]
-
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
         AIM_120C_5_AMRAAM___Active_Rdr_AAM = (
@@ -361,8 +359,6 @@ class VSN_F16AMLU(PlaneType):
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
 
-    Liveries = Liveries()[id]
-
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -453,8 +449,6 @@ class VSN_F16CBL50(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
-
-    Liveries = Liveries()[id]
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -855,8 +849,6 @@ class VSN_F16CBL52D(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  # {78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
-
-    Liveries = Liveries()[id]
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)

@@ -132,18 +132,15 @@
   },
   "liveries_overrides_ground_forces": {
     "Soldier M249": [
-      "Desert",
-      "MOP Suit"
+      "Desert"
     ],
     "Soldier M4": [
-      "Desert",
-      "MOP Suit"
+      "Desert"
     ],
     "Soldier M4 GRG": [
       "DBDU + BDU",
       "DBDU DS",
       "DBDU DS 2",
-	  "DBDU MOPP",
 	  "Delta Force",
 	  "Delta Force 2"
     ],

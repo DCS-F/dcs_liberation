@@ -34,7 +34,6 @@ from game.dcs.shipunittype import ShipUnitType
 from game.armedforces.forcegroup import ForceGroup
 from game.dcs.unittype import UnitType
 from pydcs_extensions.f16i_idf.f16i_idf import inject_F16I
-from pydcs_extensions.fa18efg.fa18efg import inject_FA18EFG
 
 if TYPE_CHECKING:
     from game.theater.start_generator import ModSettings
@@ -372,10 +371,10 @@ class Faction:
             self.remove_aircraft("KC130J")
         if not mod_settings.f_16_idf:
             self.remove_aircraft("F-16I")
-            self.remove_aircraft("F_16D_52")
-            self.remove_aircraft("F_16D_50")
-            self.remove_aircraft("F_16D_50_NS")
-            self.remove_aircraft("F_16D_52_NS")
+            self.remove_aircraft("F-16D_52")
+            self.remove_aircraft("F-16D_50")
+            self.remove_aircraft("F-16D_50_NS")
+            self.remove_aircraft("F-16D_52_NS")
             self.remove_aircraft("F-16D_Barak_30")
             self.remove_aircraft("F-16D_Barak_40")
         else:
@@ -481,8 +480,10 @@ class Faction:
             self.remove_vehicle("SAM SA-14 Strela-3 manpad")
             self.remove_vehicle("SAM SA-24 Igla-S manpad")
             self.remove_vehicle("Polyana-D4M1 C2 node")
-        if mod_settings.fa_18efg:
-            inject_FA18EFG()
+        if not mod_settings.fa_18efg:
+            self.remove_aircraft("FA-18E")
+            self.remove_aircraft("FA-18F")
+            self.remove_aircraft("EA-18G")
         # swedish military assets pack
         if not mod_settings.swedishmilitaryassetspack:
             self.remove_vehicle("BV410_RBS70")

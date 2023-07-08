@@ -386,6 +386,7 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
         self.connected_objectives: List[TheaterGroundObject] = []
         self.preset_locations = PresetLocations()
         self.helipads: List[PointWithHeading] = []
+        self.helipads_single_01: List[PointWithHeading] = []
         self.helipads_quad: List[PointWithHeading] = []
         self.helipads_invisible: List[PointWithHeading] = []
         self.stol_pads_roadbase: List[Tuple[PointWithHeading, Point]] = []
@@ -575,7 +576,10 @@ class ControlPoint(MissionTarget, SidcDescribable, ABC):
         Returns true if cp has helipads
         """
         return (
-            len(self.helipads) + len(self.helipads_quad) + len(self.helipads_invisible)
+            len(self.helipads)
+            + len(self.helipads_single_01)
+            + len(self.helipads_quad)
+            + len(self.helipads_invisible)
             > 0
         )
 
@@ -1238,6 +1242,7 @@ class Airfield(ControlPoint):
         if parking_type.include_rotary_wing:
             parking_slots += (
                 len(self.helipads)
+                + len(self.helipads_single_01)
                 + 4 * len(self.helipads_quad)
                 + len(self.helipads_invisible)
             )
@@ -1559,6 +1564,7 @@ class Fob(ControlPoint):
         if parking_type.include_rotary_wing:
             parking_slots += (
                 len(self.helipads)
+                + len(self.helipads_single_01)
                 + 4 * len(self.helipads_quad)
                 + len(self.helipads_invisible)
             )

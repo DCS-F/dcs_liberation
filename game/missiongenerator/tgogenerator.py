@@ -38,7 +38,7 @@ from dcs.task import (
 )
 from dcs.translation import String
 from dcs.triggers import Event, TriggerOnce, TriggerStart, TriggerZone
-from dcs.unit import Unit, InvisibleFARP, SingleHeliPad, FARP, BaseFARP
+from dcs.unit import Unit, InvisibleFARP, SingleHeliPad, FARP, BaseFARP, FarpSingle01
 from dcs.unitgroup import MovingGroup, ShipGroup, StaticGroup, VehicleGroup
 from dcs.unittype import ShipType, VehicleType
 from dcs.vehicles import vehicle_map, Unarmed
@@ -589,6 +589,11 @@ class HelipadGenerator:
                 unit_id=self.m.next_unit_id(), name=name, terrain=terrain
             )
             number_of_pads = 1
+        elif helipad_type == "FARP_SINGLE_01":
+            pad = FarpSingle01(
+                unit_id=self.m.next_unit_id(), name=name, terrain=terrain
+            )
+            number_of_pads = 1
         elif helipad_type == "FARP":
             pad = FARP(unit_id=self.m.next_unit_id(), name=name, terrain=terrain)
             number_of_pads = 4
@@ -666,6 +671,8 @@ class HelipadGenerator:
     def generate(self) -> None:
         for i, helipad in enumerate(self.cp.helipads):
             self.create_helipad(i, helipad, "SINGLE_HELIPAD")
+        for i, helipad in enumerate(self.cp.helipads_single_01):
+            self.create_helipad(i, helipad, "FARP_SINGLE_01")
         for i, helipad in enumerate(self.cp.helipads_quad):
             self.create_helipad(i, helipad, "FARP")
         for i, helipad in enumerate(self.cp.helipads_invisible):

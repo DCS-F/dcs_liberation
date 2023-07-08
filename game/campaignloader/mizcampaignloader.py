@@ -50,7 +50,7 @@ class MizCampaignLoader:
     SHIPPING_LANE_UNIT_TYPE = HandyWind.id
 
     FOB_UNIT_TYPE = Unarmed.SKP_11.id
-    FARP_HELIPADS_TYPE = ["Invisible FARP", "SINGLE_HELIPAD", "FARP"]
+    FARP_HELIPADS_TYPE = ["Invisible FARP", "SINGLE_HELIPAD", "FARP", "FARP_SINGLE_01"]
 
     OFFSHORE_STRIKE_TARGET_UNIT_TYPES = [
         Fortification.Oil_platform.id,
@@ -453,18 +453,28 @@ class MizCampaignLoader:
         for static in self.helipads:
             closest, distance = self.objective_info(static)
             if static.units[0].type == "SINGLE_HELIPAD":
+                print(f"Appending helipad {static.units[0].type}")
                 closest.helipads.append(
                     PointWithHeading.from_point(
                         static.position, Heading.from_degrees(static.units[0].heading)
                     )
                 )
+            elif static.units[0].type == "FARP_SINGLE_01":
+                print(f"Appending helipad {static.units[0].type}")
+                closest.helipads_single_01.append(
+                    PointWithHeading.from_point(
+                        static.position, Heading.from_degrees(static.units[0].heading)
+                    )
+                )
             elif static.units[0].type == "FARP":
+                print(f"Appending helipad {static.units[0].type}")
                 closest.helipads_quad.append(
                     PointWithHeading.from_point(
                         static.position, Heading.from_degrees(static.units[0].heading)
                     )
                 )
             else:
+                print(f"Appending helipad {static.units[0].type}")
                 closest.helipads_invisible.append(
                     PointWithHeading.from_point(
                         static.position, Heading.from_degrees(static.units[0].heading)

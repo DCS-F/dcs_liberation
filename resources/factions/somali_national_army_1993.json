@@ -1,0 +1,109 @@
+{
+  "country": "Insurgents",
+  "name": "Somali National Army 1993",
+  "authors": "Ghosti",
+  "description": "<p>Somali National Army during the Battle of Mogadishu.</p>",
+  "aircrafts": [],
+  "frontline_units": [
+    "DIM' KAMIKAZE",
+    "DIM' TOYOTA BLUE",
+    "DIM' TOYOTA DESERT",
+    "DIM' TOYOTA GREEN",
+    "Scout LC with KORD 12.7mm",
+    "Scout LC with DSHK 12.7mm",
+	"Scout HL with KORD 12.7mm",
+	"Scout HL with DSHK 12.7mm",
+    "SPAAA LC with ZU-23",
+	"SPAAA HL with ZU-23",
+    "Cobra",
+    "BRDM-2",
+    "BTR-80",
+    "BTR-D",
+    "PT-76",
+    "ZU-23 on Ural-375 Insurgent",
+    "LUV UAZ-469 Jeep",
+	"LUV Land Rover 109",
+    "Truck Ural-375",
+	"Truck Ural-4320-31 Arm'd",
+	"Truck Ural-4320T",
+	"Truck KAMAZ 43101",
+	"Truck GAZ-66"
+  ],
+  "artillery_units": [
+    "MLRS LC with B8M1 80mm",
+	"MLRS HL with B8M1 80mm",
+    "BM-21 Grad"
+  ],
+  "logistics_units": [
+    "LUV UAZ-469 Jeep",
+	"LUV Land Rover 109",
+    "Truck Ural-375",
+	"Truck Ural-4320-31 Arm'd",
+	"Truck Ural-4320T",
+	"Truck KAMAZ 43101",
+	"Truck GAZ-66"
+  ],
+  "infantry_units": [
+    "Infantry RPG",
+    "Insurgent AK-74",
+    "Mortar 2B11 120mm"
+  ],
+  "air_defense_units": [
+    "SAM P19 \"Flat Face\" SR (SA-2/3)",
+    "SPAAA LC with ZU-23",
+	"SPAAA HL with ZU-23",
+    "AAA ZU-23 Insurgent Closed Emplacement",
+    "ZU-23 on Ural-375 Insurgent"
+  ],
+  "preset_groups": [],
+  "naval_units": [],
+  "missiles": [],
+  "requirements": {
+    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
+  },
+  "liveries_overrides_ground_forces": {
+    "BMD-1": [
+      "Desert"
+    ],
+    "BRDM-2": [
+      "Desert"
+    ],
+    "BTR-80": [
+      "Military Police Summer"
+    ],
+    "MTLB": [
+      "Desert"
+    ],
+	"Ural-375 ZU-23 Insurgent": [
+      "Desert"
+    ],
+	"Ural-375 ZU-23": [
+      "Desert"
+    ],
+	"S-60_Type59_Artillery": [
+      "Syrian"
+    ],
+	"LUV Land Rover 109": [
+      "Summer"
+    ],
+    "Ural-375": [
+      "Desert"
+    ],
+	"Ural-4320-31": [
+      "Desert"
+    ],
+	"Ural-4320T": [
+      "Desert"
+    ],
+	"GAZ-66": [
+      "Desert"
+    ],
+	"KAMAZ Truck": [
+      "Desert"
+    ],
+	"Infantry AK Ins": [
+      "Insurgent 4",
+      "Insurgent 9"
+    ]
+  }
+}

@@ -62,7 +62,10 @@
     "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974"
   },
   "liveries_overrides_ground_forces": {
-    "BMD-1": [
+    "Cobra": [
+      "Desert"
+    ],
+	"BMD-1": [
       "Desert"
     ],
     "BRDM-2": [

@@ -92,7 +92,7 @@
     "LHA-5 Peleliu"
   ],
   "has_jtac": true,
-  "jtac_unit": "MQ-9 Reaper",
+  "jtac_unit": "UH-60A",
   "liveries_overrides": {
     "SA 342L Gazelle": [
       "US Marines Fictional"
@@ -131,6 +131,23 @@
     ]
   },
   "liveries_overrides_ground_forces": {
+    "LAV-25": [
+      "UN",
+	  "green",
+	  "summer"
+    ],
+    "M1045 HMMWV TOW": [
+      "UN",
+	  "summer"
+    ],
+    "M1043 HMMWV Armament": [
+      "UN",
+	  "summer"
+    ],
+    "M 818": [
+      "UN",
+	  "summer"
+    ],
     "Soldier M249": [
       "Desert"
     ],

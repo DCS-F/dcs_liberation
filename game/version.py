@@ -16,7 +16,7 @@ def _build_version_string() -> str:
             components.append(build_number_file.readline())
 
     if not Path("resources/final").exists():
-        components.append("preview")
+        components.append("dcs-f")
 
     return "-".join(components)
 

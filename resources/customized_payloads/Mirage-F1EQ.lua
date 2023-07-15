@@ -14,11 +14,11 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[3] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 5,
 				},
 				[4] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 3,
 				},
 				[5] = {
@@ -26,11 +26,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[6] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 2,
 				},
 			},
@@ -50,11 +50,11 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[3] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 5,
 				},
 				[4] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 3,
 				},
 				[5] = {
@@ -62,11 +62,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[6] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 2,
 				},
 			},
@@ -153,11 +153,11 @@ local unitPayloads = {
 					["num"] = 1,
 				},
 				[3] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 5,
 				},
 				[4] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 3,
 				},
 				[5] = {
@@ -165,11 +165,11 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[6] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 6,
 				},
 				[7] = {
-					["CLSID"] = "BR_500",
+					["CLSID"] = "{SAMP400LD}",
 					["num"] = 2,
 				},
 			},

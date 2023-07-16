@@ -378,12 +378,7 @@ class FlightGroupSpawner:
         group.units[0].heading = stol_pad[0].units[0].heading
 
         # Evaluate hot starts
-        # The Mirage 2000C currently has a bug (as of DCS World 2.8.0.33006) with hot starts from ground
-        # which makes takeoffs impossible (gear sticking to the ground), so always cold start them
-        if (
-            self.start_type is not StartType.COLD
-            and self.flight.unit_type.dcs_unit_type not in [M_2000C]
-        ):
+        if self.start_type is not StartType.COLD:
             group.points[0].action = PointAction.FromGroundAreaHot
             group.points[0].type = "TakeOffGroundHot"
 
@@ -409,11 +404,7 @@ class FlightGroupSpawner:
         return group
 
     def dcs_start_type(self) -> DcsStartType:
-        # The Mirage 2000C currently has a bug (as of DCS World 2.8.0.33006) with hot starts
-        # which makes takeoffs impossible (gear sticking to the ground), so always cold start them
-        if self.flight.unit_type.dcs_unit_type in [M_2000C]:
-            return DcsStartType.Cold
-        elif self.start_type is StartType.RUNWAY:
+        if self.start_type is StartType.RUNWAY:
             return DcsStartType.Runway
         elif self.start_type is StartType.COLD:
             return DcsStartType.Cold

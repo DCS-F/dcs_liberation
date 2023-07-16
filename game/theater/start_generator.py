@@ -81,6 +81,7 @@ class ModSettings:
     etendard_iv_superetendard: bool = False
     ov10a_bronco: bool = False
     hercules: bool = False
+    uh_1m: bool = False
     uh_60l: bool = False
     jas39_gripen: bool = False
     su57_felon: bool = False

@@ -177,6 +177,7 @@ class NewGameWizard(QtWidgets.QWizard):
             super_etendard=self.field("super_etendard"),
             etendard_iv_superetendard=self.field("etendard_iv_superetendard"),
             hercules=self.field("hercules"),
+            uh_1m=self.field("uh_1m"),
             uh_60l=self.field("uh_60l"),
             jas39_gripen=self.field("jas39_gripen"),
             su57_felon=self.field("su57_felon"),
@@ -681,6 +682,8 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         self.registerField("a7e_corsair2", a7e_corsair2)
         hercules = QtWidgets.QCheckBox()
         self.registerField("hercules", hercules)
+        uh_1m = QtWidgets.QCheckBox()
+        self.registerField("uh_1m", uh_1m)
         uh_60l = QtWidgets.QCheckBox()
         self.registerField("uh_60l", uh_60l)
         f4b_phantom = QtWidgets.QCheckBox()
@@ -764,6 +767,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
             ),
             ("OV-10A Bronco (version 1.00)", ov10a_bronco),
             ("C-130J-30 Super Hercules", hercules),
+            ("UH-1M Huey Hog Gunship", uh_1m),
             ("UH-60L Black Hawk (v1.3.1)", uh_60l),
             ("JAS 39 Gripen (v1.8.0-beta)", jas39_gripen),
             ("Tornado (version 2.5.6.10)", tornado),

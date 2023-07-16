@@ -169,6 +169,7 @@ from pydcs_extensions.etendard_iv_superetendard.etendard_iv_superetendard import
     SEM,
     ETENDARD_IV,
 )
+from pydcs_extensions.uh1m.uh1m import UH1M
 from pydcs_extensions.uh60l.uh60l import KC130J, UH_60L
 from .flighttype import FlightType
 
@@ -357,6 +358,7 @@ CAS_CAPABLE = [
     L_39ZA,
     Hawk_T1A,
     UH_1H,
+    UH1M,
     VSN_F104S_AG,
     VSN_F104G,
     VSN_F100,
@@ -721,6 +723,7 @@ TRANSPORT_CAPABLE = [
     SH_60B,
     UH_60A,
     UH_1H,
+    UH1M,
     Mi_8MT,
     Mi_8MT,
     Mi_26,
@@ -733,6 +736,7 @@ AIR_ASSAULT_CAPABLE = [
     SH_60B,
     UH_60A,
     UH_1H,
+    UH1M,
     Mi_8MT,
     Mi_26,
     Mi_24P,

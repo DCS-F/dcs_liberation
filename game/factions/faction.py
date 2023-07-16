@@ -366,6 +366,8 @@ class Faction:
             self.remove_aircraft("Hawk-T1A")
         if not mod_settings.hercules:
             self.remove_aircraft("Hercules")
+        if not mod_settings.uh_1m:
+            self.remove_aircraft("UH1M")
         if not mod_settings.uh_60l:
             self.remove_aircraft("UH-60L")
             self.remove_aircraft("KC130J")

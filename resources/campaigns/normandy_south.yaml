@@ -276,6 +276,10 @@ squadrons:
       secondary: air-to-air
       aircraft:
         - MosquitoFBMkVI
+    - primary: BAI
+      secondary: any
+      aircraft:
+        - F-100 Super Sabre
   # Meautis
   # Cotentin Peninsula
   # 1400m runway
@@ -312,6 +316,10 @@ squadrons:
       secondary: any
       aircraft:
         - A-20G Havoc
+    - primary: BAI
+      secondary: any
+      aircraft:
+        - F-100 Super Sabre
   # Sainte-Laurent-sur-Mer
   # On the coast, south of the Channel
   # 1500m runway

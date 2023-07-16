@@ -18,6 +18,7 @@
 	"Super Etendard (SFM)",
 	"Super Etendard",
 	"Etendard IV",
+	"F-100 Super Sabre",
     "SA 342L Gazelle",
     "SA 342M Gazelle",
     "SA 342M Gazelle Mistral",
@@ -141,6 +142,9 @@
 	  "EC 130 Normandie Niemen",
 	  "EC 212 Picardie",
 	  "EC 330 Lorraine"
+    ],
+	"F-100 Super Sabre": [
+	  "FRA_Silver"
     ],
     "SA 342L Gazelle": [
 	  "Combat",

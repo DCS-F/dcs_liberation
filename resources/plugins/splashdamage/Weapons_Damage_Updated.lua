@@ -32,7 +32,7 @@ splash_damage_options = {
   ["wave_explosions"] = true, --secondary explosions on top of game objects, radiating outward from the impact point and scaled based on size of object and distance from weapon impact point
   ["larger_explosions"] = true, --secondary explosions on top of weapon impact points, dictated by the values in the explTable
   ["damage_model"] = true, --allow blast wave to affect ground unit movement and weapons
-  ["blast_search_radius"] = 200, --this is the max size of any blast wave radius, since we will only find objects within this zone
+  ["blast_search_radius"] = 150, --this is the max size of any blast wave radius, since we will only find objects within this zone
   ["cascade_damage_threshold"] = 0.1, --if the calculated blast damage doesn't exeed this value, there will be no secondary explosion damage on the unit.  If this value is too small, the appearance of explosions far outside of an expected radius looks incorrect.
   ["firebomb_splash_factor"] = 8, --apply a multiplier to thermobaric and napalm bombs so it matches the visual effect
   ["shell_max_flight_time"] = 20, --maximum flight time of cannon shells, used with gun fragmentation effects
@@ -427,10 +427,16 @@ function track_wpns()
             trigger.action.explosion(impactPoint, getWeaponExplosive(wpnData.name))
             --trigger.action.smoke(impactPoint, 0)
           end
+          local obj_land_height = land.getHeight({x = impactPoint.x , y = impactPoint.z})
+          local impact_ground_pos = {
+                  x = impactPoint.x,
+                  y = impactPoint.y,
+                  z = obj_land_height
+                }
           if wpnData.name == "MK77mod1-WPN" or wpnData.name == "BIN_200" then
-              trigger.action.effectSmokeBig(impactPoint, 2, 0.5, wpnData.name)
+              trigger.action.effectSmokeBig(impact_ground_pos, 2, 0.5, wpnData.name)
           elseif wpnData.name == "MK77mod0-WPN" then
-              trigger.action.effectSmokeBig(impactPoint, 3, 0.5, wpnData.name)
+              trigger.action.effectSmokeBig(impact_ground_pos, 3, 0.5, wpnData.name)
           end
         --end
       end
@@ -743,7 +749,14 @@ function blastWave(_point, _radius, weapon, power, player)
             explosion_size = intensity * splash_damage_options.static_damage_boost --apply an extra damage boost for static objects. should we factor in surface_area?
             --debugMsg("static obj :"..obj:getTypeName())
           end
-          if (obj:getDesc().category == Unit.Category.AIRPLANE or obj:getDesc().category == Unit.Category.HELICOPTER) and obj:inAir() == false then
+          -- Object's altitude from ground
+          local obj_vec3 = obj:getPoint()
+          local obj_land_height = land.getHeight({x = obj_vec3.x , y = obj_vec3.z})
+          -- Altitude from ground in meters
+          local obj_altitude_MSL = obj:getPoint().y -- Altitude MSL, in meters
+          local obj_altitude_ground = obj_altitude_MSL - obj_land_height
+          -- Deal extra damage to parked airplanes and helicopters to make OCA/Aircraft missions more viable
+          if (obj:getDesc().category == Unit.Category.AIRPLANE or obj:getDesc().category == Unit.Category.HELICOPTER) and (obj:inAir() == false or obj_altitude_ground < 50) then
             explosion_size = intensity * splash_damage_options.oca_aircraft_damage_boost --apply an extra damage boost for aircraft to increase kill probability on OCA/Aircraft missions.
             --debugMsg("static obj :"..obj:getTypeName())
           end

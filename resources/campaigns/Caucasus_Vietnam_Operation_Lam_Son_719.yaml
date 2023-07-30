@@ -53,6 +53,15 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - P-51D-30-NA Mustang
+  Phu Cat Airfield:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - F-100 Super Sabre
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - F-86F Sabre
   Pleiku Airfield:
     - primary: CAS
       secondary: air-to-ground

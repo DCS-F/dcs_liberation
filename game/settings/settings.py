@@ -523,6 +523,16 @@ class Settings:
         default=StartType.COLD,
         detail=("Default start type for flights containing Player/Client slots."),
     )
+    untasked_opfor_client_slots: bool = boolean_option(
+        "Convert untasked OPFOR aircraft into client slots",
+        page=MISSION_GENERATOR_PAGE,
+        section=GAMEPLAY_SECTION,
+        default=False,
+        detail=(
+            "Warning: Enabling this will significantly reduce the number of "
+            "targets available for OCA/Aircraft missions."
+        ),
+    )
     # Mission specific
     desired_player_mission_duration: timedelta = minutes_option(
         "Desired mission duration",
@@ -640,8 +650,14 @@ class Settings:
         section=PERFORMANCE_SECTION,
         default=False,
     )
-    perf_disable_idle_aircraft: bool = boolean_option(
-        "Disable idle aircraft at airfields",
+    perf_disable_untasked_blufor_aircraft: bool = boolean_option(
+        "Disable untasked BLUFOR aircraft at airfields",
+        page=MISSION_GENERATOR_PAGE,
+        section=PERFORMANCE_SECTION,
+        default=False,
+    )
+    perf_disable_untasked_opfor_aircraft: bool = boolean_option(
+        "Disable untasked OPFOR aircraft at airfields",
         page=MISSION_GENERATOR_PAGE,
         section=PERFORMANCE_SECTION,
         default=False,

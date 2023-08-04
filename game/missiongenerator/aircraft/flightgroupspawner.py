@@ -7,7 +7,7 @@ from dcs import Mission, Point
 from dcs.country import Country
 from dcs.mapping import Vector2
 from dcs.mission import StartType as DcsStartType
-from dcs.planes import F_14A, Su_33, AV8BNA, M_2000C, FA_18C_hornet
+from dcs.planes import F_14A, Su_33, AV8BNA, FA_18C_hornet
 from dcs.point import PointAction
 from dcs.ships import KUZNECOW
 from dcs.terrain import Airport, NoParkingSlotError
@@ -88,14 +88,31 @@ class FlightGroupSpawner:
             return self.generate_flight_at_departure()
         return self.generate_mid_mission()
 
-    def create_idle_aircraft(self) -> FlyingGroup[Any]:
-        assert isinstance(self.flight.squadron.location, Airfield)
-        group = self._generate_at_airfield(
-            name=namegen.next_aircraft_name(self.country, self.flight),
-            airfield=self.flight.squadron.location,
-        )
-
-        group.uncontrolled = True
+    def create_idle_aircraft(self) -> Optional[FlyingGroup[Any]]:
+        group = None
+        if isinstance(self.flight.squadron.location, Airfield):
+            group = self._generate_at_airfield(
+                name=namegen.next_aircraft_name(self.country, self.flight),
+                airfield=self.flight.squadron.location,
+            )
+        elif isinstance(self.flight.squadron.location, Fob):
+            cp = self.flight.squadron.location
+            name = namegen.next_aircraft_name(self.country, self.flight)
+            if cp.has_helipads and (
+                self.flight.unit_type.helicopter
+                or self.flight.unit_type.dcs_unit_type in [AV8BNA]
+            ):
+                pad_group = self._generate_at_cp_helipad(name, cp)
+                if pad_group is not None:
+                    group = pad_group
+            if cp.has_stol_slots and (
+                self.flight.client_count > 0 or self.flight.unit_type.helicopter
+            ):
+                pad_group = self._generate_at_cp_stol(name, cp)
+                if pad_group is not None:
+                    group = pad_group
+        if group is not None:
+            group.uncontrolled = True
         return group
 
     @property

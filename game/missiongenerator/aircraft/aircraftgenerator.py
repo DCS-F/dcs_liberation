@@ -9,11 +9,12 @@ from dcs import Point
 from dcs.country import Country
 from dcs.mission import Mission
 from dcs.terrain.terrain import NoParkingSlotError
+from dcs.unit import Skill
 from dcs.unitgroup import FlyingGroup, StaticGroup
 
 from game.ato.airtaaskingorder import AirTaskingOrder
 from game.ato.flight import Flight
-from game.ato.flightstate import Completed
+from game.ato.flightstate import Completed, StartUp
 from game.ato.flighttype import FlightType
 from game.ato.package import Package
 from game.ato.starttype import StartType
@@ -127,7 +128,7 @@ class AircraftGenerator:
         self, player_country: Country, enemy_country: Country
     ) -> None:
         for control_point in self.game.theater.controlpoints:
-            if not isinstance(control_point, Airfield):
+            if control_point.captured and not isinstance(control_point, Airfield):
                 continue
 
             faction = self.game.coalition_for(control_point.captured).faction
@@ -146,10 +147,17 @@ class AircraftGenerator:
     def _spawn_unused_for(
         self, squadron: Squadron, country: Country, faction: Faction
     ) -> None:
-        if self.game.settings.perf_disable_idle_aircraft:
+        if (
+            squadron.coalition.player
+            and self.game.settings.perf_disable_untasked_blufor_aircraft
+        ):
+            return
+        elif (
+            not squadron.coalition.player
+            and self.game.settings.perf_disable_untasked_opfor_aircraft
+        ):
             return
 
-        assert isinstance(squadron.location, Airfield)
         for _ in range(squadron.untasked_aircraft):
             # Creating a flight even those this isn't a fragged mission lets us
             # reuse the existing debriefing code.
@@ -173,8 +181,26 @@ class AircraftGenerator:
                 self.stol_pads_roadbase,
                 self.stol_pads,
             ).create_idle_aircraft()
-            AircraftPainter(flight, group).apply_livery()
-            self.unit_map.add_aircraft(group, flight)
+            if group is not None:
+                if (
+                    not squadron.coalition.player
+                    and squadron.aircraft.flyable
+                    and (
+                        self.game.settings.enable_squadron_pilot_limits
+                        or squadron.number_of_available_pilots > 0
+                    )
+                    and self.game.settings.untasked_opfor_client_slots
+                ):
+                    flight.state = StartUp(
+                        flight, self.game.settings, self.game.conditions.start_time
+                    )
+                    group.uncontrolled = False
+                    group.units[0].skill = Skill.Client
+                    group.password = (
+                        "kKu45HzlrJR:UPLebpAjE8Q7WknMHMFNO-XHAHhOSFabAKkwXv4l1Mk"
+                    )
+                AircraftPainter(flight, group).apply_livery()
+                self.unit_map.add_aircraft(group, flight)
 
     def create_and_configure_flight(
         self, flight: Flight, country: Country, dynamic_runways: Dict[str, RunwayData]

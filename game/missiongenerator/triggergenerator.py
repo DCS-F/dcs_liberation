@@ -161,7 +161,7 @@ class TriggerGenerator:
             clear_trigger.add_action(SetFlag(clear_flag))
             clear_trigger.add_action(
                 RemoveSceneObjects(
-                    objects_mask=RemoveSceneObjectsMask.OBJECTS_ONLY,
+                    objects_mask=RemoveSceneObjectsMask.ALL,
                     zone=trigger_zone.id,
                 )
             )

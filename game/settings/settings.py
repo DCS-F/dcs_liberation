@@ -269,6 +269,14 @@ class Settings:
         min=0,
         max=300,
     )
+    cas_engagement_range_distance: int = bounded_int_option(
+        "CAS engagement range (nmi)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=10,
+        min=0,
+        max=100,
+    )
     tarcap_threat_buffer_min_distance: int = bounded_int_option(
         "TARCAP threat buffer distance (nmi)",
         page=CAMPAIGN_DOCTRINE_PAGE,

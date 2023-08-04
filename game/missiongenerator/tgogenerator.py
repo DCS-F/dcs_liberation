@@ -582,7 +582,7 @@ class HelipadGenerator:
         country = self.m.country(self.game.coalition_for(self.cp.captured).country_name)
 
         name = f"{self.cp.name} {helipad_type} {i}"
-        logging.info("Generating helipad static : " + name)
+        # logging.info("Generating helipad static : " + name)
         terrain = self.m.terrain
         if helipad_type == "SINGLE_HELIPAD":
             pad = SingleHeliPad(
@@ -723,7 +723,7 @@ class HighwayStripGenerator:
         terrain = self.cp.coalition.game.theater.terrain
 
         name = f"{self.cp.name} highway {i}"
-        logging.info("Generating Highway Strip static : " + name)
+        # logging.info("Generating Highway Strip static : " + name)
 
         pad = InvisibleFARP(unit_id=self.m.next_unit_id(), name=name, terrain=terrain)
 
@@ -739,6 +739,7 @@ class HighwayStripGenerator:
 
         tanker_type: Type[VehicleType]
         ammo_truck_type: Type[VehicleType]
+        power_truck_type = Unarmed.Ural_4320_APA_5D
 
         if country.id == Vietnam.id:
             tanker_type = Unarmed.ATZ_60_Maz
@@ -804,6 +805,17 @@ class HighwayStripGenerator:
                     ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
                     heading=pad.heading + 180,
                 )
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_power"),
+                _type=power_truck_type,
+                position=pad.position.point_from_heading(
+                    stol_pad[0].heading.degrees + 90, 35
+                ).point_from_heading(stol_pad[0].heading.degrees + 180, 20),
+                group_size=1,
+                heading=pad.heading + 315,
+                move_formation=PointAction.OffRoad,
+            )
 
     def generate(self) -> None:
         try:
@@ -841,7 +853,7 @@ class StolPadGenerator:
         terrain = self.cp.coalition.game.theater.terrain
 
         name = f"{self.cp.name} ramp {i}"
-        logging.info("Generating STOL static : " + name)
+        # logging.info("Generating STOL static : " + name)
 
         pad = InvisibleFARP(unit_id=self.m.next_unit_id(), name=name, terrain=terrain)
 
@@ -864,6 +876,7 @@ class StolPadGenerator:
         else:
             tanker_type = Unarmed.M978_HEMTT_Tanker
             ammo_truck_type = Unarmed.M_818
+        power_truck_type = Unarmed.Ural_4320_APA_5D
 
         if self.game.position_culled(vtol_pad[0]):
             cull_farp_statics = True
@@ -922,6 +935,18 @@ class StolPadGenerator:
                     ),
                     heading=pad.heading + 270,
                 )
+
+            self.m.vehicle_group(
+                country=country,
+                name=(name + "_power"),
+                _type=power_truck_type,
+                position=pad.position.point_from_heading(
+                    vtol_pad[0].heading.degrees - 185, 25
+                ),
+                group_size=1,
+                heading=pad.heading + 45,
+                move_formation=PointAction.OffRoad,
+            )
 
     def generate(self) -> None:
         try:

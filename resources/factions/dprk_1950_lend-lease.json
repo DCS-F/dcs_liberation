@@ -24,6 +24,7 @@
 	"BTR-80",
     "MT-LBu",
     "MT-LB",
+    "M4A2(75) Sherman",
     "PT-76",
     "ZU-23 on Ural-375",
     "LUV UAZ-469 Jeep",
@@ -111,6 +112,14 @@
     ],
     "An-26B": [
       "RF Air Force"
+    ]
+  },
+  "liveries_overrides_ground_forces": {
+    "BTR-80": [
+      "Green summer"
+    ],
+    "M4_Sherman": [
+      "3rd Guard Mech Corps - Za Stalina"
     ]
   }
 }

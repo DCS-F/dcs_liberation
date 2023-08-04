@@ -55,7 +55,9 @@
 	"P265 Dumbarton Castle",
 	"F72 Ariadne",
 	"F57 Andromeda",
-	"F12 Achilles"
+	"F12 Achilles",
+    "LST Mk.II",
+    "LS Samuel Chase"
   ],
   "carriers": {
     "Forrestal": [
@@ -91,6 +93,7 @@
   },
   "liveries_overrides": {
     "A-4E Skyhawk": [
+      "USN VF-121 Pacemakers Korea Fictional",
       "USN VA-153 Blue Tail Flies Korea Fictional"
     ],
     "F-84G Thunderjet": [

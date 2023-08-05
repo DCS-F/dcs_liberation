@@ -283,23 +283,31 @@ antiRadiationMissile = {
 ignoredWeaps = {
   ["AK_74"] = 1,                                  --5.45mm
   ["M4"] = 1,                                     --5.56mm
+  ["M249"] = 1,                                   --5.56mm
   ["7_62_MG"] = 1,                                --7.62mm
   ["7_62_PKT"] = 1,                               --7.62mm
   ["7_62_L94A1"] = 1,                             --7.62mm
   ["M_134"] = 1,                                  --7.62mm
   ["M240"] = 1,                                   --7.62mm
-  ["PK-3"] = 1,                                   --PK-3 - 7.62mm GPMG
+  ["PK-3"] = 1,                                   --7.62mm, PK-3 GPMG
+  ["SHKAS_GUN"] = 1,                              --7.62mm, ShKAS machine gun
+  ["M1 Garand .30 cal"] = 1,                      --7.62mm, .30-06
+  ["Browning .30 cal"] = 1,                       --7.62mm, .30-06
+  ["Browning303MkII"] = 1,                        --7.7 mm, .303
+  ["Lee-Enfield SMLE No.4 Mk.1"] = 1,             --7.7 mm, .303
   ["MG34"] = 1,                                   --7.92mm
   ["Besa"] = 1,                                   --7.92mm
-  ["Lee-Enfield SMLE No.4 Mk.1"] = 1,
-  ["M1 Garand .30 cal"] = 1,
-  ["Browning .30 cal"] = 1,
   ["12_7_MG"] = 1,                                --12.7mm
+  ["A20_TopTurret_M2_L"] = 1,                     --12.7mm
+  ["A20_TopTurret_M2_R"] = 1,                     --12.7mm
   ["M2_Browning"] = 1,                            --12.7mm
   ["BrowningM2"] = 1,                             --12.7mm
+  ["m3_browning"] = 1,                            --12.7mm
+  ["m3_f84g"] = 1,                                --12.7mm
   ["KORD_12_7"] = 1,                              --12.7mm
   ["KPVT"] = 1,                                   --14.5mm
   ["coltMK12"] = 1,                               --20mm
+  ["HispanoMkII"] = 1,                            --20mm
   ["2A14_2"] = 1,                                 --23mm, ZU-23
   ["2A14_4"] = 1,                                 --23mm, ZSU-23
   ["NR-23"] = 1,                                  --23mm, NR-23
@@ -316,6 +324,7 @@ ignoredWeaps = {
   ["N-37"] = 1,                                   --37mm
   ["Flak M1 37mm"] = 1,                           --37mm
   ["Bofors 40mm gun"] = 1,                        --40mm
+  ["Mk.19"] = 1,                                  --40mm
   ["S_68"] = 1,                                   --57mm
   ["AAA 01"] = 1,
 }
@@ -430,8 +439,8 @@ function track_wpns()
           local obj_land_height = land.getHeight({x = impactPoint.x , y = impactPoint.z})
           local impact_ground_pos = {
                   x = impactPoint.x,
-                  y = impactPoint.y,
-                  z = obj_land_height
+                  y = obj_land_height,
+                  z = impactPoint.z
                 }
           if wpnData.name == "MK77mod1-WPN" or wpnData.name == "BIN_200" then
               trigger.action.effectSmokeBig(impact_ground_pos, 2, 0.5, wpnData.name)
@@ -453,16 +462,7 @@ function onWpnEvent(event)
       local weapon_desc = ordnance:getDesc()
       if explTable[ordnance:getTypeName()] then
         --trigger.action.outText(ordnance:getTypeName().." found.", 10)
-
-        if (weapon_desc.category ~= 0) and event.initiator then
-          if (weapon_desc.category == 1) then
-            if (weapon_desc.MissileCategory ~= 1 and weapon_desc.MissileCategory ~= 2) then
-              tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory(), player=event.initiator:getPlayerName() }
-            end
-          else
-            tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory(), player=event.initiator:getPlayerName() }
-          end
-        end
+        tracked_weapons[event.weapon.id_] = { wpn = ordnance, init = event.initiator:getName(), pos = ordnance:getPoint(), dir = ordnance:getPosition().x, name = ordnance:getTypeName(), speed = ordnance:getVelocity(), cat = ordnance:getCategory(), player=event.initiator:getPlayerName() }
       else
         env.info(ordnance:getTypeName().." missing from Splash Damage script")
         if splash_damage_options.weapon_missing_message == false then

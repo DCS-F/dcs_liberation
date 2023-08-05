@@ -61,11 +61,11 @@ local unitPayloads = {
 			["name"] = "STRIKE",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{mk77mod1}",
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 1,
 				},
 				[2] = {
-					["CLSID"] = "{mk77mod0}",
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 2,
 				},
 				[3] = {
@@ -73,11 +73,11 @@ local unitPayloads = {
 					["num"] = 3,
 				},
 				[4] = {
-					["CLSID"] = "{mk77mod0}",
+					["CLSID"] = "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{mk77mod1}",
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 5,
 				},
 			},
@@ -174,7 +174,7 @@ local unitPayloads = {
 			["name"] = "DEAD",
 			["pylons"] = {
 				[1] = {
-					["CLSID"] = "{mk77mod1}",
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 1,
 				},
 				[2] = {
@@ -190,7 +190,7 @@ local unitPayloads = {
 					["num"] = 4,
 				},
 				[5] = {
-					["CLSID"] = "{mk77mod1}",
+					["CLSID"] = "{F3EFE0AB-E91A-42D8-9CA2-B63C91ED570A}",
 					["num"] = 5,
 				},
 			},

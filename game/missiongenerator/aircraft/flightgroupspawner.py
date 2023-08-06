@@ -35,7 +35,7 @@ WARM_START_ALTITUDE = meters(3000)
 # PG at 5700ft. This could still be too low if there are tall obstacles near the
 # airfield, but the lowest we can push this the better to avoid spawning helicopters
 # well above the altitude for WP1.
-MINIMUM_MID_MISSION_SPAWN_ALTITUDE_MSL = meters(3000)
+MINIMUM_MID_MISSION_SPAWN_ALTITUDE_MSL = meters(4000)
 MINIMUM_MID_MISSION_SPAWN_ALTITUDE_AGL = feet(500)
 
 RTB_ALTITUDE = meters(800)

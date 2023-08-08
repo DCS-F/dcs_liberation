@@ -105,6 +105,8 @@ class PackagePlanningTask(TheaterCommanderTask, Generic[MissionTargetT]):
             self.purchase_multiplier,
             state.context.tracer,
         )
+        if self.package and self.package.flights[0].flight_type == FlightType.CAS:
+            state.context.coalition.num_of_planned_cas += 1
         return self.package is not None
 
     def propose_common_escorts(self) -> None:

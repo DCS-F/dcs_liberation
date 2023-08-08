@@ -44,6 +44,7 @@ class Coalition:
         self.air_wing = AirWing(player, game, self.faction)
         self.armed_forces = ArmedForces(self.faction)
         self.transfers = PendingTransfers(game, player)
+        self.num_of_planned_cas = 0
 
         # Late initialized because the two coalitions in the game are mutually
         # dependent, so must be both constructed before this property can be set.
@@ -156,6 +157,8 @@ class Coalition:
         # coalition-specific turn-end happens before the theater-wide turn-end, so this
         # is handled correctly.
         self.transfers.perform_transfers()
+
+        self.num_of_planned_cas = 0
 
     def preinit_turn_0(self) -> None:
         """Runs final Coalition initialization.

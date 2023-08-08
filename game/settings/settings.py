@@ -310,6 +310,15 @@ class Settings:
             "planned to known threat zones."
         ),
     )
+    desired_num_of_cas_flights: int = bounded_int_option(
+        "Desired number of CAS flights (auto-planned)",
+        page=CAMPAIGN_DOCTRINE_PAGE,
+        section=DOCTRINE_DISTANCES_SECTION,
+        default=5,
+        min=1,
+        max=30,
+        detail=("How many CAS flights will the auto-planner aim to plan each turn."),
+    )
     # Pilots and Squadrons
     ai_pilot_levelling: bool = boolean_option(
         "Allow AI pilot leveling",

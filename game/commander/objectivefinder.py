@@ -176,16 +176,16 @@ class ObjectiveFinder:
                     break
 
     def oca_targets(self, min_aircraft: int) -> Iterator[ControlPoint]:
-        # Only include non-STOL and non-VTOL aircraft, because uncontrolled STOL and VTOL aircraft
-        # might block runways and therefore should not be spawned
         parking_type = ParkingType()
         parking_type.include_rotary_wing = True
         parking_type.include_fixed_wing = True
-        parking_type.include_fixed_wing_stol = False
+        parking_type.include_fixed_wing_stol = True
 
         airfields = []
         for control_point in self.enemy_control_points():
-            if not isinstance(control_point, Airfield):
+            if not isinstance(control_point, Airfield) and not isinstance(
+                control_point, Fob
+            ):
                 continue
             if (
                 control_point.allocated_aircraft(parking_type).total_present

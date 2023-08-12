@@ -6,7 +6,7 @@ from random import randint
 from game.commander.tasks.packageplanningtask import PackagePlanningTask
 from game.commander.theaterstate import TheaterState
 from game.settings import Settings
-from game.theater import ControlPoint
+from game.theater import ControlPoint, Airfield
 from game.ato.flighttype import FlightType
 
 
@@ -28,11 +28,13 @@ class PlanOcaStrike(PackagePlanningTask[ControlPoint]):
         from game.ato.starttype import StartType
 
         if not self.target.coalition.player:
-            self.propose_flight(FlightType.OCA_RUNWAY, 2)
+            if isinstance(self.target, Airfield):
+                self.propose_flight(FlightType.OCA_RUNWAY, 2)
             if self.settings.default_start_type is StartType.COLD:
                 self.propose_flight(FlightType.OCA_AIRCRAFT, 2)
         else:
-            self.propose_flight(FlightType.OCA_RUNWAY, randint(2, 4))
+            if isinstance(self.target, Airfield):
+                self.propose_flight(FlightType.OCA_RUNWAY, randint(2, 4))
             if self.settings.default_start_type is StartType.COLD:
                 self.propose_flight(FlightType.OCA_AIRCRAFT, randint(2, 4))
         self.propose_common_escorts()

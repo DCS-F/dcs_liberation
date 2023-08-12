@@ -302,12 +302,13 @@ class Game:
                     events.update_front_line(front_line)
                 cp.base.affect_strength(+PLAYER_BASE_STRENGTH_RECOVERY)
 
-        self.conditions = self.generate_conditions()
-        self.conditions.weather = self.conditions.generate_weather(
-            self.theater.seasonal_conditions,
-            self.date,
-            self.current_turn_time_of_day,
-        )
+        if self.turn > 1:
+            self.conditions = self.generate_conditions()
+            self.conditions.weather = self.conditions.generate_weather(
+                self.theater.seasonal_conditions,
+                self.date,
+                self.current_turn_time_of_day,
+            )
 
     def begin_turn_0(self) -> None:
         """Initialization for the first turn of the game."""

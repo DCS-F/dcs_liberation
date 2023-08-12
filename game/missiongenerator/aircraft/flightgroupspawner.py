@@ -7,7 +7,7 @@ from dcs import Mission, Point
 from dcs.country import Country
 from dcs.mapping import Vector2
 from dcs.mission import StartType as DcsStartType
-from dcs.planes import F_14A, Su_33, AV8BNA, FA_18C_hornet
+from dcs.planes import F_14A, Su_33, AV8BNA, FA_18C_hornet, F_86F_Sabre
 from dcs.point import PointAction
 from dcs.ships import KUZNECOW
 from dcs.terrain import Airport, NoParkingSlotError
@@ -380,8 +380,14 @@ class FlightGroupSpawner:
         try:
             if len(self.stol_pads_roadbase[cp]) > 0:
                 stol_pad = self.stol_pads_roadbase[cp].pop()
+                ground_power_trucks_enabled = (
+                    self.flight.coalition.game.settings.ground_start_ground_power_trucks_roadbase
+                )
             else:
                 stol_pad = self.stol_pads[cp].pop()
+                ground_power_trucks_enabled = (
+                    self.flight.coalition.game.settings.ground_start_ground_power_trucks
+                )
         except IndexError as ex:
             logging.warning("Not enough STOL slots available at " + str(ex))
             return None
@@ -395,7 +401,12 @@ class FlightGroupSpawner:
         group.units[0].heading = stol_pad[0].units[0].heading
 
         # Evaluate hot starts
-        if self.start_type is not StartType.COLD:
+        # Some aircraft require ground power to start, so if the ground power trucks are not there,
+        # hot-start these flights.
+        if (self.start_type is not StartType.COLD) or (
+            self.flight.unit_type.dcs_unit_type in [A_4E_C, F_86F_Sabre]
+            and not ground_power_trucks_enabled
+        ):
             group.points[0].action = PointAction.FromGroundAreaHot
             group.points[0].type = "TakeOffGroundHot"
 

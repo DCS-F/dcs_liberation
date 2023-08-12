@@ -629,14 +629,15 @@ class HelipadGenerator:
 
         if self.game.position_culled(helipad):
             cull_farp_statics = True
-            for package in self.cp.coalition.ato.packages:
-                for flight in package.flights:
-                    if flight.squadron.location == self.cp:
-                        cull_farp_statics = False
-                        break
-                    elif flight.divert and flight.divert == self.cp:
-                        cull_farp_statics = False
-                        break
+            if self.cp.coalition.player:
+                for package in self.cp.coalition.ato.packages:
+                    for flight in package.flights:
+                        if flight.squadron.location == self.cp:
+                            cull_farp_statics = False
+                            break
+                        elif flight.divert and flight.divert == self.cp:
+                            cull_farp_statics = False
+                            break
         else:
             cull_farp_statics = False
 
@@ -750,14 +751,15 @@ class HighwayStripGenerator:
 
         if self.game.position_culled(stol_pad[0]):
             cull_farp_statics = True
-            for package in self.cp.coalition.ato.packages:
-                for flight in package.flights:
-                    if flight.squadron.location == self.cp:
-                        cull_farp_statics = False
-                        break
-                    elif flight.divert and flight.divert == self.cp:
-                        cull_farp_statics = False
-                        break
+            if self.cp.coalition.player:
+                for package in self.cp.coalition.ato.packages:
+                    for flight in package.flights:
+                        if flight.squadron.location == self.cp:
+                            cull_farp_statics = False
+                            break
+                        elif flight.divert and flight.divert == self.cp:
+                            cull_farp_statics = False
+                            break
         else:
             cull_farp_statics = False
 
@@ -805,17 +807,18 @@ class HighwayStripGenerator:
                     ).point_from_heading(stol_pad[0].heading.degrees + 180, 10),
                     heading=pad.heading + 180,
                 )
-            self.m.vehicle_group(
-                country=country,
-                name=(name + "_power"),
-                _type=power_truck_type,
-                position=pad.position.point_from_heading(
-                    stol_pad[0].heading.degrees + 90, 35
-                ).point_from_heading(stol_pad[0].heading.degrees + 180, 20),
-                group_size=1,
-                heading=pad.heading + 315,
-                move_formation=PointAction.OffRoad,
-            )
+            if self.game.settings.ground_start_ground_power_trucks_roadbase:
+                self.m.vehicle_group(
+                    country=country,
+                    name=(name + "_power"),
+                    _type=power_truck_type,
+                    position=pad.position.point_from_heading(
+                        stol_pad[0].heading.degrees + 90, 35
+                    ).point_from_heading(stol_pad[0].heading.degrees + 180, 20),
+                    group_size=1,
+                    heading=pad.heading + 315,
+                    move_formation=PointAction.OffRoad,
+                )
 
     def generate(self) -> None:
         try:
@@ -880,14 +883,15 @@ class StolPadGenerator:
 
         if self.game.position_culled(vtol_pad[0]):
             cull_farp_statics = True
-            for package in self.cp.coalition.ato.packages:
-                for flight in package.flights:
-                    if flight.squadron.location == self.cp:
-                        cull_farp_statics = False
-                        break
-                    elif flight.divert and flight.divert == self.cp:
-                        cull_farp_statics = False
-                        break
+            if self.cp.coalition.player:
+                for package in self.cp.coalition.ato.packages:
+                    for flight in package.flights:
+                        if flight.squadron.location == self.cp:
+                            cull_farp_statics = False
+                            break
+                        elif flight.divert and flight.divert == self.cp:
+                            cull_farp_statics = False
+                            break
         else:
             cull_farp_statics = False
 
@@ -931,22 +935,23 @@ class StolPadGenerator:
                     name=(name + "_ammo"),
                     _type=Fortification.FARP_Ammo_Dump_Coating,
                     position=pad.position.point_from_heading(
-                        vtol_pad[0].heading.degrees - 180, 35
+                        vtol_pad[0].heading.degrees - 180, 40
                     ),
                     heading=pad.heading + 270,
                 )
 
-            self.m.vehicle_group(
-                country=country,
-                name=(name + "_power"),
-                _type=power_truck_type,
-                position=pad.position.point_from_heading(
-                    vtol_pad[0].heading.degrees - 185, 25
-                ),
-                group_size=1,
-                heading=pad.heading + 45,
-                move_formation=PointAction.OffRoad,
-            )
+            if self.game.settings.ground_start_ground_power_trucks:
+                self.m.vehicle_group(
+                    country=country,
+                    name=(name + "_power"),
+                    _type=power_truck_type,
+                    position=pad.position.point_from_heading(
+                        vtol_pad[0].heading.degrees - 185, 35
+                    ),
+                    group_size=1,
+                    heading=pad.heading + 45,
+                    move_formation=PointAction.OffRoad,
+                )
 
     def generate(self) -> None:
         try:

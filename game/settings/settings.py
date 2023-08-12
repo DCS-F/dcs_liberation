@@ -420,6 +420,53 @@ class Settings:
         default=True,
     )
     reserves_procurement_target: int = 10
+    default_start_type: StartType = choices_option(
+        "Default start type for AI aircraft",
+        page=CAMPAIGN_MANAGEMENT_PAGE,
+        section=HQ_AUTOMATION_SECTION,
+        choices={v.value: v for v in StartType},
+        default=StartType.COLD,
+        detail=(
+            "Warning: Options other than Cold will significantly reduce the number of "
+            "targets available for OCA/Aircraft missions, and OCA/Aircraft flights "
+            "will not be included in automatically planned OCA packages."
+        ),
+    )
+    default_start_type_client: StartType = choices_option(
+        "Default start type for Player flights",
+        page=CAMPAIGN_MANAGEMENT_PAGE,
+        section=HQ_AUTOMATION_SECTION,
+        choices={v.value: v for v in StartType},
+        default=StartType.COLD,
+        detail=("Default start type for flights containing Player/Client slots."),
+    )
+    untasked_opfor_client_slots: bool = boolean_option(
+        "Convert untasked OPFOR aircraft into client slots",
+        page=CAMPAIGN_MANAGEMENT_PAGE,
+        section=HQ_AUTOMATION_SECTION,
+        default=False,
+        detail=(
+            "Warning: Enabling this will significantly reduce the number of "
+            "targets available for OCA/Aircraft missions."
+        ),
+    )
+    # Mission specific
+    desired_player_mission_duration: timedelta = minutes_option(
+        "Desired mission duration",
+        page=CAMPAIGN_MANAGEMENT_PAGE,
+        section=HQ_AUTOMATION_SECTION,
+        default=timedelta(minutes=60),
+        min=30,
+        max=150,
+    )
+    desired_tanker_on_station_time: timedelta = minutes_option(
+        "Desired tanker on-station time",
+        page=CAMPAIGN_MANAGEMENT_PAGE,
+        section=HQ_AUTOMATION_SECTION,
+        default=timedelta(minutes=60),
+        min=30,
+        max=150,
+    )
 
     # Mission Generator
     # Gameplay
@@ -512,54 +559,6 @@ class Settings:
             "based ones. <u>Takes effect after current turn!</u>"
         ),
     )
-    default_start_type: StartType = choices_option(
-        "Default start type for AI aircraft",
-        page=MISSION_GENERATOR_PAGE,
-        section=GAMEPLAY_SECTION,
-        choices={v.value: v for v in StartType},
-        default=StartType.COLD,
-        detail=(
-            "Warning: Options other than Cold will significantly reduce the number of "
-            "targets available for OCA/Aircraft missions, and OCA/Aircraft flights "
-            "will not be included in automatically planned OCA packages."
-        ),
-    )
-    default_start_type_client: StartType = choices_option(
-        "Default start type for Player flights",
-        page=MISSION_GENERATOR_PAGE,
-        section=GAMEPLAY_SECTION,
-        choices={v.value: v for v in StartType},
-        default=StartType.COLD,
-        detail=("Default start type for flights containing Player/Client slots."),
-    )
-    untasked_opfor_client_slots: bool = boolean_option(
-        "Convert untasked OPFOR aircraft into client slots",
-        page=MISSION_GENERATOR_PAGE,
-        section=GAMEPLAY_SECTION,
-        default=False,
-        detail=(
-            "Warning: Enabling this will significantly reduce the number of "
-            "targets available for OCA/Aircraft missions."
-        ),
-    )
-    # Mission specific
-    desired_player_mission_duration: timedelta = minutes_option(
-        "Desired mission duration",
-        page=MISSION_GENERATOR_PAGE,
-        section=GAMEPLAY_SECTION,
-        default=timedelta(minutes=60),
-        min=30,
-        max=150,
-    )
-    desired_tanker_on_station_time: timedelta = minutes_option(
-        "Desired tanker on-station time",
-        page=MISSION_GENERATOR_PAGE,
-        section=GAMEPLAY_SECTION,
-        default=timedelta(minutes=60),
-        min=30,
-        max=150,
-    )
-
     max_frontline_width: int = bounded_int_option(
         "Maximum frontline width (km)",
         page=MISSION_GENERATOR_PAGE,
@@ -573,12 +572,32 @@ class Settings:
         MISSION_GENERATOR_PAGE,
         GAMEPLAY_SECTION,
         default=False,
+        detail=("Might have a performance impact."),
     )
     ground_start_trucks_roadbase: bool = boolean_option(
         "Spawn trucks at ground starts in roadbases instead of FARP statics",
         MISSION_GENERATOR_PAGE,
         GAMEPLAY_SECTION,
         default=False,
+        detail=("Might have a performance impact."),
+    )
+    ground_start_ground_power_trucks: bool = boolean_option(
+        "Spawn ground power trucks at ground starts in airbases",
+        MISSION_GENERATOR_PAGE,
+        GAMEPLAY_SECTION,
+        default=True,
+        detail=(
+            "Needed to cold-start some aircraft types. Might have a performance impact."
+        ),
+    )
+    ground_start_ground_power_trucks_roadbase: bool = boolean_option(
+        "Spawn ground power trucks at ground starts in roadbases",
+        MISSION_GENERATOR_PAGE,
+        GAMEPLAY_SECTION,
+        default=True,
+        detail=(
+            "Needed to cold-start some aircraft types. Might have a performance impact."
+        ),
     )
 
     # Performance

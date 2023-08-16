@@ -359,7 +359,7 @@ class NavalGroundObject(TheaterGroundObject, ABC):
 
     @property
     def purchasable(self) -> bool:
-        return False
+        return True
 
 
 class GenericCarrierGroundObject(NavalGroundObject, ABC):

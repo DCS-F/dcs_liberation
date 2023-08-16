@@ -650,7 +650,7 @@ class GeneratorOptions(QtWidgets.QWizardPage):
         no_enemy_navy = QtWidgets.QCheckBox()
         self.registerField("no_enemy_navy", no_enemy_navy)
         desired_player_mission_duration = TimeInputs(
-            DEFAULT_MISSION_LENGTH, minimum=30, maximum=150
+            DEFAULT_MISSION_LENGTH, minimum=30, maximum=240
         )
         self.registerField(
             "desired_player_mission_duration", desired_player_mission_duration.spinner

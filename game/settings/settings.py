@@ -457,7 +457,7 @@ class Settings:
         section=HQ_AUTOMATION_SECTION,
         default=timedelta(minutes=60),
         min=30,
-        max=150,
+        max=240,
     )
     desired_tanker_on_station_time: timedelta = minutes_option(
         "Desired tanker on-station time",

@@ -150,23 +150,23 @@ local unitPayloads = {
 			["pylons"] = {
 				[1] = {
 					["CLSID"] = "{BK90MJ1}",
-					["num"] = 2,
+					["num"] = 5,
 				},
 				[2] = {
-					["CLSID"] = "{BK90MJ1}",
-					["num"] = 6,
-				},
-				[3] = {
 					["CLSID"] = "{VIGGEN_X-TANK}",
 					["num"] = 4,
 				},
-				[4] = {
-					["CLSID"] = "{BK90MJ1}",
-					["num"] = 5,
-				},
-				[5] = {
+				[3] = {
 					["CLSID"] = "{BK90MJ1}",
 					["num"] = 3,
+				},
+				[4] = {
+					["CLSID"] = "{U22}",
+					["num"] = 6,
+				},
+				[5] = {
+					["CLSID"] = "{KB}",
+					["num"] = 2,
 				},
 				[6] = {
 					["CLSID"] = "{Robot24J}",

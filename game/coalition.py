@@ -173,6 +173,7 @@ class Coalition:
         For more information on turn initialization in general, see the documentation
         for `Game.initialize_turn`.
         """
+        self.num_of_planned_cas = 0
         # Needs to happen *before* planning transfers so we don't cancel them.
         self.ato.clear()
         self.air_wing.reset()

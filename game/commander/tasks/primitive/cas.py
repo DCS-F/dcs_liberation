@@ -24,17 +24,21 @@ class PlanCas(PackagePlanningTask[FrontLine]):
         )
 
         if self.target not in state.vulnerable_front_lines:
-            # May still plan a CAS mission despite the front line
-            # not being considered vulnerable,
-            # more enemy ground units means higher chance to do so
-            if enemy_cp.deployable_front_line_units > randint(
-                0, enemy_cp.frontline_unit_count_limit
-            ) or (
+            if (
                 state.context.coalition.num_of_planned_cas
                 >= state.context.coalition.game.settings.desired_num_of_cas_flights
             ):
                 # Append the front line to the list of vulnerable ones if
                 # the number of CAS flights has been reached
+                state.vulnerable_front_lines.append(self.target)
+                return False
+
+            # May still plan a CAS mission despite the front line
+            # not being considered vulnerable,
+            # more enemy ground units means higher chance to do so
+            if enemy_cp.deployable_front_line_units > randint(
+                0, enemy_cp.frontline_unit_count_limit
+            ):
                 state.vulnerable_front_lines.append(self.target)
             else:
                 return False

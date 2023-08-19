@@ -1,0 +1,480 @@
+---
+name: Caucasus - Korea - Operation Chromite
+theater: Caucasus
+authors: Ghosti
+description: <p>This campaign is set during Operation Lam Son 719 in the Vietnam War. Operation Lam Son 719 was a limited-objective offensive campaign conducted in the southeastern portion of the Kingdom of Laos. The campaign was carried out by the armed forces of South Vietnam from 8 February 1971, during the Vietnam War.</p>
+recommended_player_faction: United Nations Command 1950 (A-4 Skyhawk)
+recommended_enemy_faction: North Korea 1950 (Lend-lease)
+recommended_start_date: 1950-09-01
+miz: Caucasus_Korea_Operation_Chromite.miz
+performance: 3
+version: "10.2"
+squadrons:
+  Pusan Airfield:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - A-20G Havoc
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - B-17G Flying Fortress
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - F-84G Thunderjet
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - F-86F Sabre
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-47D-40 Thunderbolt
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-51D-25-NA Mustang
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-51D-30-NA Mustang
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Naktong Southwest Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  Naktong Northeast Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+  Taegu Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Miryang Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Kyongju Airstrip:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - A-20G Havoc
+    - primary: Strike
+      secondary: air-to-ground
+      aircraft:
+        - B-17G Flying Fortress
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - F-84G Thunderjet
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - F-86F Sabre
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-47D-40 Thunderbolt
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-51D-25-NA Mustang
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - P-51D-30-NA Mustang
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Pyongyong Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Pohang-dong Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Tabu-dong Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Pohang Helicopter Base:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Andong Pass FARP:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Pork Chop Hill:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Heartbreak Ridge:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Iron Triangle Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Iron Triangle Pass Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  Pyonggang Temporary Airstrip:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+  Pyonggang Airfield:
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+  Pyonggang South Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Pyonggang North Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Kunsan Airbase:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  FOB Iksan:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  FOB Hongseong:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  FOB Seosan:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Incheon Kimpo Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+  Incheon Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Imjin river valley:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  White Horse Mountain:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Arrowhead Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  T-Bone Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Old Baldy Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Bunker Hill Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Kumsong Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Sibyan Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Charwan Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Kumhwa Combat Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Ongjin Helicopter Base:
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Ongjin West Airfield:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+  Ongjin Northwest Airfield:
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+  Haeju Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  Kaesong Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+  Seoul Southwest Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+  Seoul Southeast Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+  Osan Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  Wonsan Airfield:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+  Blue CV59:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+  Blue CVN65:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+  Blue LHA:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - UH-1H Iroquois
+  Red LHA-1:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  Red LHA-2:
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: BAI
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+  # Anapa-Vityazevo
+  12:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+    - primary: Transport
+      aircraft:
+        - An-26B
+  # Krasnodar-Center
+  13:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+    - primary: Transport
+      aircraft:
+        - An-26B
+  # Novorossiysk
+  14:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+    - primary: Transport
+      aircraft:
+        - An-26B
+  # Krymsk
+  15:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+    - primary: Transport
+      aircraft:
+        - An-26B
+        
+  # Maykop-Khanskaya
+  # 16:
+
+  # Gelendzhik
+  17:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+    - primary: Transport
+      aircraft:
+        - An-26B
+  # Krasnodar-Pashkovsky
+  19:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - MiG-15bis Fagot
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+    - primary: Transport
+      aircraft:
+        - An-26B
+  # Sukhumi-Babushara
+  20:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+    - primary: CAS
+      aircraft:
+        - Boston Mk.III
+  # Gudauta
+  21:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - I-16 Ishak
+  # Senaki-Kholki
+  23:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - MosquitoFBMkVI
+  # Kobuleti
+  24:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-51D-25-NA Mustang
+  # Kutaisi
+  25:
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - P-47D-30 Thunderbolt (Early)
+  
+  
+carriers:
+  Blue CV59:
+    preferred_name: CV-59 Forrestal
+    preferred_type: Forrestal
+  Blue CVN65:
+    preferred_name: CVN-65 Enterprise
+    preferred_type: Stennis

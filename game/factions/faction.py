@@ -391,6 +391,13 @@ class Faction:
         if not mod_settings.f16cm_bl50:
             self.remove_aircraft("VSN_F16CMBL50")
             self.remove_aircraft("VSN_F16CMBL50_AG")
+        if not mod_settings.fa_18d:
+            self.remove_aircraft("VSN_FA18D")
+            self.remove_aircraft("VSN_FA18D_AG")
+        if not mod_settings.fa_18efg:
+            self.remove_aircraft("FA-18E")
+            self.remove_aircraft("FA-18F")
+            self.remove_aircraft("EA-18G")
         if not mod_settings.f22_raptor:
             self.remove_aircraft("F-22A")
         if not mod_settings.f84g_thunderjet:
@@ -482,10 +489,6 @@ class Faction:
             self.remove_vehicle("SAM SA-14 Strela-3 manpad")
             self.remove_vehicle("SAM SA-24 Igla-S manpad")
             self.remove_vehicle("Polyana-D4M1 C2 node")
-        if not mod_settings.fa_18efg:
-            self.remove_aircraft("FA-18E")
-            self.remove_aircraft("FA-18F")
-            self.remove_aircraft("EA-18G")
         # swedish military assets pack
         if not mod_settings.swedishmilitaryassetspack:
             self.remove_vehicle("BV410_RBS70")

@@ -152,6 +152,7 @@ from pydcs_extensions.f16cm_bl50.f16cm_bl50 import VSN_F16CMBL50_AG, VSN_F16CMBL
 from pydcs_extensions.f22a.f22a import F_22A
 from pydcs_extensions.f4b.f4b import VSN_F4B
 from pydcs_extensions.f84g.f84g import VSN_F84G
+from pydcs_extensions.fa18d.fa18d import VSN_FA18D, VSN_FA18D_AG
 from pydcs_extensions.hawk_t1a.hawk_t1a import Hawk_T1A
 from pydcs_extensions.hercules.hercules import Hercules
 from pydcs_extensions.jas39.jas39 import JAS39Gripen, JAS39Gripen_AG
@@ -206,6 +207,7 @@ CAP_CAPABLE = [
     VSN_F16CBL50,
     FA_18C_hornet,
     F_A_18C,
+    VSN_FA18D,
     JF_17,
     JAS39Gripen,
     F_16A_MLU,
@@ -286,6 +288,7 @@ CAS_CAPABLE = [
     VSN_F16CMBL50_AG,
     FA_18C_hornet,
     F_A_18C,
+    VSN_FA18D_AG,
     VSN_TornadoGR4,
     VSN_TornadoIDS,
     Tornado_GR4,
@@ -399,6 +402,7 @@ SEAD_CAPABLE = [
     VSN_F16CBL52D,
     FA_18C_hornet,
     F_A_18C,
+    VSN_FA18D_AG,
     VSN_TornadoIDS,
     VSN_TornadoGR4,
     Tornado_IDS,
@@ -492,6 +496,7 @@ STRIKE_CAPABLE = [
     VSN_F16CMBL50_AG,
     FA_18C_hornet,
     F_A_18C,
+    VSN_FA18D_AG,
     VSN_TornadoGR4,
     VSN_TornadoIDS,
     Tornado_GR4,
@@ -632,6 +637,7 @@ RUNWAY_ATTACK_CAPABLE = [
     VSN_F16CMBL50_AG,
     FA_18C_hornet,
     F_A_18C,
+    VSN_FA18D_AG,
     VSN_A6A,
     AV8BNA,
     JF_17,

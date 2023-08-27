@@ -308,6 +308,7 @@ def create_game(
             a4_skyhawk=False,
             f4b_phantom=False,
             a7e_corsair2=False,
+            fa_18d=False,
             fa_18efg=False,
             f22_raptor=False,
             f84g_thunderjet=False,

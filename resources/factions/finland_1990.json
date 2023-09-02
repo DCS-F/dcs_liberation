@@ -1,0 +1,174 @@
+{
+  "country": "Finland",
+  "name": "Finland 1990",
+  "authors": "Ghosti",
+  "description": "<p>1990s Finland.</p>",
+  "locales": [
+    "fi_FI"
+  ],
+  "aircrafts": [
+    "C-130",
+    "F/A-18C Hornet (Lot 20)",
+    "F/A-18C Hornet (AI)",
+	"MiG-21bis Fishbed-N",
+    "AJS-37 Viggen",
+    "Mirage 2000C",
+    "Mirage-F1CE",
+    "Mirage-F1EE",
+    "A-4E Skyhawk",
+	"Hawk T1A",
+    "Hawk Mk.60",
+    "Mi-8MTV2 Hip",
+    "Mi-24P Hind-F",
+    "UH-1H Iroquois"
+  ],
+  "awacs": [
+    "E-3A"
+  ],
+  "tankers": [
+    "KC-130",
+    "KC-135 Stratotanker"
+  ],
+  "frontline_units": [
+    "BTR-80",
+    "ZSU-57-2 'Sparka'",
+    "Flakpanzer Gepard",
+    "Roland 2 (Marder Chassis)",
+    "PT-76",
+    "T-54A",
+	"T-55A",
+    "T-72A",
+	"T-72B with Kontakt-1 ERA",
+    "BMP-1",
+    "BMP-2",
+    "MT-LB",
+    "MT-LBu",
+    "BV 410",
+    "LUV UAZ-469 Jeep",
+    "LUV Land Rover 109",
+    "TPz Fuchs"
+  ],
+  "artillery_units": [
+    "2S1 Gvozdika",
+    "2S3 Akatsiya",
+    "BM-21 Grad"
+  ],
+  "logistics_units": [
+    "Truck KAMAZ 43101"
+  ],
+  "infantry_units": [
+    "Infantry M249",
+    "Infantry M4",
+    "Soldier AT-4",
+    "MANPADS Stinger",
+    "Mortar 2B11 120mm"
+  ],
+  "preset_groups": [
+    "RBS-15",
+    "RBS-70",
+    "SA-11",
+    "Roland"
+  ],
+  "naval_units": [
+    "FFG Oliver Hazard Perry",
+	"P265 Dumbarton Castle",
+	"F72 Ariadne",
+	"F57 Andromeda",
+	"F12 Achilles"
+  ],
+  "missiles": [],
+  "air_defense_units": [
+    "SAM SA-11 Buk \"Gadfly\" Snow Drift SR",
+    "ZSU-57-2 'Sparka'",
+    "AAA ZU-23 Closed Emplacement",
+    "ZU-23 on Ural-375",
+    "Flakpanzer Gepard"
+  ],
+  "requirements": {},
+  "carrier_names": [],
+  "helicopter_carrier_names": [],
+  "has_jtac": true,
+  "jtac_unit": "MQ-9 Reaper",
+  "liveries_overrides": {
+    "F/A-18C Hornet (Lot 20)": [
+      "Finland 21",
+      "Finland 31"
+    ],
+	"MiG-21bis Fishbed-N": [
+      "Finland - HävLLv 31",
+      "MG-130"
+    ],
+    "AJS-37 Viggen": [
+      "FiAF Early",
+      "FiAF Later"
+    ],
+    "Mirage 2000C": [
+      "Finnish Air Force Green",
+      "Finnish Air Force3"
+    ],
+    "Mirage-F1CE": [
+      "FiAF GNAT",
+      "FiAF HW"
+    ],
+    "Mirage-F1EE": [
+      "FiAF DK"
+    ],
+    "A-4E Skyhawk": [
+      "International Finnish Air Force"
+    ],
+    "Hawk T1A": [
+      "Hawk_Ilmavoimat_Camo01",
+      "Finland HW-329 Green Brown"
+    ],
+    "Hawk Mk.60": [
+      "FiAF HW-321"
+    ],
+    "Mi-8MTV2 Hip": [
+      "ILMAVOIMAT2",
+      "Ilmavoimat HS-11",
+      "Rajavartiolaitos (green)"
+    ],
+    "Mi-24P Hind-F": [
+      "FIAF",
+      "Rajavartiolaitos"
+    ]
+  },
+  "liveries_overrides_ground_forces": {
+    "SAU Gvozdika": [
+      "summer"
+    ],
+	"SAU Akatsia": [
+      "summer"
+    ],
+    "BRDM-2": [
+      "summer"
+    ],
+    "BTR-80": [
+      "Green summer"
+    ],
+    "ZSU_57_2": [
+      "summer"
+    ],
+	"Ural-375 ZU-23": [
+      "summer"
+    ],
+	"S-60_Type59_Artillery": [
+      "summer"
+    ],
+    "Ural-375": [
+      "summer"
+    ],
+	"Ural-4320-31": [
+      "summer"
+    ],
+	"Ural-4320T": [
+      "summer"
+    ],
+	"GAZ-66": [
+      "summer"
+    ],
+	"KAMAZ Truck": [
+      "summer"
+    ]
+  }
+}

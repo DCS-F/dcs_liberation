@@ -10,6 +10,7 @@
     "C-130",
     "F/A-18C Hornet (Lot 20)",
     "F/A-18C Hornet (AI)",
+    "F/A-18D Hornet",
 	"MiG-21bis Fishbed-N",
     "AJS-37 Viggen",
     "Mirage 2000C",
@@ -20,14 +21,19 @@
     "Hawk Mk.60",
     "Mi-8MTV2 Hip",
     "Mi-24P Hind-F",
-    "UH-1H Iroquois"
+	"AH-64D Apache Longbow",
+    "Ka-50 Hokum",
+    "UH-1H Iroquois",
+	"UH-60L",
+    "SA 342L Gazelle",
+    "SA 342M Gazelle"
   ],
   "awacs": [
-    "E-3A"
+    "E-2C Hawkeye"
   ],
   "tankers": [
     "KC-130",
-    "KC-135 Stratotanker"
+    "KC-135 Stratotanker MPRS"
   ],
   "frontline_units": [
     "BTR-80",
@@ -66,7 +72,9 @@
     "Infantry M249",
     "Infantry M4",
     "Soldier AT-4",
+    "Infantry RPG",
     "MANPADS Stinger",
+    "MANPADS SA-18 Igla-S \"Grouse\"",
     "Mortar 2B11 120mm"
   ],
   "preset_groups": [
@@ -98,7 +106,7 @@
   "carrier_names": [],
   "helicopter_carrier_names": [],
   "has_jtac": true,
-  "jtac_unit": "MQ-9 Reaper",
+  "jtac_unit": "UH-60L",
   "liveries_overrides": {
     "F/A-18C Hornet (Lot 20)": [
       "Finland 21",
@@ -135,6 +143,47 @@
     ],
     "Mi-8MTV2 Hip": [
       "ILMAVOIMAT2"
+    ],
+	"AH-64D Apache Longbow": [
+      "FIAF_AH-303",
+      "FIAF_AH-309",
+      "FIAF_AH-313",
+      "FIAF_AH-317",
+      "FIAF_AH-319",
+      "FIAF_AH-325",
+      "FIAF_AH-331",
+      "FIAF_AH-337",
+      "FIAF_AH-342"
+    ],
+    "Ka-50 Hokum": [
+      "Musta Hauki"
+    ],
+    "UH-1H Iroquois": [
+      "FiAF"
+    ],
+	"UH-60L": [
+      "Finnish Army"
+    ],
+    "SA 342L Gazelle": [
+      "FIAF"
+    ],
+    "SA 342M Gazelle": [
+      "FIAF"
+    ],
+    "C-130": [
+      "FIAF C-130"
+    ],
+    "KC-130": [
+      "FIAF KC-130"
+    ],
+    "E-2C Hawkeye": [
+      "FiAF"
+    ],
+    "IL-78M": [
+      "Ilmavoimat2"
+    ],
+    "KC-135 Stratotanker MPRS": [
+      "FiAF"
     ]
   },
   "liveries_overrides_ground_forces": {

@@ -18,14 +18,15 @@
     "Hawk Mk.60",
     "Mi-8MTV2 Hip",
     "Mi-24P Hind-F",
-    "UH-1H Iroquois"
+    "UH-1H Iroquois",
+    "SA 342L Gazelle"
   ],
   "awacs": [
-    "E-3A"
+    "E-2C Hawkeye"
   ],
   "tankers": [
     "KC-130",
-    "KC-135 Stratotanker"
+    "IL-78M"
   ],
   "frontline_units": [
     "BTR-80",
@@ -58,7 +59,7 @@
 	"Infantry AK-74 Rus ver2",
 	"Infantry AK-74 Rus ver3",
     "Soldier AT-4",
-    "MANPADS Stinger",
+    "Infantry RPG",
     "Mortar 2B11 120mm"
   ],
   "preset_groups": [
@@ -79,11 +80,14 @@
     "AAA ZU-23 Closed Emplacement",
     "ZU-23 on Ural-375"
   ],
-  "requirements": {},
+  "requirements": {
+    "frenchpack V3.5": "https://forums.eagle.ru/showthread.php?t=279974",
+    "Swedish Military Assets for DCS by Currenthill": "https://forum.dcs.world/topic/295202-swedish-military-assets-for-dcs-by-currenthill/"
+  },
   "carrier_names": [],
   "helicopter_carrier_names": [],
   "has_jtac": true,
-  "jtac_unit": "MQ-9 Reaper",
+  "jtac_unit": "Mi-8MTV2 Hip",
   "liveries_overrides": {
 	"MiG-21bis Fishbed-N": [
       "Finland - HävLLv 31",
@@ -122,6 +126,30 @@
     "Mi-24P Hind-F": [
       "FIAF",
       "Rajavartiolaitos"
+    ],
+    "UH-1H Iroquois": [
+      "FiAF"
+    ],
+    "SA 342L Gazelle": [
+      "FIAF"
+    ],
+    "SA 342M Gazelle": [
+      "FIAF"
+    ],
+    "C-130": [
+      "FIAF C-130"
+    ],
+    "KC-130": [
+      "FIAF KC-130"
+    ],
+    "E-2C Hawkeye": [
+      "FiAF"
+    ],
+    "IL-78M": [
+      "Ilmavoimat2"
+    ],
+    "KC-135 Stratotanker MPRS": [
+      "FiAF"
     ]
   },
   "liveries_overrides_ground_forces": {

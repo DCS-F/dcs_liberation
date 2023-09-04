@@ -1,12 +1,12 @@
 ---
-name: Caucasus - Operation Dragon Forest
+name: Caucasus - Salpalinja
 theater: Caucasus
 authors: Ghosti
 description: <p>This campaign depicts a west-east direction ground war across the more forested regions of the Caucasus map, with several roadbases in between the bigger airports and airbases, intended to depict dispersed deployment of aircraft in the event of a Cold War era ground war.</p>
-recommended_player_faction: Sweden 1970s Alternate Universe
+recommended_player_faction: Finland 1970
 recommended_enemy_faction: Soviet Union 1975
 recommended_start_date: 1975-03-01
-miz: Caucasus_Operation_Dragon_Forest.miz
+miz: Caucasus_Salpalinja.miz
 performance: 3
 version: "10.2"
 squadrons:
@@ -198,20 +198,13 @@ squadrons:
         - Mi-8MTV2 Hip
   # Anapa-Vityazevo
   12:
-    - primary: BARCAP
-      secondary: any
-      aircraft:
-        - Mirage 2000C
-    - primary: Strike
-      secondary: any
-      aircraft:
-        - AJS-37 Viggen
     - primary: AEW&C
       aircraft:
         - E-3A
     - primary: Refueling
       aircraft:
-        - KC-135 Stratotanker
+        - KC-135 Stratotanker MPRS
+        - IL-78M
     - primary: Refueling
       aircraft:
         - KC-130
@@ -229,30 +222,42 @@ squadrons:
       secondary: air-to-ground
       aircraft:
         - UH-1H Iroquois
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - SA 342M Gazelle
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - AH-64D Apache Longbow
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Ka-50 Hokum
   # Novorossiysk
   14:
     - primary: BARCAP
       secondary: any
       aircraft:
-        - Mirage 2000C
+        - F/A-18C Hornet (Lot 20)
+    - primary: BARCAP
+      secondary: any
+      aircraft:
+        - F/A-18C Hornet (AI)
     - primary: Strike
       secondary: any
       aircraft:
-        - AJS-37 Viggen
+        - F/A-18D Hornet
   # Krymsk
   15:
     - primary: BARCAP
       secondary: any
       aircraft:
-        - Mirage 2000C
-    - primary: Strike
+        - Mirage-F1CE
+    - primary: BARCAP
       secondary: any
       aircraft:
-        - AJS-37 Viggen
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - UH-1H Iroquois
+        - Mirage-F1EE
   # Maykop-Khanskaya
   16:
     - primary: CAS
@@ -272,25 +277,47 @@ squadrons:
     - primary: BARCAP
       secondary: any
       aircraft:
-        - Mirage 2000C
-    - primary: Strike
-      secondary: any
-      aircraft:
-        - AJS-37 Viggen
-    - primary: CAS
-      secondary: air-to-ground
-      aircraft:
-        - UH-1H Iroquois
-  # Krasnodar-Pashkovsky
-  19:
+        - MiG-19P Farmer-B
     - primary: BARCAP
       secondary: any
       aircraft:
-        - Mirage 2000C
+        - MiG-21bis Fishbed-N
+        - MiG-15bis Fagot
+    - primary: Transport
+      secondary: any
+      aircraft:
+        - UH-60L
+        - UH-1H Iroquois
+  # Krasnodar-Pashkovsky
+  19:
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - L-39ZA Albatros
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - A-4E Skyhawk
+    - primary: CAS
+      secondary: any
+      aircraft:
+        - Hawk T1A
     - primary: Strike
       secondary: any
       aircraft:
-        - AJS-37 Viggen
+        - Hawk Mk.60
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-8MTV2 Hip
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - Mi-24P Hind-F
+    - primary: CAS
+      secondary: air-to-ground
+      aircraft:
+        - SA 342L Gazelle
   # Mineralnye Vody
   26:
     - primary: BAI
@@ -314,7 +341,7 @@ squadrons:
       aircraft:
         - Tu-16 Badger
   # Nalchik
-  16:
+  27:
     - primary: CAS
       secondary: any
       aircraft:
@@ -323,7 +350,7 @@ squadrons:
       aircraft:
         - IL-78M
   # Mozdok
-  17:
+  28:
     - primary: BAI
       secondary: any
       aircraft:
